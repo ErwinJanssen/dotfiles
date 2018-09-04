@@ -13,3 +13,7 @@
 !.config/fish/*
 !.config/fish/functions/*
 .config/fish/fishd.*
+
+# Neovim
+!.config/nvim/
+!.config/nvim/*
