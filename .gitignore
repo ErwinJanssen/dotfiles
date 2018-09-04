@@ -8,7 +8,7 @@
 # Whitelist the .config directory, since a lot of dotfiles are located here
 !.config/
 
-# Fish shell (except the fishd file)
+# Fish (except the fishd file)
 !.config/fish/
 !.config/fish/*
 !.config/fish/functions/*
@@ -17,3 +17,7 @@
 # Neovim
 !.config/nvim/
 !.config/nvim/*
+
+# Sway
+!.config/sway/
+!.config/sway/*
