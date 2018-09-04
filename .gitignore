@@ -1,2 +1,15 @@
+# Start by blacklisting everything, since this repository is placed in the home
+# directory.
 *
+
+# Whitelist the .gitignore file
 !.gitignore
+
+# Whitelist the .config directory, since a lot of dotfiles are located here
+!.config/
+
+# Fish shell (except the fishd file)
+!.config/fish/
+!.config/fish/*
+!.config/fish/functions/*
+.config/fish/fishd.*
