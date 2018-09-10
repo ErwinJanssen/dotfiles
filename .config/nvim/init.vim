@@ -36,3 +36,16 @@ endfun
 autocmd BufWritePre * call TrimWhitespace()
 
 set spell spelllang=en_us
+
+" Specify a directory for plugins
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Distraction free writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+let g:limelight_conceal_ctermfg = 'DarkGray'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+call plug#end()
