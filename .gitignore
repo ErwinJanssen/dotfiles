@@ -31,3 +31,6 @@
 # Termite
 !.config/termite/
 !.config/termite/*
+
+# Tmux
+!.tmux.conf
