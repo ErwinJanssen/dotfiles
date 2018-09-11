@@ -5,6 +5,9 @@ set fish_greeting
 set -gx EDITOR nvim
 set -gx BROWSER firefox
 
+# Prepend PATH with local bin directory
+set -gx PATH ~/.local/bin/ $PATH
+
 # Colors for git prompt
 set yellow (set_color yellow)
 set green (set_color green)
