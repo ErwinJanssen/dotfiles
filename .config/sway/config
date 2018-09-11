@@ -195,4 +195,11 @@ bar {
     status_command i3status
 }
 
+#
+# Looks
+#
+#
+default_border pixel 2
+hide_edge_borders smart
+
 include /etc/sway/config.d/*
