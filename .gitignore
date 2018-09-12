@@ -17,6 +17,7 @@
 # Neovim
 !.config/nvim/
 !.config/nvim/*
+.config/nvim/.*
 !.local/
 !.local/share/
 !.local/share/nvim/
