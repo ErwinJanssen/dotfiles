@@ -5,6 +5,11 @@ au FileType gitcommit set tw=72
 " Enable mouse support
 set mouse=a
 
+""" Custom key bindings
+" Delete previous/next word using ctrl-backspace/del
+inoremap <C-H> <C-W>
+inoremap <C-Del> <C-O>dw
+
 """ Colors and visuals
 " Make sure the theme is set for a dark background
 set background=dark

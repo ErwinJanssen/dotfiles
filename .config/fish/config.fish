@@ -8,6 +8,15 @@ set -gx BROWSER firefox
 # Prepend PATH with local bin directory
 set -gx PATH ~/.local/bin/ $PATH
 
+# Custom key bindings
+function fish_user_key_bindings
+    # ctrl-del
+    bind \e\[3\;5~ kill-word
+
+    # ctrl-backspace
+    bind \cH backward-kill-word
+end
+
 # Colors for git prompt
 set yellow (set_color yellow)
 set green (set_color green)
