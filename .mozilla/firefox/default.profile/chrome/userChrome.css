@@ -1,0 +1,9 @@
+/* Hide the primary tabs toolbar at the top of the window */
+#TabsToolbar {
+  visibility: collapse;
+}
+
+/* Hide the sidebar header when using TreeStyleTab */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  visibility: collapse;
+}
