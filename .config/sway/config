@@ -181,6 +181,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+### Mouse
+focus_follows_mouse no
+
 #
 # Status Bar:
 #
