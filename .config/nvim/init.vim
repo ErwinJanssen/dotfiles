@@ -16,7 +16,9 @@ set background=dark
 
 " Underline spell errors
 highlight clear SpellBad
+highlight clear SpellLocal
 highlight SpellBad cterm=underline
+highlight SpellLocal ctermbg=darkblue
 
 " Set both absolute and relative line numbers
 set number
