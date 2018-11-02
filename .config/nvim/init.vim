@@ -30,6 +30,9 @@ set colorcolumn=+1
 " Show whitespace
 set list
 
+" Configure the Neovim Python virtual environment
+let g:python3_host_prog = '/home/erwin/.config/nvim/venv/bin/python'
+
 " Trim all trailing whitespace on buffer write
 function! TrimWhitespace()
     let l:state = winsaveview()
