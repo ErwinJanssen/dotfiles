@@ -27,6 +27,10 @@ set relativenumber
 " Set a color column to indicate text width
 set colorcolumn=+1
 
+" Set the direction of window splits
+set splitright
+set splitbelow
+
 " Show whitespace
 set list
 
