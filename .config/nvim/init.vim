@@ -84,6 +84,7 @@ let g:deoplete#enable_at_startup = 1
 " Better markdown support (also for math in markdown)
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
 
 call plug#end()
 
