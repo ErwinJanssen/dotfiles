@@ -34,6 +34,14 @@ set splitbelow
 " Show whitespace
 set list
 
+" Save whenever switching windows or leaving vim. This is useful when running
+" the tests inside vim without having to save all files first.
+autocmd FocusLost,WinLeave * :silent! wa
+
+" Trigger autoread when changing buffers or coming back to vim.
+autocmd FocusGained,BufEnter * :silent! !
+set autoread
+
 " Configure the Neovim Python virtual environment
 let g:python3_host_prog = '/home/erwin/.config/nvim/venv/bin/python'
 
