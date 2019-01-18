@@ -26,6 +26,8 @@
 !.config/nvim/
 !.config/nvim/*
 .config/nvim/.*
+!.config/nvim/after/ftplugin/
+!.config/nvim/after/ftplugin/*
 !.local/
 !.local/share/
 !.local/share/nvim/
