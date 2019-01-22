@@ -61,6 +61,9 @@ let g:vim_markdown_folding_disabled = 1
 " Lots of color schemes
 Plug 'flazz/vim-colorschemes'
 
+" Semantic highlighting for Python
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+
 call plug#end()
 
 " ======================================
