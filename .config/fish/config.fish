@@ -18,8 +18,8 @@ function fish_user_key_bindings
 end
 
 # Aliases
-if type exa > /dev/null 2>&1
-    # exa is a modern ls replacement
+if command --search exa > /dev/null
+    # exa is a modern ls replacement, use it if available
     function ls --description "List contents of directory"
         command exa $argv
     end
