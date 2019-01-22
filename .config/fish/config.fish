@@ -25,22 +25,6 @@ if type exa > /dev/null 2>&1
     end
 end
 
-
-
-# Colors for git prompt
-set yellow (set_color yellow)
-set green (set_color green)
-set red (set_color red)
-
-# Fish git prompt
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showuntrackedfiles 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
-set __fish_git_prompt_color_upstream_ahead green
-set __fish_git_prompt_color_upstream_behind red
-
 # Colors
 set fish_color_autosuggestion 969896
 set fish_color_cancel \x2dr
@@ -68,6 +52,7 @@ set fish_pager_color_completion \x1d
 set fish_pager_color_description B3A06D\x1eyellow
 set fish_pager_color_prefix white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 set fish_pager_color_progress brwhite\x1e\x2d\x2dbackground\x3dcyan
+set __fish_git_prompt_color_branch yellow
 
 # Start Sway on tty1
 if [ (tty) = "/dev/tty1" ]
