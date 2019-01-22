@@ -1,6 +1,9 @@
-" ================
-" General settings
-" ================
+" ======================================
+"            General settings
+" ======================================
+
+" Where to store plugins
+let plugin_dir = '~/.local/share/nvim/plugged'
 
 " Set the default position of a new window when splitting.
 set splitright
@@ -21,17 +24,60 @@ autocmd FocusLost * :silent! !
 set autoread
 autocmd FocusGained,BufEnter * :silent! !
 
-" ==============
-" User interface
-" ==============
+" ======================================
+"                 Plugins
+" ======================================
+call plug#begin(plugin_dir)
+
+" Show Git diff in the signcolumn (added, removed, modified).
+Plug 'airblade/vim-gitgutter'
+
+" Distraction free writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+let g:limelight_conceal_ctermfg = 'DarkGray'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" Language client
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+" Optional dependencies for LanguageClient
+Plug 'junegunn/fzf'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+let g:deoplete#enable_at_startup = 1
+
+" Better markdown support (also for math in markdown)
+Plug 'plasticboy/vim-markdown'
+
+let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
+
+" Lots of color schemes
+Plug 'flazz/vim-colorschemes'
+
+call plug#end()
+
+" ======================================
+"             User interface
+" ======================================
 
 " Display both absolute and relative line numbers
 set number
 set relativenumber
 
-" =============
-" Miscellaneous
-" =============
+" Always open the signcolumn (aka, the "gutter"), so the editor window does not
+" jump every time the signcolumn (dis)appears.
+set signcolumn="yes"
+
+" ======================================
+"              Miscellaneous
+" ======================================
 
 " Set the text width, by default this proves auto wrapping
 set textwidth=79
@@ -77,37 +123,6 @@ endfun
 autocmd BufWritePre * call TrimWhitespace()
 
 set spell spelllang=en_us
-
-" Specify a directory for plugins
-call plug#begin('~/.local/share/nvim/plugged')
-
-" Distraction free writing
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
-let g:limelight_conceal_ctermfg = 'DarkGray'
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
-
-" Language client
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-" Optional dependencies for LanguageClient
-Plug 'junegunn/fzf'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-
-" Better markdown support (also for math in markdown)
-Plug 'plasticboy/vim-markdown'
-let g:vim_markdown_math = 1
-let g:vim_markdown_folding_disabled = 1
-
-Plug 'flazz/vim-colorschemes'
-
-call plug#end()
 
 " Configure language client
 
