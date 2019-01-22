@@ -17,6 +17,16 @@ function fish_user_key_bindings
     bind \cH backward-kill-word
 end
 
+# Aliases
+if type exa > /dev/null 2>&1
+    # exa is a modern ls replacement
+    function ls --description "List contents of directory"
+        command exa $argv
+    end
+end
+
+
+
 # Colors for git prompt
 set yellow (set_color yellow)
 set green (set_color green)
