@@ -105,6 +105,8 @@ Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_math = 1
 let g:vim_markdown_folding_disabled = 1
 
+Plug 'flazz/vim-colorschemes'
+
 call plug#end()
 
 " Configure language client
