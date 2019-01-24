@@ -76,7 +76,7 @@ set relativenumber
 
 " Always open the signcolumn (aka, the "gutter"), so the editor window does not
 " jump every time the signcolumn (dis)appears.
-set signcolumn="yes"
+set signcolumn=yes
 
 " ======================================
 "              Miscellaneous
