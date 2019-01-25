@@ -24,6 +24,10 @@ autocmd FocusLost * :silent! !
 set autoread
 autocmd FocusGained,BufEnter * :silent! !
 
+" With the above autowrite and autoread in place, we can safely disable the
+" swap file.
+set noswapfile
+
 " ======================================
 "                 Plugins
 " ======================================
