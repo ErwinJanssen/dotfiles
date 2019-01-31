@@ -83,6 +83,17 @@ set relativenumber
 set signcolumn=yes
 
 " ======================================
+"                 Editor
+" ======================================
+
+" Always insert spaces when inserting a <Tab>
+set expandtab
+
+" Default to 4 spaces indentation
+set shiftwidth=4
+set tabstop=4
+
+" ======================================
 "              Miscellaneous
 " ======================================
 
