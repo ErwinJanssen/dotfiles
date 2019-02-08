@@ -93,6 +93,14 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
+" Disable spell checking words that are not capitalized for most files. For
+" many file types, this clutters the interface as variable names (which are
+" often not capitalized) at the start of a line get marked. This is also an
+" issue for yaml files, where the keys are spell checked, but not capitalized.
+" To re-enable checking for capitalization, unset this value and the default
+" behavior will kick in: setlocal spellcapcheck&
+set spellcapcheck=
+
 " ======================================
 "              Miscellaneous
 " ======================================
