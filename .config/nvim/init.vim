@@ -93,6 +93,22 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
+" Set the text width to 79 characters, so the color column appears at row 80. A
+" line length of 79 or 80 is often recommended by many style guides. Some file
+" types (such as gitcommit) overwrite this setting.
+set textwidth=79
+
+" These format options determine how automatic formatting is done. More
+" information van be found at `:help fo-table`, and relevant information is
+" repeated below:
+" c     Auto-wrap comments (but not source code) using `textwidth`.
+" r,o   Insert comment leader when inserting a new line.
+" q     Allow formatting of comments with `gq`.
+" n     Recognize lists when formatting (uses `formatlistpat` for detection).
+" 1     Don't break after a one-letter word, but before if possible.
+" j     Remove the comment leader when joining lines.
+set formatoptions=c,r,o,q,n,1,j
+
 " Disable spell checking words that are not capitalized for most files. For
 " many file types, this clutters the interface as variable names (which are
 " often not capitalized) at the start of a line get marked. This is also an
@@ -104,10 +120,6 @@ set spellcapcheck=
 " ======================================
 "              Miscellaneous
 " ======================================
-
-" Set the text width, by default this proves auto wrapping
-set textwidth=79
-au FileType gitcommit set tw=72
 
 " Enable mouse support
 set mouse=a
