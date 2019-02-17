@@ -44,3 +44,10 @@
 
 # Tmux
 !.tmux.conf
+
+# Thunderbird
+!.thunderbird
+!.thunderbird/profiles.ini
+!.thunderbird/default.profile/
+!.thunderbird/default.profile/chrome/
+!.thunderbird/default.profile/chrome/**
