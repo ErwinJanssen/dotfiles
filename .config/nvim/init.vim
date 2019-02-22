@@ -49,6 +49,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+let g:LanguageClient_settingsPath = '~/.config/nvim/language_client.json'
 
 " Optional dependencies for LanguageClient
 Plug 'junegunn/fzf'
