@@ -1,2 +1,11 @@
 ---
-# tasks file for dotfiles
+- name: Copy all dotfiles to the home directory
+  copy:
+    src: dotfiles/
+    dest: "{{ ansible_env['HOME'] }}"
+
+- name: Setup the Python virtual environment for Neovim
+  pip:
+    requirements: "{{ ansible_env['HOME'] }}/.config/nvim/requirements.txt"
+    virtualenv: "{{ ansible_env['HOME'] }}/.config/nvim/venv"
+    virtualenv_python: python3
