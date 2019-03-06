@@ -141,7 +141,7 @@ set colorcolumn=+1
 set list
 
 " Configure the Neovim Python virtual environment
-let g:python3_host_prog = '/home/erwin/.config/nvim/venv/bin/python'
+let g:python3_host_prog = '{{neovim_virtualenv }}/bin/python'
 
 " Trim all trailing whitespace on buffer write
 function! TrimWhitespace()
@@ -163,7 +163,7 @@ set spell spelllang=en_us
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'python': ['/home/erwin/.config/nvim/venv/bin/pyls'],
+    \ 'python': ['{{ neovim_virtualenv }}/bin/pyls'],
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>

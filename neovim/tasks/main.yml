@@ -1,0 +1,16 @@
+---
+- name: Create the main configuration file `init.nvim`
+  template:
+    src: init.vim
+    dest: "{{ neovim_directory }}/init.vim"
+
+- name: Place the additional configuration files
+  copy:
+    src: nvim/
+    dest: "{{ neovim_directory }}"
+
+- name: Setup the Python virtual environment
+  pip:
+    requirements: "{{ neovim_directory }}/requirements.txt"
+    virtualenv: "{{ neovim_virtualenv }}"
+    virtualenv_python: python3
