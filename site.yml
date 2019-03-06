@@ -1,0 +1,5 @@
+---
+- name: Setup and configure dotfiles
+  hosts: all
+  roles:
+    - dotfiles
