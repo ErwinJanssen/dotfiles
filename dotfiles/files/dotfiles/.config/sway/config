@@ -15,6 +15,9 @@ set $term termite
 # Your preferred application launcher
 set $menu dmenu_run
 
+# Preferred lockscreen command
+set $lock "swaylock"
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -59,6 +62,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Change normal to inverse to use left mouse button for resizing and right
     # mouse button for dragging.
     floating_modifier $mod normal
+
+    # Lock the screen
+    bindsym $mod+l exec $lock
 
     # reload the configuration file
     bindsym $mod+Shift+c reload
