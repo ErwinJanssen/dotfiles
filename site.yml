@@ -5,3 +5,8 @@
     - fish
     - neovim
     - dotfiles
+  vars:
+    # If the environment variable `XDG_CONFIG_HOME` is not defined, use
+    # `$HOME/.config` instead.
+    user_home: "{{ ansible_env['HOME'] }}"
+    config_home: "{{ ansible_env['XDG_CONFIG_HOME'] | default (user_home +'/.config') }}"

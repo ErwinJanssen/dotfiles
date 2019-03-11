@@ -1,4 +1,4 @@
 ---
-fish_directory: "{{ ansible_env['XDG_CONFIG_HOME'] }}/fish"
+fish_directory: "{{ config_home }}/fish"
 browser: firefox
 editor: nvim
