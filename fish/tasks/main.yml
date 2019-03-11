@@ -1,0 +1,10 @@
+---
+- name: Create the main configuration file `config.fish`
+  template:
+    src: config.fish
+    dest: "{{ fish_directory }}/config.fish"
+
+- name: Place the additional configuration files
+  copy:
+    src: fish/
+    dest: "{{ fish_directory }}"

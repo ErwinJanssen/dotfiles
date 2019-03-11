@@ -2,8 +2,8 @@
 set fish_greeting
 
 # Preferred tools
-set -gx EDITOR nvim
-set -gx BROWSER firefox
+set -gx EDITOR {{ editor }}
+set -gx BROWSER {{ browser }}
 
 # Prepend PATH with local bin directory
 set -gx PATH ~/.local/bin/ $PATH
