@@ -44,6 +44,10 @@ let g:limelight_conceal_ctermfg = 'DarkGray'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
+" Auto completion framework
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
 " Language client
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -53,9 +57,6 @@ let g:LanguageClient_settingsPath = '~/.config/nvim/language_client.json'
 
 " Optional dependencies for LanguageClient
 Plug 'junegunn/fzf'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-let g:deoplete#enable_at_startup = 1
 
 " Lots of color schemes
 Plug 'flazz/vim-colorschemes'
