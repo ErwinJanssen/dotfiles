@@ -14,3 +14,6 @@
     requirements: "{{ neovim_directory }}/requirements.txt"
     virtualenv: "{{ neovim_virtualenv }}"
     virtualenv_python: python3
+
+- name: Install Neovim Plugins
+  command: nvim '+PlugInstall --sync' +quitall
