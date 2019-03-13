@@ -90,6 +90,18 @@ set relativenumber
 set signcolumn=yes
 
 " ======================================
+"                 Visuals
+" ======================================
+" Make sure the theme is set for a dark background
+set background=dark
+
+" Underline spell errors
+hi SpellBad     ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
+hi SpellCap     ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
+hi SpellLocal   ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
+hi SpellRare    ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
+
+" ======================================
 "                 Editor
 " ======================================
 
@@ -137,14 +149,6 @@ inoremap <C-H> <C-W>
 inoremap <C-Del> <C-O>dw
 
 """ Colors and visuals
-" Make sure the theme is set for a dark background
-set background=dark
-
-" Underline spell errors
-highlight clear SpellBad
-highlight clear SpellLocal
-highlight SpellBad cterm=underline
-highlight SpellLocal ctermbg=darkblue
 
 " Set a color column to indicate text width
 set colorcolumn=+1
