@@ -71,6 +71,8 @@ Plug 'junegunn/fzf'
 
 " Lots of color schemes
 Plug 'flazz/vim-colorschemes'
+Plug 'drewtempelmeyer/palenight.vim'
+let g:palenight_terminal_italics=1
 
 " Semantic highlighting for Python
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
@@ -92,14 +94,25 @@ set signcolumn=yes
 " ======================================
 "                 Visuals
 " ======================================
+" Use 24-bit colors if possible
+if (has("termguicolors"))
+      set termguicolors
+  endif
+
 " Make sure the theme is set for a dark background
 set background=dark
 
-" Underline spell errors
-hi SpellBad     ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
-hi SpellCap     ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
-hi SpellLocal   ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
-hi SpellRare    ctermbg=NONE ctermfg=NONE cterm=UNDERCURL
+" Set the colorscheme
+colorscheme palenight
+
+" Do not use the background provided by the colorscheme
+highlight Normal ctermbg=NONE guibg=NONE
+
+" Underline spell errors, overwrites the colorscheme default
+highlight SpellBad   ctermbg=NONE ctermfg=NONE cterm=UNDERCURL guibg=NONE guifg=NONE gui=UNDERCURL
+highlight SpellCap   ctermbg=NONE ctermfg=NONE cterm=UNDERCURL guibg=NONE guifg=NONE gui=UNDERCURL
+highlight SpellLocal ctermbg=NONE ctermfg=NONE cterm=UNDERCURL guibg=NONE guifg=NONE gui=UNDERCURL
+highlight SpellRare  ctermbg=NONE ctermfg=NONE cterm=UNDERCURL guibg=NONE guifg=NONE gui=UNDERCURL
 
 " ======================================
 "                 Editor
