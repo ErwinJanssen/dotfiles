@@ -5,7 +5,7 @@
     dest: "{{ neovim_directory }}/init.vim"
 
 - name: Place the additional configuration files
-  copy:
+  synchronize:
     src: nvim/
     dest: "{{ neovim_directory }}"
 

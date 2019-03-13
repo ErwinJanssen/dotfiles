@@ -5,6 +5,6 @@
     dest: "{{ fish_directory }}/config.fish"
 
 - name: Place the additional configuration files
-  copy:
+  synchronize:
     src: fish/
     dest: "{{ fish_directory }}"

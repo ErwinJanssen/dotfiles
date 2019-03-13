@@ -1,5 +1,5 @@
 ---
 - name: Copy all dotfiles to the home directory
-  copy:
+  synchronize:
     src: dotfiles/
     dest: "{{ ansible_env['HOME'] }}"
