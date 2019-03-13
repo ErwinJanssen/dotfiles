@@ -36,6 +36,10 @@ call plug#begin(plugin_dir)
 " Show Git diff in the signcolumn (added, removed, modified).
 Plug 'airblade/vim-gitgutter'
 
+" Lightweight status line
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
