@@ -58,6 +58,7 @@ autocmd! User GoyoLeave
 " Auto completion framework
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 200
 
 " Language client
 Plug 'autozimu/LanguageClient-neovim', {
