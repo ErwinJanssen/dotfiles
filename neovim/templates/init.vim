@@ -153,17 +153,17 @@ set formatoptions=c,r,o,q,n,1,j
 " behavior will kick in: setlocal spellcapcheck&
 set spellcapcheck=
 
+" Delete previous/next word using ctrl-backspace/del, both in insert mode and
+" on the command line.
+noremap! <C-H> <C-W>
+noremap! <C-Del> <C-O>dw
+
 " ======================================
 "              Miscellaneous
 " ======================================
 
 " Enable mouse support
 set mouse=a
-
-""" Custom key bindings
-" Delete previous/next word using ctrl-backspace/del
-inoremap <C-H> <C-W>
-inoremap <C-Del> <C-O>dw
 
 """ Colors and visuals
 
