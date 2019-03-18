@@ -70,6 +70,9 @@ let g:LanguageClient_settingsPath = '~/.config/nvim/language_client.json'
 " Optional dependencies for LanguageClient
 Plug 'junegunn/fzf'
 
+" Highlight the yanked region
+Plug 'machakann/vim-highlightedyank'
+
 " Lots of color schemes
 Plug 'flazz/vim-colorschemes'
 Plug 'drewtempelmeyer/palenight.vim'
