@@ -33,6 +33,13 @@ set noswapfile
 " ======================================
 call plug#begin(plugin_dir)
 
+" Load plugins from the Vim system directory, this includes the `fzf` plugin.
+Plug '/usr/share/vim/vimfiles/plugin/'
+
+" Fuzzy search when pressing CTRL-P
+Plug 'junegunn/fzf.vim'
+noremap <C-P> :silent FZF<CR>
+
 " Show Git diff in the signcolumn (added, removed, modified).
 Plug 'airblade/vim-gitgutter'
 
