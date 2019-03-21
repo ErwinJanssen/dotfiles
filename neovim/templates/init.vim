@@ -156,6 +156,10 @@ set textwidth=79
 " j     Remove the comment leader when joining lines.
 set formatoptions=c,r,o,q,n,1,j
 
+" When formatting text or joining lines, do no insert a double space after
+" a period, or other sentence delimiter.
+set nojoinspaces
+
 " Disable spell checking words that are not capitalized for most files. For
 " many file types, this clutters the interface as variable names (which are
 " often not capitalized) at the start of a line get marked. This is also an
