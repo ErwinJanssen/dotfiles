@@ -113,6 +113,9 @@ if (has("termguicolors"))
 " Make sure the theme is set for a dark background
 set background=dark
 
+" Highlight the line of the cursor
+set cursorline
+
 " Set the colorscheme
 colorscheme palenight
 
