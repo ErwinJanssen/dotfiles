@@ -176,6 +176,9 @@ set spellcapcheck=
 noremap! <C-H> <C-W>
 noremap! <C-Del> <C-O>dw
 
+" Trigger auto complete using ctrl-space in insert mode
+inoremap <C-Space> <C-N>
+
 " ======================================
 "              Miscellaneous
 " ======================================
