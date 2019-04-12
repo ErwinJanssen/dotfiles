@@ -102,6 +102,10 @@ set relativenumber
 " jump every time the signcolumn (dis)appears.
 set signcolumn=yes
 
+" Always keep this amount of lines between the cursor and the edge of the
+" window.
+set scrolloff=5
+
 " ======================================
 "                 Visuals
 " ======================================
