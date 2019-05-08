@@ -112,6 +112,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+Shift+0 move container to workspace 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    # Switch back and forth the current and the previous window, similar to how
+    # alt-tab works in other window managers.
+    bindsym $mod+tab workspace back_and_forth
 #
 # Layout stuff:
 #
