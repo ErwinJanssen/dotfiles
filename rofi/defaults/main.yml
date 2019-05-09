@@ -1,0 +1,2 @@
+---
+rofi_directory: "{{ config_home }}/rofi"

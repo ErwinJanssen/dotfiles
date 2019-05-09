@@ -4,6 +4,7 @@
   roles:
     - fish
     - neovim
+    - rofi
     - dotfiles
   vars:
     # If the environment variable `XDG_CONFIG_HOME` is not defined, use
