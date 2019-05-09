@@ -199,7 +199,7 @@ set colorcolumn=+1
 set list
 
 " Configure the Neovim Python virtual environment
-let g:python3_host_prog = '{{neovim_virtualenv }}/bin/python'
+let g:python3_host_prog = '{{ neovim_virtualenv }}/bin/python'
 
 " Trim all trailing whitespace on buffer write
 function! TrimWhitespace()
