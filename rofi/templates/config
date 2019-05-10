@@ -51,7 +51,7 @@
 ! "Use sorting" Set from: Default
 ! rofi.sort:                           false
 ! "Choose the strategy used for sorting: normal (levenshtein) or fzf." Set from: Default
-! rofi.sorting-method:
+rofi.sorting-method:                 fzf
 ! "Set case-sensitivity" Set from: Default
 ! rofi.case-sensitive:                 false
 ! "Cycle through the results list" Set from: Default
