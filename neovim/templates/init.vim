@@ -62,6 +62,11 @@ autocmd! User GoyoLeave
     \ Limelight!
     \ | set signcolumn=yes
 
+" Better support for Pandoc
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+let g:pandoc#folding#fdc = 0
+
 " Auto completion framework
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
