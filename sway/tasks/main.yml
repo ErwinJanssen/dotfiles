@@ -1,0 +1,10 @@
+---
+- name: Create Sway config directory
+  file:
+    path: "{{ sway_directory }}"
+    state: directory
+
+- name: Create the main configuration file
+  template:
+    src: config
+    dest: "{{ sway_directory }}/config"
