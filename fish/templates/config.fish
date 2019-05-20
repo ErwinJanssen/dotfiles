@@ -8,6 +8,10 @@ set -gx BROWSER {{ browser }}
 # Prepend PATH with local bin directory
 set -gx PATH ~/.local/bin/ $PATH
 
+# Make `fzf`, the fuzzy finder, always use `fd` instead of `find`
+set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git --color always"
+set -gx FZF_DEFAULT_OPTS "--ansi"
+
 # Custom key bindings
 function fish_user_key_bindings
     # ctrl-del
