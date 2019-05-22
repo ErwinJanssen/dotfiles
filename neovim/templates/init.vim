@@ -40,6 +40,12 @@ Plug '/usr/share/vim/vimfiles/plugin/'
 Plug 'junegunn/fzf.vim'
 noremap <C-P> :silent FZF<CR>
 
+" Comment out blocks, line, etc. Use CTRL-/ to comment out a line or selection,
+" similar to most other editors. For some reason, Vim maps the `/` key to `_`,
+" so that must be used.
+Plug 'tpope/vim-commentary'
+noremap <C-_> :Commentary<CR>
+
 " Show Git diff in the signcolumn (added, removed, modified).
 Plug 'airblade/vim-gitgutter'
 
