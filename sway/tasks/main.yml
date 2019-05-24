@@ -1,4 +1,17 @@
 ---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - sway
+    - swaylock
+    - i3status
+    - wl-clipboard
+    - tmux
+  when: install_dependencies | bool
+
 - name: Create Sway config directory
   file:
     path: "{{ sway_directory }}"

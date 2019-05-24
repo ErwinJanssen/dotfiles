@@ -1,4 +1,16 @@
 ---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - fish
+    - fzf
+    - fd
+    - exa
+  when: install_dependencies | bool
+
 - name: Create the main configuration file `config.fish`
   template:
     src: config.fish

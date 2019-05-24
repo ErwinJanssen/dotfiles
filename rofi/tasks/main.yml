@@ -1,4 +1,13 @@
 ---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - rofi
+  when: install_dependencies | bool
+
 - name: Create Rofi config directory
   file:
     path: "{{ rofi_directory }}"

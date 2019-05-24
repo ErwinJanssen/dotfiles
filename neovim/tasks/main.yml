@@ -1,4 +1,14 @@
 ---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - neovim
+    - fzf
+  when: install_dependencies | bool
+
 - name: Create the main configuration file `init.nvim`
   template:
     src: init.vim
