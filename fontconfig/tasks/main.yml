@@ -1,0 +1,19 @@
+---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - ttf-fira-mono
+  when: install_dependencies | bool
+
+- name: Create the config directory
+  file:
+    path: "{{ fontconfig_directory }}"
+    state: directory
+
+- name: Create the main configuration file
+  template:
+    src: fonts.conf
+    dest: "{{ fontconfig_directory }}/fonts.conf"

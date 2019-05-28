@@ -1,0 +1,2 @@
+---
+fontconfig_directory: "{{ config_home }}/fontconfig"
