@@ -1,0 +1,2 @@
+---
+termite_directory: "{{ config_home }}/termite"

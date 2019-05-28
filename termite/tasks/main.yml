@@ -1,0 +1,14 @@
+---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - termite
+  when: install_dependencies | bool
+
+- name: Create the main configuration file
+  template:
+    src: config
+    dest: "{{ termite_directory }}/config"
