@@ -200,7 +200,7 @@ default_border pixel 2
 hide_edge_borders smart
 
 # Start a Tmux session in the scratchpad
-exec $term --name terminal_scratchpad -e "tmux new-session -A -s scratchpad"
+exec $term --name terminal_scratchpad -e "tmux new-session -A -s scratch"
 for_window [app_id="terminal_scratchpad"] move scratchpad
 
 include /etc/sway/config.d/*
