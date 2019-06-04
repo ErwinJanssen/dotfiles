@@ -16,7 +16,7 @@ set $term {{ terminal }}
 set $menu "rofi -show run"
 
 # Preferred lockscreen command
-set $lock "swaylock"
+set $lock "swaylock -f -c 262626"
 
 ### Output configuration
 #
@@ -202,5 +202,14 @@ hide_edge_borders smart
 # Start a Tmux session in the scratchpad
 exec $term --name terminal_scratchpad -e "tmux new-session -A -s scratch"
 for_window [app_id="terminal_scratchpad"] move scratchpad
+
+# Lock the screen after 300 seconds of inactivity, then turn off displays after
+# another 300 seconds, and turn screens back on when resumed. It will also lock
+# the screen before the computer goes to sleep.
+exec swayidle -w \
+    timeout 300 '$lock' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep '$lock'
 
 include /etc/sway/config.d/*
