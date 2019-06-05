@@ -186,9 +186,11 @@ bar {
     position top
     colors {
         statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        background #333333
+        focused_workspace #a599e9 #a599e9 #2d2b55
+        inactive_workspace #2d2b55 #2d2b55 #a599e9
     }
+    separator_symbol " | "
     status_command i3status
 }
 
