@@ -19,9 +19,9 @@ set $menu "rofi -show run"
 set $lock "swaylock -f -c 262626"
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# Wallpaper
+output * bg {{ sway_directory }}/wallpaper.jpg fill
+
 #
 # Example configuration:
 #

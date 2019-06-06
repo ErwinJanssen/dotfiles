@@ -22,3 +22,8 @@
   template:
     src: config
     dest: "{{ sway_directory }}/config"
+
+- name: Place static files
+  synchronize:
+    src: .
+    dest: "{{ sway_directory }}"
