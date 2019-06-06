@@ -16,7 +16,7 @@ set $term {{ terminal }}
 set $menu "rofi -show run"
 
 # Preferred lockscreen command
-set $lock "swaylock -f -c 262626"
+set $lock swaylock
 
 ### Output configuration
 # Wallpaper

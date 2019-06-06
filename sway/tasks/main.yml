@@ -27,3 +27,14 @@
   synchronize:
     src: .
     dest: "{{ sway_directory }}"
+
+- name: Create swaylock config directory
+  file:
+    path: "{{ swaylock_directory }}"
+    state: directory
+
+- name: Create swaylock configuration file
+  template:
+    src: swaylock
+    dest: "{{ swaylock_directory }}/config"
+

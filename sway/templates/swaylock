@@ -1,0 +1,3 @@
+daemonize
+image={{ sway_directory }}/wallpaper.jpg
+scaling=fill
