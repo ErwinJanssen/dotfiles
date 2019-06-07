@@ -18,7 +18,7 @@
     src: config
     dest: "{{ rofi_directory }}/config"
 
-- name: Place the additional configuration files
-  synchronize:
-    src: rofi/
-    dest: "{{ rofi_directory }}"
+- name: Create theme file
+  template:
+    src: purple-mod.rasi
+    dest: "{{ rofi_directory }}/purple-mod.rasi"
