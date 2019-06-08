@@ -9,15 +9,15 @@
 * {
     background-color:            rgba ( 0, 0, 0, 0 % );
 
-    background:                  #2d2b55;
+    background:                  {{ background_accent }};
     alternate-normal-background: @background;
 
-    foreground:                  #a599e9;
+    foreground:                  {{ foreground_accent }};
     normal-foreground:           @foreground;
     alternate-normal-foreground: @foreground;
 
-    selected-normal-background:  @foreground;
-    selected-normal-foreground:  @background;
+    selected-normal-background:  {{ background_accent_active }};
+    selected-normal-foreground:  {{ foreground_accent_active }};
 
     urgent-background:           rgba ( 47, 30, 46, 15 % );
     alternate-urgent-background: rgba ( 47, 30, 46, 18 % );

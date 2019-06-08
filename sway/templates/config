@@ -185,10 +185,10 @@ focus_follows_mouse no
 bar {
     position top
     colors {
-        statusline #ffffff
-        background #333333
-        focused_workspace #a599e9 #a599e9 #2d2b55
-        inactive_workspace #2d2b55 #2d2b55 #a599e9
+        statusline {{ foreground }}
+        background {{ background_lighter }}
+        focused_workspace {{ background_accent_active }} {{ background_accent_active }} {{ foreground_accent_active }}
+        inactive_workspace {{ background_accent }} {{ background_accent }} {{ foreground_accent }}
     }
     separator_symbol " | "
     status_command i3status

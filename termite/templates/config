@@ -44,9 +44,9 @@ cursor_shape = ibeam
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-foreground = #d9d9d9
+foreground = {{ foreground }}
 #foreground_bold = #ffffff
-background = #262626
+background = {{ background }}
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
