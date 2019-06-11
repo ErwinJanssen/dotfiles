@@ -11,6 +11,7 @@
     - i3status
     - wl-clipboard
     - tmux
+    - pulseaudio
   when: install_dependencies | bool
 
 - name: Create Sway config directory
