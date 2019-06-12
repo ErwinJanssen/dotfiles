@@ -5,7 +5,13 @@
 " Where to store plugins
 let plugin_dir = '~/.local/share/nvim/plugged'
 
-" Set the default position of a new window when splitting.
+" Location of the Python virtual environment for Neovim
+let g:python3_host_prog = '{{ neovim_virtualenv }}/bin/python'
+
+" When creating a (vertical) split, create this to the right or below of the
+" current buffer (instead of to the left or above). The benefit is that the
+" current buffer remains at the same place (and is not moved to the other part
+" of the screen), which is easier on the eyes and might be more intuitive.
 set splitright
 set splitbelow
 
@@ -42,7 +48,7 @@ noremap <C-P> :silent FZF<CR>
 
 " Comment out blocks, line, etc. Use CTRL-/ to comment out a line or selection,
 " similar to most other editors. For some reason, Vim maps the `/` key to `_`,
-" so that must be used.
+" so that must be used in the mapping.
 Plug 'tpope/vim-commentary'
 noremap <C-_> :Commentary<CR>
 
@@ -61,6 +67,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 let g:limelight_conceal_ctermfg = 'DarkGray'
+
+" When using Goyo, disable the signcolumn
 autocmd! User GoyoEnter
     \ Limelight
     \ | set signcolumn=no
@@ -84,9 +92,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 let g:LanguageClient_settingsPath = '~/.config/nvim/language_client.json'
-
-" Optional dependencies for LanguageClient
-Plug 'junegunn/fzf'
 
 " Highlight the yanked region
 Plug 'machakann/vim-highlightedyank'
@@ -131,6 +136,12 @@ set background=dark
 " Highlight the line of the cursor
 set cursorline
 
+" Set a color column to indicate text width
+set colorcolumn=+1
+
+" Show whitespace
+set list
+
 " Set the colorscheme
 colorscheme palenight
 
@@ -150,6 +161,9 @@ execute 'highlight SpellRare ' . s:spell_defaults . ' guisp=' palenight_colors.d
 " ======================================
 "                 Editor
 " ======================================
+
+" Enable mouse support
+set mouse=a
 
 " Always insert spaces when inserting a <Tab>
 set expandtab
@@ -175,8 +189,11 @@ set textwidth=79
 set formatoptions=c,r,o,q,n,1,j
 
 " When formatting text or joining lines, do no insert a double space after
-" a period, or other sentence delimiter.
+" a period, or other sentence delimiters.
 set nojoinspaces
+
+" Enable spell checking, with en_US as the default language
+set spell spelllang=en_us
 
 " Disable spell checking words that are not capitalized for most files. For
 " many file types, this clutters the interface as variable names (which are
@@ -198,20 +215,6 @@ inoremap <C-Space> <C-N>
 "              Miscellaneous
 " ======================================
 
-" Enable mouse support
-set mouse=a
-
-""" Colors and visuals
-
-" Set a color column to indicate text width
-set colorcolumn=+1
-
-" Show whitespace
-set list
-
-" Configure the Neovim Python virtual environment
-let g:python3_host_prog = '{{ neovim_virtualenv }}/bin/python'
-
 " Trim all trailing whitespace on buffer write
 function! TrimWhitespace()
     let l:state = winsaveview()
@@ -223,8 +226,6 @@ function! TrimWhitespace()
 endfun
 
 autocmd BufWritePre * call TrimWhitespace()
-
-set spell spelllang=en_us
 
 " Configure language client
 
