@@ -29,6 +29,11 @@ if command --search exa > /dev/null
     end
 end
 
+# Enable FZF key bindings if available
+if functions --query fzf_key_bindings
+    fzf_key_bindings
+end
+
 # Colors
 set fish_color_autosuggestion 969896
 set fish_color_cancel \x2dr
