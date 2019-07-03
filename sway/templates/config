@@ -221,4 +221,8 @@ exec swayidle -w \
     resume 'swaymsg "output * dpms on"' \
     before-sleep '$lock'
 
+input type:touchpad {
+    tap enabled
+}
+
 include /etc/sway/config.d/*
