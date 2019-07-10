@@ -171,6 +171,13 @@ set tabstop=4
 " types (such as gitcommit) overwrite this setting.
 set textwidth=79
 
+" Provides a live preview of the effects of the `substitute` command. Instead
+" of seeing the result only after executing `substitute`, it shows the effects
+" incrementally as you type. This option does not use the additional split to
+" view off-screen results, because it makes the screen jump up and down while
+" typing.
+set inccommand=nosplit
+
 " These format options determine how automatic formatting is done. More
 " information van be found at `:help fo-table`, and relevant information is
 " repeated below:
