@@ -46,12 +46,6 @@ Plug '/usr/share/vim/vimfiles/plugin/'
 Plug 'junegunn/fzf.vim'
 noremap <C-P> :silent FZF<CR>
 
-" Comment out blocks, line, etc. Use CTRL-/ to comment out a line or selection,
-" similar to most other editors. For some reason, Vim maps the `/` key to `_`,
-" so that must be used in the mapping.
-Plug 'tpope/vim-commentary'
-noremap <C-_> :Commentary<CR>
-
 " Show Git diff in the signcolumn (added, removed, modified).
 Plug 'airblade/vim-gitgutter'
 
@@ -210,6 +204,12 @@ noremap! <C-Del> <C-O>dw
 
 " Trigger auto complete using ctrl-space in insert mode
 inoremap <C-Space> <C-N>
+
+" Shortcut to comment out blocks, lines, etc. It is enabled by the
+" 'vim-commentary' plugin. Use CTRL-/ to comment out a line or selection,
+" similar to most other editors. For some reason, Vim maps the `/` key to `_`,
+" so that must be used in the mapping.
+noremap <C-_> :Commentary<CR>
 
 " ======================================
 "              Miscellaneous

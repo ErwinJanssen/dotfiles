@@ -1,0 +1,3 @@
+[submodule "neovim/files/plugins/general/start/vim-commentary"]
+	path = neovim/files/plugins/general/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git

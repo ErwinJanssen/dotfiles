@@ -1,3 +1,4 @@
 ---
 neovim_directory: "{{ config_home }}/nvim"
+neovim_plugin_directory: "{{ user_home }}/.local/share/nvim/site/pack"
 neovim_virtualenv: "{{ neovim_directory }}/venv"
