@@ -161,8 +161,17 @@ set mouse=a
 
 " Delete previous/next word using ctrl-backspace/del, both in insert mode and
 " on the command line.
+function! DeleteNextWord()
+    " If the cursor is on the end of the line, merge this line with the next.
+    if col(".") >= col("$") - 1
+        normal J
+    " In all other cases, delete the next word
+    else
+        normal dw
+    endif
+endfun
 noremap! <C-H> <C-W>
-noremap! <C-Del> <C-O>dw
+noremap! <C-Del> <C-O>:call DeleteNextWord()<CR>
 
 " Make the arrows keys work as expected when the cursor is at the start or the
 " end of a line, by moving the cursor to the previous or next line.
