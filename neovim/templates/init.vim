@@ -159,6 +159,15 @@ execute 'highlight SpellRare ' . s:spell_defaults . ' guisp=' palenight_colors.d
 " Enable mouse support
 set mouse=a
 
+" Delete previous/next word using ctrl-backspace/del, both in insert mode and
+" on the command line.
+noremap! <C-H> <C-W>
+noremap! <C-Del> <C-O>dw
+
+" Make the arrows keys work as expected when the cursor is at the start or the
+" end of a line, by moving the cursor to the previous or next line.
+set whichwrap+=<,>,[,]
+
 " Always insert spaces when inserting a <Tab>
 set expandtab
 
@@ -203,11 +212,6 @@ set spell spelllang=en_us
 " To re-enable checking for capitalization, unset this value and the default
 " behavior will kick in: setlocal spellcapcheck&
 set spellcapcheck=
-
-" Delete previous/next word using ctrl-backspace/del, both in insert mode and
-" on the command line.
-noremap! <C-H> <C-W>
-noremap! <C-Del> <C-O>dw
 
 " Trigger auto complete using ctrl-space in insert mode
 inoremap <C-Space> <C-N>
