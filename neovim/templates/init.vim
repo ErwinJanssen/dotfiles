@@ -116,6 +116,12 @@ set signcolumn=yes
 " window.
 set scrolloff=5
 
+" Set the completion mode in the command line. With this setting, pressing
+" <Tab> in the command line will complete till the longest common string
+" and starts the wildmenu. Pressing <Tab> again will complete the next full
+" match.
+set wildmode=longest:full,full
+
 " ======================================
 "                 Visuals
 " ======================================
