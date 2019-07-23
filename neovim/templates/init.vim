@@ -190,6 +190,11 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 
+" Use tab/shift-tab to indent/dedent visually selected blocks (and keep the
+" area selected).
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
 " Set the text width to 79 characters, so the color column appears at row 80. A
 " line length of 79 or 80 is often recommended by many style guides. Some file
 " types (such as gitcommit) overwrite this setting.
