@@ -34,6 +34,12 @@ autocmd FocusGained,BufEnter * :silent! !
 " swap file.
 set noswapfile
 
+" When searching, ignore case unless the pattern contains upper case
+" characters. Apply the same setting when searching the tags file.
+set ignorecase
+set smartcase
+set tagcase=followscs
+
 " ======================================
 "                 Plugins
 " ======================================
