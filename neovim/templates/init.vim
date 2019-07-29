@@ -115,6 +115,7 @@ set signcolumn=yes
 " Always keep this amount of lines between the cursor and the edge of the
 " window.
 set scrolloff=5
+set sidescrolloff=5
 
 " Set the completion mode in the command line. With this setting, pressing
 " <Tab> in the command line will complete till the longest common string
