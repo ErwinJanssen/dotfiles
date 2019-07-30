@@ -253,6 +253,12 @@ inoremap <C-Space> <C-N>
 " so that must be used in the mapping.
 noremap <C-_> :Commentary<CR>
 
+" Invoke the build/make step when pressing <F5>. This is similar to how tools
+" as Visual Studio (Code) work. It is also the key used to refresh a window in
+" a web browser. It uses the ':make' command, so 'makeprg' should be set the
+" filetype plugin.
+nnoremap <F5> :make<CR>
+
 " ======================================
 "              Miscellaneous
 " ======================================
@@ -278,7 +284,7 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['{{ neovim_virtualenv }}/bin/pyls'],
     \ }
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <F6> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
