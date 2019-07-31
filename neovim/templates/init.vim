@@ -129,6 +129,10 @@ set sidescrolloff=5
 " match.
 set wildmode=longest:full,full
 
+" Set the default listing style of netrw (the build-in file explorer), to tree
+" style listing.
+let g:netrw_liststyle=3
+
 " ======================================
 "                 Visuals
 " ======================================
