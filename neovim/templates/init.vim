@@ -120,6 +120,11 @@ set sidescrolloff=5
 " match.
 set wildmode=longest:full,full
 
+" Limit the height of the popup menu (used for completion suggestions) to 10
+" lines. If this it not set, it has no limit and can therefore cover the entire
+" height of the window.
+set pumheight=10
+
 " Set the default listing style of netrw (the build-in file explorer), to tree
 " style listing.
 let g:netrw_liststyle=3
