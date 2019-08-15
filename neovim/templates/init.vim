@@ -81,17 +81,8 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 let g:pandoc#folding#fdc = 0
 
-" Auto completion framework
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 200
-
-" Language client
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-let g:LanguageClient_settingsPath = '~/.config/nvim/language_client.json'
+" Completion framework
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Highlight the yanked region
 Plug 'machakann/vim-highlightedyank'
@@ -249,7 +240,9 @@ set spell spelllang=en_us
 set spellcapcheck=
 
 " Trigger auto complete using ctrl-space in insert mode
-inoremap <C-Space> <C-N>
+inoremap <silent><expr> <C-Space>
+      \ pumvisible() ? "\<C-n>" :
+      \ coc#refresh()
 
 " Shortcut to comment out blocks, lines, etc. It is enabled by the
 " 'vim-commentary' plugin. Use CTRL-/ to comment out a line or selection,
