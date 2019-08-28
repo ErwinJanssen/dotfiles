@@ -8,6 +8,6 @@
     - sway
     - dotfiles
     - fontconfig
-    - "{{ terminal }}"
+    - "terminals/{{ terminal }}"
   vars_files:
     - variables.yml
