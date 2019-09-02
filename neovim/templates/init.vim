@@ -249,8 +249,15 @@ set spellcapcheck=
 
 " Trigger auto complete using ctrl-space in insert mode
 inoremap <silent><expr> <C-Space>
-      \ pumvisible() ? "\<C-n>" :
-      \ coc#refresh()
+            \ pumvisible() ? "\<C-n>" :
+            \ coc#refresh()
+
+" Use Enter to expand a snippet and ctrl-space to jump in snippets
+inoremap <silent><expr> <cr>
+            \ pumvisible() ? coc#_select_confirm() :
+            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+let g:coc_snippet_next = '<C-Space>'
 
 " Shortcut to comment out blocks, lines, etc. It is enabled by the
 " 'vim-commentary' plugin. Use CTRL-/ to comment out a line or selection,
