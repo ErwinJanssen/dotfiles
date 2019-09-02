@@ -209,7 +209,13 @@ default_border pixel 2
 hide_edge_borders smart
 
 # Start a Tmux session in the scratchpad
-exec $term --name terminal_scratchpad -e "tmux new-session -A -s scratch"
+{% if terminal == "kitty" %}
+    {%- set app_id_flag = "--class" %}
+{% else %}
+    {%- set app_id_flag = "--name" %}
+{%- endif -%}
+
+exec $term {{ app_id_flag }} terminal_scratchpad -e "tmux new-session -A -s scratch"
 for_window [app_id="terminal_scratchpad"] move scratchpad
 
 # Lock the screen after 300 seconds of inactivity, then turn off displays after
