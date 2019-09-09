@@ -9,6 +9,7 @@
     - tmux
     - dotfiles
     - fontconfig
+    - zathura
     - "terminals/{{ terminal }}"
   vars_files:
     - theme.yml
