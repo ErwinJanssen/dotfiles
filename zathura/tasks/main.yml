@@ -1,0 +1,18 @@
+---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ dependencies }}"
+  when: install_dependencies | bool
+
+- name: Create the config directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
+- name: Create the main configuration file
+  template:
+    src: "{{ config_file }}"
+    dest: "{{ config_directory }}/{{ config_file }}"

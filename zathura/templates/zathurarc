@@ -1,0 +1,11 @@
+# Set the default background surrounding the document
+set default-bg "{{ theme.dim.background }}"
+
+# Default to dark mode document viewing using "recolor". Revert this by running
+# ":recolor false".
+set recolor-darkcolor "{{ theme.normal.foreground }}"
+set recolor-lightcolor "{{ theme.normal.background }}"
+set recolor
+
+# Increase the padding between pages to make page boundaries more clear.
+set page-padding 10
