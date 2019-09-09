@@ -1,0 +1,46 @@
+colors:
+  normal:
+    black: "#262626"
+    red: "#bf5f61"
+    green: "#6bb26b"
+    yellow: "#e5c689"
+    blue: "#8eadcc"
+    magenta: "#b499ff"
+    cyan: "#7acccc"
+    white: "#bfc7d5"
+
+  bright:
+    black: "#333333"
+    red: "#f2484b"
+    green: "#3dcc3d"
+    yellow: "#ffff4c"
+    blue: "#5ba0e5"
+    magenta: "a54cff"
+    cyan: "#2de5e5"
+    white: "#e5eeff"
+
+  brighter:
+    black: "#595959"
+
+  dim:
+    black: "#1a1a1a"
+    red: ""
+    green: ""
+    yellow: ""
+    blue: ""
+    magenta: ""
+    cyan: ""
+    white: ""
+
+theme:
+  normal:
+    background: "{{ colors.normal.black }}"
+    foreground: "{{ colors.normal.white }}"
+
+  bright:
+    background: "{{ colors.bright.black }}"
+    foreground: "{{ colors.bright.white }}"
+
+  dim:
+    background: "{{ colors.dim.black }}"
+    foreground: "{{ colors.dim.white }}"

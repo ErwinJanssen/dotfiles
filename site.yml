@@ -10,4 +10,5 @@
     - fontconfig
     - "terminals/{{ terminal }}"
   vars_files:
+    - theme.yml
     - variables.yml
