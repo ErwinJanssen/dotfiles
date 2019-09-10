@@ -275,6 +275,15 @@ nnoremap <F5> :make<CR>
 "              Miscellaneous
 " ======================================
 
+" Work around the issue where Neovim fails to reset the shape of the cursor
+" after closing: https://github.com/neovim/neovim/issues/4867
+" Because the terminal is configured to use a bar blinking every second, we set
+" it to that.
+augroup ResetCursor
+    autocmd!
+    autocmd VimLeave * set guicursor=a:ver100-blinkon1
+augroup END
+
 " Trim all trailing whitespace on buffer write
 function! TrimWhitespace()
     let l:state = winsaveview()
