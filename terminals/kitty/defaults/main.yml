@@ -1,2 +1,5 @@
 ---
-# defaults file for kitty
+config_directory: "{{ config_home }}/kitty"
+config_file: kitty.conf
+dependencies:
+  - kitty
