@@ -192,8 +192,8 @@ focus_follows_mouse no
 bar {
     position top
     colors {
-        statusline {{ foreground }}
-        background {{ background_lighter }}
+        statusline {{ theme.normal.foreground }}
+        background {{ theme.bright.background }}
         focused_workspace {{ background_accent_active }} {{ background_accent_active }} {{ foreground_accent_active }}
         inactive_workspace {{ background_accent }} {{ background_accent }} {{ foreground_accent }}
     }

@@ -156,7 +156,7 @@ set list
 colorscheme palenight
 
 " Do not use the background provided by the colorscheme
-highlight Normal ctermbg=NONE guibg={{ background }}
+highlight Normal ctermbg=NONE guibg={{ theme.normal.background }}
 
 " Instead of coloring the entire word on a spelling mistake, only color the
 " undercurl (in the same color as the color scheme).

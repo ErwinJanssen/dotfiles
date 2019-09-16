@@ -6,12 +6,6 @@ install_dependencies: true
 terminal: termite
 
 # Colors
-background: "#262626"
-foreground: "#d9d9d9"
-
-background_lighter: "#333333"
-background_darker: "#1a1a1a"
-
 background_accent: "#2d2b55"
 foreground_accent: "#a599e9"
 background_accent_active: "{{ foreground_accent }}"
