@@ -9,15 +9,15 @@
 * {
     background-color:            rgba ( 0, 0, 0, 0 % );
 
-    background:                  {{ background_accent }};
+    background:                  {{ theme.bright.background }};
     alternate-normal-background: @background;
 
-    foreground:                  {{ foreground_accent }};
+    foreground:                  {{ theme.normal.foreground }};
     normal-foreground:           @foreground;
     alternate-normal-foreground: @foreground;
 
     selected-normal-background:  {{ background_accent_active }};
-    selected-normal-foreground:  {{ foreground_accent_active }};
+    selected-normal-foreground:  {{ theme.normal.background }};
 
     urgent-background:           rgba ( 47, 30, 46, 15 % );
     alternate-urgent-background: rgba ( 47, 30, 46, 18 % );
@@ -30,7 +30,7 @@
     selected-active-foreground:  rgba ( 129, 91, 164, 100 % );
     bordercolor:                 rgba ( 239, 97, 85, 21 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    border-color:                @foreground;
+    border-color:                {{ foreground_accent }};
     spacing:                     2;
     separatorcolor:              @foreground;
     selected-urgent-background:  rgba ( 129, 91, 164, 33 % );
