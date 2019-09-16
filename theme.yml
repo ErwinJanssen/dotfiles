@@ -1,3 +1,4 @@
+# Define the different shades of each color
 colors:
   normal:
     black: "#333333"
@@ -21,18 +22,45 @@ colors:
 
   dim:
     black: "#262626"
+    magenta: "#503f7f"
 
   dimmer:
     black: "#1a1a1a"
 
+# Provide some high level color definitions such as which color is the accent
+# color.
 theme:
   normal:
     background: "{{ colors.dim.black }}"
     foreground: "{{ colors.normal.white }}"
+    accent: "{{ colors.normal.magenta }}"
+    match: "{{ colors.normal.green }}"
 
   bright:
     background: "{{ colors.normal.black }}"
     foreground: "{{ colors.bright.white }}"
+    match: "{{ colors.bright.green }}"
+
+  brighter:
+    background: "{{ colors.bright.black }}"
 
   dim:
     background: "{{ colors.dimmer.black }}"
+    accent: "{{ colors.dim.magenta }}"
+
+# Given the theme colors, provide some concrete definitions for UI elements.
+# These descriptive names can be used in the appropriate places.
+ui:
+  search:
+    background: "{{ theme.normal.background }}"
+    foreground: "{{ theme.normal.foreground }}"
+    input:
+      background: "{{ theme.dim.accent }}"
+      foreground: "{{ theme.normal.foreground }}"
+    selected:
+      background: "{{ theme.brighter.background }}"
+      foreground: "{{ theme.normal.accent }}"
+      match: "{{ theme.bright.match }}"
+    item:
+      background: "{{ theme.bright.background }}"
+      match: "{{ theme.normal.match }}"

@@ -16,8 +16,8 @@
     normal-foreground:           @foreground;
     alternate-normal-foreground: @foreground;
 
-    selected-normal-background:  {{ background_accent_active }};
-    selected-normal-foreground:  {{ theme.normal.background }};
+    selected-normal-background:  {{ ui.selection.background }};
+    selected-normal-foreground:  {{ ui.selection.foreground }};
 
     urgent-background:           rgba ( 47, 30, 46, 15 % );
     alternate-urgent-background: rgba ( 47, 30, 46, 18 % );
