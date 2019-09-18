@@ -1,0 +1,73 @@
+* {
+  /*
+   * Make everything transparent so the right background colors show up,
+   * instead of providing a background-color to all elements.
+   */
+  background-color: rgba ( 0, 0, 0, 0 % );
+
+  /*
+   * Set the default text color for all elements. This is also the color of
+   * the text if rofi is called with invalid arguments.
+   */
+  text-color: {{ ui.search.foreground }};
+
+  /*
+   * The default highlight style for matches is to color the match without any
+   * additional text styling.
+   */
+  highlight: none {{ ui.search.item.match }};
+}
+
+/*
+ * Create a full screen window with 80% transparency, with the content centered
+ * in the middle. The padding sets the size of the content, because Rofi does
+ * not support setting the `width` or `height` on the #mainbox element. This
+ * might yield the correct result for all display sizes.
+ */
+#window {
+  background-color: {{ ui.search.background }}cc;
+  transparency: "real";
+  fullscreen: true;
+  padding: 20% 30%;
+}
+
+#element {
+  background-color: {{ ui.search.item.background }};
+  padding: 0.4em 1em;
+  margin: 0.5em 0 0 0;
+
+  /*
+   * The selected element is given a colored border as indicator. To prevent
+   * the text in the selected element from jumping to the right because of the
+   * added border, all elements are given an invisible border.
+   */
+  border: 0 0 0 0.2em;
+}
+
+#element.selected {
+  background-color: {{ ui.search.selected.background }};
+  text-color: {{ ui.search.selected.foreground }};
+  border-color: {{ ui.search.selected.foreground }};
+  highlight: bold {{ ui.search.selected.match }};
+}
+
+#inputbar {
+  background-color: {{ ui.search.input.background }};
+  text-color: {{ ui.search.input.foreground }};
+  border: 0.1em;
+  border-color: {{ ui.search.input.background }};
+  margin: 0 0 0.5em 0;
+}
+
+#prompt {
+  padding: 0.5em 1em;
+}
+
+#entry {
+  background-color: {{ ui.search.background }}cc;
+  padding: 0.5em 1em;
+}
+
+#case-indicator {
+  padding: 0.5em 0;
+}

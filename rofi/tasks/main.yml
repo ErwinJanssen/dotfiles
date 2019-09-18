@@ -19,5 +19,5 @@
 
 - name: Create theme file
   template:
-    src: purple-mod.rasi
-    dest: "{{ config_directory }}/purple-mod.rasi"
+    src: rejva.rasi
+    dest: "{{ config_directory }}/rejva.rasi"
