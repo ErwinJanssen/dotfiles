@@ -10,7 +10,13 @@ set -gx PATH ~/.local/bin/ $PATH
 
 # Make `fzf`, the fuzzy finder, always use `fd` instead of `find`
 set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git --color always"
-set -gx FZF_DEFAULT_OPTS "--ansi"
+set -gx FZF_DEFAULT_OPTS "
+    --ansi
+    --color=fg+:{{ ui.search.selected.foreground }}
+    --color=bg+:{{ ui.search.selected.background }}
+    --color=hl+:{{ ui.search.selected.match }}
+    --color=hl:{{ ui.search.item.match }}
+"
 
 # Custom key bindings
 function fish_user_key_bindings
