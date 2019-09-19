@@ -40,6 +40,15 @@ if functions --query fzf_key_bindings
     fzf_key_bindings
 end
 
+# Insert a new line before displaying the prompt. This separates the command
+# prompt from the previous output.
+function fishprompt_newline \
+        --description "Insert a new line before displaying the prompt." \
+        --on-event fish_prompt
+    echo
+end
+
+
 # Start Sway on tty1
 if [ (tty) = "/dev/tty1" ]
     exec sway
