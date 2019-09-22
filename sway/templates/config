@@ -192,10 +192,11 @@ focus_follows_mouse no
 bar {
     position top
     colors {
-        statusline {{ theme.normal.foreground }}
-        background {{ theme.bright.background }}
-        focused_workspace {{ background_accent_active }} {{ background_accent_active }} {{ foreground_accent_active }}
-        inactive_workspace {{ background_accent }} {{ background_accent }} {{ foreground_accent }}
+        statusline {{ ui.status_bar.foreground }}
+        background {{ ui.status_bar.background }}
+        focused_workspace {{ ui.status_bar.active.background }} {{ ui.status_bar.active.background }} {{ ui.status_bar.active.foreground }}
+        inactive_workspace {{ ui.status_bar.tab.background }} {{ ui.status_bar.tab.background }} {{ ui.status_bar.tab.foreground }}
+        urgent_workspace {{ ui.status_bar.urgent.background }} {{ ui.status_bar.urgent.background }} {{ ui.status_bar.urgent.foreground }}
     }
     separator_symbol " | "
     status_command i3status
