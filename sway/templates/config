@@ -20,7 +20,7 @@ set $lock swaylock
 
 ### Output configuration
 # Wallpaper
-output * bg {{ sway_directory }}/wallpaper.jpg fill
+output * bg {{ config_directory }}/wallpaper.jpg fill
 
 #
 # Example configuration:

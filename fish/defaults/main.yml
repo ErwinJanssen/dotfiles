@@ -1,4 +1,11 @@
 ---
-fish_directory: "{{ config_home }}/fish"
+config_directory: "{{ config_home }}/fish"
+config_file: config.fish
+dependencies:
+    - fish
+    - fzf
+    - fd
+    - exa
+
 browser: firefox
 editor: nvim

@@ -1,4 +1,9 @@
 ---
-neovim_directory: "{{ config_home }}/nvim"
+config_directory: "{{ config_home }}/nvim"
+config_file: init.vim
+dependencies:
+  - neovim
+  - fzf
+
 neovim_plugin_directory: "{{ user_home }}/.local/share/nvim/site/pack"
-neovim_virtualenv: "{{ neovim_directory }}/venv"
+neovim_virtualenv: "{{ config_directory }}/venv"

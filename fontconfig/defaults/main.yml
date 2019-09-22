@@ -1,2 +1,6 @@
 ---
-fontconfig_directory: "{{ config_home }}/fontconfig"
+config_directory: "{{ config_home }}/fontconfig"
+config_file: fonts.conf
+dependencies:
+  - fontconfig
+  - ttf-fira-mono

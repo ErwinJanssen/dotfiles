@@ -4,24 +4,27 @@
   package:
     name: "{{ item }}"
     state: present
-  loop:
-    - neovim
-    - fzf
+  loop: "{{ dependencies }}"
   when: install_dependencies | bool
 
-- name: Create the main configuration file `init.nvim`
+- name: Create the config directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
+- name: Create the main configuration file
   template:
-    src: init.vim
-    dest: "{{ neovim_directory }}/init.vim"
+    src: "{{ config_file }}"
+    dest: "{{ config_directory }}/{{ config_file }}"
 
 - name: Place the additional configuration files
   synchronize:
     src: nvim/
-    dest: "{{ neovim_directory }}"
+    dest: "{{ config_directory }}"
 
 - name: Setup the Python virtual environment
   pip:
-    requirements: "{{ neovim_directory }}/requirements.txt"
+    requirements: "{{ config_directory }}/requirements.txt"
     virtualenv: "{{ neovim_virtualenv }}"
     virtualenv_python: python3
 

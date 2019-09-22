@@ -1,2 +1,5 @@
 ---
-rofi_directory: "{{ config_home }}/rofi"
+config_directory: "{{ config_home }}/rofi"
+config_file: config
+dependencies:
+  - rofi

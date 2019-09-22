@@ -4,19 +4,20 @@
   package:
     name: "{{ item }}"
     state: present
-  loop:
-    - fish
-    - fzf
-    - fd
-    - exa
+  loop: "{{ dependencies }}"
   when: install_dependencies | bool
 
-- name: Create the main configuration file `config.fish`
+- name: Create the config directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
+- name: Create the main configuration file
   template:
-    src: config.fish
-    dest: "{{ fish_directory }}/config.fish"
+    src: "{{ config_file }}"
+    dest: "{{ config_directory }}/{{ config_file }}"
 
 - name: Place the additional configuration files
   synchronize:
     src: fish/
-    dest: "{{ fish_directory }}"
+    dest: "{{ config_directory }}"

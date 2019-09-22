@@ -4,21 +4,20 @@
   package:
     name: "{{ item }}"
     state: present
-  loop:
-    - rofi
+  loop: "{{ dependencies }}"
   when: install_dependencies | bool
 
-- name: Create Rofi config directory
+- name: Create the config directory
   file:
-    path: "{{ rofi_directory }}"
+    path: "{{ config_directory }}"
     state: directory
 
 - name: Create the main configuration file
   template:
-    src: config
-    dest: "{{ rofi_directory }}/config"
+    src: "{{ config_file }}"
+    dest: "{{ config_directory }}/{{ config_file }}"
 
 - name: Create theme file
   template:
     src: purple-mod.rasi
-    dest: "{{ rofi_directory }}/purple-mod.rasi"
+    dest: "{{ config_directory }}/purple-mod.rasi"

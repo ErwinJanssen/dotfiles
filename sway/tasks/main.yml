@@ -4,30 +4,23 @@
   package:
     name: "{{ item }}"
     state: present
-  loop:
-    - sway
-    - swaylock
-    - swayidle
-    - i3status
-    - wl-clipboard
-    - tmux
-    - pulseaudio
+  loop: "{{ dependencies }}"
   when: install_dependencies | bool
 
-- name: Create Sway config directory
+- name: Create the config directory
   file:
-    path: "{{ sway_directory }}"
+    path: "{{ config_directory }}"
     state: directory
 
 - name: Create the main configuration file
   template:
-    src: config
-    dest: "{{ sway_directory }}/config"
+    src: "{{ config_file }}"
+    dest: "{{ config_directory }}/{{ config_file }}"
 
 - name: Place static files
   synchronize:
     src: .
-    dest: "{{ sway_directory }}"
+    dest: "{{ config_directory }}"
 
 - name: Create swaylock config directory
   file:
@@ -38,4 +31,3 @@
   template:
     src: swaylock
     dest: "{{ swaylock_directory }}/config"
-

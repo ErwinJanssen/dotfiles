@@ -1,3 +1,13 @@
 ---
-sway_directory: "{{ config_home }}/sway"
+config_directory: "{{ config_home }}/sway"
+config_file: config
+dependencies:
+  - sway
+  - swaylock
+  - swayidle
+  - i3status
+  - wl-clipboard
+  - tmux
+  - pulseaudio
+
 swaylock_directory: "{{ config_home }}/swaylock"
