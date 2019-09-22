@@ -4,9 +4,3 @@ user_home: "{{ ansible_env['HOME'] }}"
 config_home: "{{ ansible_env['XDG_CONFIG_HOME'] | default (user_home +'/.config') }}"
 install_dependencies: true
 terminal: termite
-
-# Colors
-background_accent: "#2d2b55"
-foreground_accent: "#a599e9"
-background_accent_active: "{{ foreground_accent }}"
-foreground_accent_active: "{{ background_accent }}"
