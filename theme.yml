@@ -70,3 +70,16 @@ ui:
     item:
       background: "{{ theme.bright.background }}"
       match: "{{ theme.normal.match }}"
+
+  status_bar:
+    background: "{{ theme.bright.background }}"
+    foreground: "{{ theme.normal.foreground }}"
+    tab:
+      background: "{{ theme.bright.background }}"
+      foreground: "{{ theme.normal.foreground }}"
+    active:
+      background: "{{ theme.normal.accent }}"
+      foreground: "{{ theme.dim.accent }}"
+    urgent:
+      background: "{{ theme.normal.urgent }}"
+      foreground: "{{ theme.normal.foreground }}"
