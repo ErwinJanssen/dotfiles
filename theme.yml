@@ -57,6 +57,11 @@ theme:
 # Given the theme colors, provide some concrete definitions for UI elements.
 # These descriptive names can be used in the appropriate places.
 ui:
+  window:
+    border:
+      normal: "{{ theme.dim.accent }}"
+      bright: "{{ theme.normal.accent }}"
+
   search:
     background: "{{ theme.normal.background }}"
     foreground: "{{ theme.normal.foreground }}"
