@@ -98,6 +98,9 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Fish support
 Plug 'dag/vim-fish'
 
+" Visualize undo tree
+Plug 'simnalamburt/vim-mundo'
+
 call plug#end()
 
 " ======================================
