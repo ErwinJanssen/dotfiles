@@ -37,6 +37,7 @@ theme:
     foreground: "{{ colors.normal.white }}"
     accent: "{{ colors.normal.magenta }}"
     match: "{{ colors.normal.green }}"
+    urgent: "{{ colors.dim.red }}"
 
   bright:
     background: "{{ colors.normal.black }}"
