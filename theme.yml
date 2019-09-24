@@ -22,6 +22,8 @@ colors:
 
   dim:
     black: "#262626"
+    red: "#661919"
+    green: "#1f3f1f"
     magenta: "#362d4c"
 
   dimmer:
