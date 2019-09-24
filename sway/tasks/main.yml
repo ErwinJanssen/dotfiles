@@ -31,3 +31,13 @@
   template:
     src: swaylock
     dest: "{{ swaylock_directory }}/config"
+
+- name: Create i3status config directory
+  file:
+    path: "{{ i3status_directory }}"
+    state: directory
+
+- name: Create i3status configuration file
+  template:
+    src: i3status
+    dest: "{{ i3status_directory }}/config"
