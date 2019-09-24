@@ -38,6 +38,9 @@ theme:
     accent: "{{ colors.normal.magenta }}"
     match: "{{ colors.normal.green }}"
     urgent: "{{ colors.dim.red }}"
+    success: "{{ colors.normal.green }}"
+    warning: "{{ colors.normal.yellow }}"
+    error: "{{ colors.normal.red }}"
 
   bright:
     background: "{{ colors.normal.black }}"
