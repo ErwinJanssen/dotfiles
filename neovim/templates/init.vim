@@ -1,6 +1,7 @@
 " ======================================
 "            General settings
 " ======================================
+" {{ "{{{" }}
 
 " Where to store plugins
 let plugin_dir = '~/.local/share/nvim/plugged'
@@ -40,9 +41,16 @@ set ignorecase
 set smartcase
 set tagcase=followscs
 
+" Apply folding by default using the "marker" method. This defaults to using
+" three curly braces to open and close a fold.
+set foldmethod=marker
+
+" {{ "}}}" }}
+
 " ======================================
 "                 Plugins
 " ======================================
+" {{ "{{{" }}
 call plug#begin(plugin_dir)
 
 " Load plugins from the Vim system directory, this includes the `fzf` plugin.
@@ -103,9 +111,12 @@ Plug 'simnalamburt/vim-mundo'
 
 call plug#end()
 
+" {{ "}}}" }}
+
 " ======================================
 "             User interface
 " ======================================
+" {{ "{{{" }}
 
 " Display both absolute and relative line numbers
 set number
@@ -171,9 +182,12 @@ execute 'highlight SpellCap ' . s:spell_defaults . ' guisp=' palenight_colors.da
 execute 'highlight SpellLocal ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
 execute 'highlight SpellRare ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
 
+" {{ "}}}" }}
+
 " ======================================
 "                 Editor
 " ======================================
+" {{ "{{{" }}
 
 " Enable mouse support
 set mouse=a
@@ -274,9 +288,12 @@ noremap <C-_> :Commentary<CR>
 " filetype plugin.
 nnoremap <F5> :make<CR>
 
+" {{ "}}}" }}
+
 " ======================================
 "              Miscellaneous
 " ======================================
+" {{ "{{{" }}
 
 " Work around the issue where Neovim fails to reset the shape of the cursor
 " after closing: https://github.com/neovim/neovim/issues/4867
@@ -313,3 +330,5 @@ nnoremap <F6> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" {{ "}}}" }}
