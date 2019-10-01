@@ -109,6 +109,12 @@ Plug 'dag/vim-fish'
 " Visualize undo tree
 Plug 'simnalamburt/vim-mundo'
 
+" Allow for asynchronous build commands (such as :Make instead of :make), for
+" nonblocking compilation. The 'vim-dispatch-neovim' plugin will allow
+" 'vim-dispatch' to use the build-in Neovim terminal.
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
+
 call plug#end()
 
 " {{ "}}}" }}
@@ -284,9 +290,10 @@ noremap <C-_> :Commentary<CR>
 
 " Invoke the build/make step when pressing <F5>. This is similar to how tools
 " as Visual Studio (Code) work. It is also the key used to refresh a window in
-" a web browser. It uses the ':make' command, so 'makeprg' should be set the
-" filetype plugin.
-nnoremap <F5> :make<CR>
+" a web browser, which will often be used if a web application is rebuild. It
+" uses the ':Make' command from vim-dispatch, so 'makeprg' should be set the
+" appropriate filetype plugin.
+nnoremap <F5> :Make<CR>
 
 " {{ "}}}" }}
 
