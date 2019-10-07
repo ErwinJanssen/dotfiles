@@ -70,11 +70,7 @@ noremap <C-P> :silent FZF<CR>
 Plug 'airblade/vim-gitgutter'
 
 " Lightweight status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='violet'
+Plug 'itchyny/lightline.vim'
 
 " Distraction free writing
 Plug 'junegunn/goyo.vim'
