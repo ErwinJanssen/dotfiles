@@ -352,4 +352,22 @@ function! SynStack()
     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
+set winblend=10
+
+let $FZF_DEFAULT_OPTS .= ' --margin 1,2 --layout reverse'
+
+function! FloatingFZF()
+let width = min([float2nr(&columns * 0.8), 80])
+let height = min([float2nr(&lines * 0.6), 20])
+let opts = { 'relative': 'editor',
+           \ 'row': (&lines - height) / 2,
+           \ 'col': (&columns - width) / 2,
+           \ 'width': width,
+           \ 'height': height }
+
+call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
+endfunction
+
+let g:fzf_layout = { 'window': 'call FloatingFZF()' }
+
 " {{ "}}}" }}
