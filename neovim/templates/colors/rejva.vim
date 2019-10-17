@@ -71,52 +71,29 @@ endfunction
 
 " Color Variables {{ "{{{" }}
 
-let s:colors = {
-      \ "red": { "gui": "#ff5370", "cterm": "204", "cterm16": "1" },
-      \ "light_red": { "gui": "#ff869a", "cterm": "204", "cterm16": "1" },
-      \ "dark_red": { "gui": "#BE5046", "cterm": "196", "cterm16": "9" },
-      \ "green": { "gui": "#C3E88D", "cterm": "114", "cterm16": "2" },
-      \ "yellow": { "gui": "#ffcb6b", "cterm": "180", "cterm16": "3" },
-      \ "dark_yellow": { "gui": "#F78C6C", "cterm": "173", "cterm16": "11" },
-      \ "blue": { "gui": "#82b1ff", "cterm": "39", "cterm16": "4" },
-      \ "purple": { "gui": "#c792ea", "cterm": "170", "cterm16": "5" },
-      \ "blue_purple": { "gui": "#939ede", "cterm": "39", "cterm16": "4"},
-      \ "cyan": { "gui": "#89DDFF", "cterm": "38", "cterm16": "6" },
-      \ "white": { "gui": "#bfc7d5", "cterm": "145", "cterm16": "7" },
-      \ "black": { "gui": "#292D3E", "cterm": "235", "cterm16": "0" },
-      \ "visual_black": { "gui": "NONE", "cterm": "NONE", "cterm16": "0" },
-      \ "comment_grey": { "gui": "#697098", "cterm": "59", "cterm16": "15" },
-      \ "gutter_fg_grey": { "gui": "#4B5263", "cterm": "238", "cterm16": "15" },
-      \ "cursor_grey": { "gui": "#2C323C", "cterm": "236", "cterm16": "8" },
-      \ "visual_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "15" },
-      \ "menu_grey": { "gui": "#3E4452", "cterm": "237", "cterm16": "8" },
-      \ "special_grey": { "gui": "#3B4048", "cterm": "238", "cterm16": "15" },
-      \ "vertsplit": { "gui": "#181A1F", "cterm": "59", "cterm16": "15" },
-      \ "white_mask_1": { "gui": "#333747", "cterm": "237", "cterm16": "15" },
-      \ "white_mask_3": { "gui": "#474b59", "cterm": "238", "cterm16": "15" },
-      \ "white_mask_11": { "gui": "#989aa2", "cterm": "238", "cterm16": "15" }
-      \}
-
-let s:red = s:colors.red
-let s:light_red = s:colors.light_red
-let s:dark_red = s:colors.dark_red
-let s:green = s:colors.green
-let s:yellow = s:colors.yellow
-let s:dark_yellow = s:colors.dark_yellow
-let s:blue = s:colors.blue
-let s:purple = s:colors.purple
-let s:blue_purple = s:colors.blue_purple
-let s:cyan = s:colors.cyan
-let s:white = s:colors.white
-let s:black = s:colors.black
-let s:visual_black = s:colors.visual_black " Black out selected text in 16-color visual mode
-let s:comment_grey = s:colors.comment_grey
-let s:gutter_fg_grey = s:colors.gutter_fg_grey
-let s:cursor_grey = s:colors.cursor_grey
-let s:visual_grey = s:colors.visual_grey
-let s:menu_grey = s:colors.menu_grey
-let s:special_grey = s:colors.special_grey
-let s:vertsplit = s:colors.vertsplit
+let s:red = { "gui": "{{ colors.normal.red }}", "cterm": "1", "cterm16": "1" }
+let s:light_red = { "gui": "{{ colors.bright.red }}", "cterm": "204", "cterm16": "1" }
+let s:dark_red = { "gui": "{{ colors.dim.red }}", "cterm": "196", "cterm16": "9" }
+let s:green = { "gui": "{{ colors.normal.green }}", "cterm": "2", "cterm16": "2" }
+let s:yellow = { "gui": "{{ colors.normal.yellow }}", "cterm": "180", "cterm16": "3" }
+let s:dark_yellow = { "gui": "#F78C6C", "cterm": "173", "cterm16": "11" }
+let s:blue = { "gui": "{{ colors.normal.blue }}", "cterm": "39", "cterm16": "4" }
+let s:purple = { "gui": "{{ colors.normal.magenta }}", "cterm": "5", "cterm16": "5" }
+let s:blue_purple = { "gui": "#939ede", "cterm": "39", "cterm16": "4"}
+let s:cyan = { "gui": "{{ colors.normal.cyan }}", "cterm": "38", "cterm16": "6" }
+let s:white = { "gui": "#bfc7d5", "cterm": "145", "cterm16": "7" }
+let s:black = { "gui": "#292D3E", "cterm": "235", "cterm16": "0" }
+let s:visual_black = { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }
+let s:comment_grey = { "gui": "#697098", "cterm": "59", "cterm16": "15" }
+let s:gutter_fg_grey = { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }
+let s:cursor_grey = { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }
+let s:visual_grey = { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }
+let s:menu_grey = { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }
+let s:special_grey = { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }
+let s:vertsplit = { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }
+let s:white_mask_1 = { "gui": "#333747", "cterm": "237", "cterm16": "15" }
+let s:white_mask_3 = { "gui": "#474b59", "cterm": "238", "cterm16": "15" }
+let s:white_mask_11 = { "gui": "#989aa2", "cterm": "238", "cterm16": "15"}
 
 " {{ "}}}" }}
 
@@ -136,7 +113,11 @@ call s:h("Conditional", { "fg": s:purple }) " if, then, else, endif, switch, etc
 call s:h("Repeat", { "fg": s:purple }) " for, do, while, etc.
 call s:h("Label", { "fg": s:purple }) " case, default, etc.
 call s:h("Operator", { "fg": s:cyan }) " sizeof", "+", "*", etc.
-call s:h("Keyword", { "fg": s:red }) " any other keyword
+
+highlight Keyword
+            \ ctermfg=magenta
+            \ guifg={{ colors.normal.magenta }}
+
 call s:h("Exception", { "fg": s:purple }) " try, catch, throw
 call s:h("PreProc", { "fg": s:yellow }) " generic Preprocessor
 call s:h("Include", { "fg": s:blue }) " preprocessor #include
@@ -185,7 +166,13 @@ call s:h("MatchParen", { "fg": s:blue, "gui": "underline" }) " The character und
 call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-call s:h("Normal", { "fg": s:white, "bg": s:black }) " normal text
+
+highlight Normal
+            \ ctermbg=NONE
+            \ ctermfg=white
+            \ guibg={{ theme.normal.background }}
+            \ guifg={{ theme.normal.foreground }}
+
 call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
 call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
