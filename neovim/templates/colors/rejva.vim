@@ -173,6 +173,9 @@ highlight Normal
             \ guibg={{ theme.normal.background }}
             \ guifg={{ theme.normal.foreground }}
 
+highlight NormalFloat
+            \ guibg={{ theme.bright.background }}
+
 call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
 call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
