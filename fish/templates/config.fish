@@ -13,8 +13,9 @@ set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git"
 set -gx FZF_DEFAULT_OPTS "
     --ansi
     --color=fg+:{{ ui.search.selected.foreground }}
-    --color=bg+:{{ ui.search.selected.background }}
+    --color=bg+:-1
     --color=hl+:{{ ui.search.selected.match }}
+    --color=bg:-1
     --color=hl:{{ ui.search.item.match }}
 "
 
