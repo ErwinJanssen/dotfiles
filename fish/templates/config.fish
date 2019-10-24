@@ -17,6 +17,9 @@ set -gx FZF_DEFAULT_OPTS "
     --color=hl+:{{ ui.search.selected.match }}
     --color=bg:-1
     --color=hl:{{ ui.search.item.match }}
+    --color=prompt:{{ ui.search.input.foreground }}
+    --color=pointer:{{ ui.search.selected.foreground }}
+    --color=marker:{{ ui.search.selected.match }}
 "
 
 # Custom key bindings
