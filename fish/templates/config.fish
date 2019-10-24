@@ -9,7 +9,7 @@ set -gx BROWSER {{ browser }}
 set -gx PATH ~/.local/bin/ $PATH
 
 # Make `fzf`, the fuzzy finder, always use `fd` instead of `find`
-set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git --color always"
+set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git"
 set -gx FZF_DEFAULT_OPTS "
     --ansi
     --color=fg+:{{ ui.search.selected.foreground }}
