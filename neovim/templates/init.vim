@@ -152,6 +152,10 @@ set pumheight=10
 " style listing.
 let g:netrw_liststyle=3
 
+" Do not show the mode in the command-line, as this is already shown in the
+" status-line using a plugin.
+set noshowmode
+
 " ======================================
 "                 Visuals
 " ======================================
