@@ -156,9 +156,13 @@ let g:netrw_liststyle=3
 " status-line using a plugin.
 set noshowmode
 
+" {{ "}}}" }}
+
 " ======================================
 "                 Visuals
 " ======================================
+" {{ "{{{" }}
+
 " Use 24-bit colors if possible
 if (has("termguicolors"))
       set termguicolors
