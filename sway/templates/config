@@ -209,6 +209,10 @@ bar {
 default_border pixel 2
 hide_edge_borders smart
 
+client.focused {{ ui.status_bar.active.background }} {{ ui.status_bar.active.background }} {{ ui.status_bar.active.foreground }} {{ theme.normal.accent }} {{ theme.dim.accent }}
+client.unfocused {{ ui.status_bar.tab.background }} {{ ui.status_bar.tab.background }} {{ ui.status_bar.foreground }} {{ ui.status_bar.background }} {{ ui.status_bar.background }}
+client.urgent {{ theme.normal.urgent }} {{ theme.normal.urgent }} {{ theme.normal.foreground }} {{ theme.normal.accent }} {{ theme.dim.accent }}
+
 # Start a Tmux session in the scratchpad
 exec $term --name terminal_scratchpad -e "tmux new-session -A -s scratch"
 for_window [app_id="terminal_scratchpad"] move scratchpad
