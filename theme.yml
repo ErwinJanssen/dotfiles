@@ -46,6 +46,7 @@ theme:
   bright:
     background: "{{ colors.normal.black }}"
     foreground: "{{ colors.bright.white }}"
+    accent: "{{ colors.bright.magenta }}"
     match: "{{ colors.bright.green }}"
 
   brighter:
