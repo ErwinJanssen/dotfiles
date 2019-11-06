@@ -124,6 +124,8 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 
+" Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 " {{ "}}}" }}
@@ -204,6 +206,9 @@ execute 'highlight SpellBad ' . s:spell_defaults . ' guisp=' palenight_colors.re
 execute 'highlight SpellCap ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
 execute 'highlight SpellLocal ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
 execute 'highlight SpellRare ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
+
+" Highlight color definitions in their color
+lua require'colorizer'.setup()
 
 " {{ "}}}" }}
 
