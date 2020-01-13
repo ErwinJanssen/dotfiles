@@ -2,3 +2,4 @@ python-language-server[all]
 pyls-mypy
 pyls-isort
 pyls-black
+pynvim
