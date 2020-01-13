@@ -112,6 +112,9 @@ Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 " Fish support
 Plug 'dag/vim-fish'
 
+" TOML support
+Plug 'cespare/vim-toml'
+
 " Visualize undo tree
 Plug 'simnalamburt/vim-mundo'
 
