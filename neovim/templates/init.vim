@@ -204,19 +204,6 @@ set list
 " Set the colorscheme
 colorscheme rejva
 
-" Do not use the background provided by the colorscheme
-highlight Normal ctermbg=NONE guibg={{ theme.normal.background }}
-
-" Instead of coloring the entire word on a spelling mistake, only color the
-" undercurl (in the same color as the color scheme).
-let s:spell_defaults = 'ctermbg=NONE ctermfg=NONE cterm=UNDERCURL guibg=NONE guifg=NONE gui=UNDERCURL'
-let g:palenight_colors = palenight#GetColors()
-
-execute 'highlight SpellBad ' . s:spell_defaults . ' guisp=' palenight_colors.red.gui
-execute 'highlight SpellCap ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
-execute 'highlight SpellLocal ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
-execute 'highlight SpellRare ' . s:spell_defaults . ' guisp=' palenight_colors.dark_yellow.gui
-
 " Highlight color definitions in their color
 lua require'colorizer'.setup()
 
