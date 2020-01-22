@@ -17,6 +17,8 @@ scrollback_lines = 10000
 #urgent_on_bell = true
 #hyperlinks = false
 
+cell_height_scale = 1.1
+
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open
 
