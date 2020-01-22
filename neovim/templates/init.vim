@@ -303,6 +303,13 @@ noremap <C-_> :Commentary<CR>
 " appropriate filetype plugin.
 nnoremap <F5> :Make<CR>
 
+" Alternatively, also invoke the build/make step through <Leader>r. The key 'r'
+" is also to refresh a window a web browser through CTRL-r. This eliminates the
+" need for the function key (which might be more difficult to reach, or
+" a keyboard might not have the function keys). The mnemonic for this shortcut
+" is 'run' or 'rebuild'.
+nnoremap <Leader>r :Make<CR>
+
 " `gb` is a popular mapping to list and search through the buffers. This
 " mapping invokes the Buffers command from the fzf.vim plugin, which searches
 " through the available buffers with FZF.
