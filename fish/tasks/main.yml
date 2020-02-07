@@ -7,17 +7,55 @@
   loop: "{{ dependencies }}"
   when: install_dependencies | bool
 
-- name: Create the config directory
+- name: Create the primary configuration directory
   file:
     path: "{{ config_directory }}"
     state: directory
 
-- name: Create the main configuration file
-  template:
-    src: "{{ config_file }}"
-    dest: "{{ config_directory }}/{{ config_file }}"
+- name: Create subdirectories
+  file:
+    path: "{{ config_directory }}/{{ item.path }}"
+    state: directory
+  with_filetree: templates
+  when: item.state == "directory"
 
-- name: Place the additional configuration files
-  synchronize:
-    src: fish/
-    dest: "{{ config_directory }}"
+- name: Create configuration files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ config_directory }}/{{ item.path }}"
+  with_filetree: templates
+  when: item.state == "file"
+
+- name: Create a list of all managed files
+  set_fact:
+    managed_files: >
+      {{
+        query('filetree', 'templates')
+        | selectattr('state', 'equalto' ,'file')
+        | map(attribute='path')
+        | map('regex_replace', '^', config_directory + '/')
+        | map('realpath')
+        | list
+      }}
+
+- name: Query all present files
+  find:
+    paths: "{{ config_directory }}"
+    recurse: yes
+  register: present_files
+
+- name: Create a list of files to delete
+  set_fact:
+    files_to_delete: >
+      {{
+        present_files['files']
+        | map(attribute='path')
+        | list
+        | difference(managed_files)
+      }}
+
+- name: Delete unmanaged files
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop: "{{ files_to_delete }}"
