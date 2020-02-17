@@ -8,20 +8,6 @@ set -gx BROWSER {{ browser }}
 # Prepend PATH with local bin directory
 set -gx PATH ~/.local/bin/ $PATH
 
-# Make `fzf`, the fuzzy finder, always use `fd` instead of `find`
-set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git"
-set -gx FZF_DEFAULT_OPTS "
-    --ansi
-    --color=fg+:{{ ui.search.selected.foreground }}
-    --color=bg+:-1
-    --color=hl+:{{ ui.search.selected.match }}
-    --color=bg:-1
-    --color=hl:{{ ui.search.item.match }}
-    --color=prompt:{{ ui.search.input.foreground }}
-    --color=pointer:{{ ui.search.selected.foreground }}
-    --color=marker:{{ ui.search.selected.match }}
-"
-
 # Custom key bindings
 function fish_user_key_bindings
     # ctrl-del
@@ -37,11 +23,6 @@ if command --search exa > /dev/null
     function ls --description "List contents of directory"
         command exa $argv
     end
-end
-
-# Enable FZF key bindings if available
-if functions --query fzf_key_bindings
-    fzf_key_bindings
 end
 
 # Insert a new line before displaying the prompt. This separates the command
