@@ -1,3 +1,8 @@
+/* Overwrite Firefox UI colors to match the theme */
+:root {
+  --toolbar-bgcolor: {{ ui.status_bar.background }} !important;
+}
+
 /* Hide the primary tabs toolbar at the top of the window */
 #TabsToolbar {
   visibility: collapse;
