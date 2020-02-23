@@ -9,6 +9,7 @@ dependencies:
   - wl-clipboard
   - tmux
   - pulseaudio
+  - light
 
 swaylock_directory: "{{ config_home }}/swaylock"
 i3status_directory: "{{ config_home }}/i3status"
