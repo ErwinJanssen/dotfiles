@@ -321,6 +321,9 @@ nnoremap <Leader>r :Make<CR>
 " through the available buffers with FZF.
 noremap gb :Buffers<CR>
 
+" Remove search highlights by pressing the <Leader> key twice
+nnoremap <Leader><Leader> :nohlsearch<CR>
+
 " {{ "}}}" }}
 
 " ======================================
