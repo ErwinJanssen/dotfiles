@@ -195,7 +195,7 @@ set colorcolumn=+1
 set list
 
 " Set the colorscheme
-colorscheme palenight
+colorscheme rejva
 
 " Do not use the background provided by the colorscheme
 highlight Normal ctermbg=NONE guibg={{ theme.normal.background }}
