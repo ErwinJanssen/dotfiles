@@ -71,6 +71,8 @@ Plug 'airblade/vim-gitgutter'
 
 " Lightweight status line
 Plug 'itchyny/lightline.vim'
+let g:lightline = {}
+let g:lightline.colorscheme = 'rejva'
 
 " Distraction free writing
 Plug 'junegunn/goyo.vim'

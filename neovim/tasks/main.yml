@@ -50,3 +50,13 @@
   synchronize:
     src: plugins/
     dest: "{{ neovim_plugin_directory }}"
+
+- name: Create paths for colorscheme
+  file:
+    path: "{{ config_directory }}/autoload/lightline/colorscheme"
+    state: directory
+
+- name: Create colorschemes
+  template:
+    src: colorscheme/rejva.vim
+    dest: "{{ config_directory }}/autoload/lightline/colorscheme/rejva.vim"
