@@ -94,6 +94,7 @@ autocmd! User GoyoLeave
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 let g:pandoc#folding#fdc = 0
+let g:pandoc#syntax#conceal#use = 0
 
 " Disable all keyboard shortcuts provided by default by the Pandoc plugin, as
 " well as the auto formatting (which overrides values such as `formatoptions`)
