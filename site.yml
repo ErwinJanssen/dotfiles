@@ -9,7 +9,6 @@
     - rofi
     - sway
     - tmux
-    - dotfiles
     - fontconfig
     - zathura
     - "terminals/{{ terminal }}"
