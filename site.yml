@@ -4,6 +4,7 @@
   roles:
     - fish
     - firefox
+    - thunderbird
     - neovim
     - rofi
     - sway

@@ -1,0 +1,27 @@
+---
+- name: Install dependencies
+  become: yes
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ dependencies }}"
+  when: install_dependencies | bool
+
+- name: Create the primary configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
+
+- name: Create subdirectories
+  file:
+    path: "{{ config_directory }}/{{ item.path }}"
+    state: directory
+  with_filetree: data
+  when: item.state == "directory"
+
+- name: Create configuration files
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ config_directory }}/{{ item.path }}"
+  with_filetree: data
+  when: item.state == "file"
