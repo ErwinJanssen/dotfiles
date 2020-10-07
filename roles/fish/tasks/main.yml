@@ -1,11 +1,7 @@
 ---
-- name: Install dependencies
-  become: yes
-  package:
-    name: "{{ item }}"
-    state: present
-  loop: "{{ dependencies }}"
-  when: install_dependencies | bool
+- name: Perform common tasks
+  import_role:
+    name: _common
 
 - name: Create the primary configuration directory
   file:
