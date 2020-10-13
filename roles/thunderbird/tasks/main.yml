@@ -3,11 +3,6 @@
   import_role:
     name: _common
 
-- name: Create the primary configuration directory
-  file:
-    path: "{{ config_directory }}"
-    state: directory
-
 - name: Create subdirectories
   file:
     path: "{{ config_directory }}/{{ item.path }}"
