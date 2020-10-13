@@ -3,11 +3,6 @@
   import_role:
     name: _common
 
-- name: Create the config directory
-  file:
-    path: "{{ config_directory }}"
-    state: directory
-
 - name: Create the main configuration file
   template:
     src: "{{ config_file }}"

@@ -1,0 +1,4 @@
+- name: Create the primary configuration directory
+  file:
+    path: "{{ config_directory }}"
+    state: directory
