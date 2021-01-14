@@ -1,5 +1,26 @@
-# Set the default background surrounding the document
+# Default background surrounding the document
 set default-bg "{{ theme.dim.background }}"
+
+# The default text color of UI elements (status bar, etc.)
+set default-fg "{{ theme.normal.foreground }}"
+
+# Set the following GUI options to show:
+# s: status bar
+# v: vertical scrollbar
+# h: horizontal scrollbar
+set guioptions "svh"
+
+# Style the status bar
+set statusbar-bg "{{ ui.status_bar.background }}"
+set statusbar-fg "{{ ui.status_bar.foreground }}"
+
+# Style the completion menu
+set completion-bg "{{ ui.search.item.background }}"
+set completion-fg "{{ ui.search.foreground }}"
+set completion-group-bg "{{ ui.status_bar.active.background }}"
+set completion-group-fg "{{ ui.status_bar.active.foreground }}"
+set completion-highlight-bg "{{ ui.search.selected.background }}"
+set completion-highlight-fg "{{ ui.search.selected.foreground }}"
 
 # Default to dark mode document viewing using "recolor". Revert this by running
 # ":recolor false".
