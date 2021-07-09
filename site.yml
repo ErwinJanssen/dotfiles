@@ -8,6 +8,8 @@
     - neovim
     - rofi
     - sway
+    - swaylock
+    - i3status
     - tmux
     - fontconfig
     - zathura
