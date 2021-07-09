@@ -3,13 +3,6 @@
   import_role:
     name: _common
 
-- name: Create subdirectories
-  file:
-    path: "{{ config_directory }}/{{ item.path }}"
-    state: directory
-  with_filetree: templates
-  when: item.state == "directory"
-
 - name: Create configuration files
   template:
     src: "{{ item.src }}"

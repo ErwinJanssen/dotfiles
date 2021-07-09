@@ -2,3 +2,10 @@
   file:
     path: "{{ config_directory }}"
     state: directory
+
+- name: Create subdirectories for configuration files
+  file:
+    path: "{{ config_directory }}/{{ item.path }}"
+    state: directory
+  with_filetree: "{{ ansible_parent_role_paths[0] }}/files/templates"
+  when: item.state == "directory"
