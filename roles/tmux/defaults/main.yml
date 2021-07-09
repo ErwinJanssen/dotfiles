@@ -1,5 +1,4 @@
 ---
 config_directory: "{{ user_home }}"
-config_file: .tmux.conf
 dependencies:
   - tmux

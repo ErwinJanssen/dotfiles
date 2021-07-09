@@ -1,6 +1,5 @@
 ---
 config_directory: "{{ config_home }}/sway"
-config_file: config
 dependencies:
   - sway
   - swayidle

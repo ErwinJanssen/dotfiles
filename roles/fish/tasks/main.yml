@@ -3,18 +3,11 @@
   import_role:
     name: _common
 
-- name: Create configuration files
-  template:
-    src: "{{ item.src }}"
-    dest: "{{ config_directory }}/{{ item.path }}"
-  with_filetree: templates
-  when: item.state == "file"
-
 - name: Create a list of all managed files
   set_fact:
     managed_files: >
       {{
-        query('filetree', 'templates')
+        query('filetree', '{{ role_path }}/templates')
         | selectattr('state', 'equalto' ,'file')
         | map(attribute='path')
         | map('regex_replace', '^', config_directory + '/')

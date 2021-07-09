@@ -1,5 +1,4 @@
 ---
 config_directory: "{{ config_home }}/i3status"
-config_file: config
 dependencies:
   - i3status

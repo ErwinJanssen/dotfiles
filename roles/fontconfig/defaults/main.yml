@@ -1,6 +1,5 @@
 ---
 config_directory: "{{ config_home }}/fontconfig"
-config_file: fonts.conf
 dependencies:
   - fontconfig
   - otf-fira-code

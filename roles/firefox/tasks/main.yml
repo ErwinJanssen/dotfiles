@@ -2,10 +2,3 @@
 - name: Perform common tasks
   import_role:
     name: _common
-
-- name: Create configuration files
-  template:
-    src: "{{ item.src }}"
-    dest: "{{ config_directory }}/{{ item.path }}"
-  with_filetree: templates
-  when: item.state == "file"

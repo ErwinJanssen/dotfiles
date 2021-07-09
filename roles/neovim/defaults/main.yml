@@ -1,6 +1,5 @@
 ---
 config_directory: "{{ config_home }}/nvim"
-config_file: init.vim
 dependencies:
   - neovim
   - fzf

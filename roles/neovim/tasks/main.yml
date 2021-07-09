@@ -3,32 +3,6 @@
   import_role:
     name: _common
 
-- name: Create the main configuration file
-  template:
-    src: "{{ config_file }}"
-    dest: "{{ config_directory }}/{{ config_file }}"
-
-- name: Place the additional configuration files
-  synchronize:
-    src: nvim/
-    dest: "{{ config_directory }}"
-
-- name: Create paths for colorschemes
-  file:
-    path: "{{ config_directory }}/{{ item }}"
-    state: directory
-  loop:
-    - colors
-    - autoload/lightline/colorscheme
-
-- name: Create colorschemes
-  template:
-    src: "{{ item }}"
-    dest: "{{ config_directory }}/{{ item }}"
-  loop:
-    - colors/rejva.vim
-    - autoload/lightline/colorscheme/rejva.vim
-
 - name: Setup the Python virtual environment
   pip:
     requirements: "{{ config_directory }}/requirements.txt"

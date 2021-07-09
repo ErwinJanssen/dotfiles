@@ -3,11 +3,6 @@
   import_role:
     name: _common
 
-- name: Create the main configuration file
-  template:
-    src: "{{ config_file }}"
-    dest: "{{ config_directory }}/{{ config_file }}"
-
 - name: Place static files
   synchronize:
     src: .
