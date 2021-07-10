@@ -9,6 +9,19 @@
     virtualenv: "{{ neovim_virtualenv }}"
     virtualenv_python: python3
 
+- name: Create directory for package manager packer.nvim
+  file:
+    path: "{{ user_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    state: directory
+
+- name: Clone Git repository for packer.nvim
+  git:
+    repo: "https://github.com/wbthomason/packer.nvim"
+    dest: "{{ user_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+
+- name: Install Neovim plugins with packer.nvim
+  command: nvim --headless +"autocmd User PackerComplete quitall" +PackerSync
+
 - name: Create directory for vim-plug
   file:
     path: "{{ user_home }}/.local/share/nvim/site/autoload"
