@@ -64,9 +64,22 @@ call plug#begin(plugin_dir)
 " Load plugins from the Vim system directory, this includes the `fzf` plugin.
 Plug '/usr/share/vim/vimfiles/plugin/'
 
-" Fuzzy search when pressing CTRL-P
+" Fuzzy finder
 Plug 'junegunn/fzf.vim'
-noremap <C-P> :silent FZF<CR>
+
+" Specify several mnemonic shortcuts for common search operations using fzf.
+
+" [f]ind [f]ile
+noremap <Leader>ff :silent Files<CR>
+
+" [f]ind [b]uffer
+noremap <Leader>fb :silent Buffers<CR>
+
+" [f]ind [l]ine in current buffer
+noremap <Leader>fl :silent BLines<CR>
+
+" [f]ind [L]ine in all loaded buffers
+noremap <Leader>fL :silent Lines<CR>
 
 " Show Git diff in the signcolumn (added, removed, modified).
 Plug 'airblade/vim-gitgutter'
@@ -322,11 +335,6 @@ nnoremap <F5> :Make<CR>
 " a keyboard might not have the function keys). The mnemonic for this shortcut
 " is 'run' or 'rebuild'.
 nnoremap <Leader>r :Make<CR>
-
-" `gb` is a popular mapping to list and search through the buffers. This
-" mapping invokes the Buffers command from the fzf.vim plugin, which searches
-" through the available buffers with FZF.
-noremap gb :Buffers<CR>
 
 " Remove search highlights by pressing the <Leader> key twice
 nnoremap <Leader><Leader> :nohlsearch<CR>
