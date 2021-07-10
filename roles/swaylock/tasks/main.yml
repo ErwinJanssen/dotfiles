@@ -2,3 +2,8 @@
 - name: Perform common tasks
   import_role:
     name: _common
+
+- name: Place static files
+  synchronize:
+    src: .
+    dest: "{{ config_directory }}"
