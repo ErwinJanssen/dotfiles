@@ -5,6 +5,17 @@ return require("packer").startup {
         -- Packer can manage itself. Omitting this will result in packer trying
         -- to remove itself, since its not specified in the configuration.
         use "wbthomason/packer.nvim"
+
+        -- Show Git diff in the signcolumn (added, removed, modified).
+        use {
+          'lewis6991/gitsigns.nvim',
+          requires = {
+            'nvim-lua/plenary.nvim'
+          },
+          config = function()
+            require('gitsigns').setup()
+          end
+        }
     end,
 
     config = {

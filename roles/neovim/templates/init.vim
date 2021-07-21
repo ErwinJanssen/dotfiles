@@ -81,9 +81,6 @@ noremap <Leader>fl :silent BLines<CR>
 " [f]ind [L]ine in all loaded buffers
 noremap <Leader>fL :silent Lines<CR>
 
-" Show Git diff in the signcolumn (added, removed, modified).
-Plug 'airblade/vim-gitgutter'
-
 " Lightweight status line
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
