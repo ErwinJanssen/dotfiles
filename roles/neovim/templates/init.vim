@@ -137,6 +137,9 @@ Plug 'dag/vim-fish'
 " TOML support
 Plug 'cespare/vim-toml'
 
+" PlantUML support
+Plug 'aklt/plantuml-syntax'
+
 " Visualize undo tree
 Plug 'simnalamburt/vim-mundo'
 
@@ -148,6 +151,10 @@ Plug 'radenling/vim-dispatch-neovim'
 
 " Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
 Plug 'norcalli/nvim-colorizer.lua'
+
+" Comment stuff out
+Plug 'tpope/vim-commentary'
+
 call plug#end()
 
 " {{ "}}}" }}

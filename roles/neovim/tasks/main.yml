@@ -34,13 +34,3 @@
 
 - name: Install Neovim Plugins with vim-plug
   command: nvim '+PlugInstall --sync' +quitall
-
-- name: Create Neovim plugin directory
-  file:
-    path: "{{ neovim_plugin_directory }}"
-    state: directory
-
-- name: Install Neovim plugins natively
-  synchronize:
-    src: plugins/
-    dest: "{{ neovim_plugin_directory }}"
