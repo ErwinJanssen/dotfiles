@@ -7,3 +7,10 @@
   synchronize:
     src: .
     dest: "{{ config_directory }}"
+
+- name: Add user to 'video' group, required for backlight utility 'light'
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: video
+    append: yes
