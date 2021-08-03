@@ -400,8 +400,8 @@ set winblend=10
 let $FZF_DEFAULT_OPTS .= ' --margin 1,2 --layout reverse'
 
 function! FloatingFZF()
-let width = min([float2nr(&columns * 0.8), 80])
-let height = min([float2nr(&lines * 0.6), 20])
+let width = min([float2nr(&columns * 0.8), 120])
+let height = min([float2nr(&lines * 0.6), 30])
 let opts = { 'relative': 'editor',
            \ 'row': (&lines - height) / 2,
            \ 'col': (&columns - width) / 2,
