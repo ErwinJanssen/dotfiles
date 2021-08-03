@@ -1,0 +1,4 @@
+---
+config_directory: "{{ config_home }}/kitty"
+dependencies:
+  - kitty

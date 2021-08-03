@@ -214,7 +214,7 @@ client.unfocused {{ ui.status_bar.tab.background }} {{ ui.status_bar.tab.backgro
 client.urgent {{ theme.normal.urgent }} {{ theme.normal.urgent }} {{ theme.normal.foreground }} {{ theme.normal.accent }} {{ theme.dim.accent }}
 
 # Start a Tmux session in the scratchpad
-exec $term --name terminal_scratchpad -e "tmux new-session -A -s scratch"
+exec $term --class terminal_scratchpad -e tmux new-session -A -s scratch
 for_window [app_id="terminal_scratchpad"] move scratchpad
 
 # Lock the screen after 300 seconds of inactivity, then turn off displays after
