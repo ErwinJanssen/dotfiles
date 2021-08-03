@@ -5,5 +5,5 @@ dependencies:
   - swayidle
   - wl-clipboard
   - tmux
-  - pulseaudio
+  - pipewire
   - light
