@@ -51,6 +51,11 @@ set tagcase=followscs
 " three curly braces to open and close a fold.
 set foldmethod=marker
 
+" Don't give messages related to `ins-completion-menu` in the command line.
+" Examples are "match 1 of 2", "Pattern not found", etc. These messages don't
+" provide any additional information, while still being distracting.
+set shortmess+=c
+
 " {{ "}}}" }}
 
 " ======================================
