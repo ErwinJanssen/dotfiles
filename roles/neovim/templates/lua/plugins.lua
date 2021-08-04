@@ -16,6 +16,11 @@ return require("packer").startup {
                 require("gitsigns").setup()
             end,
         }
+
+        use {
+            "hrsh7th/nvim-compe",
+            config = [[require("plugins.compe")]],
+        }
     end,
 
     config = {
