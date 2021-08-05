@@ -1,0 +1,4 @@
+---
+- name: Perform common tasks
+  import_role:
+    name: _common
