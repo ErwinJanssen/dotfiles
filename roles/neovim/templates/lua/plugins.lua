@@ -21,6 +21,14 @@ return require("packer").startup {
             "hrsh7th/nvim-compe",
             config = [[require("plugins.compe")]],
         }
+
+        -- Treesitter: more advanced syntax highlighting
+        use {
+            "nvim-treesitter/nvim-treesitter",
+            branch = "0.5-compat",
+            run = ":TSUpdate",
+            config = [[require("plugins.treesitter")]],
+        }
     end,
 
     config = {
