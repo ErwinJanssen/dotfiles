@@ -1,0 +1,7 @@
+# Include system defaults
+$include /etc/inputrc
+
+# Use the up/down arrows to search through the history for partial matches.
+# This search behavior is similar to that of the Fish shell.
+"\e[B": history-substring-search-forward
+"\e[A": history-substring-search-backward
