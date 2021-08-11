@@ -8,6 +8,9 @@ set -gx BROWSER {{ browser }}
 # Prepend PATH with local bin directory
 set -gx PATH ~/.local/bin/ $PATH
 
+# Prepend PATH with the Flatpak bin directory
+set -gx PATH /var/lib/flatpak/exports/bin $PATH
+
 # Custom key bindings
 function fish_user_key_bindings
     # ctrl-del
