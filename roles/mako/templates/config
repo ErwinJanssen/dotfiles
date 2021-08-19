@@ -1,0 +1,9 @@
+# Sort notifications by time in descending order (newest on top)
+sort=-time
+
+# Style options
+background-color={{ theme.bright.background }}
+text-color={{ theme.bright.foreground }}
+border-color={{ theme.normal.accent }}
+border-size=1
+padding=12

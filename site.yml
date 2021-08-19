@@ -11,6 +11,7 @@
     - sway
     - swaylock
     - i3status
+    - mako
     - tmux
     - fontconfig
     - zathura
