@@ -340,9 +340,9 @@ nnoremap <Leader>r :Make<CR>
 " Remove search highlights by pressing the <Leader> key twice
 nnoremap <Leader><Leader> :nohlsearch<CR>
 
-" Perform auto completion using CTRL-Space in insert mode.
+" Trigger and cycle trough auto completion in insert mode using CTRL-Space.
 inoremap <silent><expr> <C-Space>
-    \ pumvisible() ? compe#confirm('<C-Space') :
+    \ pumvisible() ? "\<C-n>" :
     \ compe#complete()
 
 " {{ "}}}" }}

@@ -5,7 +5,6 @@ vim.o.completeopt = "menuone,noselect"
 
 require("compe").setup {
     enabled = true,
-    preselect = "always",
     source = {
         path = true,
         nvim_lsp = true,
