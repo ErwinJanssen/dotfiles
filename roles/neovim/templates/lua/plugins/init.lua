@@ -21,6 +21,11 @@ return require("packer").startup {
             "hrsh7th/nvim-compe",
             config = [[require("plugins.compe")]],
         }
+        -- Configure Neovim's built-in language server client
+        use {
+            "neovim/nvim-lspconfig",
+            config = [[require("plugins.lspconfig")]],
+        }
 
         -- Treesitter: more advanced syntax highlighting
         use {

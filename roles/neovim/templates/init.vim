@@ -345,6 +345,8 @@ inoremap <silent><expr> <C-Space>
     \ pumvisible() ? "\<C-n>" :
     \ compe#complete()
 
+nnoremap <Leader>gd :lua vim .lsp.buf.definition()<CR>
+
 " {{ "}}}" }}
 
 " ======================================
