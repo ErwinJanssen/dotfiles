@@ -137,9 +137,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'drewtempelmeyer/palenight.vim'
 let g:palenight_terminal_italics=1
 
-" Semantic highlighting for Python
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-
 " Fish support
 Plug 'dag/vim-fish'
 
