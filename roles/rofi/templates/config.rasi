@@ -1,0 +1,6 @@
+configuration {
+	ssh-command: "{terminal} -e "{ssh-client} {host}"";
+	sorting-method: "fzf";
+	matching: "fuzzy";
+}
+@theme "rejva"
