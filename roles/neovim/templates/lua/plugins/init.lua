@@ -30,7 +30,6 @@ return require("packer").startup {
         -- Treesitter: more advanced syntax highlighting
         use {
             "nvim-treesitter/nvim-treesitter",
-            branch = "0.5-compat",
             run = ":TSUpdate",
             config = [[require("plugins.treesitter")]],
         }
