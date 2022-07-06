@@ -105,20 +105,6 @@ let g:lightline = {
     \ }
   \ }
 
-" Distraction free writing
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
-let g:limelight_conceal_ctermfg = 'DarkGray'
-
-" When using Goyo, disable the signcolumn
-autocmd! User GoyoEnter
-    \ Limelight
-    \ | set signcolumn=no
-autocmd! User GoyoLeave
-    \ Limelight!
-    \ | set signcolumn=yes
-
 " Better support for Pandoc
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
