@@ -17,11 +17,6 @@ return require("packer").startup {
             end,
         }
 
-        use {
-            "hrsh7th/nvim-compe",
-            config = [[require("plugins.compe")]],
-        }
-
         -- Install and manage LSP servers, linters, etc.
         use {
             "williamboman/mason.nvim",
@@ -61,6 +56,9 @@ return require("packer").startup {
             run = ":TSUpdateSync",
             config = [[require("plugins.treesitter")]],
         }
+
+        use "hrsh7th/nvim-cmp"
+        use 'hrsh7th/cmp-buffer'
 
         -- Display pop-up with possible key bindings
         use {
