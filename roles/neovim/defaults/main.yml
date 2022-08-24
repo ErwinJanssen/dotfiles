@@ -4,4 +4,7 @@ dependencies:
   - neovim
   - fzf
 
+  # fzf.vim automatically uses `bat` for file previews if it is available
+  - bat
+
 neovim_virtualenv: "{{ config_directory }}/venv"
