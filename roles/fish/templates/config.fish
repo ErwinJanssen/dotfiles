@@ -45,6 +45,9 @@ function global_history \
     history merge
 end
 
+# Use the cross-shell prompt Starship instead of custom `fish_prompt` function
+starship init fish | source
+
 # Start Sway on tty1
 if [ (tty) = "/dev/tty1" ]
     exec sway
