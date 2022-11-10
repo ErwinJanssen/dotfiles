@@ -173,15 +173,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Media keys
-#
-bindsym XF86AudioMute exec pactl pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
-
 ### Mouse
 focus_follows_mouse no
 
@@ -235,3 +226,4 @@ input type:keyboard {
 }
 
 include /etc/sway/config.d/*
+include config.d/*
