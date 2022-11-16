@@ -34,13 +34,4 @@ return require("packer").startup {
             config = [[require("plugins.treesitter")]],
         }
     end,
-
-    config = {
-        display = {
-            -- Configure packer to be non interactive. This means it won't ask
-            -- for input for actions and these can therefore be run headless in
-            -- the provision script.
-            non_interactive = true,
-        },
-    },
 }
