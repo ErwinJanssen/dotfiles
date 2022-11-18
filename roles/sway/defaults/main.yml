@@ -7,3 +7,6 @@ dependencies:
   - tmux
   - pipewire
   - light
+
+  # Emoij font (e.g. brightness symbol)
+  - noto-fonts-emoji
