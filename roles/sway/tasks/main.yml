@@ -3,10 +3,10 @@
   import_role:
     name: _common
 
-- name: Place static files
-  synchronize:
-    src: .
-    dest: "{{ config_directory }}"
+- name: Place wallpaper
+  copy:
+    src: wallpaper.jpg
+    dest: "{{ config_directory }}/wallpaper.jpg"
 
 - name: Add user to 'video' group, required for backlight utility 'light'
   become: yes
@@ -14,3 +14,8 @@
     name: "{{ ansible_user_id }}"
     groups: video
     append: yes
+
+- name: Add systemd target for user session
+  copy:
+    src: sway-session.target
+    dest: "{{ config_home }}/systemd/user/sway-session.target"
