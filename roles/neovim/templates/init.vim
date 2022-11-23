@@ -239,8 +239,15 @@ function! DeleteNextWord()
         normal dw
     endif
 endfun
-noremap! <C-H> <C-W>
 noremap! <C-Del> <C-O>:call DeleteNextWord()<CR>
+
+" Newer versions of Neovim correctly register the `<BS>` key, but older
+" (Neo)vim versions and other tools such as tmux don't; instead the `<BS>` key
+" is registered as `_`. Therefore two mappings must be added: the first works
+" in Neovim directly, the other works when Neovim is started within a tmux
+" session.
+noremap! <C-H> <C-W>
+noremap! <C-BS> <C-W>
 
 " Make the arrows keys work as expected when the cursor is at the start or the
 " end of a line, by moving the cursor to the previous or next line.
@@ -302,8 +309,14 @@ set spellcapcheck=
 
 " Shortcut to comment out blocks, lines, etc. It is enabled by the
 " 'vim-commentary' plugin. Use CTRL-/ to comment out a line or selection,
-" similar to most other editors. For some reason, Vim maps the `/` key to `_`,
-" so that must be used in the mapping.
+" similar to most other editors.
+"
+" Newer versions of Neovim correctly register the `/` key, but older (Neo)vim
+" versions and other tools such as tmux don't; instead the `/` key is
+" registered as `_`. Therefore two mappings must be added: the first works in
+" Neovim directly, the other works when Neovim is started within a tmux
+" session.
+noremap <C-/> :Commentary<CR>
 noremap <C-_> :Commentary<CR>
 
 " Invoke the build/make step when pressing <F5>. This is similar to how tools
