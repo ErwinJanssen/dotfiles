@@ -2,3 +2,9 @@
 profile {
 	output eDP-1 enable
 }
+
+# Disable build-in display when this external monitor is connected
+profile {
+    output eDP-1 disable
+    output "Unknown G27Q 20362B001216" enable
+}
