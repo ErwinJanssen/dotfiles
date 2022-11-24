@@ -1,0 +1,9 @@
+[Unit]
+Description=Kanshi - dynamic output configuration
+After=sway-session.target
+
+[Install]
+WantedBy=sway-session.target
+
+[Service]
+ExecStart=/usr/bin/kanshi

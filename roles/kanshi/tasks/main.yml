@@ -1,0 +1,9 @@
+---
+- name: Perform common tasks
+  import_role:
+    name: _common
+
+- name: Place systemd user service
+  copy:
+    src: kanshi.service
+    dest: "{{ config_home }}/systemd/user/kanshi.service"
