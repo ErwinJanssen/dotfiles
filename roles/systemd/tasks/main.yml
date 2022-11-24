@@ -1,0 +1,5 @@
+---
+- name: Create directory for systemd user units
+  file:
+    path: "{{ config_directory }}/user"
+    state: directory

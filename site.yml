@@ -2,6 +2,9 @@
 - name: Setup and configure dotfiles
   hosts: all
   roles:
+    # This role must come first as it creates a directory used by other roles
+    - systemd
+
     - fish
     - starship
     - bash

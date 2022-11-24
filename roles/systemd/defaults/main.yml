@@ -1,0 +1,2 @@
+---
+config_directory: "{{ config_home }}/systemd"
