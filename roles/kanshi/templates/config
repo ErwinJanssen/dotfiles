@@ -3,8 +3,15 @@ profile {
 	output eDP-1 enable
 }
 
-# Disable build-in display when this external monitor is connected
+# Disable build-in display when one of these external monitors is connected
 profile {
+    # Desk at home
     output eDP-1 disable
     output "Unknown G27Q 20362B001216" enable
+}
+
+profile {
+    # Desk at office
+    output eDP-1 disable
+    output "Dell Inc. DELL S3422DW 4D81TH3" enable
 }
