@@ -7,3 +7,9 @@
   copy:
     src: kanshi.service
     dest: "{{ config_home }}/systemd/user/kanshi.service"
+
+- name: Enable the kanshi service
+  systemd:
+    name: kanshi.service
+    scope: user
+    enabled: yes
