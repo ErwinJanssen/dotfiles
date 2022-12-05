@@ -30,7 +30,9 @@ return require("packer").startup {
         -- Treesitter: more advanced syntax highlighting
         use {
             "nvim-treesitter/nvim-treesitter",
-            run = ":TSUpdate",
+            -- Perform parser update in synchronous mode, so the headless
+            -- update script will wait for completion.
+            run = ":TSUpdateSync",
             config = [[require("plugins.treesitter")]],
         }
     end,
