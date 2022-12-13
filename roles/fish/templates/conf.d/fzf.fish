@@ -1,7 +1,7 @@
 # Configure FZF, the fuzzy finder, for Fish
 
 # Make FZF always use `fd` instead of `find`
-set -gx FZF_DEFAULT_COMMAND "fd --type file --follow --hidden --exclude .git --strip-cwd-prefix"
+set -gx FZF_DEFAULT_COMMAND "fd --type file --hidden --exclude .git --strip-cwd-prefix"
 
 # Configure colors
 set -gx FZF_DEFAULT_OPTS "
