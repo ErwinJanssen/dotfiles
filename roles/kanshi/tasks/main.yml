@@ -1,15 +1,16 @@
 ---
 - name: Perform common tasks
-  import_role:
+  ansible.builtin.import_role:
     name: _common
 
 - name: Place systemd user service
-  copy:
+  ansible.builtin.copy:
     src: kanshi.service
     dest: "{{ config_home }}/systemd/user/kanshi.service"
+    mode: u=rw,g=r,o=r
 
 - name: Enable the kanshi service
-  systemd:
+  ansible.builtin.systemd:
     name: kanshi.service
     scope: user
-    enabled: yes
+    enabled: true

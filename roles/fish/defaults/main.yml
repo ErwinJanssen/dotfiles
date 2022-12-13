@@ -1,10 +1,10 @@
 ---
 config_directory: "{{ config_home }}/fish"
 dependencies:
-    - fish
-    - fzf
-    - fd
-    - exa
+  - fish
+  - fzf
+  - fd
+  - exa
 
 browser: firefox
 editor: nvim

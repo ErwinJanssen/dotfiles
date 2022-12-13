@@ -1,10 +1,10 @@
 ---
 - name: Perform common tasks
-  import_role:
+  ansible.builtin.import_role:
     name: _common
 
 - name: Create a list of all managed files
-  set_fact:
+  ansible.builtin.set_fact:
     managed_files: >
       {{
         query('filetree', '{{ role_path }}/templates')
@@ -16,13 +16,13 @@
       }}
 
 - name: Query all present files
-  find:
+  ansible.builtin.find:
     paths: "{{ config_directory }}"
-    recurse: yes
+    recurse: true
   register: present_files
 
 - name: Create a list of files to delete
-  set_fact:
+  ansible.builtin.set_fact:
     files_to_delete: >
       {{
         present_files['files']
@@ -32,7 +32,7 @@
       }}
 
 - name: Delete unmanaged files
-  file:
+  ansible.builtin.file:
     path: "{{ item }}"
     state: absent
   loop: "{{ files_to_delete }}"

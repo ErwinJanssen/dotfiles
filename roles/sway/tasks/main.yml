@@ -1,21 +1,23 @@
 ---
 - name: Perform common tasks
-  import_role:
+  ansible.builtin.import_role:
     name: _common
 
 - name: Place wallpaper
-  copy:
+  ansible.builtin.copy:
     src: wallpaper.jpg
     dest: "{{ config_directory }}/wallpaper.jpg"
+    mode: u=rw,g=r,o=r
 
 - name: Add user to 'video' group, required for backlight utility 'light'
-  become: yes
-  user:
+  become: true
+  ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     groups: video
-    append: yes
+    append: true
 
 - name: Add systemd target for user session
-  copy:
+  ansible.builtin.copy:
     src: sway-session.target
     dest: "{{ config_home }}/systemd/user/sway-session.target"
+    mode: u=rw,g=r,o=r

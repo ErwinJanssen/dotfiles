@@ -1,36 +1,41 @@
 ---
 - name: Perform common tasks
-  import_role:
+  ansible.builtin.import_role:
     name: _common
 
 - name: Setup the Python virtual environment
-  pip:
+  ansible.builtin.pip:
     requirements: "{{ config_directory }}/requirements.txt"
     virtualenv: "{{ neovim_virtualenv }}"
     virtualenv_python: python3
 
 - name: Create directory for package manager packer.nvim
-  file:
+  ansible.builtin.file:
     path: "{{ user_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
     state: directory
+    mode: u=rwx,g=rx,o=x
 
 - name: Clone Git repository for packer.nvim
-  git:
-    repo: "https://github.com/wbthomason/packer.nvim"
+  ansible.builtin.git: # noqa: latest[git]
+    repo: https://github.com/wbthomason/packer.nvim
     dest: "{{ user_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
 
-- name: Install Neovim plugins with packer.nvim
-  command: nvim --headless +"autocmd User PackerComplete quitall" +PackerSync
+- name: Update Neovim plugins with packer.nvim
+  ansible.builtin.command: nvim --headless +"autocmd User PackerComplete quitall" +PackerSync
+  changed_when: true
 
 - name: Create directory for vim-plug
-  file:
+  ansible.builtin.file:
     path: "{{ user_home }}/.local/share/nvim/site/autoload"
     state: directory
+    mode: u=rwx,g=rx,o=x
 
 - name: Install plugin manager vim-plug
-  get_url:
+  ansible.builtin.get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: "{{ user_home }}/.local/share/nvim/site/autoload/plug.vim"
+    mode: u=rw,g=r,o=r
 
-- name: Install Neovim Plugins with vim-plug
-  command: nvim '+PlugInstall --sync' +quitall
+- name: Update Neovim Plugins with vim-plug
+  ansible.builtin.command: nvim '+PlugUpdate --sync' +quitall
+  changed_when: true

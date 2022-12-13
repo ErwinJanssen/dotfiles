@@ -1,3 +1,4 @@
+---
 # If the environment variable `XDG_CONFIG_HOME` is not defined, use
 # `$HOME/.config` instead.
 user_home: "{{ ansible_env['HOME'] }}"

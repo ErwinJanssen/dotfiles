@@ -20,7 +20,7 @@
     - tmux
     - fontconfig
     - zathura
-    - "terminals/{{ terminal }}"
+    - terminals/{{ terminal }}
   vars_files:
     - theme.yml
     - variables.yml

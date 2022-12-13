@@ -1,9 +1,9 @@
 ---
 - name: Perform common tasks
-  import_role:
+  ansible.builtin.import_role:
     name: _common
 
 - name: Place static files
-  synchronize:
+  ansible.posix.synchronize:
     src: .
     dest: "{{ config_directory }}"
