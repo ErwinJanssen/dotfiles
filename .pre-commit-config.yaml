@@ -1,4 +1,12 @@
 repos:
+  - repo: local
+    hooks:
+      - id: fish-indent
+        name: Fish auto-format
+        entry: fish_indent --write
+        language: system
+        types: [fish]
+
   - repo: https://github.com/JohnnyMorganz/StyLua
     rev: v0.15.2
     hooks:

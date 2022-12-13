@@ -20,4 +20,3 @@ set -gx FZF_DEFAULT_OPTS "
 if functions --query fzf_key_bindings
     fzf_key_bindings
 end
-

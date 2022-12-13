@@ -21,7 +21,7 @@ function fish_user_key_bindings
 end
 
 # Aliases
-if command --search exa > /dev/null
+if command --search exa >/dev/null
     # exa is a modern ls replacement, use it if available
     function ls --description "List contents of directory"
         command exa $argv
@@ -31,8 +31,8 @@ end
 # Insert a new line before displaying the prompt. This separates the command
 # prompt from the previous output.
 function fishprompt_newline \
-        --description "Insert a new line before displaying the prompt." \
-        --on-event fish_prompt
+    --description "Insert a new line before displaying the prompt." \
+    --on-event fish_prompt
     echo
 end
 
@@ -40,8 +40,8 @@ end
 # a global history that is shared between all fish sessions, and prevents
 # entries from suddenly being "forgotten".
 function global_history \
-        --description "Merge history after every command." \
-        --on-event fish_prompt
+    --description "Merge history after every command." \
+    --on-event fish_prompt
     history merge
 end
 
@@ -49,7 +49,7 @@ end
 starship init fish | source
 
 # Start Sway on tty1
-if [ (tty) = "/dev/tty1" ]
+if [ (tty) = /dev/tty1 ]
     # Send Sway's output to journald, retrieve with:
     # `journalctl --user --identifier sway`
     exec systemd-cat --identifier=sway sway
