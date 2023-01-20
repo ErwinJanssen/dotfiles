@@ -13,5 +13,5 @@ profile {
 profile {
     # Desk at office
     output eDP-1 disable
-    output "Dell Inc. DELL S3422DW 4981TH3" enable
+    output "Dell Inc. DELL S3422DW 4981TH3" mode 3440x1440
 }
