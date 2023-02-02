@@ -1,0 +1,4 @@
+---
+config_directory: "{{ user_home }}/.ssh"
+dependencies:
+  - openssh

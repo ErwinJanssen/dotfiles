@@ -5,6 +5,7 @@
     # This role must come first as it creates a directory used by other roles
     - systemd
 
+    - ssh
     - fish
     - starship
     - bash

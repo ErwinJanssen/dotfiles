@@ -1,0 +1,16 @@
+---
+- name: Perform common tasks
+  ansible.builtin.import_role:
+    name: _common
+
+- name: Place systemd user service
+  ansible.builtin.copy:
+    src: ssh-agent.service
+    dest: "{{ config_home }}/systemd/user/ssh-agent.service"
+    mode: u=rw,g=r,o=r
+
+- name: Enable the ssh-agent service
+  ansible.builtin.systemd:
+    name: ssh-agent.service
+    scope: user
+    enabled: true
