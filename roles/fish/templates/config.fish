@@ -2,14 +2,14 @@
 set fish_greeting
 
 # Preferred tools
-set -gx EDITOR {{ editor }}
-set -gx BROWSER {{ browser }}
+set --global --export EDITOR {{ editor }}
+set --global --export BROWSER {{ browser }}
 
 # Prepend PATH with local bin directory
-set -gx PATH ~/.local/bin/ $PATH
+set --global --export PATH ~/.local/bin/ $PATH
 
 # Prepend PATH with the Flatpak bin directory
-set -gx PATH /var/lib/flatpak/exports/bin $PATH
+set --global --export PATH /var/lib/flatpak/exports/bin $PATH
 
 # Custom key bindings
 function fish_user_key_bindings
