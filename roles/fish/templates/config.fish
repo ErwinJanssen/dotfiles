@@ -11,6 +11,8 @@ set --global --export PATH ~/.local/bin/ $PATH
 # Prepend PATH with the Flatpak bin directory
 set --global --export PATH /var/lib/flatpak/exports/bin $PATH
 
+set --global --export SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
+
 # Custom key bindings
 function fish_user_key_bindings
     # ctrl-del
