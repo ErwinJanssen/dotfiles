@@ -10,7 +10,7 @@
     path: "{{ config_directory }}/{{ item.path }}"
     state: directory
     mode: u=rwx,g=rx,o=x
-  with_filetree: "{{ ansible_parent_role_paths[0] }}/templates"
+  with_community.general.filetree: "{{ ansible_parent_role_paths[0] }}/templates"
   when: item.state == "directory"
 
 - name: Create configuration files
@@ -18,5 +18,5 @@
     src: "{{ item.src }}"
     dest: "{{ config_directory }}/{{ item.path }}"
     mode: u=rw,g=r,o=r
-  with_filetree: "{{ ansible_parent_role_paths[0] }}/templates"
+  with_community.general.filetree: "{{ ansible_parent_role_paths[0] }}/templates"
   when: item.state == "file"
