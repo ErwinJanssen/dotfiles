@@ -3,6 +3,9 @@
 # Make FZF always use `fd` instead of `find`
 set --global --export FZF_DEFAULT_COMMAND "fd --type file --hidden --exclude .git --strip-cwd-prefix"
 
+# Specify command for path completion when using CTRL-t
+set --global --export FZF_CTRL_T_COMMAND "command fd --unrestricted --search-path \$dir --exclude .git"
+
 # Configure colors
 set --global --export FZF_DEFAULT_OPTS "
     --ansi
