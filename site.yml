@@ -1,27 +1,117 @@
 ---
 - name: Setup and configure dotfiles
   hosts: all
-  roles:
-    # This role must come first as it creates a directory used by other roles
-    - systemd
-
-    - ssh
-    - fish
-    - starship
-    - bash
-    - firefox
-    - thunderbird
-    - neovim
-    - rofi
-    - sway
-    - swaylock
-    - i3status
-    - mako
-    - kanshi
-    - tmux
-    - fontconfig
-    - zathura
-    - terminals/{{ terminal }}
   vars_files:
     - theme.yml
     - variables.yml
+  tasks:
+    - name: Import and tag each role
+      block:
+        # This role must come first as it creates a directory used by other roles
+        - name: Apply role `systemd`
+          ansible.builtin.import_role:
+            name: systemd
+          tags:
+            - systemd
+
+        - name: Apply role `ssh`
+          ansible.builtin.import_role:
+            name: ssh
+          tags:
+            - ssh
+
+        - name: Apply role `fish`
+          ansible.builtin.import_role:
+            name: fish
+          tags:
+            - fish
+
+        - name: Apply role `starship`
+          ansible.builtin.import_role:
+            name: starship
+          tags:
+            - starship
+
+        - name: Apply role `bash`
+          ansible.builtin.import_role:
+            name: bash
+          tags:
+            - bash
+
+        - name: Apply role `firefox`
+          ansible.builtin.import_role:
+            name: firefox
+          tags:
+            - firefox
+
+        - name: Apply role `thunderbird`
+          ansible.builtin.import_role:
+            name: thunderbird
+          tags:
+            - thunderbird
+
+        - name: Apply role `neovim`
+          ansible.builtin.import_role:
+            name: neovim
+          tags:
+            - neovim
+
+        - name: Apply role `rofi`
+          ansible.builtin.import_role:
+            name: rofi
+          tags:
+            - rofi
+
+        - name: Apply role `sway`
+          ansible.builtin.import_role:
+            name: sway
+          tags:
+            - sway
+
+        - name: Apply role `swaylock`
+          ansible.builtin.import_role:
+            name: swaylock
+          tags:
+            - swaylock
+
+        - name: Apply role `i3status`
+          ansible.builtin.import_role:
+            name: i3status
+          tags:
+            - i3status
+
+        - name: Apply role `mako`
+          ansible.builtin.import_role:
+            name: mako
+          tags:
+            - mako
+
+        - name: Apply role `kanshi`
+          ansible.builtin.import_role:
+            name: kanshi
+          tags:
+            - kanshi
+
+        - name: Apply role `tmux`
+          ansible.builtin.import_role:
+            name: tmux
+          tags:
+            - tmux
+
+        - name: Apply role `fontconfig`
+          ansible.builtin.import_role:
+            name: fontconfig
+          tags:
+            - fontconfig
+
+        - name: Apply role `zathura`
+          ansible.builtin.import_role:
+            name: zathura
+          tags:
+            - zathura
+
+        - name: Apply role `terminals/{{ terminal }}`
+          ansible.builtin.import_role:
+            name: terminals/{{ terminal }}
+          tags:
+            - terminals/{{ terminal }}
