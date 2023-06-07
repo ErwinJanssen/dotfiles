@@ -79,10 +79,22 @@ Plug '/usr/share/vim/vimfiles/plugin/'
 " Fuzzy finder
 Plug 'junegunn/fzf.vim'
 
+" Function to call `fzf` with `--no-ignore` appended to the search command.
+" Allows it to find files that are otherwise ignored through e.g. `.gitignore`.
+function! FZFFindAllFiles()
+    let l:original_command = $FZF_DEFAULT_COMMAND
+    let $FZF_DEFAULT_COMMAND = $FZF_DEFAULT_COMMAND . ' --no-ignore'
+    call fzf#vim#files(0)
+    let $FZF_DEFAULT_COMMAND = l:original_command
+endfunction
+
 " Specify several mnemonic shortcuts for common search operations using fzf.
 
 " [f]ind [f]ile
 noremap <Leader>ff :silent Files<CR>
+
+" [f]ind all [F]iles
+noremap <Leader>fF :silent call FZFFindAllFiles()<CR>
 
 " [f]ind [b]uffer
 noremap <Leader>fb :silent Buffers<CR>
