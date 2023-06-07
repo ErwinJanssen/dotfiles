@@ -61,5 +61,13 @@ return require("packer").startup {
             run = ":TSUpdateSync",
             config = [[require("plugins.treesitter")]],
         }
+
+        -- Display pop-up with possible key bindings
+        use {
+            "folke/which-key.nvim",
+            config = function()
+                require("which-key").setup()
+            end,
+        }
     end,
 }
