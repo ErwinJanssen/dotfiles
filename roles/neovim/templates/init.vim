@@ -130,11 +130,6 @@ let g:pandoc#modules#disabled = ['formatting', 'keyboard']
 " Highlight the yanked region
 Plug 'machakann/vim-highlightedyank'
 
-" Lots of color schemes
-Plug 'flazz/vim-colorschemes'
-Plug 'drewtempelmeyer/palenight.vim'
-let g:palenight_terminal_italics=1
-
 " Fish support
 Plug 'dag/vim-fish'
 
