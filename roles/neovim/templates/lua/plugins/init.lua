@@ -21,10 +21,36 @@ return require("packer").startup {
             "hrsh7th/nvim-compe",
             config = [[require("plugins.compe")]],
         }
-        -- Configure Neovim's built-in language server client
+
+        -- Install and manage LSP servers, linters, etc.
         use {
-            "neovim/nvim-lspconfig",
-            config = [[require("plugins.lspconfig")]],
+            "williamboman/mason.nvim",
+            -- :MasonUpdate updates registry contents
+            run = ":MasonUpdate",
+        }
+
+        -- Bridge between `mason` and `lspconfig`
+        use "williamboman/mason-lspconfig.nvim"
+
+        -- Configuration for Neovim's built-in language server client
+        use "neovim/nvim-lspconfig"
+
+        -- Setup `mason`
+        require("mason").setup()
+
+        -- Setup both `mason` and `lspconfig` via `mason-lspconfig`. Ensure
+        -- certain packages are installed, and provide a setup handler that
+        -- automatically registers language servers with `lspconfig`.
+        require("mason-lspconfig").setup {
+            ensure_installed = { "lua_ls", "rust_analyzer", "pyright" },
+        }
+        require("mason-lspconfig").setup_handlers {
+            -- The first entry (without a key) will be the default handler
+            -- and will be called for each installed server that doesn't have
+            -- a dedicated handler.
+            function(server_name) -- default handler (optional)
+                require("lspconfig")[server_name].setup {}
+            end,
         }
 
         -- Treesitter: more advanced syntax highlighting
