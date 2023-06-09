@@ -1,4 +1,10 @@
+local wk = require "which-key"
+
 -- Mappings to [f]ind things
+wk.register {
+    ["<leader>f"] = { name = "Find something" },
+}
+
 vim.keymap.set("n", "<Leader>ff", "<cmd>Files<CR>", {
     desc = "Find file",
 })
