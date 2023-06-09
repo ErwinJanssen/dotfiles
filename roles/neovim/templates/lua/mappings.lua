@@ -24,3 +24,7 @@ vim.keymap.set("n", "<Leader>fl", "<cmd>BLines<CR>", {
 vim.keymap.set("n", "<Leader>fL", "<cmd>Lines<CR>", {
     desc = "Find line in *any* buffer",
 })
+
+vim.keymap.set("n", "<Leader>fg", function()
+    vim.cmd("Rg " .. vim.fn.input "Search string: ")
+end, { desc = "Find with ripgrep" })
