@@ -88,23 +88,6 @@ function! FZFFindAllFiles()
     let $FZF_DEFAULT_COMMAND = l:original_command
 endfunction
 
-" Specify several mnemonic shortcuts for common search operations using fzf.
-
-" [f]ind [f]ile
-noremap <Leader>ff :silent Files<CR>
-
-" [f]ind all [F]iles
-noremap <Leader>fF :silent call FZFFindAllFiles()<CR>
-
-" [f]ind [b]uffer
-noremap <Leader>fb :silent Buffers<CR>
-
-" [f]ind [l]ine in current buffer
-noremap <Leader>fl :silent BLines<CR>
-
-" [f]ind [L]ine in all loaded buffers
-noremap <Leader>fL :silent Lines<CR>
-
 " Lightweight status line
 Plug 'itchyny/lightline.vim'
 let g:lightline = {
@@ -346,6 +329,8 @@ inoremap <silent><expr> <C-Space>
     \ compe#complete()
 
 nnoremap <Leader>gd :lua vim .lsp.buf.definition()<CR>
+
+lua require("mappings")
 
 " {{ "}}}" }}
 
