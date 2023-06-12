@@ -9,7 +9,7 @@ vim.keymap.set("n", "<Leader>ff", "<cmd>Files<CR>", {
     desc = "Find file",
 })
 
-vim.keymap.set("n", "<Leader>fF", "<cmd>FZFFindAllFiles<CR>", {
+vim.keymap.set("n", "<Leader>fF", "<cmd>call FZFFindAllFiles()<CR>", {
     desc = "Find *any* file (including ignored)",
 })
 
