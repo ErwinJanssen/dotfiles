@@ -113,9 +113,6 @@ let g:pandoc#modules#disabled = ['formatting', 'keyboard']
 " Highlight the yanked region
 Plug 'machakann/vim-highlightedyank'
 
-" TOML support
-Plug 'cespare/vim-toml'
-
 " PlantUML support
 Plug 'aklt/plantuml-syntax'
 
