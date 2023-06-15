@@ -42,7 +42,7 @@ return require("packer").startup {
         -- certain packages are installed, and provide a setup handler that
         -- automatically registers language servers with `lspconfig`.
         require("mason-lspconfig").setup {
-            ensure_installed = { "lua_ls", "rust_analyzer", "pyright" },
+            ensure_installed = { "bashls", "lua_ls", "rust_analyzer", "pyright" },
         }
         require("mason-lspconfig").setup_handlers {
             -- The first entry (without a key) will be the default handler
