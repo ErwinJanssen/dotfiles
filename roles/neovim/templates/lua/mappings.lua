@@ -1,5 +1,8 @@
 local wk = require "which-key"
 
+-- Mappings to mimic behavior from other programs
+vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current file" })
+
 -- Mappings to [f]ind things
 wk.register {
     ["<leader>f"] = { name = "Find something" },
