@@ -110,9 +110,6 @@ let g:pandoc#syntax#conceal#use = 0
 " well as the auto formatting (which overrides values such as `formatoptions`)
 let g:pandoc#modules#disabled = ['formatting', 'keyboard']
 
-" Highlight the yanked region
-Plug 'machakann/vim-highlightedyank'
-
 " PlantUML support
 Plug 'aklt/plantuml-syntax'
 
@@ -201,6 +198,12 @@ colorscheme rejva
 
 " Highlight color definitions in their color
 lua require'colorizer'.setup()
+
+" Highlight the yanked region
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=500 }
+augroup END
 
 " {{ "}}}" }}
 
