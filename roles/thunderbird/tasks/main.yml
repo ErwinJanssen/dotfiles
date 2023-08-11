@@ -18,3 +18,8 @@
     mode: u=rw,g=r,o=r
   with_community.general.filetree: "{{ 'data/' }}"
   when: item.state == "file"
+
+- name: Remove old theme
+  ansible.builtin.file:
+    path: "{{ config_directory }}/default.profile/chrome"
+    state: absent
