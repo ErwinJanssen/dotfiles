@@ -48,3 +48,10 @@ local function get_current_mode()
     end
     return map_code
 end
+
+function DrawStatusLine()
+    local mode_string = get_current_mode()
+    return mode_string
+end
+
+vim.opt.statusline = "%{luaeval(DrawStatusLine())}"
