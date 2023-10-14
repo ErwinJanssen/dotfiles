@@ -113,6 +113,9 @@ let g:pandoc#modules#disabled = ['formatting', 'keyboard']
 " PlantUML support
 Plug 'aklt/plantuml-syntax'
 
+" Ansible YAML support
+Plug 'pearofducks/ansible-vim'
+
 " Visualize undo tree
 Plug 'simnalamburt/vim-mundo'
 
