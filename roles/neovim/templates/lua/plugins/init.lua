@@ -1,4 +1,10 @@
---  This script uses "packer.nvim" to manage the specified plugins.
+--  This script uses both `paq-nvim` and `packer.nvim` to manage the specified
+--  plugins.
+
+require("paq"):setup { verbose = true } {
+    -- Let Paq manage itself
+    "savq/paq-nvim",
+}
 
 return require("packer").startup {
     function(use)

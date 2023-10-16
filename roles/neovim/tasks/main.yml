@@ -20,6 +20,12 @@
     repo: https://github.com/wbthomason/packer.nvim
     dest: "{{ user_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
 
+- name: Clone Git repository for paq-nvim
+  ansible.builtin.git: # noqa: latest[git]
+    repo: https://github.com/savq/paq-nvim.git
+    dest: "{{ user_home }}/.local/share/nvim/site/pack/paqs/start/paq-nvim"
+    depth: 1
+
 - name: Update Neovim plugins with packer.nvim
   ansible.builtin.command: nvim --headless +"autocmd User PackerComplete quitall" +PackerSync
   changed_when: true
