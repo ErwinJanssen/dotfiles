@@ -30,6 +30,13 @@
   ansible.builtin.command: nvim --headless +"autocmd User PackerComplete quitall" +PackerSync
   changed_when: true
 
+- name: Update Neovim Plugins with Paq
+  ansible.builtin.command: nvim --headless +"autocmd User PaqDoneSync quitall" +PaqSync
+  register: paq_command
+  changed_when: |
+    'Paq: Nothing to remove' not in paq_command.stderr
+    or 'Paq: sync complete. 0 ok; 0 errors' not in paq_command.stderr
+
 - name: Create directory for vim-plug
   ansible.builtin.file:
     path: "{{ user_home }}/.local/share/nvim/site/autoload"
