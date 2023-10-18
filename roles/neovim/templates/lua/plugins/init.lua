@@ -10,12 +10,20 @@ require("paq"):setup { verbose = true } {
 
     -- Show Git diff in the signcolumn (added, removed, modified).
     "lewis6991/gitsigns.nvim",
+
+    -- Display pop-up with possible key bindings
+    "folke/which-key.nvim",
 }
 
 -- Run initialization for plugins if they are installed
 local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
 if gitsigns_ok then
     gitsigns.setup()
+end
+
+local whichkey_ok, whichkey = pcall(require, "wich-key")
+if whichkey_ok then
+    whichkey.setup()
 end
 
 return require("packer").startup {
@@ -67,14 +75,6 @@ return require("packer").startup {
             -- update script will wait for completion.
             run = ":TSUpdateSync",
             config = [[require("plugins.treesitter")]],
-        }
-
-        -- Display pop-up with possible key bindings
-        use {
-            "folke/which-key.nvim",
-            config = function()
-                require("which-key").setup()
-            end,
         }
     end,
 }
