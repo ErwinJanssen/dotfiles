@@ -16,6 +16,12 @@ require("paq"):setup { verbose = true } {
 
     -- Auto-completion during typing, uses various sources
     "hrsh7th/nvim-compe",
+
+    -- Treesitter: more advanced syntax highlighting
+    {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdateSync",
+    },
 }
 
 -- Run initialization for plugins if they are installed
@@ -32,6 +38,11 @@ end
 local compe_ok, _ = pcall(require, "compe")
 if compe_ok then
     require "plugins.compe"
+end
+
+local treesitter_ok, _ = pcall(require, "nvim-treesitter.configs")
+if treesitter_ok then
+    require "plugins.treesitter"
 end
 
 return require("packer").startup {
@@ -69,15 +80,6 @@ return require("packer").startup {
             function(server_name) -- default handler (optional)
                 require("lspconfig")[server_name].setup {}
             end,
-        }
-
-        -- Treesitter: more advanced syntax highlighting
-        use {
-            "nvim-treesitter/nvim-treesitter",
-            -- Perform parser update in synchronous mode, so the headless
-            -- update script will wait for completion.
-            run = ":TSUpdateSync",
-            config = [[require("plugins.treesitter")]],
         }
     end,
 }
