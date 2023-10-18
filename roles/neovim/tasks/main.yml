@@ -9,26 +9,19 @@
     virtualenv: "{{ neovim_virtualenv }}"
     virtualenv_python: python3
 
-- name: Create directory for package manager packer.nvim
+- name: Remove all data from Packer
   ansible.builtin.file:
-    path: "{{ user_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
-    state: directory
-    mode: u=rwx,g=rx,o=x
-
-- name: Clone Git repository for packer.nvim
-  ansible.builtin.git: # noqa: latest[git]
-    repo: https://github.com/wbthomason/packer.nvim
-    dest: "{{ user_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - "{{ user_home }}/.local/share/nvim/site/pack/packer/"
+    - "{{ config_directory }}/plugin/packer_compiled.lua"
 
 - name: Clone Git repository for paq-nvim
   ansible.builtin.git: # noqa: latest[git]
     repo: https://github.com/savq/paq-nvim.git
     dest: "{{ user_home }}/.local/share/nvim/site/pack/paqs/start/paq-nvim"
     depth: 1
-
-- name: Update Neovim plugins with packer.nvim
-  ansible.builtin.command: nvim --headless +"autocmd User PackerComplete quitall" +PackerSync
-  changed_when: true
 
 - name: Update Neovim Plugins with Paq
   ansible.builtin.command: nvim --headless +"autocmd User PaqDoneSync quitall" +PaqSync

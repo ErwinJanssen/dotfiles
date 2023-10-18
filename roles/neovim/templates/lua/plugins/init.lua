@@ -1,5 +1,4 @@
---  This script uses both `paq-nvim` and `packer.nvim` to manage the specified
---  plugins.
+--  This script uses Paq to manage the specified plugins.
 
 require("paq"):setup { verbose = true } {
     -- Let Paq manage itself
@@ -80,11 +79,3 @@ if mason_lspconfig_ok then
         end,
     }
 end
-
-return require("packer").startup {
-    function(use)
-        -- Packer can manage itself. Omitting this will result in packer trying
-        -- to remove itself, since its not specified in the configuration.
-        use "wbthomason/packer.nvim"
-    end,
-}
