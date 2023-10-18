@@ -22,6 +22,13 @@ require("paq"):setup { verbose = true } {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdateSync",
     },
+
+    -- Install and manage LSP servers, linters, etc.
+    {
+        "williamboman/mason.nvim",
+        -- :MasonUpdate updates registry contents
+        run = ":MasonUpdate",
+    },
 }
 
 -- Run initialization for plugins if they are installed
@@ -45,27 +52,22 @@ if treesitter_ok then
     require "plugins.treesitter"
 end
 
+local mason_ok, mason = pcall(require, "mason")
+if mason_ok then
+    mason.setup()
+end
+
 return require("packer").startup {
     function(use)
         -- Packer can manage itself. Omitting this will result in packer trying
         -- to remove itself, since its not specified in the configuration.
         use "wbthomason/packer.nvim"
 
-        -- Install and manage LSP servers, linters, etc.
-        use {
-            "williamboman/mason.nvim",
-            -- :MasonUpdate updates registry contents
-            run = ":MasonUpdate",
-        }
-
         -- Bridge between `mason` and `lspconfig`
         use "williamboman/mason-lspconfig.nvim"
 
         -- Configuration for Neovim's built-in language server client
         use "neovim/nvim-lspconfig"
-
-        -- Setup `mason`
-        require("mason").setup()
 
         -- Setup both `mason` and `lspconfig` via `mason-lspconfig`. Ensure
         -- certain packages are installed, and provide a setup handler that
