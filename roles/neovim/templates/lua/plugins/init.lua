@@ -13,6 +13,9 @@ require("paq"):setup { verbose = true } {
 
     -- Display pop-up with possible key bindings
     "folke/which-key.nvim",
+
+    -- Auto-completion during typing, uses various sources
+    "hrsh7th/nvim-compe",
 }
 
 -- Run initialization for plugins if they are installed
@@ -26,16 +29,16 @@ if whichkey_ok then
     whichkey.setup()
 end
 
+local compe_ok, _ = pcall(require, "compe")
+if compe_ok then
+    require "plugins.compe"
+end
+
 return require("packer").startup {
     function(use)
         -- Packer can manage itself. Omitting this will result in packer trying
         -- to remove itself, since its not specified in the configuration.
         use "wbthomason/packer.nvim"
-
-        use {
-            "hrsh7th/nvim-compe",
-            config = [[require("plugins.compe")]],
-        }
 
         -- Install and manage LSP servers, linters, etc.
         use {
