@@ -4,24 +4,25 @@
 require("paq"):setup { verbose = true } {
     -- Let Paq manage itself
     "savq/paq-nvim",
+
+    -- Lua library with additional function for Neovim, used by other packages
+    "nvim-lua/plenary.nvim",
+
+    -- Show Git diff in the signcolumn (added, removed, modified).
+    "lewis6991/gitsigns.nvim",
 }
+
+-- Run initialization for plugins if they are installed
+local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
+if gitsigns_ok then
+    gitsigns.setup()
+end
 
 return require("packer").startup {
     function(use)
         -- Packer can manage itself. Omitting this will result in packer trying
         -- to remove itself, since its not specified in the configuration.
         use "wbthomason/packer.nvim"
-
-        -- Show Git diff in the signcolumn (added, removed, modified).
-        use {
-            "lewis6991/gitsigns.nvim",
-            requires = {
-                "nvim-lua/plenary.nvim",
-            },
-            config = function()
-                require("gitsigns").setup()
-            end,
-        }
 
         use {
             "hrsh7th/nvim-compe",
