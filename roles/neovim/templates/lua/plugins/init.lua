@@ -23,6 +23,9 @@ require("paq"):setup { verbose = true } {
         run = ":TSUpdateSync",
     },
 
+    -- Configuration for Neovim's built-in language server client
+    "neovim/nvim-lspconfig",
+
     -- Install and manage LSP servers, linters, etc.
     {
         "williamboman/mason.nvim",
@@ -65,9 +68,6 @@ return require("packer").startup {
 
         -- Bridge between `mason` and `lspconfig`
         use "williamboman/mason-lspconfig.nvim"
-
-        -- Configuration for Neovim's built-in language server client
-        use "neovim/nvim-lspconfig"
 
         -- Setup both `mason` and `lspconfig` via `mason-lspconfig`. Ensure
         -- certain packages are installed, and provide a setup handler that
