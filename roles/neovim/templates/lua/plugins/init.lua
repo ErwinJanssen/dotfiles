@@ -32,6 +32,9 @@ require("paq"):setup { verbose = true } {
         -- :MasonUpdate updates registry contents
         run = ":MasonUpdate",
     },
+
+    -- Bridge between `mason` and `lspconfig`
+    "williamboman/mason-lspconfig.nvim",
 }
 
 -- Run initialization for plugins if they are installed
@@ -60,28 +63,28 @@ if mason_ok then
     mason.setup()
 end
 
+local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if mason_lspconfig_ok then
+    -- Setup both `mason` and `lspconfig` via `mason-lspconfig`. Ensure certain
+    -- packages are installed, and provide a setup handler that automatically
+    -- registers language servers with `lspconfig`.
+    mason_lspconfig.setup {
+        ensure_installed = { "bashls", "lua_ls", "rust_analyzer", "pyright" },
+    }
+    mason_lspconfig.setup_handlers {
+        -- The first entry (without a key) will be the default handler
+        -- and will be called for each installed server that doesn't have
+        -- a dedicated handler.
+        function(server_name) -- default handler (optional)
+            require("lspconfig")[server_name].setup {}
+        end,
+    }
+end
+
 return require("packer").startup {
     function(use)
         -- Packer can manage itself. Omitting this will result in packer trying
         -- to remove itself, since its not specified in the configuration.
         use "wbthomason/packer.nvim"
-
-        -- Bridge between `mason` and `lspconfig`
-        use "williamboman/mason-lspconfig.nvim"
-
-        -- Setup both `mason` and `lspconfig` via `mason-lspconfig`. Ensure
-        -- certain packages are installed, and provide a setup handler that
-        -- automatically registers language servers with `lspconfig`.
-        require("mason-lspconfig").setup {
-            ensure_installed = { "bashls", "lua_ls", "rust_analyzer", "pyright" },
-        }
-        require("mason-lspconfig").setup_handlers {
-            -- The first entry (without a key) will be the default handler
-            -- and will be called for each installed server that doesn't have
-            -- a dedicated handler.
-            function(server_name) -- default handler (optional)
-                require("lspconfig")[server_name].setup {}
-            end,
-        }
     end,
 }
