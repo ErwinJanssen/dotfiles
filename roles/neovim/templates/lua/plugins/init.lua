@@ -98,4 +98,16 @@ if mason_lspconfig_ok then
             require("lspconfig")[server_name].setup {}
         end,
     }
+
+    -- Language specific configurations
+    require("lspconfig").lua_ls.setup {
+        settings = {
+            Lua = {
+                diagnostics = {
+                    -- Suppress "Undefined global `vim`" error
+                    globals = { "vim" },
+                },
+            },
+        },
+    }
 end
