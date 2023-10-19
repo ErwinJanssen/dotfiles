@@ -68,7 +68,13 @@ if mason_lspconfig_ok then
     -- packages are installed, and provide a setup handler that automatically
     -- registers language servers with `lspconfig`.
     mason_lspconfig.setup {
-        ensure_installed = { "bashls", "lua_ls", "rust_analyzer", "pyright" },
+        ensure_installed = {
+            "ansiblels",
+            "bashls",
+            "lua_ls",
+            "pyright",
+            "rust_analyzer",
+        },
     }
     mason_lspconfig.setup_handlers {
         -- The first entry (without a key) will be the default handler
