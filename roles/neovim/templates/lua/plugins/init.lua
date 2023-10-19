@@ -9,6 +9,8 @@ require("paq"):setup { verbose = true } {
 
     -- Additional file types
     "pearofducks/ansible-vim", -- Ansible YAML
+    "vim-pandoc/vim-pandoc", -- Pandoc filetype and utilities
+    "vim-pandoc/vim-pandoc-syntax", -- Pandoc syntax highlight
     "aklt/plantuml-syntax", -- PlantUML
 
     -- Show Git diff in the signcolumn (added, removed, modified).
@@ -39,6 +41,14 @@ require("paq"):setup { verbose = true } {
     -- Bridge between `mason` and `lspconfig`
     "williamboman/mason-lspconfig.nvim",
 }
+
+-- vim-pandoc
+vim.g["pandoc#folding#fdc"] = 0
+vim.g["pandoc#syntax#conceal#use"] = 0
+
+-- Disable all keyboard shortcuts provided by default by the Pandoc plugin, as
+-- well as the auto formatting (which overrides values such as `formatoptions`)
+vim.g["pandoc#modules#disabled"] = { "formatting", "keyboard" }
 
 -- Run initialization for plugins if they are installed
 local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
