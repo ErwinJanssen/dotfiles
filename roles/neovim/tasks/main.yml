@@ -9,14 +9,6 @@
     virtualenv: "{{ neovim_virtualenv }}"
     virtualenv_python: python3
 
-- name: Remove all data from Packer
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: absent
-  loop:
-    - "{{ user_home }}/.local/share/nvim/site/pack/packer/"
-    - "{{ config_directory }}/plugin/packer_compiled.lua"
-
 - name: Clone Git repository for paq-nvim
   ansible.builtin.git: # noqa: latest[git]
     repo: https://github.com/savq/paq-nvim.git
