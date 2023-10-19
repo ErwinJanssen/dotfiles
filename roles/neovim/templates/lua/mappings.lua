@@ -1,12 +1,14 @@
-local wk = require "which-key"
+local whichkey_ok, whichkey = pcall(require, "which-key")
 
 -- Mappings to mimic behavior from other programs
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current file" })
 
 -- Mappings to [f]ind things
-wk.register {
-    ["<leader>f"] = { name = "Find something" },
-}
+if whichkey_ok then
+    whichkey.register {
+        ["<leader>f"] = { name = "Find something" },
+    }
+end
 
 vim.keymap.set("n", "<Leader>ff", "<cmd>Files<CR>", {
     desc = "Find file",

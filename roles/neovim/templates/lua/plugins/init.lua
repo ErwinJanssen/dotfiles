@@ -1,73 +1,81 @@
---  This script uses "packer.nvim" to manage the specified plugins.
+--  This script uses Paq to manage the specified plugins.
 
-return require("packer").startup {
-    function(use)
-        -- Packer can manage itself. Omitting this will result in packer trying
-        -- to remove itself, since its not specified in the configuration.
-        use "wbthomason/packer.nvim"
+require("paq"):setup { verbose = true } {
+    -- Let Paq manage itself
+    "savq/paq-nvim",
 
-        -- Show Git diff in the signcolumn (added, removed, modified).
-        use {
-            "lewis6991/gitsigns.nvim",
-            requires = {
-                "nvim-lua/plenary.nvim",
-            },
-            config = function()
-                require("gitsigns").setup()
-            end,
-        }
+    -- Lua library with additional function for Neovim, used by other packages
+    "nvim-lua/plenary.nvim",
 
-        use {
-            "hrsh7th/nvim-compe",
-            config = [[require("plugins.compe")]],
-        }
+    -- Show Git diff in the signcolumn (added, removed, modified).
+    "lewis6991/gitsigns.nvim",
 
-        -- Install and manage LSP servers, linters, etc.
-        use {
-            "williamboman/mason.nvim",
-            -- :MasonUpdate updates registry contents
-            run = ":MasonUpdate",
-        }
+    -- Display pop-up with possible key bindings
+    "folke/which-key.nvim",
 
-        -- Bridge between `mason` and `lspconfig`
-        use "williamboman/mason-lspconfig.nvim"
+    -- Auto-completion during typing, uses various sources
+    "hrsh7th/nvim-compe",
 
-        -- Configuration for Neovim's built-in language server client
-        use "neovim/nvim-lspconfig"
+    -- Treesitter: more advanced syntax highlighting
+    {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdateSync",
+    },
 
-        -- Setup `mason`
-        require("mason").setup()
+    -- Configuration for Neovim's built-in language server client
+    "neovim/nvim-lspconfig",
 
-        -- Setup both `mason` and `lspconfig` via `mason-lspconfig`. Ensure
-        -- certain packages are installed, and provide a setup handler that
-        -- automatically registers language servers with `lspconfig`.
-        require("mason-lspconfig").setup {
-            ensure_installed = { "bashls", "lua_ls", "rust_analyzer", "pyright" },
-        }
-        require("mason-lspconfig").setup_handlers {
-            -- The first entry (without a key) will be the default handler
-            -- and will be called for each installed server that doesn't have
-            -- a dedicated handler.
-            function(server_name) -- default handler (optional)
-                require("lspconfig")[server_name].setup {}
-            end,
-        }
+    -- Install and manage LSP servers, linters, etc.
+    {
+        "williamboman/mason.nvim",
+        -- :MasonUpdate updates registry contents
+        run = ":MasonUpdate",
+    },
 
-        -- Treesitter: more advanced syntax highlighting
-        use {
-            "nvim-treesitter/nvim-treesitter",
-            -- Perform parser update in synchronous mode, so the headless
-            -- update script will wait for completion.
-            run = ":TSUpdateSync",
-            config = [[require("plugins.treesitter")]],
-        }
-
-        -- Display pop-up with possible key bindings
-        use {
-            "folke/which-key.nvim",
-            config = function()
-                require("which-key").setup()
-            end,
-        }
-    end,
+    -- Bridge between `mason` and `lspconfig`
+    "williamboman/mason-lspconfig.nvim",
 }
+
+-- Run initialization for plugins if they are installed
+local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
+if gitsigns_ok then
+    gitsigns.setup()
+end
+
+local whichkey_ok, whichkey = pcall(require, "wich-key")
+if whichkey_ok then
+    whichkey.setup()
+end
+
+local compe_ok, _ = pcall(require, "compe")
+if compe_ok then
+    require "plugins.compe"
+end
+
+local treesitter_ok, _ = pcall(require, "nvim-treesitter.configs")
+if treesitter_ok then
+    require "plugins.treesitter"
+end
+
+local mason_ok, mason = pcall(require, "mason")
+if mason_ok then
+    mason.setup()
+end
+
+local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if mason_lspconfig_ok then
+    -- Setup both `mason` and `lspconfig` via `mason-lspconfig`. Ensure certain
+    -- packages are installed, and provide a setup handler that automatically
+    -- registers language servers with `lspconfig`.
+    mason_lspconfig.setup {
+        ensure_installed = { "bashls", "lua_ls", "rust_analyzer", "pyright" },
+    }
+    mason_lspconfig.setup_handlers {
+        -- The first entry (without a key) will be the default handler
+        -- and will be called for each installed server that doesn't have
+        -- a dedicated handler.
+        function(server_name) -- default handler (optional)
+            require("lspconfig")[server_name].setup {}
+        end,
+    }
+end
