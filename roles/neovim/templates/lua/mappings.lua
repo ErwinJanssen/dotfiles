@@ -14,7 +14,14 @@ vim.keymap.set("n", "<Leader>ff", "<cmd>Files<CR>", {
     desc = "Find file",
 })
 
-vim.keymap.set("n", "<Leader>fF", "<cmd>call FZFFindAllFiles()<CR>", {
+vim.keymap.set("n", "<Leader>fF", function()
+    -- Call fzf `Files` command, but append `--no-ignore` in order to find
+    -- files that are ignored by default.
+    local original_command = vim.fn.getenv "FZF_DEFAULT_COMMAND"
+    vim.fn.setenv("FZF_DEFAULT_COMMAND", original_command .. " --no-ignore")
+    vim.fn["fzf#vim#files"](0)
+    vim.fn.setenv("FZF_DEFAULT_COMMAND", original_command)
+end, {
     desc = "Find *any* file (including ignored)",
 })
 
