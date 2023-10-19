@@ -13,6 +13,9 @@ require("paq"):setup { verbose = true } {
     "vim-pandoc/vim-pandoc-syntax", -- Pandoc syntax highlight
     "aklt/plantuml-syntax", -- PlantUML
 
+    -- Lightweight status line
+    "itchyny/lightline.vim",
+
     -- Show Git diff in the signcolumn (added, removed, modified).
     "lewis6991/gitsigns.nvim",
 
@@ -49,6 +52,17 @@ vim.g["pandoc#syntax#conceal#use"] = 0
 -- Disable all keyboard shortcuts provided by default by the Pandoc plugin, as
 -- well as the auto formatting (which overrides values such as `formatoptions`)
 vim.g["pandoc#modules#disabled"] = { "formatting", "keyboard" }
+
+-- Lightline
+vim.g.lightline = {
+    colorscheme = "rejva",
+    active = {
+        right = {
+            { "lineinfo" },
+            { "percent" },
+        },
+    },
+}
 
 -- Run initialization for plugins if they are installed
 local gitsigns_ok, gitsigns = pcall(require, "gitsigns")

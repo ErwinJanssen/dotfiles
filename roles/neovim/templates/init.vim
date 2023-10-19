@@ -79,18 +79,6 @@ Plug '/usr/share/vim/vimfiles/plugin/'
 " Fuzzy finder
 Plug 'junegunn/fzf.vim'
 
-" Lightweight status line
-Plug 'itchyny/lightline.vim'
-let g:lightline = {
-    \ 'colorscheme': 'rejva',
-    \ 'active': {
-    \   'right': [
-    \       ['lineinfo'],
-    \       ['percent'],
-    \   ]
-    \ }
-  \ }
-
 " Visualize undo tree
 Plug 'simnalamburt/vim-mundo'
 
