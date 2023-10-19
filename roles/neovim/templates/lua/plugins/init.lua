@@ -8,6 +8,7 @@ require("paq"):setup { verbose = true } {
     "nvim-lua/plenary.nvim",
 
     -- Additional file types
+    "pearofducks/ansible-vim", -- Ansible YAML
     "aklt/plantuml-syntax", -- PlantUML
 
     -- Show Git diff in the signcolumn (added, removed, modified).

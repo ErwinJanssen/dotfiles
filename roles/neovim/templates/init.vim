@@ -110,9 +110,6 @@ let g:pandoc#syntax#conceal#use = 0
 " well as the auto formatting (which overrides values such as `formatoptions`)
 let g:pandoc#modules#disabled = ['formatting', 'keyboard']
 
-" Ansible YAML support
-Plug 'pearofducks/ansible-vim'
-
 " Visualize undo tree
 Plug 'simnalamburt/vim-mundo'
 
