@@ -7,6 +7,9 @@ require("paq"):setup { verbose = true } {
     -- Lua library with additional function for Neovim, used by other packages
     "nvim-lua/plenary.nvim",
 
+    -- Additional file types
+    "aklt/plantuml-syntax", -- PlantUML
+
     -- Show Git diff in the signcolumn (added, removed, modified).
     "lewis6991/gitsigns.nvim",
 

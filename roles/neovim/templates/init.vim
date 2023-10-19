@@ -110,9 +110,6 @@ let g:pandoc#syntax#conceal#use = 0
 " well as the auto formatting (which overrides values such as `formatoptions`)
 let g:pandoc#modules#disabled = ['formatting', 'keyboard']
 
-" PlantUML support
-Plug 'aklt/plantuml-syntax'
-
 " Ansible YAML support
 Plug 'pearofducks/ansible-vim'
 
