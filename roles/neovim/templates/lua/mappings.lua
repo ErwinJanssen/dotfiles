@@ -3,7 +3,11 @@ local whichkey_ok, whichkey = pcall(require, "which-key")
 -- Mappings to mimic behavior from other programs
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current file" })
 
--- Mappings to [f]ind things
+-- ==============================
+-- [f]ind things
+-- ==============================
+-- {{ "{{{" }}
+
 if whichkey_ok then
     whichkey.register {
         ["<leader>f"] = { name = "Find something" },
@@ -40,3 +44,5 @@ vim.keymap.set("n", "<Leader>fL", "<cmd>Lines<CR>", {
 vim.keymap.set("n", "<Leader>fg", function()
     vim.cmd("Rg " .. vim.fn.input "Search string: ")
 end, { desc = "Find with ripgrep" })
+
+-- {{ "}}}" }}
