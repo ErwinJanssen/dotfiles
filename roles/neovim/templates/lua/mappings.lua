@@ -46,3 +46,20 @@ vim.keymap.set("n", "<Leader>fg", function()
 end, { desc = "Find with ripgrep" })
 
 -- {{ "}}}" }}
+
+-- ==============================
+-- [t]oggle menus and interfaces
+-- ==============================
+-- {{ "{{{" }}
+
+if whichkey_ok then
+    whichkey.register {
+        ["<leader>t"] = { name = "Toggle menus/interfaces" },
+    }
+end
+
+vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
+    desc = "Undo tree",
+})
+
+-- {{ "}}}" }}
