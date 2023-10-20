@@ -19,6 +19,9 @@ require("paq"):setup { verbose = true } {
     -- Lightweight status line
     "itchyny/lightline.vim",
 
+    -- Visualize undo tree
+    "simnalamburt/vim-mundo",
+
     -- Allow for asynchronous build commands (such as :Make instead of :make),
     -- for nonblocking compilation. The 'vim-dispatch-neovim' plugin will allow
     -- 'vim-dispatch' to use the build-in Neovim terminal.
