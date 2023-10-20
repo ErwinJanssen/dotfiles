@@ -19,6 +19,12 @@ require("paq"):setup { verbose = true } {
     -- Lightweight status line
     "itchyny/lightline.vim",
 
+    -- Allow for asynchronous build commands (such as :Make instead of :make),
+    -- for nonblocking compilation. The 'vim-dispatch-neovim' plugin will allow
+    -- 'vim-dispatch' to use the build-in Neovim terminal.
+    "tpope/vim-dispatch",
+    "radenling/vim-dispatch-neovim",
+
     -- Comment stuff out
     "tpope/vim-commentary",
 
