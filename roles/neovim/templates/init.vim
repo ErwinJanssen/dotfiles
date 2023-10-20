@@ -73,9 +73,6 @@ lua require("plugins")
 
 call plug#begin(plugin_dir)
 
-" Fuzzy finder
-Plug 'junegunn/fzf.vim'
-
 " Visualize undo tree
 Plug 'simnalamburt/vim-mundo'
 

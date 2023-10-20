@@ -13,6 +13,9 @@ require("paq"):setup { verbose = true } {
     "vim-pandoc/vim-pandoc-syntax", -- Pandoc syntax highlight
     "aklt/plantuml-syntax", -- PlantUML
 
+    -- Fuzzy finder
+    "junegunn/fzf.vim",
+
     -- Lightweight status line
     "itchyny/lightline.vim",
 
