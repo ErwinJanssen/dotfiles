@@ -9,9 +9,6 @@
 " in the middle of the keyboard, and can be reached by both hands.
 let mapleader = " "
 
-" Where to store plugins
-let plugin_dir = '~/.local/share/nvim/plugged'
-
 " Location of the Python virtual environment for Neovim
 let g:python3_host_prog = '{{ neovim_virtualenv }}/bin/python'
 
@@ -68,13 +65,7 @@ set hidden
 " ======================================
 "                 Plugins
 " ======================================
-" {{ "{{{" }}
 lua require("plugins")
-
-call plug#begin(plugin_dir)
-call plug#end()
-
-" {{ "}}}" }}
 
 " ======================================
 "             User interface
