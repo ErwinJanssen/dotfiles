@@ -72,11 +72,6 @@ set hidden
 lua require("plugins")
 
 call plug#begin(plugin_dir)
-
-
-" Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
-Plug 'norcalli/nvim-colorizer.lua'
-
 call plug#end()
 
 " {{ "}}}" }}

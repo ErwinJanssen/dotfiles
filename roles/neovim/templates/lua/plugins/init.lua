@@ -22,6 +22,9 @@ require("paq"):setup { verbose = true } {
     -- Visualize undo tree
     "simnalamburt/vim-mundo",
 
+    -- Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
+    "norcalli/nvim-colorizer.lua",
+
     -- Allow for asynchronous build commands (such as :Make instead of :make),
     -- for nonblocking compilation. The 'vim-dispatch-neovim' plugin will allow
     -- 'vim-dispatch' to use the build-in Neovim terminal.
