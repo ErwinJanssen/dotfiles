@@ -73,9 +73,6 @@ lua require("plugins")
 
 call plug#begin(plugin_dir)
 
-" Load plugins from the Vim system directory, this includes the `fzf` plugin.
-Plug '/usr/share/vim/vimfiles/plugin/'
-
 " Fuzzy finder
 Plug 'junegunn/fzf.vim'
 
