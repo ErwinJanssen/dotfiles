@@ -7,6 +7,33 @@ require("paq"):setup { verbose = true } {
     -- Lua library with additional function for Neovim, used by other packages
     "nvim-lua/plenary.nvim",
 
+    -- Additional file types
+    "pearofducks/ansible-vim", -- Ansible YAML
+    "vim-pandoc/vim-pandoc", -- Pandoc filetype and utilities
+    "vim-pandoc/vim-pandoc-syntax", -- Pandoc syntax highlight
+    "aklt/plantuml-syntax", -- PlantUML
+
+    -- Fuzzy finder
+    "junegunn/fzf.vim",
+
+    -- Lightweight status line
+    "itchyny/lightline.vim",
+
+    -- Visualize undo tree
+    "simnalamburt/vim-mundo",
+
+    -- Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
+    "norcalli/nvim-colorizer.lua",
+
+    -- Allow for asynchronous build commands (such as :Make instead of :make),
+    -- for nonblocking compilation. The 'vim-dispatch-neovim' plugin will allow
+    -- 'vim-dispatch' to use the build-in Neovim terminal.
+    "tpope/vim-dispatch",
+    "radenling/vim-dispatch-neovim",
+
+    -- Comment stuff out
+    "tpope/vim-commentary",
+
     -- Show Git diff in the signcolumn (added, removed, modified).
     "lewis6991/gitsigns.nvim",
 
@@ -34,6 +61,25 @@ require("paq"):setup { verbose = true } {
 
     -- Bridge between `mason` and `lspconfig`
     "williamboman/mason-lspconfig.nvim",
+}
+
+-- vim-pandoc
+vim.g["pandoc#folding#fdc"] = 0
+vim.g["pandoc#syntax#conceal#use"] = 0
+
+-- Disable all keyboard shortcuts provided by default by the Pandoc plugin, as
+-- well as the auto formatting (which overrides values such as `formatoptions`)
+vim.g["pandoc#modules#disabled"] = { "formatting", "keyboard" }
+
+-- Lightline
+vim.g.lightline = {
+    colorscheme = "rejva",
+    active = {
+        right = {
+            { "lineinfo" },
+            { "percent" },
+        },
+    },
 }
 
 -- Run initialization for plugins if they are installed
@@ -83,5 +129,17 @@ if mason_lspconfig_ok then
         function(server_name) -- default handler (optional)
             require("lspconfig")[server_name].setup {}
         end,
+    }
+
+    -- Language specific configurations
+    require("lspconfig").lua_ls.setup {
+        settings = {
+            Lua = {
+                diagnostics = {
+                    -- Suppress "Undefined global `vim`" error
+                    globals = { "vim" },
+                },
+            },
+        },
     }
 end

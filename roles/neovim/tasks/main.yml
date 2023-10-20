@@ -22,18 +22,10 @@
     'Paq: Nothing to remove' not in paq_command.stderr
     or 'Paq: sync complete. 0 ok; 0 errors' not in paq_command.stderr
 
-- name: Create directory for vim-plug
+- name: Remove all vim-plug data
   ansible.builtin.file:
-    path: "{{ user_home }}/.local/share/nvim/site/autoload"
-    state: directory
-    mode: u=rwx,g=rx,o=x
-
-- name: Install plugin manager vim-plug
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    dest: "{{ user_home }}/.local/share/nvim/site/autoload/plug.vim"
-    mode: u=rw,g=r,o=r
-
-- name: Update Neovim Plugins with vim-plug
-  ansible.builtin.command: nvim '+PlugUpdate --sync' +quitall
-  changed_when: true
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - "{{ user_home }}/.local/share/nvim/site/autoload/plug.vim"
+    - "{{ user_home }}/.local/share/nvim/plugged"

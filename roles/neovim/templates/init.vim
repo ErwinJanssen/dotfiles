@@ -9,9 +9,6 @@
 " in the middle of the keyboard, and can be reached by both hands.
 let mapleader = " "
 
-" Where to store plugins
-let plugin_dir = '~/.local/share/nvim/plugged'
-
 " Location of the Python virtual environment for Neovim
 let g:python3_host_prog = '{{ neovim_virtualenv }}/bin/python'
 
@@ -68,72 +65,7 @@ set hidden
 " ======================================
 "                 Plugins
 " ======================================
-" {{ "{{{" }}
 lua require("plugins")
-
-call plug#begin(plugin_dir)
-
-" Load plugins from the Vim system directory, this includes the `fzf` plugin.
-Plug '/usr/share/vim/vimfiles/plugin/'
-
-" Fuzzy finder
-Plug 'junegunn/fzf.vim'
-
-" Function to call `fzf` with `--no-ignore` appended to the search command.
-" Allows it to find files that are otherwise ignored through e.g. `.gitignore`.
-function! FZFFindAllFiles()
-    let l:original_command = $FZF_DEFAULT_COMMAND
-    let $FZF_DEFAULT_COMMAND = $FZF_DEFAULT_COMMAND . ' --no-ignore'
-    call fzf#vim#files(0)
-    let $FZF_DEFAULT_COMMAND = l:original_command
-endfunction
-
-" Lightweight status line
-Plug 'itchyny/lightline.vim'
-let g:lightline = {
-    \ 'colorscheme': 'rejva',
-    \ 'active': {
-    \   'right': [
-    \       ['lineinfo'],
-    \       ['percent'],
-    \   ]
-    \ }
-  \ }
-
-" Better support for Pandoc
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-let g:pandoc#folding#fdc = 0
-let g:pandoc#syntax#conceal#use = 0
-
-" Disable all keyboard shortcuts provided by default by the Pandoc plugin, as
-" well as the auto formatting (which overrides values such as `formatoptions`)
-let g:pandoc#modules#disabled = ['formatting', 'keyboard']
-
-" PlantUML support
-Plug 'aklt/plantuml-syntax'
-
-" Ansible YAML support
-Plug 'pearofducks/ansible-vim'
-
-" Visualize undo tree
-Plug 'simnalamburt/vim-mundo'
-
-" Allow for asynchronous build commands (such as :Make instead of :make), for
-" nonblocking compilation. The 'vim-dispatch-neovim' plugin will allow
-" 'vim-dispatch' to use the build-in Neovim terminal.
-Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
-
-" Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
-Plug 'norcalli/nvim-colorizer.lua'
-
-" Comment stuff out
-Plug 'tpope/vim-commentary'
-
-call plug#end()
-
-" {{ "}}}" }}
 
 " ======================================
 "             User interface
