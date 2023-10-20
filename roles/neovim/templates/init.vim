@@ -91,9 +91,6 @@ Plug 'radenling/vim-dispatch-neovim'
 " Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
 Plug 'norcalli/nvim-colorizer.lua'
 
-" Comment stuff out
-Plug 'tpope/vim-commentary'
-
 call plug#end()
 
 " {{ "}}}" }}

@@ -16,6 +16,9 @@ require("paq"):setup { verbose = true } {
     -- Lightweight status line
     "itchyny/lightline.vim",
 
+    -- Comment stuff out
+    "tpope/vim-commentary",
+
     -- Show Git diff in the signcolumn (added, removed, modified).
     "lewis6991/gitsigns.nvim",
 
