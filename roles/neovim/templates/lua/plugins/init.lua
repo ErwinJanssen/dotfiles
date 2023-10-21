@@ -46,7 +46,7 @@ require("paq"):setup { verbose = true } {
     -- Treesitter: more advanced syntax highlighting
     {
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdateSync",
+        build = ":TSUpdateSync",
     },
 
     -- Configuration for Neovim's built-in language server client
@@ -56,7 +56,7 @@ require("paq"):setup { verbose = true } {
     {
         "williamboman/mason.nvim",
         -- :MasonUpdate updates registry contents
-        run = ":MasonUpdate",
+        build = ":MasonUpdate",
     },
 
     -- Bridge between `mason` and `lspconfig`
