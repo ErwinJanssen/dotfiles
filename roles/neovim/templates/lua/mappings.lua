@@ -63,3 +63,22 @@ vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
 })
 
 -- {{ "}}}" }}
+
+-- ==============================
+-- [t]oggle menus and interfaces
+-- ==============================
+-- {{ "{{{" }}
+
+if whichkey_ok then
+    whichkey.register {
+        ["<leader>v"] = { name = "Version control info and actions" },
+    }
+end
+
+vim.keymap.set("n", "<Leader>vb", function()
+    package.loaded.gitsigns.blame_line { full = true }
+end, {
+    desc = "Blame of current line",
+})
+
+-- {{ "}}}" }}
