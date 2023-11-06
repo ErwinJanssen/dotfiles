@@ -48,6 +48,25 @@ end, { desc = "Find with ripgrep" })
 -- {{ "}}}" }}
 
 -- ==============================
+-- [l]anguage action
+-- ==============================
+-- {{ "{{{" }}
+
+if whichkey_ok then
+    whichkey.register {
+        ["<leader>l"] = { name = "Language actions (LSP)" },
+    }
+end
+
+vim.keymap.set("n", "<Leader>lr", function()
+    vim.lsp.buf.rename()
+end, {
+    desc = "Rename current symbol",
+})
+
+-- {{ "}}}" }}
+
+-- ==============================
 -- [t]oggle menus and interfaces
 -- ==============================
 -- {{ "{{{" }}
