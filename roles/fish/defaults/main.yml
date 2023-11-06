@@ -6,5 +6,8 @@ dependencies:
   - fd
   - exa
 
+  # Python version switcher
+  - pyenv
+
 browser: firefox
 editor: nvim
