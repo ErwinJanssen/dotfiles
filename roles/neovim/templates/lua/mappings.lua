@@ -65,7 +65,7 @@ vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
 -- {{ "}}}" }}
 
 -- ==============================
--- [t]oggle menus and interfaces
+-- [v]ersion control
 -- ==============================
 -- {{ "{{{" }}
 
