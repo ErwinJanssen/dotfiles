@@ -11,6 +11,11 @@ fish_add_path --global "$HOME/.local/bin"
 # Add Flatpak bin directory to PATH
 fish_add_path --path /var/lib/flatpak/exports/bin
 
+# Add the bin directory of the current Guix profile to `$PATH`. This is done
+# here, instead of `conf.d/guix.fish`, to ensure that this is the first element
+# of `$PATH`.
+fish_add_path --global "$GUIX_PROFILE/bin"
+
 set --global --export SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
 # Custom key bindings
