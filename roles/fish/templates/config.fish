@@ -5,11 +5,11 @@ set fish_greeting
 set --global --export EDITOR {{ editor }}
 set --global --export BROWSER {{ browser }}
 
-# Prepend PATH with local bin directory
-set --global --export PATH ~/.local/bin/ $PATH
+# Add local bin directory to PATH
+fish_add_path --path ~/.local/bin/
 
-# Prepend PATH with the Flatpak bin directory
-set --global --export PATH /var/lib/flatpak/exports/bin $PATH
+# Add Flatpak bin directory to PATH
+fish_add_path --path /var/lib/flatpak/exports/bin
 
 set --global --export SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
