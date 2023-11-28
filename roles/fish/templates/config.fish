@@ -6,7 +6,7 @@ set --global --export EDITOR {{ editor }}
 set --global --export BROWSER {{ browser }}
 
 # Add local bin directory to PATH
-fish_add_path --path ~/.local/bin/
+fish_add_path --path ~/.local/bin
 
 # Add Flatpak bin directory to PATH
 fish_add_path --path /var/lib/flatpak/exports/bin
