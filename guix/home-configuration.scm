@@ -28,4 +28,5 @@
   (services (list
     (load "services/fontconfig.scm")
     (load "services/inputrc.scm")
+    (service home-fish-service-type)
   )))

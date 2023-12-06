@@ -29,7 +29,10 @@
         | map(attribute='path')
         | list
         | difference(managed_files)
-        | difference([config_directory + '/fish_variables'])
+        | difference([
+          config_directory + '/config.fish',
+          config_directory + '/fish_variables',
+        ])
       }}
 
 - name: Delete unmanaged files
