@@ -13,6 +13,7 @@
   (gnu packages)
   (gnu services)
   (gnu home services fontutils)
+  (gnu home services shells)
   )
 
 (home-environment
@@ -26,4 +27,5 @@
   ;; Services used to configure the Home profile
   (services (list
     (load "services/fontconfig.scm")
+    (load "services/inputrc.scm")
   )))
