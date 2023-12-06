@@ -1,4 +1,0 @@
----
-- name: Perform common tasks
-  ansible.builtin.import_role:
-    name: _common
