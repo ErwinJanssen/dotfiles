@@ -3,13 +3,13 @@
   ansible.builtin.file:
     path: "{{ config_directory }}"
     state: directory
-    mode: u=rwx,g=rx,o=x
+    mode: u=rwx,g=rx,o=rx
 
 - name: Create subdirectories for configuration files
   ansible.builtin.file:
     path: "{{ config_directory }}/{{ item.path }}"
     state: directory
-    mode: u=rwx,g=rx,o=x
+    mode: u=rwx,g=rx,o=rx
   with_community.general.filetree: "{{ ansible_parent_role_paths[0] }}/templates"
   when: item.state == "directory"
 
