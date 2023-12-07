@@ -31,8 +31,8 @@
         | difference(managed_files)
       }}
 
-- name: Delete unmanaged files
+- name: Delete unmanaged files (with some exceptions)
   ansible.builtin.file:
     path: "{{ item }}"
     state: absent
-  loop: "{{ files_to_delete }}"
+  loop: "{{ files_to_delete | reject('search', 'fish_variables') | list }}"
