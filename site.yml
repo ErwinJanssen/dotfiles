@@ -98,12 +98,6 @@
           tags:
             - tmux
 
-        - name: Apply role `fontconfig`
-          ansible.builtin.import_role:
-            name: fontconfig
-          tags:
-            - fontconfig
-
         - name: Apply role `zathura`
           ansible.builtin.import_role:
             name: zathura

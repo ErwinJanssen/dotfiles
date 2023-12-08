@@ -1,9 +1,0 @@
----
-config_directory: "{{ config_home }}/fontconfig"
-dependencies:
-  - fontconfig
-  - ttf-fira-code
-
-fonts:
-  - family: monospace
-    name: Fira Code
