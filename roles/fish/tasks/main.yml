@@ -29,10 +29,11 @@
         | map(attribute='path')
         | list
         | difference(managed_files)
+        | difference([config_directory + '/fish_variables'])
       }}
 
-- name: Delete unmanaged files (with some exceptions)
+- name: Delete unmanaged files
   ansible.builtin.file:
     path: "{{ item }}"
     state: absent
-  loop: "{{ files_to_delete | reject('search', 'fish_variables') | list }}"
+  loop: "{{ files_to_delete }}"
