@@ -2,7 +2,7 @@
 - name: Setup and configure dotfiles
   hosts: all
   vars_files:
-    - theme.yml
+    - theme.json
     - variables.yml
   tasks:
     - name: Import and tag each role
