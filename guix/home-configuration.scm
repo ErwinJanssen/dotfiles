@@ -15,6 +15,7 @@
   (gnu home services)
   (gnu home services fontutils)
   (gnu home services shells)
+  (guix gexp)
   )
 
 ;; These packages will be installed and show up in the 'Home' profile, under
@@ -49,6 +50,7 @@
 
 (load "services/fontconfig.scm")
 (load "services/inputrc.scm")
+(load "services/fzf/service.scm")
 
 (home-environment
   (packages (specifications->packages %user-packages))
