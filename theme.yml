@@ -66,8 +66,9 @@ ui:
       bright: "{{ theme.normal.accent }}"
 
   search:
-    background: "{{ theme.normal.background }}"
-    foreground: "{{ theme.normal.foreground }}"
+    default:
+      background: "{{ theme.normal.background }}"
+      foreground: "{{ theme.normal.foreground }}"
     input:
       background: "{{ theme.dim.accent }}"
       foreground: "{{ theme.normal.foreground }}"
@@ -80,8 +81,9 @@ ui:
       match: "{{ theme.normal.match }}"
 
   status_bar:
-    background: "{{ theme.bright.background }}"
-    foreground: "{{ theme.normal.foreground }}"
+    default:
+      background: "{{ theme.bright.background }}"
+      foreground: "{{ theme.normal.foreground }}"
     tab:
       background: "{{ theme.bright.background }}"
       foreground: "{{ theme.normal.foreground }}"

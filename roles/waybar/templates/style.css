@@ -1,5 +1,5 @@
-@define-color background {{ ui.status_bar.background }};
-@define-color foreground {{ ui.status_bar.foreground }};
+@define-color background {{ ui.status_bar.default.background }};
+@define-color foreground {{ ui.status_bar.default.foreground }};
 @define-color active-background {{ ui.status_bar.active.background }};
 @define-color active-foreground {{ ui.status_bar.active.foreground }};
 @define-color accent {{ theme.normal.accent }};

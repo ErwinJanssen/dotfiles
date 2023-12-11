@@ -35,10 +35,10 @@ let s:dim.magenta = '{{ colors.dim.magenta }}'
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [
     \   [ s:dim.magenta, s:normal.magenta ],
-    \   [ '{{ ui.status_bar.foreground }}' , '{{ theme.brighter.background }}' ]
+    \   [ '{{ ui.status_bar.default.foreground }}' , '{{ theme.brighter.background }}' ]
     \ ]
 let s:p.normal.middle = [
-    \   [ '{{ ui.status_bar.foreground }}', '{{ ui.status_bar.background }}' ]
+    \   [ '{{ ui.status_bar.default.foreground }}', '{{ ui.status_bar.default.background }}' ]
     \ ]
 let s:p.normal.right = copy(s:p.normal.left)
 

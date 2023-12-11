@@ -9,7 +9,7 @@
    * Set the default text color for all elements. This is also the color of
    * the text if rofi is called with invalid arguments.
    */
-  text-color: {{ ui.search.foreground }};
+  text-color: {{ ui.search.default.foreground }};
 
   /*
    * The default highlight style for matches is to color the match without any
@@ -25,7 +25,7 @@
  * might yield the correct result for all display sizes.
  */
 #window {
-  background-color: {{ ui.search.background }}cc;
+  background-color: {{ ui.search.default.background }}cc;
   transparency: "real";
   fullscreen: true;
   padding: 20% 30%;
@@ -64,7 +64,7 @@
 }
 
 #entry {
-  background-color: {{ ui.search.background }}cc;
+  background-color: {{ ui.search.default.background }}cc;
   padding: 0.5em 1em;
 }
 
