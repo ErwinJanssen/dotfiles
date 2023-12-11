@@ -10,3 +10,7 @@ guix:
 .PHONY: playbook
 playbook:
 	ansible-playbook --diff -i hosts site.yml --tags "${TAGS}"
+
+.PHONY: shell
+shell:
+	guix shell --manifest=manifest.scm
