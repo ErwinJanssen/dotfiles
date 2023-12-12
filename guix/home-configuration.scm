@@ -17,23 +17,36 @@
   (gnu home services shells)
   )
 
+;; These packages will be installed and show up in the 'Home' profile, under
+;; `~/.guix-home/profile`. Some loaded file services might append to this list.
+(define %user-packages (list
+  ;; Locale data
+  "glibc-locales"
+
+  ;; Preferred monospace font
+  "font-fira-code"
+  ))
+
+;; Utility function to easily append a package for this home configuration.
+(define (add-user-package package-name)
+  (set! %user-packages (append %user-packages (list package-name))))
+
+;; Services used to configure the Home profile. Loaded service files will
+;; append their services here.
+(define %user-services (list
+  (simple-service 'additional-guix-environment-variables
+                  home-environment-variables-service-type
+                  `(("GUIX_LOCPATH" . "$HOME/.guix-home/profile/lib/locale")))
+  (service home-fish-service-type)
+  ))
+
+;; Utility function to easily append a service for this home configuration.
+(define (add-user-service service-definition)
+  (set! %user-services (append %user-services (list service-definition))))
+
+(load "services/fontconfig.scm")
+(load "services/inputrc.scm")
+
 (home-environment
-  ;; These packages will be installed and show up in the 'Home' profile, under
-  ;; `~/.guix-home/profile`.
-  (packages (specifications->packages (list
-    ;; Locale data
-    "glibc-locales"
-
-    ;; Preferred monospace font
-    "font-fira-code"
-  )))
-
-  ;; Services used to configure the Home profile
-  (services (list
-    (simple-service 'additional-guix-environment-variables
-                    home-environment-variables-service-type
-                    `(("GUIX_LOCPATH" . "$HOME/.guix-home/profile/lib/locale")))
-    (load "services/fontconfig.scm")
-    (load "services/inputrc.scm")
-    (service home-fish-service-type)
-  )))
+  (packages (specifications->packages %user-packages))
+  (services %user-services))

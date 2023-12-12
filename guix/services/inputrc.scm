@@ -1,5 +1,5 @@
 ;; Configure readline behavior via `.inputrc`.
-(service home-inputrc-service-type (home-inputrc-configuration
+(add-user-service (service home-inputrc-service-type (home-inputrc-configuration
   (key-bindings `(
     ;; Use the up/down arrows to search through the history for partial
     ;; matches. This search behavior is similar to that of the Fish
@@ -40,4 +40,4 @@
     ;; Include system defaults
     ("$include" . "/etc/inputrc")
     ))
-  ))
+  )))
