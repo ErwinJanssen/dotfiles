@@ -44,6 +44,9 @@
 (define (add-user-service service-definition)
   (set! %user-services (append %user-services (list service-definition))))
 
+;; Load variables and configuration parameters used by the home services.
+(load "theme.scm")
+
 (load "services/fontconfig.scm")
 (load "services/inputrc.scm")
 
