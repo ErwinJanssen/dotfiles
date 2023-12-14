@@ -48,6 +48,12 @@
 ;; Load variables and configuration parameters used by the home services.
 (load "theme.scm")
 
+;; For the Fish home service, service extensions that are defined first are
+;; places at the end of the generated `config.fish`. The "start Sway on tty1"
+;; should be the final step in that config, so the Sway home service should be
+;; loaded as one of the first early on.
+(load "services/sway/service.scm")
+
 (load "services/fontconfig.scm")
 (load "services/inputrc.scm")
 (load "services/fzf/service.scm")
