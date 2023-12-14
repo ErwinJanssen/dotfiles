@@ -14,6 +14,7 @@ require("paq"):setup { verbose = true } {
     "aklt/plantuml-syntax", -- PlantUML
 
     -- Fuzzy finder
+    "junegunn/fzf",
     "junegunn/fzf.vim",
 
     -- Lightweight status line
