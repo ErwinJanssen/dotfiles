@@ -23,9 +23,6 @@
 (define %user-packages (list
   ;; Locale data
   "glibc-locales"
-
-  ;; Preferred monospace font
-  "font-fira-code"
   ))
 
 ;; Utility function to easily append a package for this home configuration.
