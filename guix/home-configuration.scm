@@ -54,6 +54,7 @@
 (load "services/fontconfig.scm")
 (load "services/inputrc.scm")
 (load "services/fzf/service.scm")
+(load "services/ripgrep/service.scm")
 
 (home-environment
   (packages (specifications->packages %user-packages))
