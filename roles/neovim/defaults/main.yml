@@ -2,7 +2,6 @@
 config_directory: "{{ config_home }}/nvim"
 dependencies:
   - neovim
-  - fzf
 
   # fzf.vim automatically uses `bat` for file previews if it is available
   - bat

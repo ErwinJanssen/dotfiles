@@ -1,7 +1,6 @@
 ---
 config_directory: "{{ config_home }}/fish"
 dependencies:
-  - fzf
   - exa
 
   # Python version switcher
