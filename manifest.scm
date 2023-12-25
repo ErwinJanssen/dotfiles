@@ -5,4 +5,5 @@
     "guile-json"
     "jq"
     "make"
+    "python"
     ))

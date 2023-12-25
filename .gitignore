@@ -3,3 +3,5 @@
 # Generated files
 /templates.checksum
 /theme.json
+/process-templates.mk
+**/generated

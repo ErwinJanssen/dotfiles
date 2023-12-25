@@ -8,8 +8,16 @@ clean:
 	git clean -xdf
 
 .PHONY: guix
-guix:
+guix: process-templates | checksum-templates
 	guix home reconfigure guix/home-configuration.scm
+
+.PHONY: process-templates
+process-templates: process-templates.mk
+
+process-templates.mk: templates.checksum
+	python3 scripts/generate_process_templates_makefile.py > process-templates.mk
+
+include process-templates.mk
 
 .PHONY: playbook
 playbook: theme.json
