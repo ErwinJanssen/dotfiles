@@ -92,12 +92,6 @@
           tags:
             - kanshi
 
-        - name: Apply role `tmux`
-          ansible.builtin.import_role:
-            name: tmux
-          tags:
-            - tmux
-
         - name: Apply role `zathura`
           ansible.builtin.import_role:
             name: zathura

@@ -55,6 +55,7 @@
 (load "services/inputrc.scm")
 (load "services/fzf/service.scm")
 (load "services/ripgrep/service.scm")
+(load "services/tmux/service.scm")
 
 (home-environment
   (packages (specifications->packages %user-packages))

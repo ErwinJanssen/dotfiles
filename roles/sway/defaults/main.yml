@@ -4,7 +4,6 @@ dependencies:
   - sway
   - swayidle
   - wl-clipboard
-  - tmux
   - pipewire
   - light
 
