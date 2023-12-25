@@ -3,6 +3,10 @@ TAGS ?= all
 .PHONY: configure
 configure: guix playbook
 
+.PHONY: clean
+clean:
+	git clean -xdf
+
 .PHONY: guix
 guix:
 	guix home reconfigure guix/home-configuration.scm
