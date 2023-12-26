@@ -27,3 +27,8 @@ shell:
 .PHONY: container
 container:
 	guix home container guix/home-configuration.scm
+
+# Generate Guix service data files from templates
+.PHONY: checksum-templates
+templates.checksum checksum-templates:
+	python3 scripts/checksum_templates.py

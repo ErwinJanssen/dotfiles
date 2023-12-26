@@ -1,4 +1,5 @@
 *.retry
 
 # Generated files
+/templates.checksum
 /theme.json
