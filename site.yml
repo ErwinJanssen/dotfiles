@@ -74,12 +74,6 @@
           tags:
             - swaylock
 
-        - name: Apply role `i3status`
-          ansible.builtin.import_role:
-            name: i3status
-          tags:
-            - i3status
-
         - name: Apply role `mako`
           ansible.builtin.import_role:
             name: mako
