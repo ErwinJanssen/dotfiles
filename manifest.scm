@@ -7,5 +7,4 @@
     "jq"
     "make"
     "python"
-    "tar"
     ))
