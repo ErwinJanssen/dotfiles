@@ -39,4 +39,4 @@ container:
 # Generate Guix service data files from templates
 .PHONY: checksum-templates
 templates.checksum checksum-templates:
-	python3 scripts/checksum_templates.py
+	tar --create $$(find guix/ -type f -path '*/templates/*') | sha256sum --binary > templates.checksum

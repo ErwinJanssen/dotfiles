@@ -1,9 +1,11 @@
 (specifications->manifest
   (list
     "ansible-core"
+    "findutils"
     "guile"
     "guile-json"
     "jq"
     "make"
     "python"
+    "tar"
     ))
