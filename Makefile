@@ -1,5 +1,8 @@
 TAGS ?= all
 
+TEMPLATES_CHECKSUM := templates.checksum
+CURRENT_CHECKSUM := $(shell find guix/ -type f -path '*/templates/*' | sha256sum)
+
 .PHONY: configure
 configure: guix playbook
 
@@ -38,5 +41,15 @@ container:
 
 # Generate Guix service data files from templates
 .PHONY: checksum-templates
-templates.checksum checksum-templates:
-	find guix/ -type f -path '*/templates/*' | sha256sum > templates.checksum
+$(TEMPLATES_CHECKSUM) checksum-templates:
+	@if [ -f $(TEMPLATES_CHECKSUM) ]; then \
+		if [ "$(CURRENT_CHECKSUM)" != "$$(cat $(TEMPLATES_CHECKSUM))" ]; then \
+			echo "$(CURRENT_CHECKSUM)" > $(TEMPLATES_CHECKSUM); \
+			echo "Checksum has changed. Updating $(TEMPLATES_CHECKSUM)."; \
+		else \
+			echo "Checksum has not changed. $(TEMPLATES_CHECKSUM) is up-to-date."; \
+		fi \
+	else \
+		echo "$(CURRENT_CHECKSUM)" > $(TEMPLATES_CHECKSUM); \
+		echo "Checksum file $(TEMPLATES_CHECKSUM) created with initial value."; \
+	fi
