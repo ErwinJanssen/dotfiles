@@ -49,6 +49,7 @@ if __name__ == "__main__":
     recipes = set()
     for service_path in get_service_paths():
         for path in get_template_paths(service_path):
-            recipes |= generate_template_recipes(service_path, path)
+            if path.is_file():
+                recipes |= generate_template_recipes(service_path, path)
 
     print("\n".join(sorted(recipes)))
