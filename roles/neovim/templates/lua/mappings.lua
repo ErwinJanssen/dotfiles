@@ -58,6 +58,12 @@ if whichkey_ok then
     }
 end
 
+vim.keymap.set("n", "<Leader>ld", function()
+    vim.diagnostic.open_float()
+end, {
+    desc = "Show diagnostic under cursor",
+})
+
 vim.keymap.set("n", "<Leader>lr", function()
     vim.lsp.buf.rename()
 end, {
