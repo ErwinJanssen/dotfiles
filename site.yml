@@ -14,6 +14,12 @@
           tags:
             - systemd
 
+        - name: Apply role `user`
+          ansible.builtin.import_role:
+            name: user
+          tags:
+            - user
+
         - name: Apply role `ssh`
           ansible.builtin.import_role:
             name: ssh

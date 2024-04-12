@@ -1,0 +1,8 @@
+---
+user_username: "{{ ansible_user_id }}"
+user_groups:
+  - sudo
+  - wheel
+  - video # For brightness control
+  - docker
+  - libvirt

@@ -1,0 +1,7 @@
+---
+- name: Add primary user to the desired groups
+  become: true
+  ansible.builtin.user:
+    name: "{{ user_username }}"
+    groups: "{{ user_groups }}"
+    append: true
