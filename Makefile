@@ -3,11 +3,15 @@ TAGS ?= all
 _:=$(shell bash scripts/checksum_templates.sh)
 
 .PHONY: configure
-configure: guix playbook
+configure: nix guix playbook
 
 .PHONY: clean
 clean:
 	git clean -xdf
+
+.PHONY: nix
+nix:
+	home-manager --file nix/home-manager/home.nix switch
 
 .PHONY: guix
 guix: process-templates
