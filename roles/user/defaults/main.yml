@@ -6,3 +6,4 @@ user_groups:
   - video # For brightness control
   - docker
   - libvirt
+  - nix-users
