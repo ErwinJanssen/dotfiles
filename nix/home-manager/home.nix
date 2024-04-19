@@ -74,5 +74,8 @@ in
   };
 
   # Set program configurations by importing `programs.nix`.
-  programs = import ./programs.nix { theme = theme; };
+  programs = import ./programs.nix {
+    config = config;
+    theme = theme;
+  };
 }
