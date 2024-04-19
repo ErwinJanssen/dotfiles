@@ -7,6 +7,7 @@
 
   readline = import ./programs/readline.nix;
 
+  fzf = import ./programs/fzf.nix theme;
   tmux = import ./programs/tmux/main.nix theme;
 
   # GUI programs
