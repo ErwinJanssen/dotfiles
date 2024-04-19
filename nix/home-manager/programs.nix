@@ -5,6 +5,8 @@
   # Let Home Manager install and manage itself.
   home-manager = import ./programs/home-manager.nix;
 
+  # Shell setup
+  fish = import ./programs/fish.nix;
   readline = import ./programs/readline.nix;
 
   fzf = import ./programs/fzf.nix theme;
