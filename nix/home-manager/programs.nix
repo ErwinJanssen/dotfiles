@@ -8,6 +8,7 @@
   readline = import ./programs/readline.nix;
 
   fzf = import ./programs/fzf.nix theme;
+  ripgrep = import ./programs/ripgrep.nix;
   tmux = import ./programs/tmux/main.nix theme;
 
   # GUI programs

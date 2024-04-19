@@ -51,8 +51,6 @@
 ;; loaded as one of the first early on.
 (load "services/sway/service.scm")
 
-(load "services/ripgrep/service.scm")
-
 (home-environment
   (packages (specifications->packages %user-packages))
   (services %user-services))
