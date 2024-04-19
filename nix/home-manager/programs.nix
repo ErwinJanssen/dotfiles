@@ -10,6 +10,7 @@
   tmux = import ./programs/tmux/main.nix theme;
 
   # GUI programs
+  i3status = import ./programs/i3status.nix theme;
   rofi = import ./programs/rofi.nix {
     config = config;
     theme = theme.theme;
