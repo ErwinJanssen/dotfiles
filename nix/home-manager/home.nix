@@ -20,6 +20,9 @@ in
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  # The default locale to use.
+  home.language.base = "en_US.UTF-8";
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
