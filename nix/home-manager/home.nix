@@ -66,6 +66,6 @@
     # EDITOR = "emacs";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # Set program configurations by importing `programs.nix`.
+  programs = import ./programs.nix;
 }
