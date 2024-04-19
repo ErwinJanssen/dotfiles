@@ -51,7 +51,6 @@
 ;; loaded as one of the first early on.
 (load "services/sway/service.scm")
 
-(load "services/fontconfig.scm")
 (load "services/fzf/service.scm")
 (load "services/ripgrep/service.scm")
 

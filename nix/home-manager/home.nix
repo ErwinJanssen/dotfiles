@@ -26,6 +26,7 @@ in
     # Packages that need to be installed, but are not included through other
     # modules.
     pkgs.fd
+    pkgs.fira-code
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -70,6 +71,20 @@ in
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  fonts = {
+    fontconfig = {
+      enable = true;
+    };
+  };
+  # Font setup: Fira Code as default monospace font. The prefix '20' ensures it
+  # is loaded after the Home Manager generated `10-hm-fonts.conf`.
+  home.file.".config/fontconfig/conf.d/20-default-monospace.conf".text = ''
+    <alias>
+      <family>monospace</family>
+      <prefer><family>Fira Code</family></prefer>
+    </alias>
+  '';
 
   # Set program configurations by importing `programs.nix`.
   programs = import ./programs.nix {
