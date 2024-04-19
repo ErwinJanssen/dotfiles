@@ -6,4 +6,6 @@
   home-manager = import ./programs/home-manager.nix;
 
   readline = import ./programs/readline.nix;
+
+  tmux = import ./programs/tmux/main.nix theme;
 }
