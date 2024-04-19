@@ -14,5 +14,5 @@
   };
   defaultOptions = [ "--ansi" ];
   defaultCommand = "fd --type file --hidden --exclude .git --strip-cwd-prefix";
-  fileWidgetCommand = "command fd --unrestricted --search-path $dir --exclude .git";
+  fileWidgetCommand = "command fd --unrestricted --search-path \\$dir --exclude .git";
 }
