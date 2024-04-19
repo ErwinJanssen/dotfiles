@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 
+let
+  theme = {
+    theme = builtins.fromJSON (builtins.readFile ../../theme.json);
+  };
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -69,5 +74,5 @@
   };
 
   # Set program configurations by importing `programs.nix`.
-  programs = import ./programs.nix;
+  programs = import ./programs.nix { theme = theme; };
 }
