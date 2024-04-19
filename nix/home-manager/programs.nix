@@ -2,4 +2,6 @@
 {
   # Let Home Manager install and manage itself.
   home-manager = import ./programs/home-manager.nix;
+
+  readline = import ./programs/readline.nix;
 }
