@@ -62,12 +62,6 @@
           tags:
             - neovim
 
-        - name: Apply role `rofi`
-          ansible.builtin.import_role:
-            name: rofi
-          tags:
-            - rofi
-
         - name: Apply role `sway`
           ansible.builtin.import_role:
             name: sway

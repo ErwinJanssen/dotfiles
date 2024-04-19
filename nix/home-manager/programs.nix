@@ -8,4 +8,10 @@
   readline = import ./programs/readline.nix;
 
   tmux = import ./programs/tmux/main.nix theme;
+
+  # GUI programs
+  rofi = import ./programs/rofi.nix {
+    config = config;
+    theme = theme.theme;
+  };
 }
