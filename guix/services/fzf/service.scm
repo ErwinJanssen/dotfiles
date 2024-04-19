@@ -1,5 +1,4 @@
 (add-user-package "fzf")
-(add-user-package "fd")
 
 (define fzf-default-opts
   (string-join
