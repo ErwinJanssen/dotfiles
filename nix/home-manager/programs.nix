@@ -14,6 +14,7 @@
   git = import ./programs/git.nix;
   ripgrep = import ./programs/ripgrep.nix;
   tmux = import ./programs/tmux/main.nix theme;
+  neovim = import ./programs/neovim.nix;
 
   # GUI programs
   i3status = import ./programs/i3status.nix theme;
