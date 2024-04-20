@@ -1,7 +1,14 @@
 ---
-- name: Add primary user to the desired groups
+- name: Ensure the primary shell is installed
+  become: true
+  ansible.builtin.package:
+    name: "{{ user_shell }}"
+    state: present
+
+- name: Set primary user with desired groups, shell, etc.
   become: true
   ansible.builtin.user:
     name: "{{ user_username }}"
     groups: "{{ user_groups }}"
     append: true
+    shell: "{{ user_shell_path }}"

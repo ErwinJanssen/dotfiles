@@ -1,5 +1,7 @@
 ---
 user_username: "{{ ansible_user_id }}"
+user_shell: fish
+user_shell_path: /usr/bin/fish
 user_groups:
   - sudo
   - wheel
