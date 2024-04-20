@@ -25,8 +25,6 @@ process-templates.mk: templates.checksum
 
 templates.checksum:
 
-include process-templates.mk
-
 .PHONY: playbook
 playbook: theme.json
 	ansible-playbook --diff -i hosts site.yml --tags "${TAGS}"
