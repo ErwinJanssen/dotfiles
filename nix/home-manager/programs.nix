@@ -9,7 +9,9 @@
   fish = import ./programs/fish.nix;
   readline = import ./programs/readline.nix;
 
+  # CLI tools
   fzf = import ./programs/fzf.nix theme;
+  git = import ./programs/git.nix;
   ripgrep = import ./programs/ripgrep.nix;
   tmux = import ./programs/tmux/main.nix theme;
 
