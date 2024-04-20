@@ -3,12 +3,6 @@
   ansible.builtin.import_role:
     name: _common
 
-- name: Setup the Python virtual environment
-  ansible.builtin.pip:
-    requirements: "{{ config_directory }}/requirements.txt"
-    virtualenv: "{{ neovim_virtualenv }}"
-    virtualenv_python: python3
-
 - name: Clone Git repository for paq-nvim
   ansible.builtin.git: # noqa: latest[git]
     repo: https://github.com/savq/paq-nvim.git

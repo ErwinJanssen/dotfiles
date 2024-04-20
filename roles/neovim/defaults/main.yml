@@ -3,5 +3,3 @@ config_directory: "{{ config_home }}/nvim"
 dependencies:
   # fzf.vim automatically uses `bat` for file previews if it is available
   - bat
-
-neovim_virtualenv: "{{ config_directory }}/venv"

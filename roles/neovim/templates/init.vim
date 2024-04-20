@@ -9,9 +9,6 @@
 " in the middle of the keyboard, and can be reached by both hands.
 let mapleader = " "
 
-" Location of the Python virtual environment for Neovim
-let g:python3_host_prog = '{{ neovim_virtualenv }}/bin/python'
-
 " When creating a (vertical) split, create this to the right or below of the
 " current buffer (instead of to the left or above). The benefit is that the
 " current buffer remains at the same place (and is not moved to the other part
