@@ -97,4 +97,7 @@ in
 
   # Configure services by importing `services.nix`.
   services = import ./services.nix;
+
+  # Configure Wayland display managers by importing `wayland.nix`.
+  wayland = import ./wayland.nix;
 }
