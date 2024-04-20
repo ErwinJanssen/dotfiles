@@ -20,12 +20,6 @@
           tags:
             - user
 
-        - name: Apply role `ssh`
-          ansible.builtin.import_role:
-            name: ssh
-          tags:
-            - ssh
-
         - name: Apply role `fish`
           ansible.builtin.import_role:
             name: fish
