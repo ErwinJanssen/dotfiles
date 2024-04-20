@@ -32,12 +32,6 @@
           tags:
             - fish
 
-        - name: Apply role `starship`
-          ansible.builtin.import_role:
-            name: starship
-          tags:
-            - starship
-
         - name: Apply role `bash`
           ansible.builtin.import_role:
             name: bash

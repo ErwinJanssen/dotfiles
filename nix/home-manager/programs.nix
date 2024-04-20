@@ -8,6 +8,7 @@
   # Shell setup
   fish = import ./programs/fish.nix;
   readline = import ./programs/readline.nix;
+  starship = import ./programs/starship.nix;
 
   # CLI tools
   fzf = import ./programs/fzf.nix theme;

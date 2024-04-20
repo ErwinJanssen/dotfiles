@@ -14,6 +14,3 @@ function global_history \
     --on-event fish_prompt
     history merge
 end
-
-# Use the cross-shell prompt Starship instead of custom `fish_prompt` function
-starship init fish | source
