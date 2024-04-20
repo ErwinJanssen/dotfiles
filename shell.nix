@@ -10,6 +10,12 @@ in
 
 pkgs.mkShellNoCC {
   packages = with pkgs; [
+    # To run the Makefile
+    gnumake
+
+    # For the Ansible playbook
+    ansible
+
     # To format Nix code.
     nixfmt-rfc-style
   ];
