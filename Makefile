@@ -29,10 +29,9 @@ templates.checksum:
 playbook: theme.json
 	ansible-playbook --diff -i hosts site.yml --tags "${TAGS}"
 
-# Generate JSON file from Scheme data file. Pipe through `jq` to verify that
-# the output is valid JSON.
-%.json: guix/%.scm
-	guile -c '(use-modules (json)) (define data (load "$<")) (scm->json data)' | jq > "$@"
+# Generate JSON file from Python script.
+%.json: scripts/%.py
+	python3 "$<" > "$@"
 
 .PHONY: shell
 shell:
