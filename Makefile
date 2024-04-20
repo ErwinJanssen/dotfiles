@@ -10,7 +10,7 @@ clean:
 	git clean -xdf
 
 .PHONY: nix
-nix:
+nix: theme.json
 	home-manager --file nix/home-manager/home.nix switch
 
 .PHONY: guix
