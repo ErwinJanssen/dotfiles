@@ -2,7 +2,6 @@
 set fish_greeting
 
 # Preferred tools
-set --global --export EDITOR {{ editor }}
 set --global --export BROWSER {{ browser }}
 
 set --global --export SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
