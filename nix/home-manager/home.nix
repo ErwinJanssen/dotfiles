@@ -94,4 +94,7 @@ in
     config = config;
     theme = theme;
   };
+
+  # Configure services by importing `services.nix`.
+  services = import ./services.nix;
 }
