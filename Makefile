@@ -1,7 +1,7 @@
 TAGS ?= all
 
 .PHONY: configure
-configure: nix guix playbook
+configure: nix playbook
 
 .PHONY: clean
 clean:
@@ -10,10 +10,6 @@ clean:
 .PHONY: nix
 nix: theme.json
 	home-manager --file nix/home-manager/home.nix switch
-
-.PHONY: guix
-guix:
-	guix home reconfigure guix/home-configuration.scm
 
 .PHONY: playbook
 playbook: theme.json
