@@ -4,6 +4,13 @@
 " {{ "{{{" }}
 lua require("base")
 
+" When creating a (vertical) split, create this to the right or below of the
+" current buffer (instead of to the left or above). The benefit is that the
+" current buffer remains at the same place (and is not moved to the other part
+" of the screen), which is easier on the eyes and might be more intuitive.
+set splitright
+set splitbelow
+
 " Automatically save the current buffer, also when leaving Vim (`autowrite`
 " does not always detect this). This prevents a lot of manual saving and, since
 " most files are in version control, is often safe to do. It also prevents a
