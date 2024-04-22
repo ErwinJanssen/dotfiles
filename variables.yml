@@ -4,3 +4,4 @@
 user_home: "{{ ansible_env['HOME'] }}"
 config_home: "{{ ansible_env['XDG_CONFIG_HOME'] | default (user_home +'/.config') }}"
 install_dependencies: true
+terminal: kitty
