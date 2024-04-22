@@ -50,12 +50,6 @@
           tags:
             - swaylock
 
-        - name: Apply role `mako`
-          ansible.builtin.import_role:
-            name: mako
-          tags:
-            - mako
-
         - name: Apply role `kanshi`
           ansible.builtin.import_role:
             name: kanshi
