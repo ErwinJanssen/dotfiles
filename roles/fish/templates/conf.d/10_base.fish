@@ -1,6 +1,3 @@
-# Preferred tools
-set --global --export BROWSER {{ browser }}
-
 # Custom key bindings
 function fish_user_key_bindings
     # ctrl-del

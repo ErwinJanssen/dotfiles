@@ -4,5 +4,4 @@ dependencies:
   # Python version switcher
   - pyenv
 
-browser: firefox
 editor: nvim
