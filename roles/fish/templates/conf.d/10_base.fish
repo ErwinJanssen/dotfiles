@@ -1,6 +1,3 @@
-# Disable greeting message at start
-set fish_greeting
-
 # Preferred tools
 set --global --export BROWSER {{ browser }}
 

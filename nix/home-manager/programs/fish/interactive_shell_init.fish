@@ -1,3 +1,6 @@
+# Disable greeting message at start
+set fish_greeting
+
 # Start Sway on tty1
 if [ (tty) = /dev/tty1 ]
     # Send Sway's output to journald, retrieve with:
