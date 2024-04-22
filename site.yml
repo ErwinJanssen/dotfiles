@@ -32,12 +32,6 @@
           tags:
             - bash
 
-        - name: Apply role `firefox`
-          ansible.builtin.import_role:
-            name: firefox
-          tags:
-            - firefox
-
         - name: Apply role `thunderbird`
           ansible.builtin.import_role:
             name: thunderbird

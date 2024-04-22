@@ -1,4 +1,0 @@
----
-config_directory: "{{ user_home }}/.mozilla/firefox"
-dependencies:
-  - firefox
