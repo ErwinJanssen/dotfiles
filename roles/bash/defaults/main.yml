@@ -1,5 +1,0 @@
----
-# Bash places its configuration files directly in the home directory
-config_directory: "{{ user_home }}"
-dependencies:
-  - bash

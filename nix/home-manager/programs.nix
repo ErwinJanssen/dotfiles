@@ -6,6 +6,7 @@
   home-manager = import ./programs/home-manager.nix;
 
   # Shell setup
+  bash = import ./programs/bash.nix;
   fish = import ./programs/fish/main.nix;
   kitty = import ./programs/kitty.nix theme;
   readline = import ./programs/readline.nix;
