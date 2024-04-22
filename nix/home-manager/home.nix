@@ -98,6 +98,16 @@ in
     </alias>
   '';
 
+  # Configure user-global EditorConfig settings.
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+      };
+    };
+  };
+
   # Set program configurations by importing `programs.nix`.
   programs = import ./programs.nix {
     config = config;
