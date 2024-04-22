@@ -38,13 +38,6 @@ set foldmethod=marker
 " provide any additional information, while still being distracting.
 set shortmess+=c
 
-" When this value is not set, a buffer that is "unloaded" when removed from the
-" view (when switching between buffers for example) is unloaded. One of the
-" results is that the undo history is discarded when a buffer is temporarily
-" not shown. Setting this value causes hidden buffers to remain in existing in
-" the background.
-set hidden
-
 " {{ "}}}" }}
 
 " ======================================
