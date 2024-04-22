@@ -11,6 +11,7 @@
   starship = import ./programs/starship.nix;
 
   # CLI tools
+  eza = import ./programs/eza.nix;
   fzf = import ./programs/fzf.nix theme;
   git = import ./programs/git.nix;
   ripgrep = import ./programs/ripgrep.nix;

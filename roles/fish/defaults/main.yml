@@ -1,8 +1,6 @@
 ---
 config_directory: "{{ config_home }}/fish"
 dependencies:
-  - eza
-
   # Python version switcher
   - pyenv
 
