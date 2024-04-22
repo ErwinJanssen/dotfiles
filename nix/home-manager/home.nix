@@ -108,6 +108,7 @@ in
   programs = import ./programs.nix {
     config = config;
     theme = theme;
+    pkgs = pkgs;
   };
 
   # Configure services by importing `services.nix`.

@@ -1,6 +1,10 @@
 # Define program configurations, with a separate file per program. Pass the
 # `theme` data to programs that need it.
-{ config, theme }:
+{
+  config,
+  theme,
+  pkgs,
+}:
 {
   # Let Home Manager install and manage itself.
   home-manager = import ./programs/home-manager.nix;
@@ -8,7 +12,10 @@
   # Shell setup
   bash = import ./programs/bash.nix;
   fish = import ./programs/fish/main.nix;
-  kitty = import ./programs/kitty.nix theme;
+  kitty = import ./programs/kitty.nix {
+    theme = theme.theme;
+    pkgs = pkgs;
+  };
   readline = import ./programs/readline.nix;
   starship = import ./programs/starship.nix;
 

@@ -7,5 +7,8 @@ dependencies:
   - pipewire
   - light
 
+  # Install terminal as dependency of Sway
+  - "{{ terminal }}"
+
   # Emoij font (e.g. brightness symbol)
   - noto-fonts-emoji

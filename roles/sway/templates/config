@@ -10,7 +10,7 @@
 set $mod Mod4
 
 # Your preferred terminal emulator
-set $term /usr/bin/{{ terminal }}
+set $term {{ terminal }}
 
 # Your preferred application launcher
 set $menu "rofi -show run"

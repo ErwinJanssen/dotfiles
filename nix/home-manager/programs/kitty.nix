@@ -1,6 +1,14 @@
-{ theme }:
+{ theme, pkgs }:
 {
   enable = true;
+
+  # Workaround to prevent the `kitty` binary from being installed. Setting
+  # `package = null` will give an error, so instead a 'dummy' package is
+  # specified. The reason for this, is that programs that use OpenGL fail to
+  # start in a pure Nix environment. So the installed `kitty` binary would
+  # immediately crash.
+  package = pkgs.hello;
+
   font = {
     name = "Monospace";
     size = 12.0;
