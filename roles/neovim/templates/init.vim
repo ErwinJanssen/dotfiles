@@ -283,8 +283,6 @@ augroup END
 " Trim all trailing whitespace on buffer write
 function! TrimWhitespace()
     let l:state = winsaveview()
-    " Trim trailing whitespace on every line
-    %substitute/\s\+$//e
     " Trim trailing empty lines at the end of the file
     %substitute/\($\n\)\+\%$//e
     call winrestview(l:state)
