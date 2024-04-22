@@ -26,7 +26,3 @@ playbook: theme.json
 .PHONY: shell
 shell:
 	guix shell --manifest=manifest.scm
-
-.PHONY: container
-container:
-	guix home container guix/home-configuration.scm
