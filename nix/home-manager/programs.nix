@@ -6,7 +6,7 @@
   home-manager = import ./programs/home-manager.nix;
 
   # Shell setup
-  fish = import ./programs/fish.nix;
+  fish = import ./programs/fish/main.nix;
   readline = import ./programs/readline.nix;
   starship = import ./programs/starship.nix;
 
