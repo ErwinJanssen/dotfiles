@@ -72,7 +72,7 @@ in
   #  /etc/profiles/per-user/erwin/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    VAGRANT_DEFAULT_PROVIDER = "libvirt";
   };
 
   fonts = {
