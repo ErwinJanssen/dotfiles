@@ -25,4 +25,4 @@ playbook: theme.json
 
 .PHONY: shell
 shell:
-	guix shell --manifest=manifest.scm
+	nix-shell
