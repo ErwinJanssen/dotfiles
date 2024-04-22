@@ -7,6 +7,7 @@
 
   # Shell setup
   fish = import ./programs/fish/main.nix;
+  kitty = import ./programs/kitty.nix theme;
   readline = import ./programs/readline.nix;
   starship = import ./programs/starship.nix;
 
