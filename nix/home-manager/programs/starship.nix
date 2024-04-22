@@ -23,7 +23,7 @@
       conflicted = "[✘$count](red)";
       up_to_date = "[✓](green)";
       untracked = "[?$count](default)";
-      stashed = "[\$$count](default)";
+      stashed = "[\\$$count](default)";
       modified = "[~$count](yellow)";
       staged = "[+$count](green)";
       renamed = "[»$count](yellow)";
