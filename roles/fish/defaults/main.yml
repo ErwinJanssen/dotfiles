@@ -1,7 +1,4 @@
 ---
 config_directory: "{{ config_home }}/fish"
-dependencies:
-  # Python version switcher
-  - pyenv
-
+dependencies: []
 editor: nvim
