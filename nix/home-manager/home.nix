@@ -34,6 +34,9 @@ in
     # fzf.vim automatically uses `bat` for file previews if it is available.
     pkgs.bat
 
+    # Useful utilities for working with Nix
+    pkgs.nix-index
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
