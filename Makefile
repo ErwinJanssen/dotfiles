@@ -1,7 +1,7 @@
 TAGS ?= all
 
 .PHONY: configure
-configure: nix playbook
+configure: playbook nix
 
 .PHONY: clean
 clean:
