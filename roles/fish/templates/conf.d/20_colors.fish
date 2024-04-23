@@ -53,18 +53,6 @@ set fish_color_escape bryellow --bold
 # {{ "}}}" }}
 
 # =====================================
-#                Prompt
-# =====================================
-# {{ "{{{" }}
-
-# Colors for the prompt
-set fish_color_user brgreen
-set fish_color_host normal
-set fish_color_cwd green
-set __fish_git_prompt_color_branch yellow
-# {{ "}}}" }}
-
-# =====================================
 #           Completion pager
 # =====================================
 # {{ "{{{" }}
@@ -89,5 +77,4 @@ set fish_pager_color_secondary normal
 
 
 set fish_color_history_current --bold
-set fish_color_status red
 set fish_color_valid_path --underline
