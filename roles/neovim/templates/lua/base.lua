@@ -17,3 +17,8 @@ vim.opt.splitbelow = true
 -- temporarily not shown. Setting this value causes hidden buffers to remain in
 -- existing in the background.
 vim.opt.hidden = true
+
+-- Don't give messages related to `ins-completion-menu` in the command line.
+-- Examples are "match 1 of 2", "Pattern not found", etc. These messages don't
+-- provide any additional information, while still being distracting.
+vim.opt.shortmess:append { c = true }
