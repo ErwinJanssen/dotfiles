@@ -7,4 +7,7 @@
       defaultBranch = "main";
     };
   };
+  delta = {
+    enable = true;
+  };
 }
