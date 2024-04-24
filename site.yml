@@ -49,9 +49,3 @@
             name: swaylock
           tags:
             - swaylock
-
-        - name: Apply role `zathura`
-          ansible.builtin.import_role:
-            name: zathura
-          tags:
-            - zathura

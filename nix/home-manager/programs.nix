@@ -35,4 +35,5 @@
     config = config;
     theme = theme.theme;
   };
+  zathura = import ./programs/zathura.nix theme;
 }

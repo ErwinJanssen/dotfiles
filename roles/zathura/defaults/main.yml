@@ -1,5 +1,0 @@
----
-config_directory: "{{ config_home }}/zathura"
-dependencies:
-  - zathura
-  - zathura-pdf-mupdf
