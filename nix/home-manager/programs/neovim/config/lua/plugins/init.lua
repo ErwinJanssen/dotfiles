@@ -16,9 +16,6 @@ require("paq"):setup { verbose = true } {
     "tpope/vim-dispatch",
     "radenling/vim-dispatch-neovim",
 
-    -- Comment stuff out
-    "tpope/vim-commentary",
-
     -- Display pop-up with possible key bindings
     "folke/which-key.nvim",
 

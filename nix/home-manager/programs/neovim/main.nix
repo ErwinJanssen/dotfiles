@@ -10,6 +10,9 @@
     vim-pandoc-syntax # Pandoc syntax highlight
     plantuml-syntax # PlantUML
 
+    # Comment stuff out
+    vim-commentary
+
     # Fuzzy finder
     fzfWrapper
     fzf-vim
