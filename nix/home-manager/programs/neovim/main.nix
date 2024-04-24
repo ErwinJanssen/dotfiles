@@ -17,6 +17,9 @@
     fzfWrapper
     fzf-vim
 
+    # Display pop-up with possible key bindings
+    which-key-nvim
+
     # Visualize undo tree
     vim-mundo
 

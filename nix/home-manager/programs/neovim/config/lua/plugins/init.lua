@@ -16,9 +16,6 @@ require("paq"):setup { verbose = true } {
     "tpope/vim-dispatch",
     "radenling/vim-dispatch-neovim",
 
-    -- Display pop-up with possible key bindings
-    "folke/which-key.nvim",
-
     -- Auto-completion during typing, uses various sources
     "hrsh7th/nvim-compe",
 
