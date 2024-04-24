@@ -11,7 +11,7 @@ lua require("plugins")
 " ======================================
 "             User interface
 " ======================================
-" {{ "{{{" }}
+" {{{
 
 " Display both absolute and relative line numbers
 set number
@@ -45,12 +45,12 @@ let g:netrw_liststyle=3
 " status-line using a plugin.
 set noshowmode
 
-" {{ "}}}" }}
+" }}}
 
 " ======================================
 "                 Visuals
 " ======================================
-" {{ "{{{" }}
+" {{{
 
 " Use 24-bit colors if possible
 if (has("termguicolors"))
@@ -81,12 +81,12 @@ augroup highlight_yank
     autocmd TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=500 }
 augroup END
 
-" {{ "}}}" }}
+" }}}
 
 " ======================================
 "                 Editor
 " ======================================
-" {{ "{{{" }}
+" {{{
 
 " Enable mouse support
 set mouse=a
@@ -208,12 +208,12 @@ nnoremap <Leader>gd :lua vim .lsp.buf.definition()<CR>
 
 lua require("mappings")
 
-" {{ "}}}" }}
+" }}}
 
 " ======================================
 "              Miscellaneous
 " ======================================
-" {{ "{{{" }}
+" {{{
 
 " Work around the issue where Neovim fails to reset the shape of the cursor
 " after closing: https://github.com/neovim/neovim/issues/4867
@@ -261,4 +261,4 @@ endfunction
 
 let g:fzf_layout = { 'window': 'call FloatingFZF()' }
 
-" {{ "}}}" }}
+" }}}
