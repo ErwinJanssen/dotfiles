@@ -6,7 +6,7 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current fil
 -- ==============================
 -- [f]ind things
 -- ==============================
--- {{ "{{{" }}
+-- {{{
 
 if whichkey_ok then
     whichkey.register {
@@ -45,12 +45,12 @@ vim.keymap.set("n", "<Leader>fg", function()
     vim.cmd("Rg " .. vim.fn.input "Search string: ")
 end, { desc = "Find with ripgrep" })
 
--- {{ "}}}" }}
+-- }}}
 
 -- ==============================
 -- [l]anguage action
 -- ==============================
--- {{ "{{{" }}
+-- {{{
 
 if whichkey_ok then
     whichkey.register {
@@ -70,12 +70,12 @@ end, {
     desc = "Rename current symbol",
 })
 
--- {{ "}}}" }}
+-- }}}
 
 -- ==============================
 -- [t]oggle menus and interfaces
 -- ==============================
--- {{ "{{{" }}
+-- {{{
 
 if whichkey_ok then
     whichkey.register {
@@ -87,12 +87,12 @@ vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
     desc = "Undo tree",
 })
 
--- {{ "}}}" }}
+-- }}}
 
 -- ==============================
 -- [v]ersion control
 -- ==============================
--- {{ "{{{" }}
+-- {{{
 
 if whichkey_ok then
     whichkey.register {
@@ -106,4 +106,4 @@ end, {
     desc = "Blame of current line",
 })
 
--- {{ "}}}" }}
+-- }}}
