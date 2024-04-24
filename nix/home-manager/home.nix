@@ -118,6 +118,10 @@ in
   home.file.".config/nvim" = {
     source = ./programs/neovim/config;
     recursive = true;
+    # Update Neovim plugins with Paq.
+    # Note: because `recursive = true`, this command will always run,
+    # regardless of changes.
+    onChange = ''nvim --headless +"autocmd User PaqDoneSync quitall" +PaqSync'';
   };
 
   # Configure services by importing `services.nix`.

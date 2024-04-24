@@ -8,10 +8,3 @@
     repo: https://github.com/savq/paq-nvim.git
     dest: "{{ user_home }}/.local/share/nvim/site/pack/paqs/start/paq-nvim"
     depth: 1
-
-- name: Update Neovim Plugins with Paq
-  ansible.builtin.command: nvim --headless +"autocmd User PaqDoneSync quitall" +PaqSync
-  register: paq_command
-  changed_when: |
-    'Paq: Nothing to remove' not in paq_command.stderr
-    or 'Paq: sync complete. 0 ok; 0 errors' not in paq_command.stderr
