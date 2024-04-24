@@ -4,9 +4,6 @@ require("paq"):setup { verbose = true } {
     -- Let Paq manage itself
     "savq/paq-nvim",
 
-    -- Lua library with additional function for Neovim, used by other packages
-    "nvim-lua/plenary.nvim",
-
     -- Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
     "norcalli/nvim-colorizer.lua",
 }
