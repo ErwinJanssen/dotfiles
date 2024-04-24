@@ -26,12 +26,6 @@
           tags:
             - fish
 
-        - name: Apply role `thunderbird`
-          ansible.builtin.import_role:
-            name: thunderbird
-          tags:
-            - thunderbird
-
         - name: Apply role `neovim`
           ansible.builtin.import_role:
             name: neovim
