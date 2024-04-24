@@ -1,9 +1,6 @@
 -- Configure syntax highlighting using tree-sitter
 
 require("nvim-treesitter.configs").setup {
-    -- Install all parsers
-    ensure_installed = "all",
-
     -- Enable syntax highlighting
     highlight = {
         enable = true,

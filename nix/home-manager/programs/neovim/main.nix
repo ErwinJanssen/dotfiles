@@ -35,6 +35,9 @@
     vim-dispatch
     vim-dispatch-neovim
 
+    # Treesitter: more advanced syntax highlighting
+    nvim-treesitter.withAllGrammars
+
     # Auto-completion during typing, uses various sources
     nvim-compe
   ];
