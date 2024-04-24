@@ -15,11 +15,3 @@
   changed_when: |
     'Paq: Nothing to remove' not in paq_command.stderr
     or 'Paq: sync complete. 0 ok; 0 errors' not in paq_command.stderr
-
-- name: Remove all vim-plug data
-  ansible.builtin.file:
-    path: "{{ item }}"
-    state: absent
-  loop:
-    - "{{ user_home }}/.local/share/nvim/site/autoload/plug.vim"
-    - "{{ user_home }}/.local/share/nvim/plugged"
