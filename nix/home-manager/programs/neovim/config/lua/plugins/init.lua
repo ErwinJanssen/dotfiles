@@ -1,9 +1,4 @@
---  This script uses Paq to manage the specified plugins.
-
-require("paq"):setup { verbose = true } {
-    -- Let Paq manage itself
-    "savq/paq-nvim",
-}
+-- Configure plugins. Install is done by Nix Home Manager.
 
 -- vim-pandoc
 vim.g["pandoc#folding#fdc"] = 0
