@@ -28,6 +28,7 @@
   neovim = import ./programs/neovim/main.nix { pkgs = pkgs; };
   pyenv = import ./programs/pyenv.nix;
   ssh = import ./programs/ssh.nix;
+  zellij = import ./programs/zellij.nix { theme = theme; };
 
   # GUI programs
   firefox = import ./programs/firefox/main.nix { theme = theme; };
