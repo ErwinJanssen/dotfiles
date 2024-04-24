@@ -8,12 +8,12 @@ vim.g.mapleader = " "
 -- current buffer (instead of to the left or above). The benefit is that the
 -- current buffer remains at the same place (and is not moved to the other part
 -- of the screen), which is easier on the eyes and might be more intuitive.
-vim.o.splitright = true
-vim.o.splitbelow = true
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- When this value is not set, a buffer that is "unloaded" when removed from
 -- the view (when switching between buffers for example) is unloaded. One of
 -- the results is that the undo history is discarded when a buffer is
 -- temporarily not shown. Setting this value causes hidden buffers to remain in
 -- existing in the background.
-vim.o.hidden = true
+vim.opt.hidden = true
