@@ -9,13 +9,6 @@ require("paq"):setup { verbose = true } {
 
     -- Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
     "norcalli/nvim-colorizer.lua",
-
-    -- Install and manage LSP servers, linters, etc.
-    {
-        "williamboman/mason.nvim",
-        -- :MasonUpdate updates registry contents
-        build = ":MasonUpdate",
-    },
 }
 
 -- vim-pandoc
