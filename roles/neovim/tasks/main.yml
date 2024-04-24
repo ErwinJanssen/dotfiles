@@ -3,8 +3,7 @@
   ansible.builtin.import_role:
     name: _common
 
-- name: Clone Git repository for paq-nvim
-  ansible.builtin.git: # noqa: latest[git]
-    repo: https://github.com/savq/paq-nvim.git
-    dest: "{{ user_home }}/.local/share/nvim/site/pack/paqs/start/paq-nvim"
-    depth: 1
+- name: Remove packages installed by paq-nvim
+  ansible.builtin.file:
+    path: "{{ user_home }}/.local/share/nvim/site/pack/paqs/start/paq-nvim"
+    state: absent
