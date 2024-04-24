@@ -1,14 +1,7 @@
 " ======================================
 "            General settings
 " ======================================
-" {{ "{{{" }}
 lua require("base")
-
-" Apply folding by default using the "marker" method. This defaults to using
-" three curly braces to open and close a fold.
-set foldmethod=marker
-
-" {{ "}}}" }}
 
 " ======================================
 "                 Plugins

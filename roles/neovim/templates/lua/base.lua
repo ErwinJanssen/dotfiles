@@ -29,6 +29,10 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.tagcase = "followscs"
 
+-- Apply folding by default using the "marker" method. This defaults to using
+-- three curly braces to open and close a fold.
+vim.opt.foldmethod = "marker"
+
 -- Automatically reload the file if it has been changed outside of Vim.
 vim.opt.autoread = true
 
