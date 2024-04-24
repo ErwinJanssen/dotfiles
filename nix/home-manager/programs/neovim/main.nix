@@ -16,5 +16,8 @@
 
     # Visualize undo tree
     vim-mundo
+
+    # Show Git diff in the signcolumn (added, removed, modified).
+    gitsigns-nvim
   ];
 }

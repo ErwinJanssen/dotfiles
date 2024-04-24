@@ -22,9 +22,6 @@ require("paq"):setup { verbose = true } {
     -- Comment stuff out
     "tpope/vim-commentary",
 
-    -- Show Git diff in the signcolumn (added, removed, modified).
-    "lewis6991/gitsigns.nvim",
-
     -- Display pop-up with possible key bindings
     "folke/which-key.nvim",
 
