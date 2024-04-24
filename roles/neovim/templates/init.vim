@@ -4,25 +4,6 @@
 " {{ "{{{" }}
 lua require("base")
 
-" Automatically save the current buffer, also when leaving Vim (`autowrite`
-" does not always detect this). This prevents a lot of manual saving and, since
-" most files are in version control, is often safe to do. It also prevents a
-" lot of conflicts when you are modifying the same file outside of Vim and have
-" `autoread` enabled.
-set autowriteall
-autocmd FocusLost * :silent! !
-
-" Configure `autoread` to work as expected. By default `autoread` only triggers
-" on certain actions, such as a shell command. By shelling out every time you
-" enter a buffer or come back to Vim, your buffer gets refreshed with the
-" contents from the disk.
-set autoread
-autocmd FocusGained,BufEnter * :silent! !
-
-" With the above autowrite and autoread in place, we can safely disable the
-" swap file.
-set noswapfile
-
 " When searching, ignore case unless the pattern contains upper case
 " characters. Apply the same setting when searching the tags file.
 set ignorecase

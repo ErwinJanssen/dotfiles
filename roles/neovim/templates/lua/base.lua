@@ -22,3 +22,23 @@ vim.opt.hidden = true
 -- Examples are "match 1 of 2", "Pattern not found", etc. These messages don't
 -- provide any additional information, while still being distracting.
 vim.opt.shortmess:append { c = true }
+
+-- Automatically reload the file if it has been changed outside of Vim.
+vim.opt.autoread = true
+
+-- Automatically save the current buffer. This prevents a lot of manual saving
+-- and -- since most files are in version control -- is often safe to do. It
+-- also prevents a lot of conflicts when you are modifying the same file
+-- outside of Vim and have `autoread` enabled.
+vim.opt.autowriteall = true
+
+-- Configure `autoread` and `autowriteall` to work as expected. By default
+-- these settings only trigger on certain actions, such as a shell command. By
+-- shelling out every time you change your focus to/from Vim, or when entering
+-- another buffer, your buffer is always saved to disk when you leave, and
+-- reloaded when you come back.
+vim.api.nvim_create_autocmd({ "FocusLost", "FocusGained", "BufEnter" }, { command = "silent! !" })
+
+-- With the above autowrite and autoread in place, we can safely disable the
+-- swap file.
+vim.opt.swapfile = false
