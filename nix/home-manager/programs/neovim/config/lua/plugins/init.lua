@@ -7,12 +7,6 @@ require("paq"):setup { verbose = true } {
     -- Lua library with additional function for Neovim, used by other packages
     "nvim-lua/plenary.nvim",
 
-    -- Additional file types
-    "pearofducks/ansible-vim", -- Ansible YAML
-    "vim-pandoc/vim-pandoc", -- Pandoc filetype and utilities
-    "vim-pandoc/vim-pandoc-syntax", -- Pandoc syntax highlight
-    "aklt/plantuml-syntax", -- PlantUML
-
     -- Lightweight status line
     "itchyny/lightline.vim",
 
