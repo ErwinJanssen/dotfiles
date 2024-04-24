@@ -14,6 +14,9 @@
     vim-pandoc-syntax # Pandoc syntax highlight
     plantuml-syntax # PlantUML
 
+    # Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
+    nvim-colorizer-lua
+
     # Comment stuff out
     vim-commentary
 

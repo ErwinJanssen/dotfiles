@@ -3,9 +3,6 @@
 require("paq"):setup { verbose = true } {
     -- Let Paq manage itself
     "savq/paq-nvim",
-
-    -- Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
-    "norcalli/nvim-colorizer.lua",
 }
 
 -- vim-pandoc
