@@ -1,6 +1,11 @@
-{ theme }:
+{ theme, pkgs }:
 {
   enable = true;
+  iconTheme = {
+    name = "gnome";
+    package = pkgs.xfce.xfce4-icon-theme;
+    size = "256x256";
+  };
   settings = {
     global = {
       # Do not set a time-out by default. Otherwise notifications can disappear
