@@ -3,6 +3,10 @@
   enable = true;
   defaultEditor = true;
   extraConfig = builtins.readFile ./init.vim;
+  extraPackages = [
+    # Used by Mason to install packages.
+    pkgs.nodejs_21
+  ];
   plugins = with pkgs.vimPlugins; [
     # Additional file types.
     ansible-vim # Ansible YAML
