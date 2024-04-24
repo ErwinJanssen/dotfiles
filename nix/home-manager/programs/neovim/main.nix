@@ -40,5 +40,8 @@
 
     # Auto-completion during typing, uses various sources
     nvim-compe
+
+    # Configuration for Neovim's built-in language server client
+    nvim-lspconfig
   ];
 }

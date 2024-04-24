@@ -10,9 +10,6 @@ require("paq"):setup { verbose = true } {
     -- Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
     "norcalli/nvim-colorizer.lua",
 
-    -- Configuration for Neovim's built-in language server client
-    "neovim/nvim-lspconfig",
-
     -- Install and manage LSP servers, linters, etc.
     {
         "williamboman/mason.nvim",
