@@ -55,6 +55,7 @@ if mason_lspconfig_ok then
             "ansiblels",
             "bashls",
             "lua_ls",
+            "nil_ls",
             "pyright",
             "rust_analyzer",
         },
