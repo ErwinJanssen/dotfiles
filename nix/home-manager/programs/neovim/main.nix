@@ -34,5 +34,8 @@
     # 'vim-dispatch' to use the build-in Neovim terminal.
     vim-dispatch
     vim-dispatch-neovim
+
+    # Auto-completion during typing, uses various sources
+    nvim-compe
   ];
 }
