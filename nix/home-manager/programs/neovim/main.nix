@@ -43,5 +43,8 @@
 
     # Configuration for Neovim's built-in language server client
     nvim-lspconfig
+
+    # Bridge between `mason` and `lspconfig`
+    mason-lspconfig-nvim
   ];
 }

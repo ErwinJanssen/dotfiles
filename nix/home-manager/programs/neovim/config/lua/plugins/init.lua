@@ -16,9 +16,6 @@ require("paq"):setup { verbose = true } {
         -- :MasonUpdate updates registry contents
         build = ":MasonUpdate",
     },
-
-    -- Bridge between `mason` and `lspconfig`
-    "williamboman/mason-lspconfig.nvim",
 }
 
 -- vim-pandoc
