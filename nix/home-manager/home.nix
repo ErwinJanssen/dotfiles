@@ -115,7 +115,10 @@ in
   };
 
   # Configure services by importing `services.nix`.
-  services = import ./services.nix { theme = theme; };
+  services = import ./services.nix {
+    theme = theme;
+    pkgs = pkgs;
+  };
 
   # Configure Wayland display managers by importing `wayland.nix`.
   wayland = import ./wayland.nix;

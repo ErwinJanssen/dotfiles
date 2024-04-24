@@ -1,4 +1,4 @@
-{ theme }:
+{ theme, pkgs }:
 {
   dunst = import ./services/dunst.nix theme;
   kanshi = import ./services/kanshi.nix;
