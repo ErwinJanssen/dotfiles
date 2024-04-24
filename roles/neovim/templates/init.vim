@@ -4,12 +4,6 @@
 " {{ "{{{" }}
 lua require("base")
 
-" When searching, ignore case unless the pattern contains upper case
-" characters. Apply the same setting when searching the tags file.
-set ignorecase
-set smartcase
-set tagcase=followscs
-
 " Apply folding by default using the "marker" method. This defaults to using
 " three curly braces to open and close a fold.
 set foldmethod=marker

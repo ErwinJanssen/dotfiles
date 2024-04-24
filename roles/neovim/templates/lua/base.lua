@@ -23,6 +23,12 @@ vim.opt.hidden = true
 -- provide any additional information, while still being distracting.
 vim.opt.shortmess:append { c = true }
 
+-- When searching, ignore case unless the pattern contains upper case
+-- characters. Apply the same setting when searching the tags file.
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.tagcase = "followscs"
+
 -- Automatically reload the file if it has been changed outside of Vim.
 vim.opt.autoread = true
 
