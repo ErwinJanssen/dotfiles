@@ -7,9 +7,6 @@ require("paq"):setup { verbose = true } {
     -- Lua library with additional function for Neovim, used by other packages
     "nvim-lua/plenary.nvim",
 
-    -- Lightweight status line
-    "itchyny/lightline.vim",
-
     -- Highlight color definitions (e.g. #1b1b1b, DarkGray, hsl(20, 30%, 50%))
     "norcalli/nvim-colorizer.lua",
 

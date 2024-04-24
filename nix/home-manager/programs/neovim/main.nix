@@ -19,5 +19,8 @@
 
     # Show Git diff in the signcolumn (added, removed, modified).
     gitsigns-nvim
+
+    # Lightweight status line
+    lightline-vim
   ];
 }
