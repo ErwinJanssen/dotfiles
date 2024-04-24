@@ -1,4 +1,0 @@
----
-config_directory: "{{ config_home }}/termite"
-dependencies:
-  - termite
