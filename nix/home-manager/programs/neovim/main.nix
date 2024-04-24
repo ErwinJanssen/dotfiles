@@ -13,5 +13,8 @@
     # Fuzzy finder
     fzfWrapper
     fzf-vim
+
+    # Visualize undo tree
+    vim-mundo
   ];
 }
