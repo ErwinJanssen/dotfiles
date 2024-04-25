@@ -8,6 +8,10 @@
       path = "default.profile";
       isDefault = true;
       userChrome = import ./userChrome.css { theme = theme; };
+      settings = {
+        # Allow custom `userChrome.css`.
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      };
     };
   };
 }
