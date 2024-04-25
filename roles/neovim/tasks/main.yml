@@ -3,7 +3,10 @@
   ansible.builtin.import_role:
     name: _common
 
-- name: Remove packages installed by paq-nvim
+- name: Remove all paq-nvim data
   ansible.builtin.file:
-    path: "{{ user_home }}/.local/share/nvim/site/pack/paqs/start/paq-nvim"
+    path: "{{ item }}"
     state: absent
+  loop:
+    - "{{ user_home }}/.local/share/nvim/site/pack/paqs"
+    - "{{ user_home }}/.local/share/nvim/paq-lock.json"
