@@ -90,6 +90,11 @@ in
     VAGRANT_DEFAULT_PROVIDER = "libvirt";
   };
 
+  # Configure Nix itself for this user.
+  nix = {
+    package = pkgs.nix;
+  };
+
   fonts = {
     fontconfig = {
       enable = true;
