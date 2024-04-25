@@ -4,7 +4,9 @@
   defaultEditor = true;
   extraConfig = builtins.readFile ./init.vim;
   extraPackages = [
-    # Used by Mason to install packages.
+    # Used by Mason to build and install packages.
+    pkgs.cargo
+    pkgs.gcc9 # Cargo needs a C compiler for linking.
     pkgs.nodejs_21
   ];
   plugins = with pkgs.vimPlugins; [
