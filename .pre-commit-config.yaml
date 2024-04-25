@@ -7,6 +7,11 @@ repos:
         entry: fish_indent --write
         language: system
         types: [fish]
+      - id: nix-fmt
+        name: Nix auto-format
+        entry: nix fmt
+        language: system
+        types: [nix]
 
   - repo: https://github.com/JohnnyMorganz/StyLua
     rev: v0.17.1
