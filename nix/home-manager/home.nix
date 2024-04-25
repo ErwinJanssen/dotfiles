@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   theme = {
@@ -142,5 +147,8 @@ in
   };
 
   # Configure Wayland display managers by importing `wayland.nix`.
-  wayland = import ./wayland.nix;
+  wayland = import ./wayland.nix {
+    config = config;
+    lib = lib;
+  };
 }
