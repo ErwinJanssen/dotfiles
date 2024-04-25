@@ -93,6 +93,9 @@ in
   # Configure Nix itself for this user.
   nix = {
     package = pkgs.nix;
+    settings = {
+      experimental-features = [ "nix-command" ];
+    };
   };
 
   fonts = {
