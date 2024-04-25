@@ -1,12 +1,26 @@
 {
   enable = true;
   profiles = {
-    # If no outputs are connected, enable build-in display.
-    undocked = {
+    # If no outputs are connected, enable build-in display. Use more specific
+    # settings for some devices. Use `_9_` and `_0_` in the profile name to
+    # make sure than the 'other' config is placed last, and will only match as
+    # a fall-back.
+    undocked_9_other = {
       outputs = [
         {
           criteria = "eDP-1";
           status = "enable";
+        }
+      ];
+    };
+    undocked_0_framework = {
+      outputs = [
+        {
+          # The Framework 13 has a high resolution screen, use a larger scale
+          # factor.
+          criteria = "BOE 0x0BCA Unknown";
+          status = "enable";
+          scale = 1.3;
         }
       ];
     };
