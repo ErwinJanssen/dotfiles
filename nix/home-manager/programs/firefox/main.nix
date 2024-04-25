@@ -11,6 +11,10 @@
       settings = {
         # Allow custom `userChrome.css`.
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+
+        # Hide the bookmarks toolbar as this takes up vertical space. Use the
+        # bookmarks side-panel instead when needed.
+        "browser.toolbars.bookmarks.visibility" = "never";
       };
     };
   };
