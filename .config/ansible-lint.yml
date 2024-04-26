@@ -1,4 +1,7 @@
 ---
+exclude_paths:
+  - collections
+
 skip_list:
   # Skip the role-name check, because it fails on the _common role
   - role-name
