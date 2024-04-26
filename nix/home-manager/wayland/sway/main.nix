@@ -6,6 +6,7 @@
 }:
 let
   mod = config.wayland.windowManager.sway.config.modifier;
+  menu = config.wayland.windowManager.sway.config.menu;
 in
 {
   enable = true;
@@ -31,6 +32,17 @@ in
       # config from Home Manager includes keybinding for workspaces up to 9.
       "${mod}+0" = "workspace number 10";
       "${mod}+Shift+0" = "move container to workspace number 10";
+
+      # Tap the left Super key to start the launcher, instead of `$mod+d`.
+      "--release Super_L" = "exec ${menu}";
+      "${mod}+d" = null;
+
+      # Switch back and forth the current and the previous window, similar to
+      # how alt-tab works in other window managers.
+      "${mod}+tab" = "workspace back_and_forth";
+
+      # Keybinding to lock the screen.
+      "${mod}+l" = "exec swaylock";
     };
 
     output = {
