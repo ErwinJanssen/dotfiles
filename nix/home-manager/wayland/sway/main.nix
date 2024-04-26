@@ -19,6 +19,9 @@ in
     # Use 'logo' key as default modifier.
     modifier = "Mod4";
 
+    # Use system installed Kitty as default terminal.
+    terminal = "kitty";
+
     # Use Rofi as application launcher.
     menu = "rofi -show run";
 
