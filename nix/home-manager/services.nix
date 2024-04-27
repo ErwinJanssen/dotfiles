@@ -6,4 +6,5 @@
   };
   kanshi = import ./services/kanshi.nix;
   ssh-agent = import ./services/ssh-agent.nix;
+  swayidle = import ./services/swayidle.nix;
 }
