@@ -26,6 +26,23 @@ in
     # Use Rofi as application launcher.
     menu = "rofi -show run";
 
+    focus = {
+      # Do not let the mouse position determine which window has the focus.
+      followMouse = false;
+    };
+
+    input = {
+      "type:touchpad" = {
+        # Enable 'tab to click'.
+        tap = "enabled";
+      };
+
+      "type:keyboard" = {
+        # Map `CapsLock` to `Escape`.
+        xkb_options = "caps:escape";
+      };
+    };
+
     # Append custom keybindings to the default config.
     keybindings = lib.mkOptionDefault {
       # Add bindings for wokspace 10. As of NixOS 23.11, the default Sway
