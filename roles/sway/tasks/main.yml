@@ -3,6 +3,13 @@
   ansible.builtin.import_role:
     name: _common
 
+- name: Remove obsolete condiguration files.
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - "{{ config_directory }}/config.d/systemd.conf"
+
 - name: Add user to 'video' group, required for backlight utility 'light'
   become: true
   ansible.builtin.user:
