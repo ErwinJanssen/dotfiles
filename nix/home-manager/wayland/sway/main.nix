@@ -15,8 +15,7 @@ let
       ${notification-command} --expire-time=1000 \
       --hint=string:x-canonical-private-synchronous:brightness \
       --hint="int:value:$VALUE" \
-      "Brightness: $${VALUE}%"
-  '';
+      "Brightness: $${VALUE}%"'';
 in
 {
   enable = true;
@@ -72,8 +71,14 @@ in
       "${mod}+l" = "exec swaylock";
 
       # Increase/decrease screen brightness.
-      XF86MonBrightnessUp = "exec light -A 5 && ${brightness-notification-command}";
-      XF86MonBrightnessDown = "exec light -U 5 && ${brightness-notification-command}";
+      XF86MonBrightnessUp = ''
+        exec light -A 5 && ${brightness-notification-command} \
+          --icon=display-brightness-high-symbolic
+      '';
+      XF86MonBrightnessDown = ''
+        exec light -U 5 && ${brightness-notification-command} \
+          --icon=display-brightness-low-symbolic
+      '';
     };
 
     output = {
