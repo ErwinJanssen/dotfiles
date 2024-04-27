@@ -36,6 +36,9 @@ in
     pkgs.fd
     pkgs.fira-code
 
+    # Required for Sway config.
+    pkgs.libnotify
+
     # fzf.vim automatically uses `bat` for file previews if it is available.
     pkgs.bat
 
