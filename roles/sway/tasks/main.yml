@@ -15,9 +15,3 @@
     name: "{{ ansible_user_id }}"
     groups: video
     append: true
-
-- name: Add systemd target for user session
-  ansible.builtin.copy:
-    src: sway-session.target
-    dest: "{{ config_home }}/systemd/user/sway-session.target"
-    mode: u=rw,g=r,o=r
