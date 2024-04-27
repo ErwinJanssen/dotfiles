@@ -35,7 +35,5 @@ in
   extraConfigEarly = ''
     set $mod ${mod}
   '';
-  extraConfig = ''
-    include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "$XDG_CONFIG_HOME/sway/config.d/*.conf")'
-  '';
+  extraConfig = builtins.readFile ./extra.conf;
 }
