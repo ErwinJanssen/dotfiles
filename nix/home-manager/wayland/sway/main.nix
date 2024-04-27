@@ -65,7 +65,7 @@ in
 
     output = {
       "*" = {
-        bg = "/usr/share/backgrounds/default.png fill";
+        bg = "wallpaper.jpg fill";
       };
     };
 
