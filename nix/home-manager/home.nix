@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   theme = {
@@ -141,6 +146,16 @@ in
     pkgs = pkgs;
   };
 
+  # Place background image for Sway.
+  home.file.".config/sway/wallpaper.jpg" = {
+    source = ./wayland/sway/wallpaper.jpg;
+  };
+
   # Configure Wayland display managers by importing `wayland.nix`.
-  wayland = import ./wayland.nix;
+  wayland = import ./wayland.nix {
+    config = config;
+    pkgs = pkgs;
+    lib = lib;
+    theme = theme;
+  };
 }

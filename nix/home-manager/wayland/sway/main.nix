@@ -1,0 +1,167 @@
+{
+  config,
+  pkgs,
+  lib,
+  theme,
+}:
+let
+  mod = config.wayland.windowManager.sway.config.modifier;
+  menu = config.wayland.windowManager.sway.config.menu;
+  term = config.wayland.windowManager.sway.config.terminal;
+in
+{
+  enable = true;
+
+  # Do not install Sway via Nix, but use the system version. Sway integrates
+  # with the system, so installing it purely via Nix on non-NixOS can cause
+  # problems, like with missing drivers.
+  package = null;
+
+  config = {
+    # Use 'logo' key as default modifier.
+    modifier = "Mod4";
+
+    # Use system installed Kitty as default terminal.
+    terminal = "kitty";
+
+    # Use Rofi as application launcher.
+    menu = "rofi -show run";
+
+    focus = {
+      # Do not let the mouse position determine which window has the focus.
+      followMouse = false;
+    };
+
+    input = {
+      "type:touchpad" = {
+        # Enable 'tab to click'.
+        tap = "enabled";
+      };
+
+      "type:keyboard" = {
+        # Map `CapsLock` to `Escape`.
+        xkb_options = "caps:escape";
+      };
+    };
+
+    # Append custom keybindings to the default config.
+    keybindings = lib.mkOptionDefault {
+      # Add bindings for wokspace 10. As of NixOS 23.11, the default Sway
+      # config from Home Manager includes keybinding for workspaces up to 9.
+      "${mod}+0" = "workspace number 10";
+      "${mod}+Shift+0" = "move container to workspace number 10";
+
+      # Tap the left Super key to start the launcher, instead of `$mod+d`.
+      "--release Super_L" = "exec ${menu}";
+      "${mod}+d" = null;
+
+      # Switch back and forth the current and the previous window, similar to
+      # how alt-tab works in other window managers.
+      "${mod}+tab" = "workspace back_and_forth";
+
+      # Keybinding to lock the screen.
+      "${mod}+l" = "exec swaylock";
+    };
+
+    output = {
+      "*" = {
+        bg = "wallpaper.jpg fill";
+      };
+    };
+
+    startup = [
+      # Start a terminal with a tmux sessions. This will be moved to the
+      # scratchpad automatically.
+      { command = "${term} --class terminal_scratchpad -e tmux new-session -A -s scratch"; }
+    ];
+
+    window = {
+      # Default window border is 2 pixels.
+      border = 2;
+
+      # Hide titlebar by default for tiled windows.
+      titlebar = false;
+
+      # Hides window borders adjacent to the screen edges
+      hideEdgeBorders = "smart";
+
+      commands = [
+        # Automatically move the 'scratchpad' terminal to the scratchpad.
+        {
+          criteria = {
+            app_id = "terminal_scratchpad";
+          };
+          command = "move scratchpad";
+        }
+      ];
+    };
+
+    # Styling for window borders and title bars.
+    colors = {
+      focused = {
+        border = theme.ui.status_bar.active.background;
+        background = theme.ui.status_bar.active.background;
+        text = theme.ui.status_bar.active.foreground;
+        indicator = theme.theme.normal.accent;
+        childBorder = theme.theme.dim.accent;
+      };
+      unfocused = {
+        border = theme.ui.status_bar.tab.background;
+        background = theme.ui.status_bar.tab.background;
+        text = theme.ui.status_bar.default.foreground;
+        indicator = theme.ui.status_bar.default.background;
+        childBorder = theme.ui.status_bar.default.background;
+      };
+      urgent = {
+        border = theme.theme.normal.urgent;
+        background = theme.theme.normal.urgent;
+        text = theme.theme.normal.foreground;
+        indicator = theme.theme.normal.accent;
+        childBorder = theme.theme.dim.accent;
+      };
+    };
+
+    bars = [
+      {
+        # Use i3status as status command.
+        statusCommand = "${pkgs.i3status}/bin/i3status";
+
+        # Bar should be permanently visible at the top edge of the screen.
+        mode = "dock";
+        position = "top";
+
+        fonts = {
+          # Use the default monospace font as configured via Fontconfig.
+          names = [ "Monospace" ];
+          size = 10.0;
+        };
+
+        # Use colors from theme.
+        colors = {
+          statusline = theme.ui.status_bar.default.foreground;
+          background = theme.ui.status_bar.default.background;
+          focusedWorkspace = {
+            background = theme.ui.status_bar.active.background;
+            border = theme.ui.status_bar.active.background;
+            text = theme.ui.status_bar.active.foreground;
+          };
+          inactiveWorkspace = {
+            background = theme.ui.status_bar.tab.background;
+            border = theme.ui.status_bar.tab.background;
+            text = theme.ui.status_bar.tab.foreground;
+          };
+          urgentWorkspace = {
+            background = theme.ui.status_bar.urgent.background;
+            border = theme.ui.status_bar.urgent.background;
+            text = theme.ui.status_bar.urgent.foreground;
+          };
+        };
+      }
+    ];
+  };
+
+  extraConfigEarly = ''
+    set $mod ${mod}
+  '';
+  extraConfig = builtins.readFile ./extra.conf;
+}
