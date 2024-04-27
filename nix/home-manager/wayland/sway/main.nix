@@ -8,6 +8,15 @@ let
   mod = config.wayland.windowManager.sway.config.modifier;
   menu = config.wayland.windowManager.sway.config.menu;
   term = config.wayland.windowManager.sway.config.terminal;
+
+  notification-command = "${pkgs.libnotify}/bin/notify-send --transient";
+  brightness-notification-command = ''
+    VALUE=$(light) && VALUE=$${VALUE%%.*} && \
+      ${notification-command} --expire-time=1000 \
+      --hint=string:x-canonical-private-synchronous:brightness \
+      --hint="int:value:$VALUE" \
+      "Brightness: $${VALUE}%"
+  '';
 in
 {
   enable = true;
@@ -61,6 +70,10 @@ in
 
       # Keybinding to lock the screen.
       "${mod}+l" = "exec swaylock";
+
+      # Increase/decrease screen brightness.
+      XF86MonBrightnessUp = "exec light -A 5 && ${brightness-notification-command}";
+      XF86MonBrightnessDown = "exec light -U 5 && ${brightness-notification-command}";
     };
 
     output = {
