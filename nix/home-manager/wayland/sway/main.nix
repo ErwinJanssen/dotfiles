@@ -1,4 +1,9 @@
-{ config, lib }:
+{
+  config,
+  pkgs,
+  lib,
+  theme,
+}:
 let
   mod = config.wayland.windowManager.sway.config.modifier;
 in
@@ -30,6 +35,44 @@ in
         bg = "/usr/share/backgrounds/default.png fill";
       };
     };
+
+    bars = [
+      {
+        # Use i3status as status command.
+        statusCommand = "${pkgs.i3status}/bin/i3status";
+
+        # Bar should be permanently visible at the top edge of the screen.
+        mode = "dock";
+        position = "top";
+
+        fonts = {
+          # Use the default monospace font as configured via Fontconfig.
+          names = [ "Monospace" ];
+          size = 10.0;
+        };
+
+        # Use colors from theme.
+        colors = {
+          statusline = theme.ui.status_bar.default.foreground;
+          background = theme.ui.status_bar.default.background;
+          focusedWorkspace = {
+            background = theme.ui.status_bar.active.background;
+            border = theme.ui.status_bar.active.background;
+            text = theme.ui.status_bar.active.foreground;
+          };
+          inactiveWorkspace = {
+            background = theme.ui.status_bar.tab.background;
+            border = theme.ui.status_bar.tab.background;
+            text = theme.ui.status_bar.tab.foreground;
+          };
+          urgentWorkspace = {
+            background = theme.ui.status_bar.urgent.background;
+            border = theme.ui.status_bar.urgent.background;
+            text = theme.ui.status_bar.urgent.foreground;
+          };
+        };
+      }
+    ];
   };
 
   extraConfigEarly = ''

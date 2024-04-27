@@ -149,6 +149,8 @@ in
   # Configure Wayland display managers by importing `wayland.nix`.
   wayland = import ./wayland.nix {
     config = config;
+    pkgs = pkgs;
     lib = lib;
+    theme = theme;
   };
 }
