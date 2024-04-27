@@ -7,6 +7,7 @@
 let
   mod = config.wayland.windowManager.sway.config.modifier;
   menu = config.wayland.windowManager.sway.config.menu;
+  term = config.wayland.windowManager.sway.config.terminal;
 in
 {
   enable = true;
@@ -68,6 +69,12 @@ in
       };
     };
 
+    startup = [
+      # Start a terminal with a tmux sessions. This will be moved to the
+      # scratchpad automatically.
+      { command = "${term} --class terminal_scratchpad -e tmux new-session -A -s scratch"; }
+    ];
+
     window = {
       # Default window border is 2 pixels.
       border = 2;
@@ -77,6 +84,16 @@ in
 
       # Hides window borders adjacent to the screen edges
       hideEdgeBorders = "smart";
+
+      commands = [
+        # Automatically move the 'scratchpad' terminal to the scratchpad.
+        {
+          criteria = {
+            app_id = "terminal_scratchpad";
+          };
+          command = "move scratchpad";
+        }
+      ];
     };
 
     # Styling for window borders and title bars.
