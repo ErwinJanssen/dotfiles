@@ -16,6 +16,14 @@
         # bookmarks side-panel instead when needed.
         "browser.toolbars.bookmarks.visibility" = "never";
       };
+
+      search = {
+        # Set the default search engine to DuckDuckGo.
+        default = "DuckDuckGo";
+
+        # Without `force=true`, Firefox will overwrite the config on launch.
+        force = true;
+      };
     };
   };
 }
