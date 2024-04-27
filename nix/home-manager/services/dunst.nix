@@ -2,9 +2,9 @@
 {
   enable = true;
   iconTheme = {
-    name = "gnome";
-    package = pkgs.xfce.xfce4-icon-theme;
-    size = "256x256";
+    name = "Papirus-Dark";
+    package = pkgs.papirus-icon-theme;
+    size = "symbolic";
   };
   settings = {
     global = {
