@@ -68,6 +68,42 @@ in
       };
     };
 
+    window = {
+      # Default window border is 2 pixels.
+      border = 2;
+
+      # Hide titlebar by default for tiled windows.
+      titlebar = false;
+
+      # Hides window borders adjacent to the screen edges
+      hideEdgeBorders = "smart";
+    };
+
+    # Styling for window borders and title bars.
+    colors = {
+      focused = {
+        border = theme.ui.status_bar.active.background;
+        background = theme.ui.status_bar.active.background;
+        text = theme.ui.status_bar.active.foreground;
+        indicator = theme.theme.normal.accent;
+        childBorder = theme.theme.dim.accent;
+      };
+      unfocused = {
+        border = theme.ui.status_bar.tab.background;
+        background = theme.ui.status_bar.tab.background;
+        text = theme.ui.status_bar.default.foreground;
+        indicator = theme.ui.status_bar.default.background;
+        childBorder = theme.ui.status_bar.default.background;
+      };
+      urgent = {
+        border = theme.theme.normal.urgent;
+        background = theme.theme.normal.urgent;
+        text = theme.theme.normal.foreground;
+        indicator = theme.theme.normal.accent;
+        childBorder = theme.theme.dim.accent;
+      };
+    };
+
     bars = [
       {
         # Use i3status as status command.
