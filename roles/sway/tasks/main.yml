@@ -3,12 +3,6 @@
   ansible.builtin.import_role:
     name: _common
 
-- name: Place wallpaper
-  ansible.builtin.copy:
-    src: wallpaper.jpg
-    dest: "{{ config_directory }}/wallpaper.jpg"
-    mode: u=rw,g=r,o=r
-
 - name: Add user to 'video' group, required for backlight utility 'light'
   become: true
   ansible.builtin.user:
