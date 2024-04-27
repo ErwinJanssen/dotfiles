@@ -8,6 +8,10 @@
     pkgs.cargo
     pkgs.gcc9 # Cargo needs a C compiler for linking.
     pkgs.nodejs_21
+
+    # Dependencies of Ansible language server.
+    pkgs.ansible
+    pkgs.ansible-lint
   ];
   plugins = with pkgs.vimPlugins; [
     # Additional file types.
