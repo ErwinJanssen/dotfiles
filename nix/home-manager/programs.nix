@@ -39,5 +39,6 @@
     pkgs = pkgs;
     theme = theme.theme;
   };
+  waybar = import ./programs/waybar/main.nix;
   zathura = import ./programs/zathura.nix theme;
 }
