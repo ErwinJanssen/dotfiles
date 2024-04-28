@@ -9,10 +9,13 @@ let
   menu = config.wayland.windowManager.sway.config.menu;
   term = config.wayland.windowManager.sway.config.terminal;
 
-  notification-command = "${pkgs.libnotify}/bin/notify-send --transient";
+  notification-command = ''
+    ${pkgs.libnotify}/bin/notify-send \
+    --transient \
+    --expire-time=1000'';
+
   brightness-notification-command = ''
-    VALUE=$(light) && VALUE=$${VALUE%%.*} && \
-      ${notification-command} --expire-time=1000 \
+    VALUE=$(light) && VALUE=$${VALUE%%.*} && ${notification-command} \
       --hint=string:x-canonical-private-synchronous:brightness \
       --hint="int:value:$VALUE" \
       "Brightness: $${VALUE}%"'';
