@@ -34,5 +34,17 @@
     python = {
       style = "yellow";
     };
+
+    # For non-Fish shells, show a shell indicator. Without this, it is not
+    # clear which shell is being used, since Starship is used by all shells.
+    shell = {
+      disabled = false;
+      fish_indicator = "";
+      # Default format string, but without an added space on the end. This
+      # places the prompt closer to the shell indicator, but only if one is
+      # shown. Otherwise most day-to-day usage with Fish shows no shell
+      # indicator, but instead a single space before the prompt.
+      format = "[$indicator]($style)";
+    };
   };
 }
