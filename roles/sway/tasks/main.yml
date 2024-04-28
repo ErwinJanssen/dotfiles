@@ -1,14 +1,11 @@
 ---
-- name: Perform common tasks
-  ansible.builtin.import_role:
-    name: _common
-
 - name: Remove obsolete condiguration files.
   ansible.builtin.file:
     path: "{{ item }}"
     state: absent
   loop:
     - "{{ config_directory }}/config.d/systemd.conf"
+    - "{{ config_directory }}/config.d/media_keys.conf"
 
 - name: Add user to 'video' group, required for backlight utility 'light'
   become: true

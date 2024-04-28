@@ -14,6 +14,21 @@ let
     --transient \
     --expire-time=1000'';
 
+  volume-notification-command = ''
+    VALUE=$(pactl get-sink-volume @DEFAULT_SINK@) \
+      && VALUE=$${VALUE%%%*} && VALUE=$${VALUE##* } \
+      && ${notification-command} \
+        --hint=string:x-canonical-private-synchronous:volume \
+        --hint="int:value:$VALUE" \
+        "Volume: $${VALUE}%"'';
+
+  volume-mute-notification-command = ''
+    MUTE_STATUS=$(pactl get-sink-mute @DEFAULT_SINK@) \
+      && ICON=$${MUTE_STATUS/*no/audio-volume-high-symbolic} \
+      && ICON=$${ICON/*yes/audio-volume-muted-symbolic} \
+      && ${notification-command} --icon="$ICON" "$MUTE_STATUS"
+  '';
+
   brightness-notification-command = ''
     VALUE=$(light) && VALUE=$${VALUE%%.*} && ${notification-command} \
       --hint=string:x-canonical-private-synchronous:brightness \
@@ -72,6 +87,22 @@ in
 
       # Keybinding to lock the screen.
       "${mod}+l" = "exec swaylock";
+
+      # Increase/decrease/mute audio volume, also when screen is locked.
+      "--locked XF86AudioRaiseVolume" = ''
+        exec pactl set-sink-volume @DEFAULT_SINK@ +2% \
+          && ${volume-notification-command} \
+            --icon=audio-volume-high-symbolic
+      '';
+      "--locked XF86AudioLowerVolume" = ''
+        exec pactl set-sink-volume @DEFAULT_SINK@ -2% \
+          && ${volume-notification-command} \
+            --icon=audio-volume-low-symbolic
+      '';
+      "--locked XF86AudioMute" = ''
+        exec pactl set-sink-mute @DEFAULT_SINK@ toggle \
+          && ${volume-mute-notification-command}
+      '';
 
       # Increase/decrease screen brightness.
       XF86MonBrightnessUp = ''
