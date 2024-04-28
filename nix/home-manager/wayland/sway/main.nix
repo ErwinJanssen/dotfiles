@@ -91,6 +91,13 @@ in
       # Start a terminal with a tmux sessions. This will be moved to the
       # scratchpad automatically.
       { command = "${term} --class terminal_scratchpad -e tmux new-session -A -s scratch"; }
+
+      # Always restart Kanshi, also after reloading the config, to apply output
+      # settings.
+      {
+        command = "systemctl --user restart kanshi.service";
+        always = true;
+      }
     ];
 
     window = {
