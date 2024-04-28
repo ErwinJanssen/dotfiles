@@ -31,9 +31,3 @@
             name: sway
           tags:
             - sway
-
-        - name: Apply role `swaylock`
-          ansible.builtin.import_role:
-            name: swaylock
-          tags:
-            - swaylock

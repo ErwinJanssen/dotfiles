@@ -3,6 +3,7 @@ config_directory: "{{ config_home }}/sway"
 dependencies:
   - sway
   - swayidle
+  - swaylock
   - wl-clipboard
   - pipewire
   - light

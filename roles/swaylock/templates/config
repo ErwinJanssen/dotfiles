@@ -1,3 +1,0 @@
-daemonize
-image={{ config_directory }}/wallpaper.jpg
-scaling=fill
