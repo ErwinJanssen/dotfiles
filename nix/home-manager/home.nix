@@ -46,6 +46,7 @@ in
     pkgs.nix-index
 
     # Other useful packages.
+    pkgs.bottom
     pkgs.gnumake
     pkgs.pre-commit
 
