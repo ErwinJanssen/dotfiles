@@ -1,0 +1,6 @@
+{ theme }: ''
+  window#waybar {
+    /* Set background on the bar itself. */
+    background: ${theme.ui.status_bar.default.background};
+  }
+''
