@@ -7,13 +7,6 @@
   tasks:
     - name: Import and tag each role
       block:
-        # This role must come first as it creates a directory used by other roles
-        - name: Apply role `systemd`
-          ansible.builtin.import_role:
-            name: systemd
-          tags:
-            - systemd
-
         - name: Apply role `user`
           ansible.builtin.import_role:
             name: user

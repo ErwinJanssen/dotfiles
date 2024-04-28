@@ -1,6 +1,0 @@
----
-- name: Create directory for systemd user units
-  ansible.builtin.file:
-    path: "{{ config_directory }}/user"
-    state: directory
-    mode: u=rwx,g=rx,o=x
