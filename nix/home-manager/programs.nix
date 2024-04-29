@@ -35,6 +35,9 @@
     config = config;
     theme = theme.theme;
   };
-  swaylock = import ./programs/swaylock.nix { pkgs = pkgs; };
+  swaylock = import ./programs/swaylock.nix {
+    pkgs = pkgs;
+    theme = theme.theme;
+  };
   zathura = import ./programs/zathura.nix theme;
 }
