@@ -40,17 +40,9 @@
       };
     };
 
-    "disk /" = {
-      enable = true;
-      position = 5;
-      settings = {
-        format = "%avail";
-      };
-    };
-
     load = {
       enable = true;
-      position = 6;
+      position = 5;
       settings = {
         format = "%1min";
       };
@@ -58,7 +50,7 @@
 
     memory = {
       enable = true;
-      position = 7;
+      position = 6;
       settings = {
         format = "%used | %available";
         threshold_degraded = "1G";
@@ -68,7 +60,7 @@
 
     "tztime local" = {
       enable = true;
-      position = 8;
+      position = 7;
       settings = {
         format = "%Y-%m-%d %H:%M:%S";
       };
