@@ -8,4 +8,10 @@
     font-family: monospace;
     font-size: 1rem;
   }
+
+  /* Add padding and border-left to each widget, as a separator. */
+  .modules-right > widget > label {
+    border-left: 1px solid ${theme.ui.status_bar.default.foreground};
+    padding: 0 1em;
+  }
 ''
