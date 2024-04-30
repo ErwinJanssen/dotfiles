@@ -30,7 +30,7 @@ let
   '';
 
   brightness-notification-command = ''
-    VALUE=$(light) && VALUE=$${VALUE%%.*} && ${notification-command} \
+    VALUE=$(brightnessctl get --percentage) && ${notification-command} \
       --hint=string:x-canonical-private-synchronous:brightness \
       --hint="int:value:$VALUE" \
       "Brightness: $${VALUE}%"'';
@@ -106,11 +106,11 @@ in
 
       # Increase/decrease screen brightness.
       XF86MonBrightnessUp = ''
-        exec light -A 5 && ${brightness-notification-command} \
+        exec brightnessctl set 5%+ && ${brightness-notification-command} \
           --icon=display-brightness-high-symbolic
       '';
       XF86MonBrightnessDown = ''
-        exec light -U 5 && ${brightness-notification-command} \
+        exec brightnessctl set 5%- && ${brightness-notification-command} \
           --icon=display-brightness-low-symbolic
       '';
     };

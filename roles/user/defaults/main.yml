@@ -5,7 +5,6 @@ user_shell_path: /usr/bin/fish
 user_groups:
   - sudo
   - wheel
-  - video # For brightness control
   - docker
   - libvirt
   - nix-users

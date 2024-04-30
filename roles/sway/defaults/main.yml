@@ -6,7 +6,7 @@ dependencies:
   - swaylock
   - wl-clipboard
   - pipewire
-  - light
+  - brightnessctl
 
   # Install terminal as dependency of Sway
   - "{{ terminal }}"
