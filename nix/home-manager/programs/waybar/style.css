@@ -3,5 +3,9 @@
     /* Set default background and text color on the bar itself. */
     background: ${theme.ui.status_bar.default.background};
     color: ${theme.ui.status_bar.default.foreground};
+
+    /* Use the default monospace font as configured with Fontconfig. */
+    font-family: monospace;
+    font-size: 1rem;
   }
 ''
