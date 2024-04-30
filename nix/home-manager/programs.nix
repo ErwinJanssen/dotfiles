@@ -18,6 +18,7 @@
   };
   readline = import ./programs/readline.nix;
   starship = import ./programs/starship.nix;
+  wezterm = import ./programs/wezterm/main.nix;
 
   # CLI tools
   eza = import ./programs/eza.nix;
