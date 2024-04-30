@@ -6,10 +6,3 @@
   loop:
     - "{{ config_directory }}/config.d/systemd.conf"
     - "{{ config_directory }}/config.d/media_keys.conf"
-
-- name: Add user to 'video' group, required for backlight utility 'light'
-  become: true
-  ansible.builtin.user:
-    name: "{{ ansible_user_id }}"
-    groups: video
-    append: true
