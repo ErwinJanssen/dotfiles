@@ -1,6 +1,7 @@
 { theme }: ''
   window#waybar {
-    /* Set background on the bar itself. */
+    /* Set default background and text color on the bar itself. */
     background: ${theme.ui.status_bar.default.background};
+    color: ${theme.ui.status_bar.default.foreground};
   }
 ''
