@@ -57,13 +57,5 @@
         format_degraded = "MEMORY < %available";
       };
     };
-
-    "tztime local" = {
-      enable = true;
-      position = 7;
-      settings = {
-        format = "%Y-%m-%d %H:%M:%S";
-      };
-    };
   };
 }
