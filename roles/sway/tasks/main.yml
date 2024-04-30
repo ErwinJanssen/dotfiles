@@ -1,4 +1,8 @@
 ---
+- name: Perform common tasks
+  ansible.builtin.import_role:
+    name: _common
+
 - name: Remove obsolete condiguration files.
   ansible.builtin.file:
     path: "{{ item }}"
