@@ -182,9 +182,6 @@ in
 
     bars = [
       {
-        # Use i3status as status command.
-        statusCommand = "${pkgs.i3status}/bin/i3status";
-
         # Bar should be permanently visible at the top edge of the screen.
         mode = "dock";
         position = "top";

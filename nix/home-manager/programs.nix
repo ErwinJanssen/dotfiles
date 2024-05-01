@@ -30,7 +30,6 @@
 
   # GUI programs
   firefox = import ./programs/firefox/main.nix theme;
-  i3status = import ./programs/i3status.nix theme;
   rofi = import ./programs/rofi.nix {
     config = config;
     theme = theme.theme;
