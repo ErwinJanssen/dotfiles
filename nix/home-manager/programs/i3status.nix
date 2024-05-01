@@ -47,15 +47,5 @@
         format = "%1min";
       };
     };
-
-    memory = {
-      enable = true;
-      position = 6;
-      settings = {
-        format = "%used | %available";
-        threshold_degraded = "1G";
-        format_degraded = "MEMORY < %available";
-      };
-    };
   };
 }
