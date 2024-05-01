@@ -9,6 +9,15 @@
     font-size: 1rem;
   }
 
+  /* Colors for values past certain thresholds. */
+  .warning {
+    color: ${theme.theme.normal.warning};
+  }
+
+  .critical {
+    color: ${theme.theme.normal.error};
+  }
+
   /* Add padding and border-left to each widget, as a separator. */
   .modules-right > widget > label {
     border-left: 1px solid ${theme.ui.status_bar.default.foreground};
