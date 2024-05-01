@@ -9,6 +9,7 @@
     mainBar = {
       position = "top";
       modules-right = [
+        "network"
         "battery"
         "cpu"
         "memory"
@@ -86,6 +87,18 @@
           warning = 80;
           critical = 90;
         };
+      };
+
+      # Network connectivity.
+      network = {
+        # Information and icons depend on connection type.
+        format-wifi = "{essid} ({signalStrength}%) ";
+        format-ethernet = "{ipaddr}/{cidr} ";
+        format-linked = "{ifname} (No IP) ";
+        format-disconnected = "Disconnected ⚠";
+
+        # Shw IP address and gateway in tooltip.
+        tooltip-format = "{ifname}:\n  {ipaddr}/{cidr}\n  via {gwaddr}";
       };
     };
   };
