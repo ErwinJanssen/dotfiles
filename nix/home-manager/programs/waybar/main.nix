@@ -9,10 +9,40 @@
     mainBar = {
       position = "top";
       modules-right = [
+        "battery"
         "cpu"
         "memory"
         "clock"
       ];
+
+      # Battery capacity and charge status.
+      battery = {
+        # Charge level can be polled less frequently.
+        interval = 30;
+
+        states = {
+          warning = 30;
+          critical = 15;
+        };
+
+        format = "{capacity}% {icon}";
+        format-charging = "{capacity}% ";
+        format-plugged = "{capacity}% ";
+
+        # Use fancy icons for battery levels.
+        format-icons = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
+
+        # In the tooltip, show the time remaining, current power draw and
+        # total number of charge cycles seen.
+        tooltip-format = "{timeTo}\nPower draw: {power:.2f} W";
+      };
+
       clock = {
         # Show the time in 24h format.
         format = "{:%T}";
