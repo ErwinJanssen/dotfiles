@@ -8,6 +8,7 @@
   settings = {
     mainBar = {
       position = "top";
+      modules-left = [ "sway/workspaces" ];
       modules-right = [
         "network"
         "battery"

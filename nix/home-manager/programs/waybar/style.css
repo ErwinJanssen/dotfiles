@@ -23,4 +23,38 @@
     border-left: 1px solid ${theme.ui.status_bar.default.foreground};
     padding: 0 1em;
   }
+
+  /* Styling for workspaces buttons. */
+  #workspaces button {
+    /* Use default text color on non-active workspaces. */
+    color: ${theme.ui.status_bar.default.foreground};
+
+    /* Disable the default padding. */
+    padding: 0;
+
+    /* Disable the default border. */
+    border: none;
+    border-radius: 0;
+
+    /* Set minimum width and height to make the buttons square. */
+    min-height: 1.7em;
+    min-width: 1.7em;
+  }
+
+  #workspaces button:hover {
+    /* Disable all default hover effects. */
+    background: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+  }
+
+  #workspaces button.focused {
+    background: ${theme.ui.status_bar.active.background};
+    color: ${theme.ui.status_bar.active.foreground};
+  }
+
+  #workspaces button.urgent {
+    background: ${theme.ui.status_bar.urgent.background};
+    color: ${theme.ui.status_bar.urgent.foreground};
+  }
 ''
