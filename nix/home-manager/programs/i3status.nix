@@ -31,13 +31,5 @@
         format_down = "E: down";
       };
     };
-
-    "battery all" = {
-      enable = true;
-      position = 4;
-      settings = {
-        format = "%status %percentage %remaining";
-      };
-    };
   };
 }
