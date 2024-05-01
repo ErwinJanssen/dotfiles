@@ -39,13 +39,5 @@
         format = "%status %percentage %remaining";
       };
     };
-
-    load = {
-      enable = true;
-      position = 5;
-      settings = {
-        format = "%1min";
-      };
-    };
   };
 }
