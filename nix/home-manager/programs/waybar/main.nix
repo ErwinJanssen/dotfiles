@@ -15,6 +15,7 @@
         "cpu"
         "memory"
         "clock"
+        "tray"
       ];
 
       # Battery capacity and charge status.
@@ -100,6 +101,15 @@
 
         # Shw IP address and gateway in tooltip.
         tooltip-format = "{ifname}:\n  {ipaddr}/{cidr}\n  via {gwaddr}";
+      };
+
+      # Tray with icons from processes like network status, chat apps, etc.
+      tray = {
+        # Increase icon size to 2rem. This does not change the bar height.
+        icon-size = 24;
+
+        # Add 0.5rem whitespace between the icons.
+        spacing = 6;
       };
     };
   };
