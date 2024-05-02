@@ -11,6 +11,7 @@
       modules-left = [ "sway/workspaces" ];
       modules-center = [ "idle_inhibitor" ];
       modules-right = [
+        "pulseaudio"
         "network"
         "battery"
         "cpu"
@@ -113,6 +114,14 @@
 
         # Shw IP address and gateway in tooltip.
         tooltip-format = "{ifname}:\n  {ipaddr}/{cidr}\n  via {gwaddr}";
+      };
+
+      pulseaudio = {
+        format = "{volume}%   {format_source}";
+        format-muted = "{volume}   {format_source}";
+        format-source = "{volume}% ";
+        format-source-muted = "{volume} ";
+        on-click = "pavucontrol";
       };
 
       # Tray with icons from processes like network status, chat apps, etc.
