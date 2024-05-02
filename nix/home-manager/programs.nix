@@ -26,6 +26,7 @@
   ripgrep = import ./programs/ripgrep.nix;
   tmux = import ./programs/tmux/main.nix theme;
   neovim = import ./programs/neovim/main.nix { pkgs = pkgs; };
+  #nixvim = import ./programs/nixvim/main.nix;
   pyenv = import ./programs/pyenv.nix;
 
   # GUI programs
