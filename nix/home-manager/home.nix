@@ -162,4 +162,9 @@ in
     lib = lib;
     theme = theme;
   };
+
+  # Let Home Manager set `XDG_` environment variables and other xdg settings.
+  xdg = {
+    enable = true;
+  };
 }
