@@ -9,6 +9,7 @@
     mainBar = {
       position = "top";
       modules-left = [ "sway/workspaces" ];
+      modules-center = [ "idle_inhibitor" ];
       modules-right = [
         "network"
         "battery"
@@ -71,6 +72,17 @@
           warning = 80;
           critical = 90;
         };
+      };
+
+      # Manually activate the idle inhibitor.
+      idle_inhibitor = {
+        format = "{icon}";
+        format-icons = {
+          activated = "";
+          deactivated = "";
+        };
+        tooltip-format-activated = "Idle inhibitor: {status}";
+        tooltip-format-deactivated = "Idle inhibitor: {status}";
       };
 
       # Current memory usage.

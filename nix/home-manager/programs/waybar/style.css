@@ -57,4 +57,15 @@
     background: ${theme.ui.status_bar.urgent.background};
     color: ${theme.ui.status_bar.urgent.foreground};
   }
+
+  /* Style the idle inhibitor. */
+  #idle_inhibitor {
+    padding: 0 1em;
+  }
+
+  #idle_inhibitor.activated {
+    /* Apply accent colors when idle inhibitor is active. */
+    background: ${theme.ui.status_bar.active.background};
+    color: ${theme.ui.status_bar.active.foreground};
+  }
 ''
