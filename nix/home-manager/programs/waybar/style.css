@@ -4,8 +4,8 @@
     background: ${theme.ui.status_bar.default.background};
     color: ${theme.ui.status_bar.default.foreground};
 
-    /* Use the default monospace font as configured with Fontconfig. */
-    font-family: monospace;
+    /* Use Fira Code and fall-back to Font Awesome for certain icons. */
+    font-family: 'Fira Code', 'Font Awesome 6 Free';
     font-size: 1rem;
   }
 
