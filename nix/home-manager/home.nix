@@ -9,8 +9,19 @@ let
   theme = {
     theme = builtins.fromJSON (builtins.readFile ../../theme.json);
   };
+
+  # Import Nixvim to configure Neovim.
+  nixvim = import (
+    builtins.fetchGit {
+      url = "https://github.com/nix-community/nixvim";
+      ref = "nixos-23.11";
+    }
+  );
 in
 {
+  # Import extra modules.
+  imports = [ nixvim.homeManagerModules.nixvim ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "erwin";
