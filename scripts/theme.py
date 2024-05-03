@@ -27,10 +27,14 @@ hues = {
 # Set the primary/accent color
 primary_color = "magenta"
 
+# Mix a slight amount of the primary hue in blacks. Chroma goes from 0-150, so
+# 0.75 means 0.5%.
+black_chroma = 0.75
+
 # Define the different shades of each color
 colors = {
     "normal": {
-        "black": lch_to_hex(20, 0, 0),
+        "black": lch_to_hex(20, black_chroma, hues[primary_color]),
         "red": lch_to_hex(52.4, 43, hues["red"]),
         "green": lch_to_hex(66.6, 45, hues["green"]),
         "yellow": lch_to_hex(85, 50, hues["yellow"]),
@@ -40,7 +44,7 @@ colors = {
         "white": lch_to_hex(80, 5, hues[primary_color]),
     },
     "bright": {
-        "black": lch_to_hex(35, 0, 0),
+        "black": lch_to_hex(35, black_chroma, hues[primary_color]),
         "red": lch_to_hex(56.9, 76, hues["red"]),
         "green": lch_to_hex(72.6, 81.75, hues["green"]),
         "yellow": lch_to_hex(97, 81, hues["yellow"]),
@@ -50,13 +54,13 @@ colors = {
         "white": lch_to_hex(90, 5, hues[primary_color]),
     },
     "dim": {
-        "black": lch_to_hex(15, 0, 0),
+        "black": lch_to_hex(15, black_chroma, hues[primary_color]),
         "red": lch_to_hex(22.7, 41, hues["red"]),
         "green": lch_to_hex(23.5, 24, hues["green"]),
         "blue": lch_to_hex(26.75, 25.5, hues["blue"]),
         "magenta": lch_to_hex(20.5, 20.5, hues["magenta"]),
     },
-    "dimmer": {"black": lch_to_hex(10, 0, 0)},
+    "dimmer": {"black": lch_to_hex(10, black_chroma, hues[primary_color])},
 }
 
 
