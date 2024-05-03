@@ -2,6 +2,18 @@
 
 import json
 
+from colormath.color_conversions import convert_color
+from colormath.color_objects import LCHabColor, sRGBColor
+
+
+def lch_to_hex(lightness: float, chroma: float, hue: float) -> str:
+    """Convert LCH colors values to RGB hex."""
+    lch = LCHabColor(lightness, chroma, hue)
+    rgb = convert_color(lch, sRGBColor)
+    clamped_rgb = sRGBColor(rgb.clamped_rgb_r, rgb.clamped_rgb_g, rgb.clamped_rgb_b)
+    return clamped_rgb.get_rgb_hex()
+
+
 # Define the different shades of each color
 colors = {
     "normal": {
