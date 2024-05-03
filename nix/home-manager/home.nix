@@ -151,7 +151,7 @@ in
 
   # No other way for now to easily sync Neovim config.
   home.file.".config/nvim" = {
-    source = ./programs/neovim/config;
+    source = ./programs/nixvim/config;
     recursive = true;
   };
 
