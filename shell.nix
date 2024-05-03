@@ -18,5 +18,8 @@ pkgs.mkShellNoCC {
 
     # To format Nix code.
     nixfmt-rfc-style
+
+    # To generate `theme.json`.
+    (pkgs.python311.withPackages (python-pkgs: [ python-pkgs.colormath ]))
   ];
 }
