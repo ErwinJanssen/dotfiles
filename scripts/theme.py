@@ -1,3 +1,5 @@
+"""Generate theme colors to be used when deploying the configuration."""
+
 import json
 
 # Define the different shades of each color
