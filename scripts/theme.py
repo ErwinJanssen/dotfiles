@@ -21,6 +21,7 @@ hues = {
     "yellow": 100,
     "blue": 260,
     "magenta": 300,
+    "cyan": 197,
 }
 
 # Define the different shades of each color
@@ -32,7 +33,7 @@ colors = {
         "yellow": lch_to_hex(81.5, 35, hues["yellow"]),
         "blue": lch_to_hex(69.2, 20.5, hues["blue"]),
         "magenta": lch_to_hex(68.75, 54.5, hues["magenta"]),
-        "cyan": lch_to_hex(76.85, 27.5, 198),
+        "cyan": lch_to_hex(76.85, 27.5, hues["cyan"]),
         "white": lch_to_hex(80, 8, 265),
     },
     "bright": {
@@ -42,7 +43,7 @@ colors = {
         "yellow": lch_to_hex(97, 81, hues["yellow"]),
         "blue": lch_to_hex(63.5, 42, hues["blue"]),
         "magenta": lch_to_hex(51.4, 87, hues["magenta"]),
-        "cyan": lch_to_hex(82.6, 46.5, 196.5),
+        "cyan": lch_to_hex(82.6, 46.5, hues["cyan"]),
         "white": lch_to_hex(93.8, 9.3, 265),
     },
     "dim": {
