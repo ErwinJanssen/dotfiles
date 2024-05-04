@@ -33,7 +33,7 @@ colors = {
         "black": lch_to_hex(20, 0, 0),
         "red": lch_to_hex(52.4, 43, hues["red"]),
         "green": lch_to_hex(66.6, 45, hues["green"]),
-        "yellow": lch_to_hex(81.5, 35, hues["yellow"]),
+        "yellow": lch_to_hex(85, 50, hues["yellow"]),
         "blue": lch_to_hex(69.2, 20.5, hues["blue"]),
         "magenta": lch_to_hex(68.75, 54.5, hues["magenta"]),
         "cyan": lch_to_hex(76.85, 27.5, hues["cyan"]),
