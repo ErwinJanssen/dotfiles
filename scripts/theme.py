@@ -14,6 +14,11 @@ def lch_to_hex(lightness: float, chroma: float, hue: float) -> str:
     return clamped_rgb.get_rgb_hex()
 
 
+# Set the hue for the primary accent color.
+hues = {
+    "magenta": 300,
+}
+
 # Define the different shades of each color
 colors = {
     "normal": {
@@ -22,7 +27,7 @@ colors = {
         "green": lch_to_hex(66.6, 45, 140),
         "yellow": lch_to_hex(81.5, 35, 81),
         "blue": lch_to_hex(69.2, 20.5, 254.5),
-        "magenta": lch_to_hex(68.75, 54.5, 299),
+        "magenta": lch_to_hex(68.75, 54.5, hues["magenta"]),
         "cyan": lch_to_hex(76.85, 27.5, 198),
         "white": lch_to_hex(80, 8, 265),
     },
@@ -32,7 +37,7 @@ colors = {
         "green": lch_to_hex(72.6, 81.75, 136.4),
         "yellow": lch_to_hex(97.75, 81, 100.3),
         "blue": lch_to_hex(63.5, 42.75, 261),
-        "magenta": lch_to_hex(51.4, 97, 309),
+        "magenta": lch_to_hex(51.4, 87, hues["magenta"]),
         "cyan": lch_to_hex(82.6, 46.5, 196.5),
         "white": lch_to_hex(93.8, 9.3, 265),
     },
@@ -41,7 +46,7 @@ colors = {
         "red": lch_to_hex(22.7, 41, 31.5),
         "green": lch_to_hex(23.5, 24, 139),
         "blue": lch_to_hex(26.75, 25.5, 262.5),
-        "magenta": lch_to_hex(20.5, 20.5, 300),
+        "magenta": lch_to_hex(20.5, 20.5, hues["magenta"]),
     },
     "dimmer": {"black": lch_to_hex(10, 0, 0)},
 }
