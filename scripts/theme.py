@@ -18,7 +18,7 @@ def lch_to_hex(lightness: float, chroma: float, hue: float) -> str:
 hues = {
     "red": 30,
     "green": 140,
-    "yellow": 100,
+    "yellow": 90,
     "blue": 260,
     "magenta": 300,
     "cyan": 197,
