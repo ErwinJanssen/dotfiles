@@ -37,7 +37,7 @@ colors = {
         "blue": lch_to_hex(69.2, 20.5, hues["blue"]),
         "magenta": lch_to_hex(68.75, 54.5, hues["magenta"]),
         "cyan": lch_to_hex(76.85, 27.5, hues["cyan"]),
-        "white": lch_to_hex(80, 8, hues[primary_color]),
+        "white": lch_to_hex(80, 5, hues[primary_color]),
     },
     "bright": {
         "black": lch_to_hex(35, 0, 0),
@@ -47,7 +47,7 @@ colors = {
         "blue": lch_to_hex(63.5, 42, hues["blue"]),
         "magenta": lch_to_hex(51.4, 87, hues["magenta"]),
         "cyan": lch_to_hex(82.6, 46.5, hues["cyan"]),
-        "white": lch_to_hex(93.8, 9.3, hues[primary_color]),
+        "white": lch_to_hex(90, 5, hues[primary_color]),
     },
     "dim": {
         "black": lch_to_hex(15, 0, 0),
