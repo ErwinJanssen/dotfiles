@@ -24,7 +24,7 @@ colors = {
         "blue": "#8eadcc",
         "magenta": "#b499ff",
         "cyan": "#7acccc",
-        "white": "#bfc7d5",
+        "white": lch_to_hex(80, 8, 265),
     },
     "bright": {
         "black": lch_to_hex(35, 0, 0),
@@ -34,7 +34,7 @@ colors = {
         "blue": "#5ba0e5",
         "magenta": "#a54cff",
         "cyan": "#2de5e5",
-        "white": "#e5eeff",
+        "white": lch_to_hex(93.8, 9.3, 265),
     },
     "dim": {
         "black": lch_to_hex(15, 0, 0),
