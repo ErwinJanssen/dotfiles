@@ -18,6 +18,7 @@ def lch_to_hex(lightness: float, chroma: float, hue: float) -> str:
 hues = {
     "red": 30,
     "green": 140,
+    "yellow": 100,
     "blue": 260,
     "magenta": 300,
 }
@@ -28,7 +29,7 @@ colors = {
         "black": lch_to_hex(20, 0, 0),
         "red": lch_to_hex(52.4, 43, hues["red"]),
         "green": lch_to_hex(66.6, 45, hues["green"]),
-        "yellow": lch_to_hex(81.5, 35, 81),
+        "yellow": lch_to_hex(81.5, 35, hues["yellow"]),
         "blue": lch_to_hex(69.2, 20.5, hues["blue"]),
         "magenta": lch_to_hex(68.75, 54.5, hues["magenta"]),
         "cyan": lch_to_hex(76.85, 27.5, 198),
@@ -38,7 +39,7 @@ colors = {
         "black": lch_to_hex(35, 0, 0),
         "red": lch_to_hex(56.9, 76, hues["red"]),
         "green": lch_to_hex(72.6, 81.75, hues["green"]),
-        "yellow": lch_to_hex(97.75, 81, 100.3),
+        "yellow": lch_to_hex(97, 81, hues["yellow"]),
         "blue": lch_to_hex(63.5, 42, hues["blue"]),
         "magenta": lch_to_hex(51.4, 87, hues["magenta"]),
         "cyan": lch_to_hex(82.6, 46.5, 196.5),
