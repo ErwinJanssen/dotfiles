@@ -16,6 +16,7 @@ def lch_to_hex(lightness: float, chroma: float, hue: float) -> str:
 
 # Set the hue for the primary accent color.
 hues = {
+    "green": 140,
     "magenta": 300,
 }
 
@@ -24,7 +25,7 @@ colors = {
     "normal": {
         "black": lch_to_hex(20, 0, 0),
         "red": lch_to_hex(52.4, 43, 24),
-        "green": lch_to_hex(66.6, 45, 140),
+        "green": lch_to_hex(66.6, 45, hues["green"]),
         "yellow": lch_to_hex(81.5, 35, 81),
         "blue": lch_to_hex(69.2, 20.5, 254.5),
         "magenta": lch_to_hex(68.75, 54.5, hues["magenta"]),
@@ -34,7 +35,7 @@ colors = {
     "bright": {
         "black": lch_to_hex(35, 0, 0),
         "red": lch_to_hex(56.9, 76, 30.3),
-        "green": lch_to_hex(72.6, 81.75, 136.4),
+        "green": lch_to_hex(72.6, 81.75, hues["green"]),
         "yellow": lch_to_hex(97.75, 81, 100.3),
         "blue": lch_to_hex(63.5, 42.75, 261),
         "magenta": lch_to_hex(51.4, 87, hues["magenta"]),
@@ -44,7 +45,7 @@ colors = {
     "dim": {
         "black": lch_to_hex(15, 0, 0),
         "red": lch_to_hex(22.7, 41, 31.5),
-        "green": lch_to_hex(23.5, 24, 139),
+        "green": lch_to_hex(23.5, 24, hues["green"]),
         "blue": lch_to_hex(26.75, 25.5, 262.5),
         "magenta": lch_to_hex(20.5, 20.5, hues["magenta"]),
     },
