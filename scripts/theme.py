@@ -17,7 +17,7 @@ def lch_to_hex(lightness: float, chroma: float, hue: float) -> str:
 # Define the different shades of each color
 colors = {
     "normal": {
-        "black": lch_to_hex(21.25, 0, 0),
+        "black": lch_to_hex(20, 0, 0),
         "red": "#bf5f61",
         "green": "#6bb26b",
         "yellow": "#e5c689",
@@ -27,7 +27,7 @@ colors = {
         "white": "#bfc7d5",
     },
     "bright": {
-        "black": lch_to_hex(38, 0, 0),
+        "black": lch_to_hex(35, 0, 0),
         "red": "#f2484b",
         "green": "#3dcc3d",
         "yellow": "#ffff4c",
@@ -43,7 +43,7 @@ colors = {
         "blue": "#1e4266",
         "magenta": "#362d4c",
     },
-    "dimmer": {"black": lch_to_hex(9.1, 0, 0)},
+    "dimmer": {"black": lch_to_hex(10, 0, 0)},
 }
 
 
