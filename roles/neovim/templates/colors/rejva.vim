@@ -224,3 +224,6 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 " Must appear at the end of the file to work around this oddity:
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
+
+" Load the (partial) Lua port of the colorscheme.
+source {{config_directory }}/colors/rejva.lua
