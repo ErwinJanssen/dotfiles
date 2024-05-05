@@ -200,43 +200,6 @@ call s:h("WildMenu", { "fg": s:black, "bg": s:blue }) " current match in 'wildme
 
 " {{ "}}}" }}
 
-" Plugin Highlighting {{ "{{{" }}
-
-" airblade/vim-gitgutter
-hi link GitGutterAdd    SignifySignAdd
-hi link GitGutterChange SignifySignChange
-hi link GitGutterDelete SignifySignDelete
-
-" mhinz/vim-signify
-call s:h("SignifySignAdd", { "fg": s:green })
-call s:h("SignifySignChange", { "fg": s:yellow })
-call s:h("SignifySignDelete", { "fg": s:red })
-
-" neomake/neomake
-call s:h("NeomakeWarningSign", { "fg": s:yellow })
-call s:h("NeomakeErrorSign", { "fg": s:red })
-call s:h("NeomakeInfoSign", { "fg": s:blue })
-
-" tpope/vim-fugitive
-call s:h("diffAdded", { "fg": s:green })
-call s:h("diffRemoved", { "fg": s:red })
-
-" liuchengxu/vista.vim
-call s:h("VistaBracket", { "fg": s:purple })
-call s:h("VistaChildrenNr", { "fg": s:dark_yellow })
-call s:h("VistaScope", { "fg": s:blue_purple })
-call s:h("VistaTag", { "fg": s:purple })
-call s:h("VistaPrefix", { "fg": s:blue_purple })
-call s:h("VistaParenthesis", { "fg": s:purple })
-call s:h("VistaColon", { "fg": s:cyan })
-call s:h("VistaIcon", { "fg": s:cyan })
-call s:h("VistaLineNr", { "fg": s:comment_grey })
-call s:h("VistaArgs", { "fg": s:comment_grey })
-call s:h("VistaKind", { "fg": s:comment_grey })
-call s:h("VistaScopeKind", { "fg": s:yellow })
-
-" {{ "}}}" }}
-
 " Git Highlighting {{ "{{{" }}
 
 call s:h("gitcommitComment", { "fg": s:comment_grey })
