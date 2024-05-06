@@ -79,7 +79,6 @@ let s:yellow = { "gui": "{{ colors.normal.yellow }}", "cterm": "180", "cterm16":
 let s:dark_yellow = { "gui": "#F78C6C", "cterm": "173", "cterm16": "11" }
 let s:blue = { "gui": "{{ colors.normal.blue }}", "cterm": "39", "cterm16": "4" }
 let s:purple = { "gui": "{{ colors.normal.magenta }}", "cterm": "5", "cterm16": "5" }
-let s:blue_purple = { "gui": "#939ede", "cterm": "39", "cterm16": "4"}
 let s:cyan = { "gui": "{{ colors.normal.cyan }}", "cterm": "38", "cterm16": "6" }
 let s:white = { "gui": "{{ colors.normal.white }}", "cterm": "145", "cterm16": "7" }
 let s:black = { "gui": "{{ colors.normal.black }}", "cterm": "235", "cterm16": "0" }
@@ -91,9 +90,6 @@ let s:visual_grey = { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }
 let s:menu_grey = { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }
 let s:special_grey = { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }
 let s:vertsplit = { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }
-let s:white_mask_1 = { "gui": "#333747", "cterm": "237", "cterm16": "15" }
-let s:white_mask_3 = { "gui": "#474b59", "cterm": "238", "cterm16": "15" }
-let s:white_mask_11 = { "gui": "#989aa2", "cterm": "238", "cterm16": "15"}
 
 " {{ "}}}" }}
 
