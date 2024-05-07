@@ -27,7 +27,9 @@ hues = {
 # Set the primary/accent color
 primary_color = "magenta"
 
-black_chroma = 2.5
+# Mix a slight amount of the primary hue in blacks. Chroma goes from 0-150, so
+# 1.5 means 1%.
+black_chroma = 1.5
 
 # Define the different shades of each color
 colors = {
