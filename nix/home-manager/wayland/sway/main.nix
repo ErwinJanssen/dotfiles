@@ -104,12 +104,12 @@ in
           && ${volume-mute-notification-command}
       '';
 
-      # Increase/decrease screen brightness.
-      XF86MonBrightnessUp = ''
+      # Increase/decrease screen brightness, also when screen is locked.
+      "--locked XF86MonBrightnessUp" = ''
         exec brightnessctl set 5%+ && ${brightness-notification-command} \
           --icon=display-brightness-high-symbolic
       '';
-      XF86MonBrightnessDown = ''
+      "--locked XF86MonBrightnessDown" = ''
         exec brightnessctl set 5%- && ${brightness-notification-command} \
           --icon=display-brightness-low-symbolic
       '';
