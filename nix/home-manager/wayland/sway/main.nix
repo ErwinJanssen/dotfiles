@@ -43,6 +43,13 @@ in
   # problems, like with missing drivers.
   package = null;
 
+  # Disable config checking for now. This feature was added in a recent version
+  # of Home Manager, but as a consequence the configuration fails because it
+  # cannot find the background image.
+  #
+  # This is the commit: https://github.com/nix-community/home-manager/commit/3a435342e2e5e2bff1d3331c2bd9e70f25693ea2
+  checkConfig = false;
+
   config = {
     # Use 'logo' key as default modifier.
     modifier = "Mod4";

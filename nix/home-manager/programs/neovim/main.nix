@@ -7,7 +7,7 @@
     # Used by Mason to build and install packages.
     pkgs.cargo
     pkgs.gcc9 # Cargo needs a C compiler for linking.
-    pkgs.nodejs_21
+    pkgs.nodejs_22
 
     # Dependencies of Ansible language server.
     pkgs.ansible
