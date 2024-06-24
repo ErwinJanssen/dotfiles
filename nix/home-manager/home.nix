@@ -6,9 +6,7 @@
 }:
 
 let
-  theme = {
-    theme = builtins.fromJSON (builtins.readFile ../../theme.json);
-  };
+  theme = builtins.fromJSON (builtins.readFile ../../theme.json);
 in
 {
   # Home Manager needs a bit of information about you and the paths it should

@@ -10,7 +10,7 @@
       config = config;
       pkgs = pkgs;
       lib = lib;
-      theme = theme.theme;
+      theme = theme;
     };
   };
 }

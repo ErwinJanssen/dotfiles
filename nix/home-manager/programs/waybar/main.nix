@@ -4,7 +4,7 @@
   systemd = {
     enable = true;
   };
-  style = import ./style.css theme;
+  style = import ./style.css { theme = theme; };
   settings = {
     mainBar = {
       position = "top";
