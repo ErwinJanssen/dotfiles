@@ -21,5 +21,6 @@
     in
     {
       formatter.${system} = pkgs.nixfmt-rfc-style;
+      defaultPackage.${system} = home-manager.defaultPackage.${system};
     };
 }

@@ -9,7 +9,7 @@ clean:
 
 .PHONY: nix
 nix: theme.json
-	home-manager --file nix/home-manager/home.nix switch
+	nix run . -- switch --file nix/home-manager/home.nix
 
 .PHONY: playbook
 playbook: theme.json
