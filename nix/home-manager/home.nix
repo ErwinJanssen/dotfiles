@@ -43,6 +43,9 @@ in
     # Useful utilities for working with Nix
     pkgs.nix-index
 
+    # Useful utilities for working with Python
+    pkgs.uv
+
     # Other useful packages.
     pkgs.bottom
     pkgs.gnumake
