@@ -30,10 +30,7 @@ if whichkey_ok then
     whichkey.setup()
 end
 
-local compe_ok, _ = pcall(require, "compe")
-if compe_ok then
-    require "plugins.compe"
-end
+require "plugins.cmp"
 
 local treesitter_ok, _ = pcall(require, "nvim-treesitter.configs")
 if treesitter_ok then

@@ -51,8 +51,17 @@
     # Treesitter: more advanced syntax highlighting
     nvim-treesitter.withAllGrammars
 
+    # Snippet engine, required by nvim-cmp
+    luasnip
+
     # Auto-completion during typing, uses various sources
-    nvim-compe
+    nvim-cmp
+
+    # Auto-completion sources for `nvim-cmp`
+    cmp-buffer
+    cmp-nvim-lsp
+    cmp-path
+    cmp-spell
 
     # Configuration for Neovim's built-in language server client
     nvim-lspconfig

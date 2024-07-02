@@ -199,11 +199,6 @@ nnoremap <Leader>r :Make<CR>
 " Remove search highlights by pressing the <Leader> key twice
 nnoremap <Leader><Leader> :nohlsearch<CR>
 
-" Trigger and cycle trough auto completion in insert mode using CTRL-Space.
-inoremap <silent><expr> <C-Space>
-    \ pumvisible() ? "\<C-n>" :
-    \ compe#complete()
-
 nnoremap <Leader>gd :lua vim .lsp.buf.definition()<CR>
 
 lua require("mappings")
