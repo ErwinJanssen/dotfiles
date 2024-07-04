@@ -32,6 +32,14 @@ cmp.setup {
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "buffer" },
-        { name = "spell" },
+        {
+            name = "spell",
+            options = {
+                -- Only enable this source in a `@spell` treesitter capture.
+                enable_in_context = function(params)
+                    return require("cmp.config.context").in_treesitter_capture "spell"
+                end,
+            },
+        },
     },
 }
