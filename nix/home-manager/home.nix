@@ -26,6 +26,14 @@ in
   # The default locale to use.
   home.language.base = "en_US.UTF-8";
 
+  # Do not notify about 'unread and relevant news items' after running
+  # `home-manager switch`. When using Nix Flakes, Home Manager will not be able
+  # to show the news items: https://github.com/nix-community/home-manager/issues/2033
+  #
+  # Without this setting, a notification appears after each `switch`, but the
+  # news cannot be read so it keeps coming back.
+  news.display = "silent";
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
