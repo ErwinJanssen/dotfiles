@@ -27,6 +27,7 @@
   tmux = import ./programs/tmux/main.nix { theme = theme; };
   neovim = import ./programs/neovim/main.nix { pkgs = pkgs; };
   pyenv = import ./programs/pyenv.nix;
+  ssh = import ./programs/ssh.nix;
 
   # GUI programs
   firefox = import ./programs/firefox/main.nix { theme = theme; };
