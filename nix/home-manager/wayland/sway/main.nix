@@ -120,6 +120,13 @@ in
         exec brightnessctl set 5%- && ${brightness-notification-command} \
           --icon=display-brightness-low-symbolic
       '';
+
+      # Bindings to control media playback using `playerctl`.
+      "--locked XF86AudioForward" = "exec playerctl position +10";
+      "--locked XF86AudioNext" = "exec playerctl next";
+      "--locked XF86AudioPlay" = "exec playerctl play-pause";
+      "--locked XF86AudioPrev" = "exec playerctl previous";
+      "--locked XF86AudioRewind" = "exec playerctl position -10";
     };
 
     output = {

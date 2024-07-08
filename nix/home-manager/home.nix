@@ -44,6 +44,7 @@ in
 
     # Required for Sway config.
     pkgs.libnotify
+    pkgs.playerctl
 
     # fzf.vim automatically uses `bat` for file previews if it is available.
     pkgs.bat
