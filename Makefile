@@ -8,7 +8,7 @@ clean:
 	git clean -xdf
 
 .PHONY: nix
-nix: theme.json
+nix:
 	nix run . -- switch --flake .
 
 .PHONY: playbook
