@@ -149,6 +149,10 @@ in
     pkgs = pkgs;
   };
 
+  home.file.".config/theme.json" = {
+    text = builtins.toJSON theme;
+  };
+
   # No other way for now to easily sync Neovim config.
   home.file.".config/nvim" = {
     source = ./programs/neovim/config;
