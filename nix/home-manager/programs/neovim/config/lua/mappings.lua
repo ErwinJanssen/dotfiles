@@ -1,4 +1,4 @@
-local whichkey_ok, whichkey = pcall(require, "which-key")
+local whichkey = require "which-key"
 
 -- Mappings to mimic behavior from other programs
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current file" })
@@ -8,11 +8,9 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current fil
 -- ==============================
 -- {{{
 
-if whichkey_ok then
-    whichkey.register {
-        ["<leader>f"] = { name = "Find something" },
-    }
-end
+whichkey.register {
+    ["<leader>f"] = { name = "Find something" },
+}
 
 vim.keymap.set("n", "<Leader>ff", "<cmd>Files<CR>", {
     desc = "Find file",
@@ -52,11 +50,9 @@ end, { desc = "Find with ripgrep" })
 -- ==============================
 -- {{{
 
-if whichkey_ok then
-    whichkey.register {
-        ["<leader>l"] = { name = "Language actions (LSP)" },
-    }
-end
+whichkey.register {
+    ["<leader>l"] = { name = "Language actions (LSP)" },
+}
 
 vim.keymap.set("n", "<Leader>ld", function()
     vim.diagnostic.open_float()
@@ -77,11 +73,9 @@ end, {
 -- ==============================
 -- {{{
 
-if whichkey_ok then
-    whichkey.register {
-        ["<leader>t"] = { name = "Toggle menus/interfaces" },
-    }
-end
+whichkey.register {
+    ["<leader>t"] = { name = "Toggle menus/interfaces" },
+}
 
 vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
     desc = "Undo tree",
@@ -94,11 +88,9 @@ vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
 -- ==============================
 -- {{{
 
-if whichkey_ok then
-    whichkey.register {
-        ["<leader>v"] = { name = "Version control info and actions" },
-    }
-end
+whichkey.register {
+    ["<leader>v"] = { name = "Version control info and actions" },
+}
 
 vim.keymap.set("n", "<Leader>vb", function()
     package.loaded.gitsigns.blame_line { full = true }
