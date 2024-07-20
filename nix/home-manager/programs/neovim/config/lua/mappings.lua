@@ -8,9 +8,7 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current fil
 -- ==============================
 -- {{{
 
-whichkey.register {
-    ["<leader>f"] = { name = "Find something" },
-}
+whichkey.add { { "<leader>f", group = "Find something" } }
 
 vim.keymap.set("n", "<Leader>ff", "<cmd>Files<CR>", {
     desc = "Find file",
@@ -50,9 +48,7 @@ end, { desc = "Find with ripgrep" })
 -- ==============================
 -- {{{
 
-whichkey.register {
-    ["<leader>l"] = { name = "Language actions (LSP)" },
-}
+whichkey.add { { "<leader>l", group = "Language actions (LSP)" } }
 
 vim.keymap.set("n", "<Leader>ld", function()
     vim.diagnostic.open_float()
@@ -73,9 +69,7 @@ end, {
 -- ==============================
 -- {{{
 
-whichkey.register {
-    ["<leader>t"] = { name = "Toggle menus/interfaces" },
-}
+whichkey.add { { "<leader>t", group = "Toggle menus/interfaces" } }
 
 vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
     desc = "Undo tree",
@@ -88,9 +82,7 @@ vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
 -- ==============================
 -- {{{
 
-whichkey.register {
-    ["<leader>v"] = { name = "Version control info and actions" },
-}
+whichkey.add { { "<leader>v", group = "Version control info and actions" } }
 
 vim.keymap.set("n", "<Leader>vb", function()
     package.loaded.gitsigns.blame_line { full = true }
