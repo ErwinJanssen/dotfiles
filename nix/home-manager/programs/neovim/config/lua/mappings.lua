@@ -41,6 +41,10 @@ vim.keymap.set("n", "<Leader>fg", function()
     vim.cmd("Rg " .. vim.fn.input "Search string: ")
 end, { desc = "Find with ripgrep" })
 
+vim.keymap.set("n", "<Leader>f*", function()
+    require("telescope.builtin").builtin { include_extensions = true }
+end, { desc = "Find Telescope pickers" })
+
 -- }}}
 
 -- ==============================
