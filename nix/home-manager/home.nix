@@ -142,6 +142,13 @@ in
   # Configure user-global EditorConfig settings.
   editorconfig = import ./editorconfig.nix;
 
+  # Write the generated theme colors to a file in the home directory. Other
+  # programs -- such as Neovim -- can then read this file and use its values,
+  # instead of having a templated/generated configuration file of their own.
+  home.file.".config/theme.json" = {
+    text = builtins.toJSON theme;
+  };
+
   # Set program configurations by importing `programs.nix`.
   programs = import ./programs.nix {
     config = config;
