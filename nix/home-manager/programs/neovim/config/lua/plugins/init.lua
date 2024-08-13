@@ -26,6 +26,14 @@ require("telescope").setup {
             horizontal = { prompt_position = "top" },
         },
         sorting_strategy = "ascending",
+        mappings = {
+            i = {
+                -- Close Telescope when pressing Escape while in insert,
+                -- instead of returning to 'normal' mode and requiring an
+                -- additional Escape to exit.
+                ["<esc>"] = require("telescope.actions").close,
+            },
+        },
     },
 }
 
