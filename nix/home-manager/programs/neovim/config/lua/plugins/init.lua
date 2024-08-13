@@ -19,6 +19,16 @@ vim.g.lightline = {
     },
 }
 
+-- Telescope
+require("telescope").setup {
+    defaults = {
+        layout_config = {
+            horizontal = { prompt_position = "top" },
+        },
+        sorting_strategy = "ascending",
+    },
+}
+
 -- Run initialization for plugins if they are installed
 local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
 if gitsigns_ok then
