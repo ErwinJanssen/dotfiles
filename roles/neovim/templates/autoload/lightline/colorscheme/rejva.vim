@@ -1,3 +1,6 @@
+" Fetch theme colors from the `theme` plugin.
+lua vim.g.theme_colors = require("theme")
+
 let s:base3 = '#c5c8c6'
 let s:base2 = '#bababa'
 let s:base1 = '#a0a0a0'
@@ -16,29 +19,29 @@ let s:blue = '#81a2be'
 let s:magenta = '#b294bb'
 
 let s:normal = {}
-let s:normal.black = '{{ colors.normal.black }}'
-let s:normal.red = '{{ colors.normal.red }}'
-let s:normal.green = '{{ colors.normal.green }}'
-let s:normal.yellow = '{{ colors.normal.yellow }}'
-let s:normal.blue = '{{ colors.normal.blue }}'
-let s:normal.magenta = '{{ colors.normal.magenta }}'
-let s:normal.cyan = '{{ colors.normal.cyan }}'
-let s:normal.white = '{{ colors.normal.white }}'
+let s:normal.black = g:theme_colors.colors.normal.black
+let s:normal.red = g:theme_colors.colors.normal.red
+let s:normal.green = g:theme_colors.colors.normal.green
+let s:normal.yellow = g:theme_colors.colors.normal.yellow
+let s:normal.blue = g:theme_colors.colors.normal.blue
+let s:normal.magenta = g:theme_colors.colors.normal.magenta
+let s:normal.cyan = g:theme_colors.colors.normal.cyan
+let s:normal.white = g:theme_colors.colors.normal.white
 
 let s:dim = {}
-let s:dim.black = '{{ colors.dim.black }}'
-let s:dim.red = '{{ colors.dim.red }}'
-let s:dim.green = '{{ colors.dim.green }}'
-let s:dim.blue = '{{ colors.dim.blue }}'
-let s:dim.magenta = '{{ colors.dim.magenta }}'
+let s:dim.black = g:theme_colors.colors.dim.black
+let s:dim.red = g:theme_colors.colors.dim.red
+let s:dim.green = g:theme_colors.colors.dim.green
+let s:dim.blue = g:theme_colors.colors.dim.blue
+let s:dim.magenta = g:theme_colors.colors.dim.magenta
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 let s:p.normal.left = [
     \   [ s:dim.magenta, s:normal.magenta ],
-    \   [ '{{ ui.status_bar.default.foreground }}' , '{{ theme.brighter.background }}' ]
+    \   [ g:theme_colors.ui.status_bar.default.foreground , g:theme_colors.theme.brighter.background ]
     \ ]
 let s:p.normal.middle = [
-    \   [ '{{ ui.status_bar.default.foreground }}', '{{ ui.status_bar.default.background }}' ]
+    \   [ g:theme_colors.ui.status_bar.default.foreground, g:theme_colors.ui.status_bar.default.background ]
     \ ]
 let s:p.normal.right = copy(s:p.normal.left)
 
@@ -66,11 +69,11 @@ let s:p.replace.left = [
     \ ]
 let s:p.replace.right = copy(s:p.replace.left)
 
-let s:p.tabline.left = [ [ '{{ ui.status_bar.tab.foreground }}', '{{ ui.status_bar.tab.background }}' ] ]
-let s:p.tabline.tabsel = [ [ '{{ ui.status_bar.active.foreground }}', '{{ ui.status_bar.active.background }}' ] ]
+let s:p.tabline.left = [ [ g:theme_colors.ui.status_bar.tab.foreground, g:theme_colors.ui.status_bar.tab.background ] ]
+let s:p.tabline.tabsel = [ [ g:theme_colors.ui.status_bar.active.foreground, g:theme_colors.ui.status_bar.active.background ] ]
 let s:p.tabline.right = copy(s:p.normal.right)
 
-let s:p.normal.error = [ [ s:normal.red, '{{ theme.brighter.background }}' ] ]
-let s:p.normal.warning = [ [ s:normal.yellow, '{{ theme.brighter.background }}' ] ]
+let s:p.normal.error = [ [ s:normal.red, g:theme_colors.theme.brighter.background ] ]
+let s:p.normal.warning = [ [ s:normal.yellow, g:theme_colors.theme.brighter.background ] ]
 
 let g:lightline#colorscheme#rejva#palette = lightline#colorscheme#fill(s:p)

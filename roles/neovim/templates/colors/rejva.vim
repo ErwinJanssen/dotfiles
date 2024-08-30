@@ -17,6 +17,9 @@ set t_Co=256
 
 let g:colors_name="rejva"
 
+" Fetch theme colors from the `theme` plugin.
+lua vim.g.theme_colors = require("theme")
+
 " Set to "256" for 256-color terminals, or
 " set to "16" to use your terminal emulator's native colors
 " (a 16-color palette for this color scheme is available; see
@@ -71,17 +74,17 @@ endfunction
 
 " Color Variables {{ "{{{" }}
 
-let s:red = { "gui": "{{ colors.normal.red }}", "cterm": "1", "cterm16": "1" }
-let s:light_red = { "gui": "{{ colors.bright.red }}", "cterm": "204", "cterm16": "1" }
-let s:dark_red = { "gui": "{{ colors.dim.red }}", "cterm": "196", "cterm16": "9" }
-let s:green = { "gui": "{{ colors.normal.green }}", "cterm": "2", "cterm16": "2" }
-let s:yellow = { "gui": "{{ colors.normal.yellow }}", "cterm": "180", "cterm16": "3" }
+let s:red = { "gui": g:theme_colors.colors.normal.red, "cterm": "1", "cterm16": "1" }
+let s:light_red = { "gui": g:theme_colors.colors.bright.red, "cterm": "204", "cterm16": "1" }
+let s:dark_red = { "gui": g:theme_colors.colors.dim.red, "cterm": "196", "cterm16": "9" }
+let s:green = { "gui": g:theme_colors.colors.normal.green, "cterm": "2", "cterm16": "2" }
+let s:yellow = { "gui": g:theme_colors.colors.normal.yellow, "cterm": "180", "cterm16": "3" }
 let s:dark_yellow = { "gui": "#F78C6C", "cterm": "173", "cterm16": "11" }
-let s:blue = { "gui": "{{ colors.normal.blue }}", "cterm": "39", "cterm16": "4" }
-let s:purple = { "gui": "{{ colors.normal.magenta }}", "cterm": "5", "cterm16": "5" }
-let s:cyan = { "gui": "{{ colors.normal.cyan }}", "cterm": "38", "cterm16": "6" }
-let s:white = { "gui": "{{ colors.normal.white }}", "cterm": "145", "cterm16": "7" }
-let s:black = { "gui": "{{ colors.normal.black }}", "cterm": "235", "cterm16": "0" }
+let s:blue = { "gui": g:theme_colors.colors.normal.blue, "cterm": "39", "cterm16": "4" }
+let s:purple = { "gui": g:theme_colors.colors.normal.magenta, "cterm": "5", "cterm16": "5" }
+let s:cyan = { "gui": g:theme_colors.colors.normal.cyan, "cterm": "38", "cterm16": "6" }
+let s:white = { "gui": g:theme_colors.colors.normal.white, "cterm": "145", "cterm16": "7" }
+let s:black = { "gui": g:theme_colors.colors.normal.black, "cterm": "235", "cterm16": "0" }
 let s:visual_black = { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }
 let s:comment_grey = { "gui": "#697098", "cterm": "59", "cterm16": "15" }
 let s:gutter_fg_grey = { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }
@@ -110,9 +113,12 @@ call s:h("Repeat", { "fg": s:purple }) " for, do, while, etc.
 call s:h("Label", { "fg": s:purple }) " case, default, etc.
 call s:h("Operator", { "fg": s:cyan }) " sizeof", "+", "*", etc.
 
-highlight Keyword
-            \ ctermfg=magenta
-            \ guifg={{ colors.normal.magenta }}
+lua << EOF
+    vim.api.nvim_set_hl(0, 'Keyword', {
+        ctermfg = "magenta",
+        fg = vim.g.theme_colors.colors.normal.magenta,
+    })
+EOF
 
 call s:h("Exception", { "fg": s:purple }) " try, catch, throw
 call s:h("PreProc", { "fg": s:yellow }) " generic Preprocessor
@@ -163,14 +169,18 @@ call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
 
-highlight Normal
-            \ ctermbg=NONE
-            \ ctermfg=white
-            \ guibg={{ theme.normal.background }}
-            \ guifg={{ theme.normal.foreground }}
+lua << EOF
+    vim.api.nvim_set_hl(0, 'Normal', {
+        ctermbg = "NONE",
+        ctermfg = "white",
+        bg = vim.g.theme_colors.theme.normal.background,
+        fg= vim.g.theme_colors.theme.normal.foreground,
+    })
 
-highlight NormalFloat
-            \ guibg={{ theme.bright.background }}
+    vim.api.nvim_set_hl(0, 'NormalFloat', {
+        bg = vim.g.theme_colors.theme.bright.background,
+    })
+EOF
 
 call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
 call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
