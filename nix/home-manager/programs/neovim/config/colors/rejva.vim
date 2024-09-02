@@ -5,7 +5,7 @@
 " License:    The MIT License (MIT)
 " Based On:   https://github.com/joshdick/onedark.vim
 
-" Initialization {{ "{{{" }}
+" Initialization {{{
 
 highlight clear
 
@@ -62,17 +62,17 @@ function! s:h(group, style)
     \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
 endfunction
 
-" public {{ "{{{" }}
+" public {{{
 
 function! rejva#set_highlight(group, style)
   call s:h(a:group, a:style)
 endfunction
 
-" {{ "}}}" }}
+" }}}
 
-" {{ "}}}" }}
+" }}}
 
-" Color Variables {{ "{{{" }}
+" Color Variables {{{
 
 let s:red = { "gui": g:theme_colors.colors.normal.red, "cterm": "1", "cterm16": "1" }
 let s:light_red = { "gui": g:theme_colors.colors.bright.red, "cterm": "204", "cterm16": "1" }
@@ -94,9 +94,9 @@ let s:menu_grey = { "gui": "#3E4452", "cterm": "237", "cterm16": "8" }
 let s:special_grey = { "gui": "#3B4048", "cterm": "238", "cterm16": "15" }
 let s:vertsplit = { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }
 
-" {{ "}}}" }}
+" }}}
 
-" Syntax Groups (descriptions and ordering from `:h w18`) {{ "{{{" }}
+" Syntax Groups (descriptions and ordering from `:h w18`) {{{
 
 call s:h("Comment", { "fg": s:comment_grey, "gui": "italic", "cterm": "italic" }) " any comment
 call s:h("Constant", { "fg": s:cyan }) " any constant
@@ -141,9 +141,9 @@ call s:h("Ignore", {}) " left blank, hidden
 call s:h("Error", { "fg": s:red }) " any erroneous construct
 call s:h("Todo", { "fg": s:purple }) " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-" {{ "}}}" }}
+" }}}
 
-" Highlighting Groups (descriptions and ordering from `:h hitest.vim`) {{ "{{{" }}
+" Highlighting Groups (descriptions and ordering from `:h hitest.vim`) {{{
 
 call s:h("ColorColumn", { "bg": s:cursor_grey }) " used for the columns set with 'colorcolumn'
 call s:h("Conceal", {}) " placeholder characters substituted for concealed text (see 'conceallevel')
@@ -204,9 +204,9 @@ call s:h("VisualNOS", { "bg": s:visual_grey }) " Visual mode selection when vim 
 call s:h("WarningMsg", { "fg": s:yellow }) " warning messages
 call s:h("WildMenu", { "fg": s:black, "bg": s:blue }) " current match in 'wildmenu' completion
 
-" {{ "}}}" }}
+" }}}
 
-" Git Highlighting {{ "{{{" }}
+" Git Highlighting {{{
 
 call s:h("gitcommitUnmerged", { "fg": s:green })
 call s:h("gitcommitOnBranch", {})
@@ -229,13 +229,13 @@ hi link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi link gitcommitSelectedArrow gitcommitSelectedFile
 hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
-" {{ "}}}" }}
+" }}}
 
-" Treesitter {{ "{{{" }}
+" Treesitter {{{
 
 call s:h("@variable", { "fg": s:red })
 
-" {{ "}}}" }}
+" }}}
 
 
 " Must appear at the end of the file to work around this oddity:
