@@ -13,12 +13,6 @@
           tags:
             - user
 
-        - name: Apply role `neovim`
-          ansible.builtin.import_role:
-            name: neovim
-          tags:
-            - neovim
-
         - name: Apply role `sway`
           ansible.builtin.import_role:
             name: sway
