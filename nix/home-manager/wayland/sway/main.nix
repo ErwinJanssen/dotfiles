@@ -79,11 +79,6 @@ in
 
     # Append custom keybindings to the default config.
     keybindings = lib.mkOptionDefault {
-      # Add bindings for wokspace 10. As of NixOS 23.11, the default Sway
-      # config from Home Manager includes keybinding for workspaces up to 9.
-      "${mod}+0" = "workspace number 10";
-      "${mod}+Shift+0" = "move container to workspace number 10";
-
       # Tap the left Super key to start the launcher, instead of `$mod+d`.
       "--release Super_L" = "exec ${menu}";
       "${mod}+d" = null;
