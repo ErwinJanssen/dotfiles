@@ -38,7 +38,7 @@ colors = {
         "red": lch_to_hex(50, 45, hues["red"]),
         "green": lch_to_hex(65, 45, hues["green"]),
         "yellow": lch_to_hex(85, 50, hues["yellow"]),
-        "blue": lch_to_hex(70, 20, hues["blue"]),
+        "blue": lch_to_hex(70, 40, hues["blue"]),
         "magenta": lch_to_hex(70, 50, hues["magenta"]),
         "cyan": lch_to_hex(75, 30, hues["cyan"]),
         "white": lch_to_hex(80, 5, hues[primary_color]),
