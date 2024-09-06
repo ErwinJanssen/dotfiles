@@ -36,7 +36,7 @@ colors = {
     "normal": {
         "black": lch_to_hex(20, black_chroma, hues[primary_color]),
         "red": lch_to_hex(50, 45, hues["red"]),
-        "green": lch_to_hex(65, 45, hues["green"]),
+        "green": lch_to_hex(70, 40, hues["green"]),
         "yellow": lch_to_hex(85, 50, hues["yellow"]),
         "blue": lch_to_hex(70, 40, hues["blue"]),
         "magenta": lch_to_hex(70, 40, hues["magenta"]),
