@@ -231,17 +231,16 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 
 " }}}
 
-" Treesitter {{{
-
-call s:h("@variable", { "fg": s:red })
-
-" }}}
 
 lua << EOF
 
 local theme = require "theme"
 
-local hightlight_defintions = {}
+local hightlight_defintions = {
+    -- Treesitter {{{
+    ["@variable"] = { fg = theme.colors.normal.red },
+    -- }}}
+}
 
 for group, opts in pairs(hightlight_defintions) do
     vim.api.nvim_set_hl(0, group, opts)
