@@ -206,30 +206,6 @@ call s:h("WildMenu", { "fg": s:black, "bg": s:blue }) " current match in 'wildme
 
 " }}}
 
-" Git Highlighting {{{
-
-call s:h("gitcommitUnmerged", { "fg": s:green })
-call s:h("gitcommitOnBranch", {})
-call s:h("gitcommitBranch", { "fg": s:purple })
-call s:h("gitcommitDiscardedType", { "fg": s:red })
-call s:h("gitcommitSelectedType", { "fg": s:green })
-call s:h("gitcommitHeader", {})
-call s:h("gitcommitUntrackedFile", { "fg": s:cyan })
-call s:h("gitcommitDiscardedFile", { "fg": s:red })
-call s:h("gitcommitSelectedFile", { "fg": s:green })
-call s:h("gitcommitUnmergedFile", { "fg": s:yellow })
-call s:h("gitcommitFile", {})
-highlight link gitcommitSummary Normal
-call s:h("gitcommitOverflow", { "fg": s:red })
-hi link gitcommitNoBranch gitcommitBranch
-hi link gitcommitUntracked gitcommitComment
-hi link gitcommitDiscarded gitcommitComment
-hi link gitcommitSelected gitcommitComment
-hi link gitcommitDiscardedArrow gitcommitDiscardedFile
-hi link gitcommitSelectedArrow gitcommitSelectedFile
-hi link gitcommitUnmergedArrow gitcommitUnmergedFile
-
-" }}}
 
 
 lua << EOF
@@ -237,6 +213,29 @@ lua << EOF
 local theme = require "theme"
 
 local hightlight_defintions = {
+    -- Git {{{
+    gitcommitUnmerged = { fg = theme.colors.normal.green },
+    gitcommitOnBranch = {},
+    gitcommitBranch = { fg = theme.colors.normal.purple },
+    gitcommitDiscardedType = { fg = theme.colors.normal.red },
+    gitcommitSelectedType = { fg = theme.colors.normal.green },
+    gitcommitHeader = {},
+    gitcommitUntrackedFile = { fg = theme.colors.normal.cyan },
+    gitcommitDiscardedFile = { fg = theme.colors.normal.red },
+    gitcommitSelectedFile = { fg = theme.colors.normal.green },
+    gitcommitUnmergedFile = { fg = theme.colors.normal.yellow },
+    gitcommitFile = {},
+    gitcommitSummary = { link = "Normal" },
+    gitcommitOverflow = { fg = theme.colors.normal.red },
+    gitcommitNoBranch = { link = "gitcommitBranch" },
+    gitcommitUntracked = { link = "gitcommitComment" },
+    gitcommitDiscarded = { link = "gitcommitComment" },
+    gitcommitSelected = { link = "gitcommitComment" },
+    gitcommitDiscardedArrow = { link = "gitcommitDiscardedFile" },
+    gitcommitSelectedArrow = { link = "gitcommitSelectedFile" },
+    gitcommitUnmergedArrow = { link = "gitcommitUnmergedFile" },
+    -- }}}
+
     -- Treesitter {{{
     ["@variable"] = { fg = theme.colors.normal.red },
     -- }}}
