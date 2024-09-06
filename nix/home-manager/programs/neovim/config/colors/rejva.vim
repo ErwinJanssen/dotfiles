@@ -213,7 +213,7 @@ local hightlight_defintions = {
     -- Popup menu: Normal item.
     Pmenu = {
         bg = theme.ui.search.item.background,
-        fg = theme.ui.search.item.match,
+        fg = theme.ui.search.item.foreground,
     },
 
     -- Popup menu: selected item.
