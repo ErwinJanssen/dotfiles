@@ -236,3 +236,15 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 call s:h("@variable", { "fg": s:red })
 
 " }}}
+
+lua << EOF
+
+local theme = require "theme"
+
+local hightlight_defintions = {}
+
+for group, opts in pairs(hightlight_defintions) do
+    vim.api.nvim_set_hl(0, group, opts)
+end
+
+EOF
