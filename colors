@@ -1,23 +1,65 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-# Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-# Copyright (C) 2016-present Sven Greb <development@svengreb.de>
+# Function to print color blocks
+print_color_blocks() {
+    local start=$1
+    local end=$2
+    local prefix=$3
 
-# Project:    igloo
-# Repository: https://github.com/arcticicestudio/igloo
-# License:    MIT
+    for i in $(seq "$start" "$end"); do
+        printf "\e[${prefix}${i}m  %3d  \e[0m" "$i"
+    done
+    echo
+}
 
-DOTS='•••'
-printf "\n                 40m     41m     42m     43m     44m     45m     46m     47m\n";
-for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
-           '1;32m' '  33m' '1;33m' '  34m' '1;34m' '  35m' '1;35m' \
-           '  36m' '1;36m' '  37m' '1;37m'; do
-  FG=${FGs// /}
-  printf " $FGs \033[$FG  $DOTS  "
-  for BG in 40m 41m 42m 43m 44m 45m 46m 47m; do
-    printf "$EINS \033[$FG\033[$BG  $DOTS  \033[0m";
-  done
-  printf "\n"
+# Print header
+echo -e "\nStandard colors:"
+echo "Foreground: 30-37 | Background: 40-47"
+echo "Bright Foreground: 90-97 | Bright Background: 100-107"
+
+# Print foreground colors
+echo -e "\nForeground colors:"
+print_color_blocks 30 37 ""
+print_color_blocks 90 97 ""
+
+# Print background colors
+echo -e "\nBackground colors:"
+print_color_blocks 40 47 ""
+print_color_blocks 100 107 ""
+
+# Function to print color combinations
+print_color_combinations() {
+    local fg_start=$1
+    local fg_end=$2
+    local bg_start=$3
+    local bg_end=$4
+
+    for fg in $(seq "$fg_start" "$fg_end"); do
+        for bg in $(seq "$bg_start" "$bg_end"); do
+            printf "\e[${fg}m\e[${bg}m  %3d;%3d  \e[0m" "$fg" "$bg"
+        done
+        echo
+    done
+}
+
+# Print all combinations
+echo -e "\nAll color combinations:"
+echo "Standard foreground (30-37) with standard background (40-47):"
+print_color_combinations 30 37 40 47
+
+echo -e "\nBright foreground (90-97) with standard background (40-47):"
+print_color_combinations 90 97 40 47
+
+echo -e "\nStandard foreground (30-37) with bright background (100-107):"
+print_color_combinations 30 37 100 107
+
+echo -e "\nBright foreground (90-97) with bright background (100-107):"
+print_color_combinations 90 97 100 107
+
+# Print text attributes
+echo -e "\nText attributes:"
+attributes=("Normal" "Bold" "Dim" "Italic" "Underline" "Blink" "Reverse" "Hidden")
+for i in {0..7}; do
+    printf "\e[${i}m%s\e[0m " "${attributes[$i]}"
 done
-printf "\n"
-unset -v DOTS
+echo -e "\n"
