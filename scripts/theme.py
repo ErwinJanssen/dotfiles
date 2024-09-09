@@ -24,9 +24,9 @@ hues = {
     "cyan": 197,
 }
 
-# Default lightness and chroma for 'normal' colors.
-default_lightness = 70
-default_chroma = 40
+# Default lightness and chroma for different color shades.
+normal_lightness = 70
+normal_chroma = 40
 
 # Set the primary/accent color
 primary_color = "magenta"
@@ -39,12 +39,12 @@ black_chroma = 0.75
 colors = {
     "normal": {
         "black": lch_to_hex(20, black_chroma, hues[primary_color]),
-        "red": lch_to_hex(default_lightness, default_chroma, hues["red"]),
-        "green": lch_to_hex(default_lightness, default_chroma, hues["green"]),
+        "red": lch_to_hex(normal_lightness, normal_chroma, hues["red"]),
+        "green": lch_to_hex(normal_lightness, normal_chroma, hues["green"]),
         "yellow": lch_to_hex(85, 50, hues["yellow"]),
-        "blue": lch_to_hex(default_lightness, default_chroma, hues["blue"]),
-        "magenta": lch_to_hex(default_lightness, default_chroma, hues["magenta"]),
-        "cyan": lch_to_hex(default_lightness, default_chroma, hues["cyan"]),
+        "blue": lch_to_hex(normal_lightness, normal_chroma, hues["blue"]),
+        "magenta": lch_to_hex(normal_lightness, normal_chroma, hues["magenta"]),
+        "cyan": lch_to_hex(normal_lightness, normal_chroma, hues["cyan"]),
         "white": lch_to_hex(80, 5, hues[primary_color]),
     },
     "bright": {
