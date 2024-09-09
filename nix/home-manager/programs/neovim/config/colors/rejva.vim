@@ -230,10 +230,6 @@ local hightlight_defintions = {
 
     -- }}}
 
-    -- nvim-cmp {{
-    CmpItemKindDefault = { fg = theme.ui.search.selected.foreground},
-    -- }}}
-
     -- Git {{{
     gitcommitUnmerged = { fg = theme.colors.normal.green },
     gitcommitOnBranch = {},
