@@ -28,6 +28,13 @@ hues = {
 normal_lightness = 70
 normal_chroma = 40
 
+# The bright colors must be more vibrant, so the chroma must be increased.
+# The lightness is lowered. An increased lightness results colors that are more
+# pale, and colors with higher lightness are more often out of the sRGB color
+# range.
+bright_lightness = normal_lightness - 20
+bright_chroma = normal_chroma + 40
+
 # Set the primary/accent color
 primary_color = "magenta"
 
@@ -49,12 +56,12 @@ colors = {
     },
     "bright": {
         "black": lch_to_hex(35, black_chroma, hues[primary_color]),
-        "red": lch_to_hex(55, 75, hues["red"]),
-        "green": lch_to_hex(75, 80, hues["green"]),
-        "yellow": lch_to_hex(95, 80, hues["yellow"]),
-        "blue": lch_to_hex(65, 40, hues["blue"]),
-        "magenta": lch_to_hex(50, 80, hues["magenta"]),
-        "cyan": lch_to_hex(80, 45, hues["cyan"]),
+        "red": lch_to_hex(bright_lightness, bright_chroma, hues["red"]),
+        "green": lch_to_hex(bright_lightness, bright_lightness, hues["green"]),
+        "yellow": lch_to_hex(bright_lightness + 40, bright_chroma, hues["yellow"]),
+        "blue": lch_to_hex(bright_lightness, bright_chroma, hues["blue"]),
+        "magenta": lch_to_hex(bright_lightness, bright_chroma, hues["magenta"]),
+        "cyan": lch_to_hex(bright_lightness, bright_chroma, hues["cyan"]),
         "white": lch_to_hex(90, 5, hues[primary_color]),
     },
     "dim": {
