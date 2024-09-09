@@ -39,7 +39,7 @@ black_chroma = 0.75
 colors = {
     "normal": {
         "black": lch_to_hex(20, black_chroma, hues[primary_color]),
-        "red": lch_to_hex(50, 45, hues["red"]),
+        "red": lch_to_hex(default_lightness, default_chroma, hues["red"]),
         "green": lch_to_hex(default_lightness, default_chroma, hues["green"]),
         "yellow": lch_to_hex(85, 50, hues["yellow"]),
         "blue": lch_to_hex(default_lightness, default_chroma, hues["blue"]),
