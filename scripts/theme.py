@@ -16,7 +16,7 @@ def lch_to_hex(lightness: float, chroma: float, hue: float) -> str:
 
 # Set the hue for the primary accent color.
 hues = {
-    "red": 30,
+    "red": 40,
     "green": 140,
     "yellow": 90,
     "blue": 260,
