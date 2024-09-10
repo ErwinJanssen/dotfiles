@@ -20,7 +20,7 @@ end, {
     desc = "Find *any* file (including ignored)",
 })
 
-vim.keymap.set("n", "<Leader>fb", "<cmd>Buffers<CR>", {
+vim.keymap.set("n", "<Leader>fb", require("telescope.builtin").buffers, {
     desc = "Find buffer",
 })
 
