@@ -10,17 +10,12 @@ vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Write buffer to current fil
 
 whichkey.add { { "<leader>f", group = "Find something" } }
 
-vim.keymap.set("n", "<Leader>ff", "<cmd>Files<CR>", {
+vim.keymap.set("n", "<Leader>ff", require("telescope.builtin").find_files, {
     desc = "Find file",
 })
 
 vim.keymap.set("n", "<Leader>fF", function()
-    -- Call fzf `Files` command, but append `--no-ignore` in order to find
-    -- files that are ignored by default.
-    local original_command = vim.fn.getenv "FZF_DEFAULT_COMMAND"
-    vim.fn.setenv("FZF_DEFAULT_COMMAND", original_command .. " --no-ignore")
-    vim.fn["fzf#vim#files"](0)
-    vim.fn.setenv("FZF_DEFAULT_COMMAND", original_command)
+    require("telescope.builtin").find_files { no_ignore = true }
 end, {
     desc = "Find *any* file (including ignored)",
 })
