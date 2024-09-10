@@ -32,6 +32,10 @@ vim.keymap.set("n", "<Leader>fL", "<cmd>Lines<CR>", {
     desc = "Find line in *any* buffer",
 })
 
+vim.keymap.set("n", "<Leader>fg", require("telescope.builtin").grep_string, {
+    desc = "Find word under cursor with ripgrep",
+})
+
 vim.keymap.set("n", "<Leader>fG", function()
     require("telescope.builtin").grep_string { search = vim.fn.input "Search string: " }
 end, { desc = "Find with ripgrep" })
