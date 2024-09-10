@@ -25,7 +25,7 @@ hues = {
 }
 
 # Default lightness and chroma for different color shades.
-normal_lightness = 70
+normal_lightness = 60
 normal_chroma = 40
 
 # The bright colors must be more vibrant, so the chroma must be increased.
