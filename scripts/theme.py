@@ -74,6 +74,14 @@ colors = {
     "dimmer": {"black": lch_to_hex(10, black_chroma, hues[primary_color])},
 }
 
+# Add 'greys' to the color definitions. For each hue, the grey version has
+# both lower lightness and chroma.
+colors["grey"] = {}
+for hue_name, hue_value in hues.items():
+    colors["grey"][hue_name] = lch_to_hex(
+        normal_lightness - 10, normal_chroma / 2, hue_value
+    )
+
 
 # Provide some high level color definitions such as which color is the accent
 # color.
