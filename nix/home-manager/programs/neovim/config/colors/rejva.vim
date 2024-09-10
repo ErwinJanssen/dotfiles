@@ -230,6 +230,14 @@ local hightlight_defintions = {
 
     -- }}}
 
+    -- Diagnostic (from `:help diagnostic-highlights`) {{{
+    DiagnosticError = { fg = theme.colors.grey.red },
+    DiagnosticWarn = { fg = theme.colors.grey.yellow },
+    DiagnosticInfo = { fg = theme.colors.grey.magenta },
+    DiagnosticHint = { fg = theme.colors.grey.cyan },
+    DiagnosticOk = { fg = theme.colors.grey.green },
+    -- }}}
+
     -- Git {{{
     gitcommitUnmerged = { fg = theme.colors.normal.green },
     gitcommitOnBranch = {},
