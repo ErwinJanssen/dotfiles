@@ -33,7 +33,7 @@ vim.keymap.set("n", "<Leader>fL", "<cmd>Lines<CR>", {
 })
 
 vim.keymap.set("n", "<Leader>fG", function()
-    vim.cmd("Rg " .. vim.fn.input "Search string: ")
+    require("telescope.builtin").grep_string { search = vim.fn.input "Search string: " }
 end, { desc = "Find with ripgrep" })
 
 vim.keymap.set("n", "<Leader>f*", function()
