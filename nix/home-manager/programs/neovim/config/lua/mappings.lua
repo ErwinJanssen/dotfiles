@@ -44,6 +44,10 @@ vim.keymap.set("n", "<Leader>f*", function()
     require("telescope.builtin").builtin { include_extensions = true }
 end, { desc = "Find Telescope pickers" })
 
+vim.keymap.set("n", "<Leader>fr", require("telescope.builtin").resume, {
+    desc = "Resume last Telescope picker",
+})
+
 -- }}}
 
 -- ==============================
