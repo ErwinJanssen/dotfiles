@@ -264,6 +264,15 @@ local hightlight_defintions = {
     -- Treesitter {{{
     ["@variable"] = { fg = theme.colors.normal.red },
     -- }}}
+
+    -- Telescope {{{
+    TelescopeSelection = { bg = theme.ui.search.selected.background },
+    TelescopeSelectionCaret = {
+        bg = theme.ui.search.selected.background,
+        fg = theme.ui.search.selected.foreground,
+    },
+    TelescopeMatching = { fg = theme.ui.search.item.match },
+    -- }}}
 }
 
 for group, opts in pairs(hightlight_defintions) do
