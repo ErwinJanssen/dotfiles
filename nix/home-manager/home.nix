@@ -125,6 +125,13 @@ in
     };
   };
 
+  # Configure nixpkgs.
+  home.file.".config/nixpkgs/config.nix".text = ''
+    {
+      allowUnfree = true;
+    }
+  '';
+
   fonts = {
     fontconfig = {
       enable = true;
