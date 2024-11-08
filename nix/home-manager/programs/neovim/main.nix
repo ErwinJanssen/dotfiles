@@ -52,8 +52,9 @@
     # Treesitter: more advanced syntax highlighting
     nvim-treesitter.withAllGrammars
 
-    # Snippet engine, required by nvim-cmp
+    # Snippet engine and snippet sources
     luasnip
+    friendly-snippets
 
     # Auto-completion during typing, uses various sources
     nvim-cmp

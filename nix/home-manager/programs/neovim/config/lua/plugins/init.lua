@@ -40,6 +40,8 @@ require("telescope").setup {
 require("gitsigns").setup()
 require("which-key").setup()
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 require "plugins.cmp"
 
 require "plugins.treesitter"
