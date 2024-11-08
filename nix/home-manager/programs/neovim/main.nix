@@ -64,6 +64,7 @@
     cmp-nvim-lsp
     cmp-path
     cmp-spell
+    cmp_luasnip
 
     # Configuration for Neovim's built-in language server client
     nvim-lspconfig

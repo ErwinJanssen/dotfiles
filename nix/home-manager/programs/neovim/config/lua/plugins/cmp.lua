@@ -1,13 +1,14 @@
 -- Configure auto completion using 'nvim-cmp'
 
 local cmp = require "cmp"
+local luasnip = require "luasnip"
 
 cmp.setup {
     snippet = {
         -- It is required to specify specify a snippet engine (even if it is
         -- not used).
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     window = {
@@ -24,12 +25,44 @@ cmp.setup {
             end
         end, { "i", "s" }),
 
-        -- Use 'Enter' to insert the currently selected item. The option
-        -- `select = false` is used to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = false },
+        ["<CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                if luasnip.expandable() then
+                    -- Expand snippet if one is selected.
+                    luasnip.expand()
+                else
+                    -- Insert the currently selected item. The option
+                    -- `select = false` is used to only confirm explicitly
+                    -- selected items.
+                    cmp.confirm {
+                        select = false,
+                    }
+                end
+            else
+                fallback()
+            end
+        end),
+
+        -- Use Tab and Shift-Tab to jump through snippet placeholders.
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if luasnip.locally_jumpable(1) then
+                luasnip.jump(1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     },
     sources = cmp.config.sources {
         { name = "nvim_lsp" },
+        { name = "luasnip" },
         { name = "path" },
         { name = "buffer" },
         {
