@@ -99,4 +99,8 @@ end, {
     desc = "Blame of current line",
 })
 
+vim.keymap.set("n", "<Leader>vB", package.loaded.gitsigns.blame, {
+    desc = "Blame of entire file",
+})
+
 -- }}}
