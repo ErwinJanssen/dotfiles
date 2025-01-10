@@ -178,8 +178,9 @@ in
 
   # Configure services by importing `services.nix`.
   services = import ./services.nix {
-    theme = theme;
+    config = config;
     pkgs = pkgs;
+    theme = theme;
   };
 
   # Place background image for Sway.
