@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  nixgl,
   specialArgs,
   ...
 }:
@@ -34,6 +35,9 @@ in
   # Without this setting, a notification appears after each `switch`, but the
   # news cannot be read so it keeps coming back.
   news.display = "silent";
+
+  nixGL.packages = nixgl.packages;
+  nixGL.defaultWrapper = "mesa";
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
