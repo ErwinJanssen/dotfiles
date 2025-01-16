@@ -30,7 +30,11 @@
   ssh = import ./programs/ssh.nix;
 
   # GUI programs
-  firefox = import ./programs/firefox/main.nix { theme = theme; };
+  firefox = import ./programs/firefox/main.nix {
+    config = config;
+    pkgs = pkgs;
+    theme = theme;
+  };
   rofi = import ./programs/rofi.nix {
     config = config;
     theme = theme;

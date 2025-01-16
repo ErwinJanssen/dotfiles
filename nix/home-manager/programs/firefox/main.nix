@@ -1,8 +1,11 @@
-{ theme }:
 {
-  # Configure Firefox using Nix Home Manger, but use the system Firefox.
+  config,
+  pkgs,
+  theme,
+}:
+{
   enable = true;
-  package = null;
+  package = config.lib.nixGL.wrap pkgs.firefox;
   profiles = {
     default = {
       path = "default.profile";
