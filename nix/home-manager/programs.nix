@@ -43,6 +43,10 @@
     pkgs = pkgs;
     theme = theme;
   };
+  thunderbird = import ./programs/thunderbird.nix {
+    config = config;
+    pkgs = pkgs;
+  };
   waybar = import ./programs/waybar/main.nix { theme = theme; };
   zathura = import ./programs/zathura.nix { theme = theme; };
 }
