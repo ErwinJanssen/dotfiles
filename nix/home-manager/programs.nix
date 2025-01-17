@@ -21,6 +21,7 @@
 
   # CLI tools
   eza = import ./programs/eza.nix;
+  fd = import ./programs/fd.nix;
   fzf = import ./programs/fzf.nix { theme = theme; };
   git = import ./programs/git.nix;
   ripgrep = import ./programs/ripgrep.nix;

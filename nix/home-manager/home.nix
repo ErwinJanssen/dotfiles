@@ -53,7 +53,6 @@ in
   home.packages = [
     # Packages that need to be installed, but are not included through other
     # modules.
-    pkgs.fd
     pkgs.fira-code
 
     # Required for Sway config.
