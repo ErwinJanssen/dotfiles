@@ -26,7 +26,16 @@ in
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   # The default locale to use.
-  home.language.base = "en_US.UTF-8";
+  # Use `en_IE` instead of the more 'standard' `en_US`, because it is better
+  # suited for the EU zone, while the system messages are still in English:
+  #   - Metric units for measurements.
+  #   - 24-hour time format.
+  #   - Work week starts on Monday.
+  #   - Full date format dd/mm/yyyy.
+  #   - Short date format dd/mm.
+  #   - A4 paper size
+  #   - Euro currency
+  home.language.base = "en_IE.UTF-8";
 
   # Do not notify about 'unread and relevant news items' after running
   # `home-manager switch`. When using Nix Flakes, Home Manager will not be able
