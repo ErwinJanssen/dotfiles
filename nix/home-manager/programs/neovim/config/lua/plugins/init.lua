@@ -82,3 +82,24 @@ require("lspconfig").lua_ls.setup {
         },
     },
 }
+
+-- Plugin for writing and navigating Obsidian vaults
+require("obsidian").setup {
+    workspaces = {
+        {
+            -- The plugin requires that a workspace path is specified,
+            -- otherwise it will give an error on Neovim startup.
+            name = "personal",
+            path = "~/workspace/private-notes/",
+        },
+    },
+    ui = {
+        -- Disable UI features for now, evaluate later.
+        enable = false,
+    },
+
+    notes_subdir = "notes",
+    daily_notes = {
+        folder = "notes/dailies",
+    },
+}

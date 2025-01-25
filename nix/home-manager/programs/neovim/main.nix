@@ -74,5 +74,8 @@
 
     # Bridge between `mason` and `lspconfig`
     mason-lspconfig-nvim
+
+    # Plugin for writing and navigating Obsidian vaults
+    obsidian-nvim
   ];
 }
