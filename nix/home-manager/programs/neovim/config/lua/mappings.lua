@@ -74,6 +74,19 @@ end, {
 -- }}}
 
 -- ==============================
+-- [n]ote taking
+-- ==============================
+-- {{{
+
+whichkey.add { { "<leader>n", group = "Note taking" } }
+
+vim.keymap.set("n", "<Leader>nt", "<cmd>ObsidianToday<CR>", {
+    desc = "Today's notes",
+})
+
+-- }}}
+
+-- ==============================
 -- [t]oggle menus and interfaces
 -- ==============================
 -- {{{
