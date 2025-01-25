@@ -103,4 +103,8 @@ vim.keymap.set("n", "<Leader>vB", package.loaded.gitsigns.blame, {
     desc = "Blame of entire file",
 })
 
+vim.keymap.set("n", "<Leader>vp", package.loaded.gitsigns.preview_hunk, {
+    desc = "Preview the hunk at the cursor position in a floating window.",
+})
+
 -- }}}
