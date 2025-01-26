@@ -4,6 +4,8 @@ local cmp = require "cmp"
 local luasnip = require "luasnip"
 
 cmp.setup {
+    -- Do not automatically select an entry when the completion menu is shown.
+    preselect = cmp.PreselectMode.None,
     snippet = {
         -- It is required to specify specify a snippet engine (even if it is
         -- not used).
