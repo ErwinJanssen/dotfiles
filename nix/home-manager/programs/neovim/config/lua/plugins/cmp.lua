@@ -30,13 +30,14 @@ cmp.setup {
                 if luasnip.expandable() then
                     -- Expand snippet if one is selected.
                     luasnip.expand()
+                elseif cmp.get_selected_entry() then
+                    -- Insert the currently selected item.
+                    cmp.confirm()
                 else
-                    -- Insert the currently selected item. The option
-                    -- `select = false` is used to only confirm explicitly
-                    -- selected items.
-                    cmp.confirm {
-                        select = false,
-                    }
+                    -- If the menu is visible, but nothing is selected, perform
+                    -- the fallback actions. The default fallback is to simply
+                    -- insert a newline.
+                    fallback()
                 end
             else
                 fallback()
