@@ -1,13 +1,5 @@
 -- Configure plugins. Install is done by Nix Home Manager.
 
--- vim-pandoc
-vim.g["pandoc#folding#fdc"] = 0
-vim.g["pandoc#syntax#conceal#use"] = 0
-
--- Disable all keyboard shortcuts provided by default by the Pandoc plugin, as
--- well as the auto formatting (which overrides values such as `formatoptions`)
-vim.g["pandoc#modules#disabled"] = { "formatting", "keyboard" }
-
 -- Lightline
 vim.g.lightline = {
     colorscheme = "rejva",
