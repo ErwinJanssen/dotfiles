@@ -82,7 +82,7 @@ require("obsidian").setup {
             -- The plugin requires that a workspace path is specified,
             -- otherwise it will give an error on Neovim startup.
             name = "personal",
-            path = "~/workspace/private-notes/",
+            path = "~/workspace/private-notes/notes/",
         },
     },
     ui = {
@@ -92,6 +92,6 @@ require("obsidian").setup {
 
     notes_subdir = "notes",
     daily_notes = {
-        folder = "notes/dailies",
+        folder = "dailies",
     },
 }
