@@ -159,8 +159,8 @@ set formatoptions=c,r,o,q,n,1,j
 " a period, or other sentence delimiters.
 set nojoinspaces
 
-" Enable spell checking, with en_US as the default language
-set spell spelllang=en_us
+" Enable spell checking, with en_US and Dutch as the default languages.
+set spell spelllang=en_us,nl
 
 " Disable spell checking words that are not capitalized for most files. For
 " many file types, this clutters the interface as variable names (which are
