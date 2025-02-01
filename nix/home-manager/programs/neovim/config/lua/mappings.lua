@@ -87,7 +87,7 @@ vim.keymap.set("n", "<Leader>nt", "<cmd>ObsidianToday<CR>", {
 -- }}}
 
 -- ==============================
--- [t]oggle menus and interfaces
+-- [t]oggle menus and behavior
 -- ==============================
 -- {{{
 
@@ -95,6 +95,15 @@ whichkey.add { { "<leader>t", group = "Toggle menus/interfaces" } }
 
 vim.keymap.set("n", "<Leader>tu", "<cmd>MundoToggle<CR>", {
     desc = "Undo tree",
+})
+
+vim.keymap.set("n", "<Leader>ta", function()
+    -- Invert the value of the 'automatic formatting' flag.
+    vim.opt_local.formatoptions:append {
+        a = not vim.opt_local.formatoptions:get().a,
+    }
+end, {
+    desc = "Toggle autoformat",
 })
 
 -- }}}
