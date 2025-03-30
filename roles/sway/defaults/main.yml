@@ -1,6 +1,6 @@
 ---
-config_directory: "{{ config_home }}/sway"
-dependencies:
+config_directory: "{{ config_home }}/sway" # noqa: var-naming[no-role-prefix]
+dependencies: # noqa: var-naming[no-role-prefix]
   - sway
   - swayidle
   - swaylock
