@@ -3,6 +3,7 @@
   enable = true;
   systemd = {
     enable = true;
+    target = "sway-session.target";
   };
   style = import ./style.css { theme = theme; };
   settings = {
