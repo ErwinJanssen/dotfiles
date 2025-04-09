@@ -158,6 +158,9 @@ in
     </alias>
   '';
 
+  # Configuration for GNOME desktop environment.
+  dconf = import ./dconf.nix;
+
   # Configure user-global EditorConfig settings.
   editorconfig = import ./editorconfig.nix;
 
