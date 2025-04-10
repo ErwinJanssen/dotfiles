@@ -51,6 +51,7 @@
   wezterm = import ./programs/wezterm/main.nix {
     config = config;
     pkgs = pkgs;
+    theme = theme;
   };
   zathura = import ./programs/zathura.nix { theme = theme; };
 }
