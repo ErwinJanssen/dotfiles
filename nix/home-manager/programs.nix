@@ -48,7 +48,7 @@
     pkgs = pkgs;
   };
   waybar = import ./programs/waybar/main.nix { theme = theme; };
-  wezterm = import ./programs/wezterm.nix {
+  wezterm = import ./programs/wezterm/main.nix {
     config = config;
     pkgs = pkgs;
   };
