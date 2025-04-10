@@ -48,5 +48,9 @@
     pkgs = pkgs;
   };
   waybar = import ./programs/waybar/main.nix { theme = theme; };
+  wezterm = import ./programs/wezterm.nix {
+    config = config;
+    pkgs = pkgs;
+  };
   zathura = import ./programs/zathura.nix { theme = theme; };
 }
