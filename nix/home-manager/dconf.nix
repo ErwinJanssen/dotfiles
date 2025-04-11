@@ -59,6 +59,21 @@
       dynamic-workspaces = false;
     };
 
+    # Custom keybindings have to be registered, as well as defined separately.
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/"
+      ];
+    };
+
+    # Similar to Sway, open a terminal on <Super>+<Enter>.
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal" = {
+      binding = "<Super>Return";
+      command = "wezterm";
+      name = "Terminal";
+
+    };
+
     "org/gnome/shell/keybindings" = {
       # By default, these are defined as <Super>+<number>. If left at their
       # default values, they take precedence over the bindings to switch
