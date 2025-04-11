@@ -1,5 +1,6 @@
 {
   enable = true;
+  systemdTarget = "sway-session.target";
   settings = [
     # Disable build-in display when one of these external monitors is
     # connected:
