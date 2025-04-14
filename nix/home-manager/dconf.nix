@@ -1,5 +1,11 @@
 {
   settings = {
+    "org/gnome/desktop/input-sources" = {
+      # Map `<CapsLock>` to `<Escape>` by default, enable actual `<CapsLock>`
+      # with `<Shift>+<CapsLock>`.
+      xkb-options = [ "caps:escape_shifted_capslock" ];
+    };
+
     "org/gnome/desktop/peripherals/touchpad" = {
       # This seems to enable both 'areas' and 'tap to click'.
       click-method = "areas";
