@@ -35,6 +35,7 @@
     pkgs = pkgs;
     theme = theme;
   };
+  gnome-shell = import ./programs/gnome-shell.nix { pkgs = pkgs; };
   rofi = import ./programs/rofi.nix {
     config = config;
     theme = theme;

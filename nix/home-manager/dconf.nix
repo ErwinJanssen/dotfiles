@@ -74,6 +74,10 @@
 
     };
 
+    "org/gnome/shell/extensions/quake-terminal" = {
+      terminal-shortcut = [ "<Super>minus" ];
+    };
+
     "org/gnome/shell/keybindings" = {
       # By default, these are defined as <Super>+<number>. If left at their
       # default values, they take precedence over the bindings to switch
