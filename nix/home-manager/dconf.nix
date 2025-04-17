@@ -2,6 +2,7 @@
   settings = {
     "org/gnome/desktop/interface" = {
       "color-scheme" = "prefer-dark";
+      "enable-animations" = false;
     };
     "org/gnome/desktop/input-sources" = {
       # Map `<CapsLock>` to `<Escape>` by default, enable actual `<CapsLock>`
