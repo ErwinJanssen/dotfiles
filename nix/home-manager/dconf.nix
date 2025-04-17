@@ -1,5 +1,8 @@
 {
   settings = {
+    "org/gnome/desktop/interface" = {
+      "color-scheme" = "prefer-dark";
+    };
     "org/gnome/desktop/input-sources" = {
       # Map `<CapsLock>` to `<Escape>` by default, enable actual `<CapsLock>`
       # with `<Shift>+<CapsLock>`.
