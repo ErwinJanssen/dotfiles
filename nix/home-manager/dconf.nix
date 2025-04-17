@@ -80,6 +80,7 @@
 
     "org/gnome/shell/extensions/quake-terminal" = {
       horizontal-size = 80;
+      render-on-current-monitor = true;
       terminal-id = "org.wezfurlong.wezterm.desktop";
       terminal-shortcut = [ "<Super>minus" ];
     };
