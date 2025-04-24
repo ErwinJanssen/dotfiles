@@ -13,6 +13,7 @@
   bash = import ./programs/bash.nix;
   fish = import ./programs/fish/main.nix;
   kitty = import ./programs/kitty.nix {
+    config = config;
     theme = theme;
     pkgs = pkgs;
   };
