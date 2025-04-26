@@ -5,7 +5,6 @@
   # so that has to be done manually. This is probably because GNOME itself is
   # not being installed and managed by Home Manager.
   extensions = [
-    { package = pkgs.gnomeExtensions.quake-terminal; }
-
+    { package = pkgs.gnomeExtensions.ddterm; }
   ];
 }

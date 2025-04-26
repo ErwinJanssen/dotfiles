@@ -1,5 +1,9 @@
 {
   settings = {
+    "com/github/amezin/ddterm" = {
+      "ddterm-toggle-hotkey" = [ "<Super>minus" ];
+    };
+
     "org/gnome/desktop/interface" = {
       "color-scheme" = "prefer-dark";
       "enable-animations" = false;
@@ -76,13 +80,6 @@
       command = "wezterm";
       name = "Terminal";
 
-    };
-
-    "org/gnome/shell/extensions/quake-terminal" = {
-      horizontal-size = 80;
-      render-on-current-monitor = true;
-      terminal-id = "org.wezfurlong.wezterm.desktop";
-      terminal-shortcut = [ "<Super>minus" ];
     };
 
     "org/gnome/shell/keybindings" = {
