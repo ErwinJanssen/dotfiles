@@ -77,7 +77,7 @@
     # Similar to Sway, open a terminal on <Super>+<Enter>.
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal" = {
       binding = "<Super>Return";
-      command = "wezterm";
+      command = "kitty";
       name = "Terminal";
 
     };
