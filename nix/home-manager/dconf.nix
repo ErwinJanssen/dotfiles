@@ -30,6 +30,17 @@
     };
 
     "org/gnome/desktop/wm/keybindings" = {
+      # Define multiple keybindings for closing a window.
+      close = [
+        # Alt+F4: Default value in GNOME and many other window
+        # managers, as well as Microsoft Windows.
+        "<Alt>F4"
+
+        # Default on Sway/i3, and convenient on laptops where the fn
+        # key is needed to access F4.
+        "<Shift><Super>q"
+      ];
+
       # Move applications to a different workspace.
       move-to-workspace-1 = [ "<Super><Shift>1" ];
       move-to-workspace-2 = [ "<Super><Shift>2" ];
