@@ -29,6 +29,10 @@
       two-finger-scrolling-enabled = true;
     };
 
+    "org/gnome/desktop/sound" = {
+      event-sounds = false;
+    };
+
     "org/gnome/desktop/wm/keybindings" = {
       # Define multiple keybindings for closing a window.
       close = [
