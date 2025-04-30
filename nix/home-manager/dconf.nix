@@ -110,6 +110,11 @@
 
     };
 
+    "org/gnome/shell/app-switcher" = {
+      # No not limit application switch to current workspace.
+      current-workspace-only = false;
+    };
+
     "org/gnome/shell/keybindings" = {
       # By default, these are defined as <Super>+<number>. If left at their
       # default values, they take precedence over the bindings to switch
@@ -123,6 +128,11 @@
       switch-to-application-7 = [ ];
       switch-to-application-8 = [ ];
       switch-to-application-9 = [ ];
+    };
+
+    "org/gnome/shell/window-switcher" = {
+      # No not limit window switch to current workspace.
+      current-workspace-only = false;
     };
 
   };
