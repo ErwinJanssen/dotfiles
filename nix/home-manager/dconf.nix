@@ -69,6 +69,16 @@
       switch-to-workspace-9 = [ "<Super>9" ];
       switch-to-workspace-10 = [ "<Super>0" ];
 
+      # Switch between applications, which groups windows of the same
+      # application type.
+      switch-applications = [ "<Super>Tab" ];
+      switch-applications-backward = [ "<Shift><Super>Tab" ];
+
+      # Switch between all open windows, does not group based on
+      # application.
+      switch-windows = [ "<Alt>Tab" ];
+      switch-windows-backward = [ "<Shift><Alt>Tab" ];
+
       # Keybinding to make window fullscreen, similar to Sway.
       toggle-fullscreen = [ "<Super>f" ];
     };
