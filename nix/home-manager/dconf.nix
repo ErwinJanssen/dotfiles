@@ -68,6 +68,9 @@
       switch-to-workspace-8 = [ "<Super>8" ];
       switch-to-workspace-9 = [ "<Super>9" ];
       switch-to-workspace-10 = [ "<Super>0" ];
+
+      # Keybinding to make window fullscreen, similar to Sway.
+      toggle-fullscreen = [ "<Super>f" ];
     };
 
     "org/gnome/desktop/wm/preferences" = {
