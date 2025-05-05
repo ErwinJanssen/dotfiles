@@ -6,6 +6,9 @@
     "com/github/amezin/ddterm" = {
       "ddterm-toggle-hotkey" = [ "<Super>minus" ];
 
+      # Do not restore tabs on startup.
+      save-restore-session = false;
+
       # Use custom theme colors
       use-theme-colors = false;
       background-color = theme.theme.normal.background;
