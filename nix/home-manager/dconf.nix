@@ -1,7 +1,33 @@
 {
+  theme,
+}:
+{
   settings = {
     "com/github/amezin/ddterm" = {
       "ddterm-toggle-hotkey" = [ "<Super>minus" ];
+
+      # Use custom theme colors
+      use-theme-colors = false;
+      background-color = theme.theme.normal.background;
+      foreground-color = theme.theme.normal.foreground;
+      palette = [
+        theme.colors.normal.black
+        theme.colors.normal.red
+        theme.colors.normal.green
+        theme.colors.normal.yellow
+        theme.colors.normal.blue
+        theme.colors.normal.magenta
+        theme.colors.normal.cyan
+        theme.colors.normal.white
+        theme.colors.bright.black
+        theme.colors.bright.red
+        theme.colors.bright.green
+        theme.colors.bright.yellow
+        theme.colors.bright.blue
+        theme.colors.bright.magenta
+        theme.colors.bright.cyan
+        theme.colors.bright.white
+      ];
     };
 
     "org/gnome/desktop/interface" = {
