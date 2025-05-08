@@ -12,6 +12,9 @@
       # Do not restore tabs on startup.
       save-restore-session = false;
 
+      # Set cursor shape to 'beam' instead of 'block'.
+      cursor-shape = "ibeam";
+
       # Use custom theme colors
       use-theme-colors = false;
       background-color = theme.theme.normal.background;
