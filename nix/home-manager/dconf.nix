@@ -12,6 +12,9 @@
       # Do not restore tabs on startup.
       save-restore-session = false;
 
+      # Always start new tabs in the user's home directory.
+      preserve-working-directory = false;
+
       # Set cursor shape to 'beam' instead of 'block'.
       cursor-shape = "ibeam";
 
