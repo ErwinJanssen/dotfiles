@@ -6,6 +6,9 @@
     "com/github/amezin/ddterm" = {
       "ddterm-toggle-hotkey" = [ "<Super>minus" ];
 
+      # Disable 'bell' sounds.
+      audible-bell = false;
+
       # Do not restore tabs on startup.
       save-restore-session = false;
 
