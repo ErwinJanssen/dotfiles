@@ -149,6 +149,10 @@
 
     };
 
+    "org/gnome/settings-daemon/plugins/power" = {
+      sleep-inactive-ac-type = "nothing";
+    };
+
     "org/gnome/shell/app-switcher" = {
       # No not limit application switch to current workspace.
       current-workspace-only = false;
