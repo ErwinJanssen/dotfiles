@@ -59,6 +59,9 @@ in
     # modules.
     pkgs.fira-code
 
+    # CLI tool to access the Wayland clipboard
+    pkgs.wl-clipboard
+
     # Required for Sway config.
     pkgs.libnotify
     pkgs.playerctl
