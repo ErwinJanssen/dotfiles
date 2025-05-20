@@ -1,4 +1,4 @@
-{ theme }:
+{ pkgs, theme }:
 {
   enable = true;
 
@@ -8,6 +8,9 @@
 
   # Enable mouse support.
   mouse = true;
+
+  # Use Fish from nixpkgs as the default shell when starting tmux.
+  shell = "${pkgs.fish}/bin/fish";
 
   # Read extra configuration for templates `tmux.conf`.
   extraConfig = import ./tmux.conf { theme = theme; };

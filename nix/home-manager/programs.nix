@@ -26,7 +26,10 @@
   fzf = import ./programs/fzf.nix { theme = theme; };
   git = import ./programs/git.nix;
   ripgrep = import ./programs/ripgrep.nix;
-  tmux = import ./programs/tmux/main.nix { theme = theme; };
+  tmux = import ./programs/tmux/main.nix {
+    pkgs = pkgs;
+    theme = theme;
+  };
   neovim = import ./programs/neovim/main.nix { pkgs = pkgs; };
   ssh = import ./programs/ssh.nix;
 
