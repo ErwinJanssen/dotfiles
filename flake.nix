@@ -26,7 +26,6 @@
     in
     {
       formatter.${system} = pkgs.nixfmt-rfc-style;
-      defaultPackage.${system} = home-manager.defaultPackage.${system};
 
       packages = {
         # Define a package for the theme data, in order to pass that to
