@@ -21,6 +21,7 @@
   starship = import ./programs/starship.nix;
 
   # CLI tools
+  atuin = import ./programs/atuin.nix;
   eza = import ./programs/eza.nix;
   fd = import ./programs/fd.nix;
   fzf = import ./programs/fzf.nix { theme = theme; };
