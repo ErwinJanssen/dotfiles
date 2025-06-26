@@ -42,7 +42,6 @@
     };
 
     "org/gnome/desktop/interface" = {
-      "color-scheme" = "prefer-dark";
       "enable-animations" = false;
       monospace-font-name = "Fira Code 11";
     };
