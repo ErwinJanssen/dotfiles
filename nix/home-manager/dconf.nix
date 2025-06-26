@@ -18,10 +18,9 @@
       # Set cursor shape to 'beam' instead of 'block'.
       cursor-shape = "ibeam";
 
-      # Use custom theme colors
-      use-theme-colors = false;
-      background-color = theme.theme.normal.background;
-      foreground-color = theme.theme.normal.foreground;
+      # Use the custom color palette, but let system theme set background and
+      # foreground based on light/dark mode.
+      use-theme-colors = true;
       palette = [
         theme.colors.normal.black
         theme.colors.normal.red
