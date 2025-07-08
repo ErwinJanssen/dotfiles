@@ -33,6 +33,7 @@
   };
   neovim = import ./programs/neovim/main.nix { pkgs = pkgs; };
   ssh = import ./programs/ssh.nix;
+  zellij = import ./programs/zellij.nix;
 
   # GUI programs
   firefox = import ./programs/firefox/main.nix {
