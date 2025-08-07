@@ -12,5 +12,7 @@
     # prevent the need to manually run `fish` each time when Zellij is started
     # using `nix develop`.
     default_shell = "fish";
+
+    copy_command = "wl-copy";
   };
 }
