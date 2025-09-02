@@ -22,7 +22,7 @@
 
       search = {
         # Set the default search engine to DuckDuckGo.
-        default = "DuckDuckGo";
+        default = "ddg";
 
         # Without `force=true`, Firefox will overwrite the config on launch.
         force = true;
