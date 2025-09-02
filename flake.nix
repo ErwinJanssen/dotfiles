@@ -2,9 +2,9 @@
   description = "Personal home configuration of Erwin Janssen";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager = {
-      url = "github:nix-community/home-manager?rev=5cfbf5cc37a3bd1da07ae84eea1b828909c4456b";
+      url = "github:nix-community/home-manager?rev=c1dc900a1ac0b2688115508c7b3c2a70a990ff8d";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixgl = {
