@@ -49,8 +49,10 @@ in
   # news cannot be read so it keeps coming back.
   news.display = "silent";
 
-  nixGL.packages = nixgl.packages;
-  nixGL.defaultWrapper = "mesa";
+  targets.genericLinux.nixGL = {
+    packages = nixgl.packages;
+    defaultWrapper = "mesa";
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
