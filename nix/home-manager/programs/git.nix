@@ -15,7 +15,4 @@
       sshCommand = "ssh -F ~/.ssh/config";
     };
   };
-  delta = {
-    enable = true;
-  };
 }
