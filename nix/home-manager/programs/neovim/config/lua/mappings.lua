@@ -30,8 +30,8 @@ vim.keymap.set("n", "<Leader>fl", require("telescope.builtin").current_buffer_fu
     desc = "Find line in current buffer",
 })
 
-vim.keymap.set("n", "<Leader>fL", "<cmd>Lines<CR>", {
-    desc = "Find line in *any* buffer",
+vim.keymap.set("n", "<Leader>fL", require("telescope.builtin").live_grep, {
+    desc = "Find line in *any* file (live grep)",
 })
 
 vim.keymap.set("n", "<Leader>fg", require("telescope.builtin").grep_string, {
