@@ -34,7 +34,7 @@ require("which-key").setup()
 
 require("luasnip.loaders.from_vscode").lazy_load()
 
-require "plugins.cmp"
+require "plugins.blink"
 
 require "plugins.treesitter"
 

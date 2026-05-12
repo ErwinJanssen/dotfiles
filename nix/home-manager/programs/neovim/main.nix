@@ -53,15 +53,8 @@
     luasnip
     friendly-snippets
 
-    # Auto-completion during typing, uses various sources
-    nvim-cmp
-
-    # Auto-completion sources for `nvim-cmp`
-    cmp-buffer
-    cmp-nvim-lsp
-    cmp-path
-    cmp-spell
-    cmp_luasnip
+    # Auto-completion during typing
+    blink-cmp
 
     # Configuration for Neovim's built-in language server client
     nvim-lspconfig
