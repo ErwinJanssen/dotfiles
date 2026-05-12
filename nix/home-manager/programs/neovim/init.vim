@@ -52,11 +52,6 @@ set noshowmode
 " ======================================
 " {{{
 
-" Use 24-bit colors if possible
-if (has("termguicolors"))
-      set termguicolors
-  endif
-
 " Make sure the theme is set for a dark background
 set background=dark
 
