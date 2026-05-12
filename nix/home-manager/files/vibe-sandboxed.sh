@@ -4,8 +4,11 @@ set -eu
 # vibe-sandboxed - Run mistral-vibe in a Podman container
 #
 # This script creates and runs a containerized environment for mistral-vibe to
-# ensure isolation from the host system while maintaining access to the current
-# working directory and vibe configuration.
+# ensure isolation from the host system while maintaining access to:
+# - Current working directory (read-write)
+# - Vibe configuration directory (read-write)
+# - Nix profile with binaries in PATH (read-only)
+# - Nix store for resolving profile symlinks (read-only)
 #
 # Usage: vibe-sandboxed [vibe_args...]
 # Examples:
@@ -32,10 +35,15 @@ EOF
 # Run mistral-vibe in the container with proper directory mounts
 # --rm: Remove container after execution (cleanup)
 # --interactive --tty: Keep STDIN open and allocate pseudo-TTY for interactive use
-# --volume: Mount current directory as /workdir and vibe config directory
+# --volume: Mount current directory, vibe config, nix profile, and nix store
+# Note: Using :ro without relabeling for nix store to preserve SELinux context
 # --workdir: Set working directory inside container to /workdir
+# --env: Set PATH to include nix profile binaries
 podman run --rm --interactive --tty \
     --volume "$(pwd):/workdir:rw,z" \
     --volume "$VIBE_DIR:/root/.vibe:rw,z" \
+    --volume "$HOME/.nix-profile:/root/.nix-profile:ro,z" \
+    --volume "/nix/store:/nix/store:ro" \
+    --env PATH="/root/.nix-profile/bin:$PATH" \
     --workdir /workdir \
     "$CONTAINER_NAME" vibe "$@"
