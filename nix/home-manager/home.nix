@@ -178,7 +178,10 @@ in
   '';
 
   # Configuration for GNOME desktop environment.
-  dconf = import ./dconf.nix { theme = theme; };
+  dconf = import ./dconf.nix {
+    pkgs = pkgs;
+    theme = theme;
+  };
 
   # Configure user-global EditorConfig settings.
   editorconfig = import ./editorconfig.nix;

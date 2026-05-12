@@ -1,10 +1,15 @@
 {
+  pkgs,
   theme,
 }:
 {
   settings = {
     "com/github/amezin/ddterm" = {
       "ddterm-toggle-hotkey" = [ "<Super>minus" ];
+
+      # Use Fish from nixpkgs as the default shell when starting ddterm.
+      command = "custom-command";
+      custom-command = "${pkgs.fish}/bin/fish";
 
       # Disable 'bell' sounds.
       audible-bell = false;
