@@ -60,6 +60,7 @@ in
     # Packages that need to be installed, but are not included through other
     # modules.
     pkgs.fira-code
+    pkgs.nerd-fonts.fira-code
 
     # CLI tool to access the Wayland clipboard
     pkgs.wl-clipboard
