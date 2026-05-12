@@ -109,6 +109,12 @@ in
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    # vibe-sandboxed - Run mistral-vibe in an isolated Podman container.
+    ".local/bin/vibe-sandboxed" = {
+      source = files/vibe-sandboxed.sh;
+      executable = true;
+    };
   };
 
   # Extra directories to add to `$PATH`.
