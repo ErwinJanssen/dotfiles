@@ -224,15 +224,6 @@ endfun
 
 autocmd BufWritePre * call TrimWhitespace()
 
-" Show the highlight groups of the object under the cursor. Useful for
-" debugging and creating syntax files and color schemes.
-function! SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
 set winblend=10
 
 let $FZF_DEFAULT_OPTS .= ' --margin 1,2 --layout reverse'
