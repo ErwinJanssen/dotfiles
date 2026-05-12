@@ -11,6 +11,9 @@
     size = 12.0;
   };
   settings = {
+    # Use Fish from nixpkgs as the default shell when starting Kitty.
+    shell = "${pkgs.fish}/bin/fish";
+
     # Increase the space between lines
     adjust_line_height = "110%";
 
