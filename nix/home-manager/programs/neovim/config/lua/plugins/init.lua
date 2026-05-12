@@ -58,6 +58,9 @@ mason_lspconfig.setup {
 
 -- Plugin for writing and navigating Obsidian vaults
 require("obsidian").setup {
+    -- Required to get rid of a deprecation warning.
+    legacy_commands = false,
+
     workspaces = {
         {
             -- The plugin requires that a workspace path is specified,
