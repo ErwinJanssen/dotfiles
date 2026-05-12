@@ -1,8 +1,10 @@
 {
   enable = true;
-  userName = "Erwin Janssen";
-  userEmail = "erwinjanssen@outlook.com";
-  extraConfig = {
+  settings = {
+    user = {
+      name = "Erwin Janssen";
+      email = "erwinjanssen@outlook.com";
+    };
     init = {
       defaultBranch = "main";
     };
