@@ -26,7 +26,7 @@ end, {
     desc = "Find buffer",
 })
 
-vim.keymap.set("n", "<Leader>fl", "<cmd>BLines<CR>", {
+vim.keymap.set("n", "<Leader>fl", require("telescope.builtin").current_buffer_fuzzy_find, {
     desc = "Find line in current buffer",
 })
 
