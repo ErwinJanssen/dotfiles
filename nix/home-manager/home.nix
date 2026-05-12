@@ -115,6 +115,9 @@ in
   # These values are appended to `$PATH`, it is not possible to insert paths
   # with a higher priority than the default paths already defined.
   home.sessionPath = [
+    # Add local bin directory in user home to PATH
+    "$HOME/.local/bin"
+
     # Add Flatpak bin directory to PATH
     "/var/lib/flatpak/exports/bin"
   ];
