@@ -1,6 +1,7 @@
 """Generate theme colors to be used when deploying the configuration."""
 
 import json
+import typing
 
 from colormath.color_conversions import convert_color
 from colormath.color_objects import LCHabColor, sRGBColor
@@ -42,128 +43,135 @@ primary_color = "magenta"
 # 0.75 means 0.5%.
 black_chroma = 0.75
 
-# Define the different shades of each color
-colors = {
-    "normal": {
-        "black": lch_to_hex(20, black_chroma, hues[primary_color]),
-        "red": lch_to_hex(normal_lightness, normal_chroma, hues["red"]),
-        "green": lch_to_hex(normal_lightness, normal_chroma, hues["green"]),
-        "yellow": lch_to_hex(normal_lightness + 20, normal_chroma, hues["yellow"]),
-        "blue": lch_to_hex(normal_lightness, normal_chroma, hues["blue"]),
-        "magenta": lch_to_hex(normal_lightness, normal_chroma, hues["magenta"]),
-        "cyan": lch_to_hex(normal_lightness, normal_chroma, hues["cyan"]),
-        "white": lch_to_hex(80, 5, hues[primary_color]),
-    },
-    "bright": {
-        "black": lch_to_hex(35, black_chroma, hues[primary_color]),
-        "red": lch_to_hex(bright_lightness, bright_chroma, hues["red"]),
-        "green": lch_to_hex(bright_lightness, bright_lightness, hues["green"]),
-        "yellow": lch_to_hex(bright_lightness + 40, bright_chroma, hues["yellow"]),
-        "blue": lch_to_hex(bright_lightness, bright_chroma, hues["blue"]),
-        "magenta": lch_to_hex(bright_lightness, bright_chroma, hues["magenta"]),
-        "cyan": lch_to_hex(bright_lightness, bright_chroma, hues["cyan"]),
-        "white": lch_to_hex(90, 5, hues[primary_color]),
-    },
-    "dim": {
-        "black": lch_to_hex(15, black_chroma, hues[primary_color]),
-        "red": lch_to_hex(25, 40, hues["red"]),
-        "green": lch_to_hex(25, 25, hues["green"]),
-        "blue": lch_to_hex(25, 25, hues["blue"]),
-        "magenta": lch_to_hex(20, 20, hues["magenta"]),
-    },
-    "dimmer": {"black": lch_to_hex(10, black_chroma, hues[primary_color])},
-}
 
-# Add 'greys' to the color definitions. For each hue, the grey version has
-# both lower lightness and chroma.
-colors["grey"] = {}
-for hue_name, hue_value in hues.items():
-    colors["grey"][hue_name] = lch_to_hex(
-        normal_lightness - 10, normal_chroma / 2, hue_value
-    )
+def generate_theme(mode: typing.Literal["light", "dark"]) -> dict:  # noqa: ARG001
+    """Generate theme colors for light or dark mode."""
+    # Define the different shades of each color
+    colors = {
+        "normal": {
+            "black": lch_to_hex(20, black_chroma, hues[primary_color]),
+            "red": lch_to_hex(normal_lightness, normal_chroma, hues["red"]),
+            "green": lch_to_hex(normal_lightness, normal_chroma, hues["green"]),
+            "yellow": lch_to_hex(normal_lightness + 20, normal_chroma, hues["yellow"]),
+            "blue": lch_to_hex(normal_lightness, normal_chroma, hues["blue"]),
+            "magenta": lch_to_hex(normal_lightness, normal_chroma, hues["magenta"]),
+            "cyan": lch_to_hex(normal_lightness, normal_chroma, hues["cyan"]),
+            "white": lch_to_hex(80, 5, hues[primary_color]),
+        },
+        "bright": {
+            "black": lch_to_hex(35, black_chroma, hues[primary_color]),
+            "red": lch_to_hex(bright_lightness, bright_chroma, hues["red"]),
+            "green": lch_to_hex(bright_lightness, bright_lightness, hues["green"]),
+            "yellow": lch_to_hex(bright_lightness + 40, bright_chroma, hues["yellow"]),
+            "blue": lch_to_hex(bright_lightness, bright_chroma, hues["blue"]),
+            "magenta": lch_to_hex(bright_lightness, bright_chroma, hues["magenta"]),
+            "cyan": lch_to_hex(bright_lightness, bright_chroma, hues["cyan"]),
+            "white": lch_to_hex(90, 5, hues[primary_color]),
+        },
+        "dim": {
+            "black": lch_to_hex(15, black_chroma, hues[primary_color]),
+            "red": lch_to_hex(25, 40, hues["red"]),
+            "green": lch_to_hex(25, 25, hues["green"]),
+            "blue": lch_to_hex(25, 25, hues["blue"]),
+            "magenta": lch_to_hex(20, 20, hues["magenta"]),
+        },
+        "dimmer": {"black": lch_to_hex(10, black_chroma, hues[primary_color])},
+    }
 
+    # Add 'greys' to the color definitions. For each hue, the grey version has
+    # both lower lightness and chroma.
+    colors["grey"] = {}
+    for hue_name, hue_value in hues.items():
+        colors["grey"][hue_name] = lch_to_hex(
+            normal_lightness - 10, normal_chroma / 2, hue_value
+        )
 
-# Provide some high level color definitions such as which color is the accent
-# color.
-theme = {
-    "normal": {
-        "background": colors["dim"]["black"],
-        "foreground": colors["normal"]["white"],
-        "accent": colors["normal"]["magenta"],
-        "match": colors["normal"]["green"],
-        "urgent": colors["dim"]["red"],
-        "success": colors["normal"]["green"],
-        "warning": colors["normal"]["yellow"],
-        "error": colors["normal"]["red"],
-    },
-    "bright": {
-        "background": colors["normal"]["black"],
-        "foreground": colors["bright"]["white"],
-        "accent": colors["bright"]["magenta"],
-        "match": colors["bright"]["green"],
-    },
-    "brighter": {
-        "background": colors["bright"]["black"],
-    },
-    "dim": {
-        "background": colors["dimmer"]["black"],
-        "accent": colors["dim"]["magenta"],
-    },
-}
+    # Provide some high level color definitions such as which color is the
+    # accent color.
+    theme = {
+        "normal": {
+            "background": colors["dim"]["black"],
+            "foreground": colors["normal"]["white"],
+            "accent": colors["normal"]["magenta"],
+            "match": colors["normal"]["green"],
+            "urgent": colors["dim"]["red"],
+            "success": colors["normal"]["green"],
+            "warning": colors["normal"]["yellow"],
+            "error": colors["normal"]["red"],
+        },
+        "bright": {
+            "background": colors["normal"]["black"],
+            "foreground": colors["bright"]["white"],
+            "accent": colors["bright"]["magenta"],
+            "match": colors["bright"]["green"],
+        },
+        "brighter": {
+            "background": colors["bright"]["black"],
+        },
+        "dim": {
+            "background": colors["dimmer"]["black"],
+            "accent": colors["dim"]["magenta"],
+        },
+    }
 
-# Given the theme colors, provide some concrete definitions for UI elements.
-# These descriptive names can be used in the appropriate places.
-ui = {
-    "window": {
-        "border": {
-            "normal": theme["dim"]["accent"],
-            "bright": theme["normal"]["accent"],
+    # Given the theme colors, provide some concrete definitions for UI
+    # elements. These descriptive names can be used in the appropriate places.
+    ui = {
+        "window": {
+            "border": {
+                "normal": theme["dim"]["accent"],
+                "bright": theme["normal"]["accent"],
+            },
         },
-    },
-    "search": {
-        "default": {
-            "background": theme["normal"]["background"],
-            "foreground": theme["normal"]["foreground"],
+        "search": {
+            "default": {
+                "background": theme["normal"]["background"],
+                "foreground": theme["normal"]["foreground"],
+            },
+            "input": {
+                "background": theme["dim"]["accent"],
+                "foreground": theme["normal"]["foreground"],
+            },
+            "selected": {
+                "background": theme["brighter"]["background"],
+                "foreground": theme["normal"]["accent"],
+                "match": theme["bright"]["match"],
+            },
+            "item": {
+                "background": theme["bright"]["background"],
+                "match": theme["normal"]["match"],
+            },
         },
-        "input": {
-            "background": theme["dim"]["accent"],
-            "foreground": theme["normal"]["foreground"],
+        "status_bar": {
+            "default": {
+                "background": theme["bright"]["background"],
+                "foreground": theme["normal"]["foreground"],
+            },
+            "tab": {
+                "background": theme["bright"]["background"],
+                "foreground": theme["normal"]["foreground"],
+            },
+            "active": {
+                "background": theme["normal"]["accent"],
+                "foreground": theme["dim"]["accent"],
+            },
+            "urgent": {
+                "background": theme["normal"]["urgent"],
+                "foreground": theme["normal"]["foreground"],
+            },
         },
-        "selected": {
-            "background": theme["brighter"]["background"],
-            "foreground": theme["normal"]["accent"],
-            "match": theme["bright"]["match"],
-        },
-        "item": {
-            "background": theme["bright"]["background"],
-            "match": theme["normal"]["match"],
-        },
-    },
-    "status_bar": {
-        "default": {
-            "background": theme["bright"]["background"],
-            "foreground": theme["normal"]["foreground"],
-        },
-        "tab": {
-            "background": theme["bright"]["background"],
-            "foreground": theme["normal"]["foreground"],
-        },
-        "active": {
-            "background": theme["normal"]["accent"],
-            "foreground": theme["dim"]["accent"],
-        },
-        "urgent": {
-            "background": theme["normal"]["urgent"],
-            "foreground": theme["normal"]["foreground"],
-        },
-    },
-}
+    }
 
-# Print a JSON object with all colors definitions combined.
-if __name__ == "__main__":
-    data = {
+    return {
         "colors": colors,
         "theme": theme,
         "ui": ui,
     }
+
+
+# Print a JSON object with all colors definitions combined.
+if __name__ == "__main__":
+    data = generate_theme("dark")
+    data["dark"] = generate_theme("dark")
+    data["light"] = generate_theme("light")
     print(json.dumps(data, indent=4))
