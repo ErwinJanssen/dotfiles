@@ -34,7 +34,6 @@
     # GUI programs
     ./programs/firefox/main.nix
     ./programs/gnome-shell.nix
-    ./programs/rofi.nix
     ./programs/thunderbird.nix
     ./programs/wezterm/main.nix
     ./programs/zathura.nix
