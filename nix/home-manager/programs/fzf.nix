@@ -1,18 +1,20 @@
-{ theme }:
+{ theme, ... }:
 {
-  enable = true;
-  enableFishIntegration = true;
-  colors = {
-    "fg+" = theme.ui.search.selected.foreground;
-    "bg+" = "-1";
-    "hl+:" = theme.ui.search.selected.match;
-    bg = "-1";
-    hl = theme.ui.search.item.match;
-    prompt = theme.ui.search.input.foreground;
-    pointer = theme.ui.search.selected.foreground;
-    marker = theme.ui.search.selected.match;
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+    colors = {
+      "fg+" = theme.ui.search.selected.foreground;
+      "bg+" = "-1";
+      "hl+:" = theme.ui.search.selected.match;
+      bg = "-1";
+      hl = theme.ui.search.item.match;
+      prompt = theme.ui.search.input.foreground;
+      pointer = theme.ui.search.selected.foreground;
+      marker = theme.ui.search.selected.match;
+    };
+    defaultOptions = [ "--ansi" ];
+    defaultCommand = "fd --type file --hidden --exclude .git --strip-cwd-prefix";
+    fileWidgetCommand = "fd --unrestricted --exclude .git \\$dir";
   };
-  defaultOptions = [ "--ansi" ];
-  defaultCommand = "fd --type file --hidden --exclude .git --strip-cwd-prefix";
-  fileWidgetCommand = "fd --unrestricted --exclude .git \\$dir";
 }

@@ -1,22 +1,25 @@
 {
   config,
   pkgs,
+  ...
 }:
 {
-  enable = true;
-  package = config.lib.nixGL.wrap pkgs.thunderbird-140;
-  profiles = {
-    default = {
-      isDefault = true;
-      settings = {
-        # Sort by date.
-        "mailnews.default_sort_type" = 18;
+  programs.thunderbird = {
+    enable = true;
+    package = config.lib.nixGL.wrap pkgs.thunderbird-140;
+    profiles = {
+      default = {
+        isDefault = true;
+        settings = {
+          # Sort by date.
+          "mailnews.default_sort_type" = 18;
 
-        # Descending sort by default, show most recent first.
-        "mailnews.default_sort_order" = 2;
+          # Descending sort by default, show most recent first.
+          "mailnews.default_sort_order" = 2;
 
-        # Disable threads.
-        "mailnews.default_view_flags" = 0;
+          # Disable threads.
+          "mailnews.default_view_flags" = 0;
+        };
       };
     };
   };

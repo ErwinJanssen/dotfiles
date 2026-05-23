@@ -4,57 +4,39 @@
   config,
   theme,
   pkgs,
+  ...
 }:
 {
-  # Let Home Manager install and manage itself.
-  home-manager = import ./programs/home-manager.nix;
+  imports = [
+    # Let Home Manager install and manage itself.
+    ./programs/home-manager.nix
 
-  # Shell setup
-  bash = import ./programs/bash.nix;
-  fish = import ./programs/fish/main.nix;
-  kitty = import ./programs/kitty.nix {
-    config = config;
-    theme = theme;
-    pkgs = pkgs;
-  };
-  readline = import ./programs/readline.nix;
-  starship = import ./programs/starship.nix;
+    # Shell setup
+    ./programs/bash.nix
+    ./programs/fish/main.nix
+    ./programs/kitty.nix
+    ./programs/readline.nix
+    ./programs/starship.nix
 
-  # CLI tools
-  atuin = import ./programs/atuin.nix;
-  delta = import ./programs/delta.nix;
-  eza = import ./programs/eza.nix;
-  fd = import ./programs/fd.nix;
-  fzf = import ./programs/fzf.nix { theme = theme; };
-  git = import ./programs/git.nix;
-  ripgrep = import ./programs/ripgrep.nix;
-  tmux = import ./programs/tmux/main.nix {
-    pkgs = pkgs;
-    theme = theme;
-  };
-  neovim = import ./programs/neovim/main.nix { pkgs = pkgs; };
-  ssh = import ./programs/ssh.nix;
-  zellij = import ./programs/zellij.nix;
+    # CLI tools
+    ./programs/atuin.nix
+    ./programs/delta.nix
+    ./programs/eza.nix
+    ./programs/fd.nix
+    ./programs/fzf.nix
+    ./programs/git.nix
+    ./programs/ripgrep.nix
+    ./programs/tmux/main.nix
+    ./programs/neovim/main.nix
+    ./programs/ssh.nix
+    ./programs/zellij.nix
 
-  # GUI programs
-  firefox = import ./programs/firefox/main.nix {
-    config = config;
-    pkgs = pkgs;
-    theme = theme;
-  };
-  gnome-shell = import ./programs/gnome-shell.nix { pkgs = pkgs; };
-  rofi = import ./programs/rofi.nix {
-    config = config;
-    theme = theme;
-  };
-  thunderbird = import ./programs/thunderbird.nix {
-    config = config;
-    pkgs = pkgs;
-  };
-  wezterm = import ./programs/wezterm/main.nix {
-    config = config;
-    pkgs = pkgs;
-    theme = theme;
-  };
-  zathura = import ./programs/zathura.nix { theme = theme; };
+    # GUI programs
+    ./programs/firefox/main.nix
+    ./programs/gnome-shell.nix
+    ./programs/rofi.nix
+    ./programs/thunderbird.nix
+    ./programs/wezterm/main.nix
+    ./programs/zathura.nix
+  ];
 }

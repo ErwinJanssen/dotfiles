@@ -189,12 +189,10 @@ in
     text = builtins.toJSON theme;
   };
 
-  # Set program configurations by importing `programs.nix`.
-  programs = import ./programs.nix {
-    config = config;
-    theme = theme;
-    pkgs = pkgs;
-  };
+  imports = [
+    # Install and configure various programs (both CLI and GUI).
+    ./programs.nix
+  ];
 
   # No other way for now to easily sync Neovim config.
   home.file.".config/nvim" = {

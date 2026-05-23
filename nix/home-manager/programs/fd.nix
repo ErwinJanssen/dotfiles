@@ -1,6 +1,8 @@
 {
-  enable = true;
+  programs.fd = {
+    enable = true;
 
-  # Search hidden files and directories by default.
-  hidden = true;
+    # Search hidden files and directories by default.
+    hidden = true;
+  };
 }
