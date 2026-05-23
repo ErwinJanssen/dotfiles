@@ -18,12 +18,6 @@ repos:
     hooks:
       - id: stylua-github
 
-  - repo: https://github.com/ansible/ansible-lint
-    rev: v25.12.1
-    hooks:
-      - id: ansible-lint
-        args: [--write]
-
   # Linter and formatter for Python code.
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.14.8
