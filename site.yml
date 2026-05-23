@@ -12,9 +12,3 @@
             name: user
           tags:
             - user
-
-        - name: Apply role `sway`
-          ansible.builtin.import_role:
-            name: sway
-          tags:
-            - sway

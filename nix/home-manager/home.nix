@@ -65,10 +65,6 @@ in
     # CLI tool to access the Wayland clipboard
     pkgs.wl-clipboard
 
-    # Required for Sway config.
-    pkgs.libnotify
-    pkgs.playerctl
-
     # fzf.vim automatically uses `bat` for file previews if it is available.
     pkgs.bat
 
@@ -210,19 +206,6 @@ in
   services = import ./services.nix {
     config = config;
     pkgs = pkgs;
-    theme = theme;
-  };
-
-  # Place background image for Sway.
-  home.file.".config/sway/wallpaper.jpg" = {
-    source = ./wayland/sway/wallpaper.jpg;
-  };
-
-  # Configure Wayland display managers by importing `wayland.nix`.
-  wayland = import ./wayland.nix {
-    config = config;
-    pkgs = pkgs;
-    lib = lib;
     theme = theme;
   };
 

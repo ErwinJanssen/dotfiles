@@ -47,15 +47,10 @@
     config = config;
     theme = theme;
   };
-  swaylock = import ./programs/swaylock.nix {
-    pkgs = pkgs;
-    theme = theme;
-  };
   thunderbird = import ./programs/thunderbird.nix {
     config = config;
     pkgs = pkgs;
   };
-  waybar = import ./programs/waybar/main.nix { theme = theme; };
   wezterm = import ./programs/wezterm/main.nix {
     config = config;
     pkgs = pkgs;

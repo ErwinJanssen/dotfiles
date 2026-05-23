@@ -104,16 +104,3 @@ set fish_pager_color_progress brwhite --background=cyan
 set fish_pager_color_secondary normal
 
 # }}}
-
-#======================================
-# Start Sway on tty1
-#======================================
-# {{{
-
-if [ (tty) = /dev/tty1 ]
-    # Send Sway's output to journald, retrieve with:
-    # `journalctl --user --identifier sway`
-    exec systemd-cat --identifier=sway sway
-end
-
-# }}}
