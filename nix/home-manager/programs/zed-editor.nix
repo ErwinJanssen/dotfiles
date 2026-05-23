@@ -3,5 +3,9 @@
   programs.zed-editor = {
     enable = true;
     package = config.lib.nixGL.wrap pkgs.zed-editor;
+    userSettings = {
+      # Automatically save when changing focus.
+      autosave = "on_focus_change";
+    };
   };
 }
