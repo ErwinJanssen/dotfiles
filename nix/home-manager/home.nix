@@ -194,12 +194,6 @@ in
     ./programs.nix
   ];
 
-  # No other way for now to easily sync Neovim config.
-  home.file.".config/nvim" = {
-    source = ./programs/neovim/config;
-    recursive = true;
-  };
-
   # Configure services by importing `services.nix`.
   services = import ./services.nix {
     config = config;
