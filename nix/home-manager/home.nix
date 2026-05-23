@@ -52,6 +52,7 @@ in
   targets.genericLinux.nixGL = {
     packages = nixgl.packages;
     defaultWrapper = "mesa";
+    vulkan.enable = true;
   };
 
   # The home.packages option allows you to install Nix packages into your

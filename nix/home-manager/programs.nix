@@ -37,5 +37,6 @@
     ./programs/thunderbird.nix
     ./programs/wezterm/main.nix
     ./programs/zathura.nix
+    ./programs/zed-editor.nix
   ];
 }
