@@ -15,6 +15,13 @@
         # which makes it more reproducible across devices.
         sshCommand = "ssh -F ~/.ssh/config";
       };
+      commit = {
+        gpgSign = true;
+      };
+      signing = {
+        key = "8C066B7189E4DF0E";
+        signByDefault = true;
+      };
     };
   };
 }
