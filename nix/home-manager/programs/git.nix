@@ -4,7 +4,7 @@
     settings = {
       user = {
         name = "Erwin Janssen";
-        email = "erwinjanssen@outlook.com";
+        email = "code@erwinjanssen.nl";
       };
       init = {
         defaultBranch = "main";
