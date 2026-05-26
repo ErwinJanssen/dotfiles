@@ -9,6 +9,7 @@
     ];
     extensions = [
       "nix"
+      "perl"
     ];
     userSettings = {
       # Automatically save when changing focus.
