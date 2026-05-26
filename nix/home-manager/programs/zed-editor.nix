@@ -17,6 +17,11 @@
 
       # Relative line numbers, just like Neovim.
       relative_line_numbers = "enabled";
+
+      # Show a line at 80 chars to assist with formatting code, similar to
+      # Neovim's 'colorcolumn'.
+      show_wrap_guides = true;
+      wrap_guides = [ 80 ];
     };
   };
 }
