@@ -14,6 +14,9 @@
     userSettings = {
       # Automatically save when changing focus.
       autosave = "on_focus_change";
+
+      # Relative line numbers, just like Neovim.
+      relative_line_numbers = "enabled";
     };
   };
 }
