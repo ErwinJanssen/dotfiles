@@ -6,6 +6,7 @@
     extraPackages = [
       # Nix
       pkgs.nixd
+      pkgs.nixfmt
     ];
     extensions = [
       "nix"
