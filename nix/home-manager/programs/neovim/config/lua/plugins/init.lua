@@ -36,8 +36,6 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 require "plugins.blink"
 
-require "plugins.treesitter"
-
 require("mason").setup()
 
 local mason_lspconfig = require "mason-lspconfig"

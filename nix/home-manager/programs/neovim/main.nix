@@ -53,9 +53,6 @@
       vim-dispatch
       vim-dispatch-neovim
 
-      # Treesitter: more advanced syntax highlighting
-      nvim-treesitter.withAllGrammars
-
       # Snippet engine and snippet sources
       luasnip
       friendly-snippets
