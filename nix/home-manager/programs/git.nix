@@ -23,5 +23,17 @@
         signByDefault = true;
       };
     };
+    includes = [
+      {
+        # Automatically use correct email address for work repos.
+        condition = "gitdir:~/workspace/team.blue/";
+        contents = {
+          user = {
+            email = "erwin.janssen@team.blue";
+          };
+        };
+      }
+
+    ];
   };
 }
