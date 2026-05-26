@@ -24,6 +24,9 @@
       # Neovim's 'colorcolumn'.
       show_wrap_guides = true;
       wrap_guides = [ 80 ];
+
+      # Soft wrap on editor width to avoid horizontal scrolling.
+      soft_wrap = "editor_width";
     };
   };
 }
