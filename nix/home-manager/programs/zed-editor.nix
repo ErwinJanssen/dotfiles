@@ -10,6 +10,7 @@
     extensions = [
       "nix"
       "perl"
+      "toml"
     ];
     userSettings = {
       # Automatically save when changing focus.
