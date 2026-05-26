@@ -25,7 +25,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      formatter.${system} = pkgs.nixfmt-rfc-style;
+      formatter.${system} = pkgs.nixfmt-tree;
 
       packages = {
         # Define a package for the theme data, in order to pass that to
