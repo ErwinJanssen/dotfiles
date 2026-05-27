@@ -44,8 +44,10 @@ primary_color = "magenta"
 black_chroma = 0.75
 
 
-def generate_theme(mode: typing.Literal["light", "dark"]) -> dict:  # noqa: ARG001
+def generate_theme(mode: typing.Literal["light", "dark"]) -> dict:
     """Generate theme colors for light or dark mode."""
+    white_chroma = 5 if mode == "dark" else 0
+
     # Define the different shades of each color
     colors = {
         "normal": {
@@ -56,7 +58,7 @@ def generate_theme(mode: typing.Literal["light", "dark"]) -> dict:  # noqa: ARG0
             "blue": lch_to_hex(normal_lightness, normal_chroma, hues["blue"]),
             "magenta": lch_to_hex(normal_lightness, normal_chroma, hues["magenta"]),
             "cyan": lch_to_hex(normal_lightness, normal_chroma, hues["cyan"]),
-            "white": lch_to_hex(80, 5, hues[primary_color]),
+            "white": lch_to_hex(80, white_chroma, hues[primary_color]),
         },
         "bright": {
             "black": lch_to_hex(35, black_chroma, hues[primary_color]),
@@ -66,7 +68,7 @@ def generate_theme(mode: typing.Literal["light", "dark"]) -> dict:  # noqa: ARG0
             "blue": lch_to_hex(bright_lightness, bright_chroma, hues["blue"]),
             "magenta": lch_to_hex(bright_lightness, bright_chroma, hues["magenta"]),
             "cyan": lch_to_hex(bright_lightness, bright_chroma, hues["cyan"]),
-            "white": lch_to_hex(90, 5, hues[primary_color]),
+            "white": lch_to_hex(90, white_chroma, hues[primary_color]),
         },
         "dim": {
             "black": lch_to_hex(15, black_chroma, hues[primary_color]),
