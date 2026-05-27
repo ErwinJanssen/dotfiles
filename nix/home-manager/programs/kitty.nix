@@ -35,6 +35,8 @@
     foreground ${theme.dark.theme.normal.foreground}
     background ${theme.dark.theme.normal.background}
 
+    cursor ${theme.dark.theme.normal.foreground}
+
     color0 ${theme.dark.colors.normal.black}
     color1 ${theme.dark.colors.normal.red}
     color2 ${theme.dark.colors.normal.green}
@@ -61,6 +63,8 @@
   home.file.".config/kitty/no-preference-theme.auto.conf".text = ''
     foreground ${theme.light.theme.normal.background}
     background ${theme.light.theme.normal.foreground}
+
+    cursor ${theme.light.theme.normal.background}
 
     color0 ${theme.light.colors.normal.black}
     color1 ${theme.light.colors.normal.red}
