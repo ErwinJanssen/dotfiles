@@ -25,6 +25,7 @@
     ./programs/fd.nix
     ./programs/fzf.nix
     ./programs/git.nix
+    ./programs/gpg.nix
     ./programs/ripgrep.nix
     ./programs/tmux/main.nix
     ./programs/neovim/main.nix
