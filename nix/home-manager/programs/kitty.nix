@@ -32,26 +32,26 @@
   };
   # Dark theme colors
   home.file.".config/kitty/dark-theme.auto.conf".text = ''
-    foreground ${theme.theme.normal.foreground}
-    background ${theme.theme.normal.background}
+    foreground ${theme.dark.theme.normal.foreground}
+    background ${theme.dark.theme.normal.background}
 
-    color0 ${theme.colors.normal.black}
-    color1 ${theme.colors.normal.red}
-    color2 ${theme.colors.normal.green}
-    color3 ${theme.colors.normal.yellow}
-    color4 ${theme.colors.normal.blue}
-    color5 ${theme.colors.normal.magenta}
-    color6 ${theme.colors.normal.cyan}
-    color7 ${theme.colors.normal.white}
+    color0 ${theme.dark.colors.normal.black}
+    color1 ${theme.dark.colors.normal.red}
+    color2 ${theme.dark.colors.normal.green}
+    color3 ${theme.dark.colors.normal.yellow}
+    color4 ${theme.dark.colors.normal.blue}
+    color5 ${theme.dark.colors.normal.magenta}
+    color6 ${theme.dark.colors.normal.cyan}
+    color7 ${theme.dark.colors.normal.white}
 
-    color8 ${theme.colors.bright.black}
-    color9 ${theme.colors.bright.red}
-    color10 ${theme.colors.bright.green}
-    color11 ${theme.colors.bright.yellow}
-    color12 ${theme.colors.bright.blue}
-    color13 ${theme.colors.bright.magenta}
-    color14 ${theme.colors.bright.cyan}
-    color15 ${theme.colors.bright.white}
+    color8 ${theme.dark.colors.bright.black}
+    color9 ${theme.dark.colors.bright.red}
+    color10 ${theme.dark.colors.bright.green}
+    color11 ${theme.dark.colors.bright.yellow}
+    color12 ${theme.dark.colors.bright.blue}
+    color13 ${theme.dark.colors.bright.magenta}
+    color14 ${theme.dark.colors.bright.cyan}
+    color15 ${theme.dark.colors.bright.white}
   '';
   # Light theme colors
   #
@@ -59,25 +59,25 @@
   # as a quick and simple way to get a light theme. The other colors are the
   # same for now but these will change in the future.
   home.file.".config/kitty/no-preference-theme.auto.conf".text = ''
-    foreground ${theme.theme.normal.background}
-    background ${theme.theme.normal.foreground}
+    foreground ${theme.light.theme.normal.background}
+    background ${theme.light.theme.normal.foreground}
 
-    color0 ${theme.colors.normal.black}
-    color1 ${theme.colors.normal.red}
-    color2 ${theme.colors.normal.green}
-    color3 ${theme.colors.normal.yellow}
-    color4 ${theme.colors.normal.blue}
-    color5 ${theme.colors.normal.magenta}
-    color6 ${theme.colors.normal.cyan}
-    color7 ${theme.colors.normal.white}
+    color0 ${theme.light.colors.normal.black}
+    color1 ${theme.light.colors.normal.red}
+    color2 ${theme.light.colors.normal.green}
+    color3 ${theme.light.colors.normal.yellow}
+    color4 ${theme.light.colors.normal.blue}
+    color5 ${theme.light.colors.normal.magenta}
+    color6 ${theme.light.colors.normal.cyan}
+    color7 ${theme.light.colors.normal.white}
 
-    color8 ${theme.colors.bright.black}
-    color9 ${theme.colors.bright.red}
-    color10 ${theme.colors.bright.green}
-    color11 ${theme.colors.bright.yellow}
-    color12 ${theme.colors.bright.blue}
-    color13 ${theme.colors.bright.magenta}
-    color14 ${theme.colors.bright.cyan}
-    color15 ${theme.colors.bright.white}
+    color8 ${theme.light.colors.bright.black}
+    color9 ${theme.light.colors.bright.red}
+    color10 ${theme.light.colors.bright.green}
+    color11 ${theme.light.colors.bright.yellow}
+    color12 ${theme.light.colors.bright.blue}
+    color13 ${theme.light.colors.bright.magenta}
+    color14 ${theme.light.colors.bright.cyan}
+    color15 ${theme.light.colors.bright.white}
   '';
 }
