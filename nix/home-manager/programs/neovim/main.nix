@@ -30,8 +30,6 @@
       vim-commentary
 
       # Fuzzy finder
-      fzfWrapper
-      fzf-vim
       telescope-nvim
 
       # Display pop-up with possible key bindings
