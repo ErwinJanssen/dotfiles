@@ -44,6 +44,7 @@ podman run --rm --interactive --tty \
     --volume "$VIBE_DIR:/root/.vibe:rw,z" \
     --volume "$HOME/.nix-profile:/root/.nix-profile:ro,z" \
     --volume "/nix/store:/nix/store:ro" \
+    --security-opt label=disable \
     --env PATH="/root/.nix-profile/bin:$PATH" \
     --workdir /workdir \
     "$CONTAINER_NAME" vibe "$@"
