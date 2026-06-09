@@ -9,6 +9,7 @@
       pkgs.nixfmt
     ];
     extensions = [
+      "codebook" # Spell checking
       "nix"
       "perl"
       "toml"
