@@ -29,6 +29,7 @@
     ./programs/ripgrep.nix
     ./programs/tmux/main.nix
     ./programs/neovim/main.nix
+    ./programs/opencode.nix
     ./programs/ssh.nix
     ./programs/zellij.nix
 
