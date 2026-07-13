@@ -37,7 +37,7 @@
 
           buildInputs = [
             pkgs.gnumake
-            (pkgs.python311.withPackages (python-pkgs: [ python-pkgs.colormath ]))
+            (pkgs.python314.withPackages (python-pkgs: [ python-pkgs.colormath ]))
           ];
 
           buildPhase = ''
