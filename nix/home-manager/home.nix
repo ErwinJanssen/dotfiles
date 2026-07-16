@@ -75,6 +75,9 @@ in
     # Useful utilities for working with Python
     pkgs.uv
 
+    # AI related packages
+    pkgs.openspec
+
     # Other useful packages.
     pkgs.bottom
     pkgs.gnumake
