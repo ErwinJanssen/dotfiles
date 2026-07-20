@@ -16,5 +16,8 @@
     defaultOptions = [ "--ansi" ];
     defaultCommand = "fd --type file --hidden --exclude .git --strip-cwd-prefix";
     fileWidgetCommand = "fd --unrestricted --exclude .git \\$dir";
+
+    # Disable fzf history widget (CTRL-R binding) and let Atuin handle it
+    historyWidget.command = "";
   };
 }
