@@ -23,6 +23,7 @@
         signByDefault = true;
       };
     };
+    ignores = [ ".opencode/" ];
     includes = [
       {
         # Automatically use correct email address for work repos.
