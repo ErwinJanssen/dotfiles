@@ -10,6 +10,7 @@
     ];
     extensions = [
       "codebook" # Spell checking
+      "ini"
       "nix"
       "perl"
       "toml"
