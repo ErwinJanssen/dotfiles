@@ -18,6 +18,7 @@
           };
         };
       };
+      plugin = [ "@mohak34/opencode-notifier@latest" ];
     };
 
     # Instructions for Git commit message conventions
