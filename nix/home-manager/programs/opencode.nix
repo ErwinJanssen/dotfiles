@@ -25,31 +25,18 @@
     context = ''
       ## Git commit conventions
 
-      When creating Git commits, you MUST include `Assisted-by` trailers for
-      each AI model that assisted with the work.
+      ### General
 
-      ### Format
+      1. Subject line: <=50 characters
+      2. Use Markdown, especially backticks for variables and code
 
-      - Single model: `Assisted-by: opencode:MODEL`.
-      - Multiple models: Add multiple `Assisted-by` lines, one per model.
+      ### AI transparency
 
-      ### Rules
+      You MUST include `Assisted-by` trailers for each AI model that assisted
+      with the work. Use the format `opencode:MODEL` where MODEL is the
+      identifier of the model being used.
 
-      1. Place `Assisted-by` trailers at the end of the commit message, after
-         the body.
-      2. Use the format `opencode:MODEL` where MODEL is the identifier of the
-         model being used.
-      3. Include one line per assisting AI model.
-
-      ### Example
-
-      ```
-      Feat: Add new configuration
-
-      Add support for feature X
-
-      Assisted-by: opencode:mistral-medium-3.5
-      ```
+      Example: Assisted-by: opencode:mistral-medium-3.5
     '';
   };
 }
