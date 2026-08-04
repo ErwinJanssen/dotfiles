@@ -23,7 +23,10 @@
         signByDefault = true;
       };
     };
-    ignores = [ ".opencode/" ];
+    ignores = [
+      ".arborinth/"
+      ".opencode/"
+    ];
     includes = [
       {
         # Automatically use correct email address for work repos.
