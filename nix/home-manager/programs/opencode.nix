@@ -22,21 +22,6 @@
     };
 
     # Instructions for Git commit message conventions
-    context = ''
-      ## Git commit conventions
-
-      ### General
-
-      1. Subject line: <=50 characters
-      2. Use Markdown, especially backticks for variables and code
-
-      ### AI transparency
-
-      You MUST include `Assisted-by` trailers for each AI model that assisted
-      with the work. Use the format `opencode:MODEL` where MODEL is the
-      identifier of the model being used.
-
-      Example: Assisted-by: opencode:mistral-medium-3.5
-    '';
+    context = builtins.readFile ../files/AGENTS.md;
   };
 }

@@ -117,6 +117,9 @@ in
       source = files/vibe-sandboxed.sh;
       executable = true;
     };
+    ".vibe/AGENTS.md" = {
+      source = files/AGENTS.md;
+    };
   };
 
   # Extra directories to add to `$PATH`.
