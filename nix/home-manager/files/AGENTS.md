@@ -9,8 +9,9 @@
 ### AI Transparency
 
 Include an `Assisted-by` trailer for each AI model that contributed to the
-work. Use the format: `Assisted-by: opencode:MODEL`, where `MODEL` is the model
-identifier.
+work. Use the format: `Assisted-by: PLATFORM:MODEL`, where `PLATFORM` is your
+execution environment name (e.g., `mistral-vibe`, `opencode`) and `MODEL` is
+the model identifier.
 
 Examples:
 
