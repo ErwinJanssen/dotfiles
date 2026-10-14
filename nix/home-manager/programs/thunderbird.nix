@@ -6,7 +6,7 @@
 {
   programs.thunderbird = {
     enable = true;
-    package = config.lib.nixGL.wrap pkgs.thunderbird-140;
+    package = config.lib.nixGL.wrap pkgs.thunderbird-esr;
     profiles = {
       default = {
         isDefault = true;
