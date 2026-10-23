@@ -80,6 +80,7 @@ in
 
     # Other useful packages.
     pkgs.bottom
+    pkgs.glab # GitLab CLI
     pkgs.gnumake
     pkgs.pre-commit
     pkgs.sd # Modern `sed` alternative
