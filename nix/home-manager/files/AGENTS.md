@@ -70,7 +70,12 @@ Each AI model that contributed to the work gets one trailer:
     Assisted-by: PLATFORM:MODEL
 
 `PLATFORM` is your execution environment (e.g., `mistral-vibe`, `opencode`,
-`pi`); `MODEL` is the model identifier.
+`pi`); `MODEL` is the public name of the model that did the work, not an
+internal identifier: write `GLM-5.3`, not `zai-glm-5-3`;
+`mistral-medium-3.5`, not `mistral-vibe-cli-latest`. Full examples:
+`Assisted-by: mistral-vibe:GLM-5.3`,
+`Assisted-by: opencode:mistral-medium-3.5`. Never invent the name: if you
+do not know it, ask me.
 
 # Code style
 
