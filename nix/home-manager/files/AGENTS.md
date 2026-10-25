@@ -29,8 +29,17 @@
   services) are never touched without explicit approval for that specific
   operation. Read-only queries count as touching. Ask first, name the exact
   operations and their scope, wait for the yes.
+- Never commit, print, or paste credentials, tokens, or auth files. If a task
+  seems to require one, ask first.
 - After changes, verify (compile, run, test) and report the actual result, not
-  the intent.
+  the intent. Never claim tested or working without an actual run this session;
+  if you could not verify, say so.
+- When stuck or blocked: stop. Report what succeeded, what failed, and what you
+  need from me to continue. Do not improvise around a blocker silently.
+- New behavior comes with tests unless I say otherwise.
+- Adding a dependency to any manifest is a proposal, not a silent act.
+- Unrelated problems found along the way are reported, not fixed in the same
+  change.
 - Track decisions across the session; do not silently re-open settled ones.
 - Keep a correction log: when I catch you in an error, note it so it is not
   repeated.
@@ -49,6 +58,9 @@
   not only at the end of the branch.
 - After each step: verify, commit, then start the next. No combined commits
   unless I asked for it.
+- You do not push. I push. If a task cannot complete without remote access,
+  stop and say so. A session may grant push access explicitly, and a grant
+  covers only what it names.
 
 Subject line at most 50 characters; wrap the body at 72 where possible. Use
 Markdown, especially backticks for `code` and variables.
@@ -60,7 +72,12 @@ Each AI model that contributed to the work gets one trailer:
 `PLATFORM` is your execution environment (e.g., `mistral-vibe`, `opencode`,
 `pi`); `MODEL` is the model identifier.
 
-# Python
+# Code style
+
+Change only what the task requires: do not reformat, reorder, or rewrite lines
+you were not otherwise changing, and match the file's local style.
+
+## Python
 
 In new code, import modules, not members: write `import pathlib` and use
 `pathlib.Path`, or `from package import module` and use `module.member`. Avoid
@@ -69,9 +86,8 @@ standard library (`import typing`, not `from typing import Any`). Module paths
 keep provenance visible at each use site and avoid shadowing collisions with
 local variables.
 
-This is the default for new code, not a mandate to convert existing code. Match
-the local style of files you are not otherwise rewriting, and never add
-a module import next to an existing member import of that module: `import
+This is the default for new code, not a mandate to convert existing code. Never
+add a module import next to an existing member import of that module: `import
 typing` beside `from typing import Any` is clutter, not consistency.
 
 When a module name collides with a variable, alias the import (`import client
