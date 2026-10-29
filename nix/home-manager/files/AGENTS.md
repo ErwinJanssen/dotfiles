@@ -43,6 +43,9 @@
 - Track decisions across the session; do not silently re-open settled ones.
 - Keep a correction log: when I catch you in an error, note it so it is not
   repeated.
+- If a scripted write's response is lost or unparsable, the write may still
+  have succeeded. Re-query state before retrying, a blind retry might cause
+  duplicates.
 
 # Commits
 
