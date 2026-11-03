@@ -79,6 +79,7 @@ in
     pkgs.openspec
 
     # Other useful packages.
+    pkgs.acli # Atlassian Command Line Interface
     pkgs.bottom
     pkgs.glab # GitLab CLI
     pkgs.gnumake
@@ -160,6 +161,9 @@ in
       ];
     };
   };
+
+  # Allow Home Manger to install packages with an unfree license.
+  nixpkgs.config.allowUnfree = true;
 
   # Configure nixpkgs.
   home.file.".config/nixpkgs/config.nix".text = ''
