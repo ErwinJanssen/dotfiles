@@ -77,8 +77,10 @@ Each AI model that contributed to the work gets one trailer:
 internal identifier: write `GLM-5.3`, not `zai-glm-5-3`;
 `mistral-medium-3.5`, not `mistral-vibe-cli-latest`. Full examples:
 `Assisted-by: mistral-vibe:GLM-5.3`,
-`Assisted-by: opencode:mistral-medium-3.5`. Never invent the name: if you
-do not know it, ask me.
+`Assisted-by: opencode:mistral-medium-3.5`. Never invent the name: if you do
+not know it, ask me. Never copy it from an earlier commit either: read it from
+your current environment at every commit, since the model may have changed
+since the last one.
 
 # Code style
 
