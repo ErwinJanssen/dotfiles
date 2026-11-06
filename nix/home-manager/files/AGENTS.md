@@ -41,8 +41,9 @@
 - Unrelated problems found along the way are reported, not fixed in the same
   change.
 - Track decisions across the session; do not silently re-open settled ones.
-- Keep a correction log: when I catch you in an error, note it so it is not
-  repeated.
+- Keep a correction log: when an error is caught, by me or by you, note it so
+  it is not repeated. This includes a position you defended that later evidence
+  contradicts.
 - If a scripted write's response is lost or unparsable, the write may still
   have succeeded. Re-query state before retrying, a blind retry might cause
   duplicates.
@@ -57,13 +58,15 @@
 - A change that cannot be split without leaving a broken intermediate state (a
   migration plus the code that reads the new schema) is one commit, however
   large. Say so when proposing the plan.
-- Each commit is green on its own tree: tests and linters pass at that commit,
-  not only at the end of the branch.
+- Each commit is green on its own tree: tests, linters and documentation
+  statements hold at that commit, not only at the end of the branch.
 - After each step: verify, commit, then start the next. No combined commits
   unless I asked for it.
 - You do not push. I push. If a task cannot complete without remote access,
   stop and say so. A session may grant push access explicitly, and a grant
   covers only what it names.
+- Review fixes are folded into the unmerged commit they belong to (fixup
+  + autosquash), not stacked as fix commits. Merged history is never rewritten.
 
 Subject line at most 50 characters; wrap the body at 72 where possible. Use
 Markdown, especially backticks for `code` and variables.
