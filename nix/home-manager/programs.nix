@@ -24,7 +24,7 @@
     ./programs/eza.nix
     ./programs/fd.nix
     ./programs/fzf.nix
-    ./programs/git.nix
+    ./programs/git/main.nix
     ./programs/gpg.nix
     ./programs/ripgrep.nix
     ./programs/tmux/main.nix
