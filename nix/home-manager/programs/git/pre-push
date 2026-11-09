@@ -1,0 +1,90 @@
+#!/bin/sh
+# pre-push hook: refuse to push commits authored by the configured user
+# that are not signed with the configured signing key.
+#
+# This catches unsigned commits made by agents running in a sandboxed
+# session, where the signing key is not available.
+#
+# Git runs this hook with one line per pushed ref on stdin:
+#   <local ref> <local sha> <remote ref> <remote sha>
+#
+# Escape hatch: git push --no-verify
+
+set -eu
+
+my_email=$(git config --get user.email || true)
+signing_key=$({ git config --get signing.key || true; } | tr -d ' ' | tr '[:lower:]' '[:upper:]')
+
+is_zero() {
+    case $1 in
+        *[!0]*) return 1 ;;
+        *) return 0 ;;
+    esac
+}
+
+lc() {
+    printf '%s' "$1" | tr '[:upper:]' '[:lower:]'
+}
+
+my_email_lc=$(lc "$my_email")
+
+unsigned=
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+    # Skip ref deletions.
+    if is_zero "$local_sha"; then
+        continue
+    fi
+
+    if is_zero "$remote_sha"; then
+        # New ref on the remote: check the commits that are not on any
+        # remote yet.
+        revs="$local_sha --not --remotes"
+    else
+        revs="$remote_sha..$local_sha"
+    fi
+
+    # Find commits in the pushed range that are authored by me but do not
+    # carry a valid signature from my signing key.
+    # shellcheck disable=SC2086
+    bad=$(git log --format='%H|%ae|%G?|%GK|%GP' $revs | while IFS='|' read -r sha email status key_fp primary_fp; do
+        if [ "$(lc "$email")" != "$my_email_lc" ]; then
+            continue
+        fi
+
+        case $status in
+            G | U) signed=1 ;;
+            *) signed=0 ;;
+        esac
+
+        if [ -n "$signing_key" ]; then
+            case $key_fp in
+                *"$signing_key") ;;
+                *)
+                    case $primary_fp in
+                        *"$signing_key") ;;
+                        *) signed=0 ;;
+                    esac
+                    ;;
+            esac
+        fi
+
+        if [ "$signed" = 0 ]; then
+            printf '%s\n' "$sha"
+        fi
+    done)
+
+    if [ -n "$bad" ]; then
+        unsigned="$unsigned$bad"
+    fi
+done
+
+if [ -n "$unsigned" ]; then
+    echo "error: refusing to push: these commits are authored by $my_email but not signed with key $signing_key:" >&2
+    for sha in $(printf '%s\n' "$unsigned" | sort -u); do
+        git show -s --format='  %h (%G?) %s' "$sha" >&2
+    done
+    echo "Sign them first, for example: git rebase --exec 'git commit --amend --no-edit -S' <base>" >&2
+    echo "Or bypass this check with: git push --no-verify" >&2
+    exit 1
+fi
