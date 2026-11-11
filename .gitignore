@@ -1,7 +1,3 @@
-# Ansible
-*.retry
-collections/
-
 # Generated files
 /templates.checksum
 /theme.json
