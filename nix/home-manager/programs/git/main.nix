@@ -26,6 +26,10 @@
         # which makes it more reproducible across devices.
         sshCommand = "ssh -F ~/.ssh/config";
       };
+      fetch = {
+        # Delete local remote-tracking branches that were deleted upstream.
+        prune = true;
+      };
       commit = {
         gpgSign = true;
       };
