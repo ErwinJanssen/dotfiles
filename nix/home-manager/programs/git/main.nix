@@ -30,6 +30,11 @@
         # Delete local remote-tracking branches that were deleted upstream.
         prune = true;
       };
+      push = {
+        # Set the upstream automatically when pushing a branch that does not
+        # have one yet. Existing upstreams are never changed.
+        autoSetupRemote = true;
+      };
       commit = {
         gpgSign = true;
       };
