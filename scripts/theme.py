@@ -63,7 +63,7 @@ def generate_theme(mode: typing.Literal["light", "dark"]) -> dict:
         "bright": {
             "black": lch_to_hex(35, black_chroma, hues[primary_color]),
             "red": lch_to_hex(bright_lightness, bright_chroma, hues["red"]),
-            "green": lch_to_hex(bright_lightness, bright_lightness, hues["green"]),
+            "green": lch_to_hex(bright_lightness, bright_chroma, hues["green"]),
             "yellow": lch_to_hex(bright_lightness + 40, bright_chroma, hues["yellow"]),
             "blue": lch_to_hex(bright_lightness, bright_chroma, hues["blue"]),
             "magenta": lch_to_hex(bright_lightness, bright_chroma, hues["magenta"]),
