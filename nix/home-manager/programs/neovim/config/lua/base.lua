@@ -42,12 +42,13 @@ vim.opt.autoread = true
 -- outside of Vim and have `autoread` enabled.
 vim.opt.autowriteall = true
 
--- Configure `autoread` and `autowriteall` to work as expected. By default
--- these settings only trigger on certain actions, such as a shell command. By
--- shelling out every time you change your focus to/from Vim, or when entering
--- another buffer, your buffer is always saved to disk when you leave, and
--- reloaded when you come back.
-vim.api.nvim_create_autocmd({ "FocusLost", "FocusGained", "BufEnter" }, { command = "silent! !" })
+-- Reload the buffer when its file changed on disk and the focus returns to
+-- Vim or another buffer is entered (`checktime` with `autoread`).
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, { command = "checktime" })
+
+-- Save the buffer when Vim loses focus, so changes are on disk before another
+-- program reads the file. `update` only writes when the buffer is modified.
+vim.api.nvim_create_autocmd("FocusLost", { command = "silent! update" })
 
 -- With the above autowrite and autoread in place, we can safely disable the
 -- swap file.
