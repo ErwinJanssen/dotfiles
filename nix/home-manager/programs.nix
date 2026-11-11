@@ -33,6 +33,7 @@
     ./programs/pi-coding-agent.nix
     ./programs/ssh.nix
     ./programs/zellij.nix
+    ./programs/zoxide.nix
 
     # GUI programs
     ./programs/firefox/main.nix
