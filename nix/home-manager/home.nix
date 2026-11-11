@@ -159,6 +159,8 @@ in
         "nix-command"
         "flakes"
       ];
+      # Hard-link identical files in the store to save disk space.
+      auto-optimise-store = true;
     };
   };
 
