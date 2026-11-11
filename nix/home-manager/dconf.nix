@@ -27,22 +27,22 @@
       # foreground based on light/dark mode.
       use-theme-colors = true;
       palette = [
-        theme.colors.normal.black
-        theme.colors.normal.red
-        theme.colors.normal.green
-        theme.colors.normal.yellow
-        theme.colors.normal.blue
-        theme.colors.normal.magenta
-        theme.colors.normal.cyan
-        theme.colors.normal.white
-        theme.colors.bright.black
-        theme.colors.bright.red
-        theme.colors.bright.green
-        theme.colors.bright.yellow
-        theme.colors.bright.blue
-        theme.colors.bright.magenta
-        theme.colors.bright.cyan
-        theme.colors.bright.white
+        theme.dark.colors.normal.black
+        theme.dark.colors.normal.red
+        theme.dark.colors.normal.green
+        theme.dark.colors.normal.yellow
+        theme.dark.colors.normal.blue
+        theme.dark.colors.normal.magenta
+        theme.dark.colors.normal.cyan
+        theme.dark.colors.normal.white
+        theme.dark.colors.bright.black
+        theme.dark.colors.bright.red
+        theme.dark.colors.bright.green
+        theme.dark.colors.bright.yellow
+        theme.dark.colors.bright.blue
+        theme.dark.colors.bright.magenta
+        theme.dark.colors.bright.cyan
+        theme.dark.colors.bright.white
       ];
     };
 

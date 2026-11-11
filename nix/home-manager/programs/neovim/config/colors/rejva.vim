@@ -74,19 +74,19 @@ endfunction
 
 " Color Variables {{{
 
-let s:red = { "gui": g:theme_colors.colors.normal.red, "cterm": "1", "cterm16": "1" }
-let s:light_red = { "gui": g:theme_colors.colors.bright.red, "cterm": "204", "cterm16": "1" }
-let s:dark_red = { "gui": g:theme_colors.colors.dim.red, "cterm": "196", "cterm16": "9" }
-let s:green = { "gui": g:theme_colors.colors.normal.green, "cterm": "2", "cterm16": "2" }
-let s:yellow = { "gui": g:theme_colors.colors.normal.yellow, "cterm": "180", "cterm16": "3" }
+let s:red = { "gui": g:theme_colors.dark.colors.normal.red, "cterm": "1", "cterm16": "1" }
+let s:light_red = { "gui": g:theme_colors.dark.colors.bright.red, "cterm": "204", "cterm16": "1" }
+let s:dark_red = { "gui": g:theme_colors.dark.colors.dim.red, "cterm": "196", "cterm16": "9" }
+let s:green = { "gui": g:theme_colors.dark.colors.normal.green, "cterm": "2", "cterm16": "2" }
+let s:yellow = { "gui": g:theme_colors.dark.colors.normal.yellow, "cterm": "180", "cterm16": "3" }
 let s:dark_yellow = { "gui": "#F78C6C", "cterm": "173", "cterm16": "11" }
-let s:blue = { "gui": g:theme_colors.colors.normal.blue, "cterm": "39", "cterm16": "4" }
-let s:purple = { "gui": g:theme_colors.colors.normal.magenta, "cterm": "5", "cterm16": "5" }
-let s:cyan = { "gui": g:theme_colors.colors.normal.cyan, "cterm": "38", "cterm16": "6" }
-let s:white = { "gui": g:theme_colors.colors.normal.white, "cterm": "145", "cterm16": "7" }
-let s:black = { "gui": g:theme_colors.colors.normal.black, "cterm": "235", "cterm16": "0" }
+let s:blue = { "gui": g:theme_colors.dark.colors.normal.blue, "cterm": "39", "cterm16": "4" }
+let s:purple = { "gui": g:theme_colors.dark.colors.normal.magenta, "cterm": "5", "cterm16": "5" }
+let s:cyan = { "gui": g:theme_colors.dark.colors.normal.cyan, "cterm": "38", "cterm16": "6" }
+let s:white = { "gui": g:theme_colors.dark.colors.normal.white, "cterm": "145", "cterm16": "7" }
+let s:black = { "gui": g:theme_colors.dark.colors.normal.black, "cterm": "235", "cterm16": "0" }
 let s:visual_black = { "gui": "NONE", "cterm": "NONE", "cterm16": "0" }
-let s:comment_grey = { "gui": g:theme_colors.colors.grey.blue, "cterm": "59", "cterm16": "15" }
+let s:comment_grey = { "gui": g:theme_colors.dark.colors.grey.blue, "cterm": "59", "cterm16": "15" }
 let s:gutter_fg_grey = { "gui": "#4B5263", "cterm": "238", "cterm16": "15" }
 let s:cursor_grey = { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }
 let s:visual_grey = { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }
@@ -116,7 +116,7 @@ call s:h("Operator", { "fg": s:cyan }) " sizeof", "+", "*", etc.
 lua << EOF
     vim.api.nvim_set_hl(0, 'Keyword', {
         ctermfg = "magenta",
-        fg = vim.g.theme_colors.colors.normal.magenta,
+        fg = vim.g.theme_colors.dark.colors.normal.magenta,
     })
 EOF
 
@@ -173,12 +173,12 @@ lua << EOF
     vim.api.nvim_set_hl(0, 'Normal', {
         ctermbg = "NONE",
         ctermfg = "white",
-        bg = vim.g.theme_colors.theme.normal.background,
-        fg= vim.g.theme_colors.theme.normal.foreground,
+        bg = vim.g.theme_colors.dark.theme.normal.background,
+        fg= vim.g.theme_colors.dark.theme.normal.foreground,
     })
 
     vim.api.nvim_set_hl(0, 'NormalFloat', {
-        bg = vim.g.theme_colors.theme.bright.background,
+        bg = vim.g.theme_colors.dark.theme.bright.background,
     })
 EOF
 
@@ -212,46 +212,46 @@ local hightlight_defintions = {
 
     -- Popup menu: Normal item.
     Pmenu = {
-        bg = theme.ui.search.item.background,
-        fg = theme.ui.search.item.foreground,
+        bg = theme.dark.ui.search.item.background,
+        fg = theme.dark.ui.search.item.foreground,
     },
 
     -- Popup menu: selected item.
     PmenuSel = {
-        bg = theme.ui.search.selected.background,
-        fg = theme.ui.search.selected.foreground,
+        bg = theme.dark.ui.search.selected.background,
+        fg = theme.dark.ui.search.selected.foreground,
     },
 
     -- Popup menu: scrollbar.
-    PmenuSbar = { bg = theme.ui.search.selected.background },
+    PmenuSbar = { bg = theme.dark.ui.search.selected.background },
 
     -- Popup menu: Thumb of the scrollbar.
-    PmenuThumb = { bg = theme.ui.search.selected.foreground },
+    PmenuThumb = { bg = theme.dark.ui.search.selected.foreground },
 
     -- }}}
 
     -- Diagnostic (from `:help diagnostic-highlights`) {{{
-    DiagnosticError = { fg = theme.colors.grey.red },
-    DiagnosticWarn = { fg = theme.colors.grey.yellow },
-    DiagnosticInfo = { fg = theme.colors.grey.magenta },
-    DiagnosticHint = { fg = theme.colors.grey.cyan },
-    DiagnosticOk = { fg = theme.colors.grey.green },
+    DiagnosticError = { fg = theme.dark.colors.grey.red },
+    DiagnosticWarn = { fg = theme.dark.colors.grey.yellow },
+    DiagnosticInfo = { fg = theme.dark.colors.grey.magenta },
+    DiagnosticHint = { fg = theme.dark.colors.grey.cyan },
+    DiagnosticOk = { fg = theme.dark.colors.grey.green },
     -- }}}
 
     -- Git {{{
-    gitcommitUnmerged = { fg = theme.colors.normal.green },
+    gitcommitUnmerged = { fg = theme.dark.colors.normal.green },
     gitcommitOnBranch = {},
-    gitcommitBranch = { fg = theme.colors.normal.purple },
-    gitcommitDiscardedType = { fg = theme.colors.normal.red },
-    gitcommitSelectedType = { fg = theme.colors.normal.green },
+    gitcommitBranch = { fg = theme.dark.colors.normal.purple },
+    gitcommitDiscardedType = { fg = theme.dark.colors.normal.red },
+    gitcommitSelectedType = { fg = theme.dark.colors.normal.green },
     gitcommitHeader = {},
-    gitcommitUntrackedFile = { fg = theme.colors.normal.cyan },
-    gitcommitDiscardedFile = { fg = theme.colors.normal.red },
-    gitcommitSelectedFile = { fg = theme.colors.normal.green },
-    gitcommitUnmergedFile = { fg = theme.colors.normal.yellow },
+    gitcommitUntrackedFile = { fg = theme.dark.colors.normal.cyan },
+    gitcommitDiscardedFile = { fg = theme.dark.colors.normal.red },
+    gitcommitSelectedFile = { fg = theme.dark.colors.normal.green },
+    gitcommitUnmergedFile = { fg = theme.dark.colors.normal.yellow },
     gitcommitFile = {},
     gitcommitSummary = { link = "Normal" },
-    gitcommitOverflow = { fg = theme.colors.normal.red },
+    gitcommitOverflow = { fg = theme.dark.colors.normal.red },
     gitcommitNoBranch = { link = "gitcommitBranch" },
     gitcommitUntracked = { link = "gitcommitComment" },
     gitcommitDiscarded = { link = "gitcommitComment" },
@@ -262,16 +262,16 @@ local hightlight_defintions = {
     -- }}}
 
     -- Treesitter {{{
-    ["@variable"] = { fg = theme.colors.normal.red },
+    ["@variable"] = { fg = theme.dark.colors.normal.red },
     -- }}}
 
     -- Telescope {{{
-    TelescopeSelection = { bg = theme.ui.search.selected.background },
+    TelescopeSelection = { bg = theme.dark.ui.search.selected.background },
     TelescopeSelectionCaret = {
-        bg = theme.ui.search.selected.background,
-        fg = theme.ui.search.selected.foreground,
+        bg = theme.dark.ui.search.selected.background,
+        fg = theme.dark.ui.search.selected.foreground,
     },
-    TelescopeMatching = { fg = theme.ui.search.item.match },
+    TelescopeMatching = { fg = theme.dark.ui.search.item.match },
     -- }}}
 }
 

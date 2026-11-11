@@ -171,9 +171,10 @@ def generate_theme(mode: typing.Literal["light", "dark"]) -> dict:
     }
 
 
-# Print a JSON object with all colors definitions combined.
+# Print a JSON object with the dark and light theme definitions.
 if __name__ == "__main__":
-    data = generate_theme("dark")
-    data["dark"] = generate_theme("dark")
-    data["light"] = generate_theme("light")
+    data = {
+        "dark": generate_theme("dark"),
+        "light": generate_theme("light"),
+    }
     print(json.dumps(data, indent=4))
