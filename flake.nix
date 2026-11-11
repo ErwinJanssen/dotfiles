@@ -33,15 +33,17 @@
         # generated / ignored files in its build context.
         erwin-theme = pkgs.stdenv.mkDerivation {
           name = "erwin-theme";
-          src = ./.;
+
+          # Only the generator script is needed, so the derivation does not
+          # need to rebuild when any other file in the repository changes.
+          dontUnpack = true;
 
           buildInputs = [
-            pkgs.gnumake
             (pkgs.python314.withPackages (python-pkgs: [ python-pkgs.colormath ]))
           ];
 
           buildPhase = ''
-            make theme.json
+            python ${./scripts/theme.py} > theme.json
           '';
 
           installPhase = ''
