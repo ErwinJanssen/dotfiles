@@ -35,6 +35,11 @@
         # have one yet. Existing upstreams are never changed.
         autoSetupRemote = true;
       };
+      rerere = {
+        # Record conflict resolutions and replay them when the same conflict
+        # recurs, e.g. when rebasing a long-lived branch repeatedly.
+        enabled = true;
+      };
       commit = {
         gpgSign = true;
       };
