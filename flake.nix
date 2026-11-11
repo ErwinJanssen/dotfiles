@@ -27,7 +27,7 @@
     {
       formatter.${system} = pkgs.nixfmt-tree;
 
-      packages = {
+      packages.${system} = {
         # Define a package for the theme data, in order to pass that to
         # `home.nix`. This is needed, because Nix Flake does not include
         # generated / ignored files in its build context.
@@ -65,7 +65,7 @@
         # to pass through arguments to home.nix
         extraSpecialArgs = {
           inherit nixgl;
-          theme = builtins.fromJSON (builtins.readFile "${self.packages.erwin-theme}/theme.json");
+          theme = builtins.fromJSON (builtins.readFile "${self.packages.${system}.erwin-theme}/theme.json");
         };
       };
     };
