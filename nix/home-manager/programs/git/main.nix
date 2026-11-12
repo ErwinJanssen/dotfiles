@@ -1,9 +1,27 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   # Install the pre-push hook that refuses to push unsigned commits authored
   # by the configured user. All repositories use it through core.hooksPath.
   home.file.".config/git/hooks/pre-push" = {
     source = ./pre-push;
+    executable = true;
+  };
+
+  # Run the pre-commit hooks from .pre-commit-config.yaml on every commit
+  # in every repository, using the same entry point as the shim that
+  # `pre-commit install` generates. The pre-commit store path is
+  # interpolated by Home Manager, so the hook stays current without
+  # re-running `pre-commit install` in each repository.
+  home.file.".config/git/hooks/pre-commit" = {
+    text = ''
+      #!/bin/sh
+      # PRE_COMMIT_ALLOW_NO_CONFIG skips repositories that have no
+      # .pre-commit-config.yaml instead of blocking their commits.
+      set -eu
+
+      PRE_COMMIT_ALLOW_NO_CONFIG=1 exec ${pkgs.pre-commit}/bin/pre-commit \
+        hook-impl --config=.pre-commit-config.yaml --hook-type=pre-commit
+    '';
     executable = true;
   };
 

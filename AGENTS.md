@@ -16,6 +16,8 @@ Nix Flake + Home Manager configuration for personal dotfiles.
 
 ## Toolchain
 - Nix Flakes enabled (`nix-command`, `flakes`)
+- Git hooks run globally from `~/.config/git/hooks` via `core.hooksPath`;
+  `pre-commit install` is not needed (and is refused while that setting exists)
 - Pre-commit: ruff (Python), stylua (Lua), nix fmt, fish_indent
 - ruff: `select = ["ALL"]` with per-file ignores for scripts/*
 - stylua: `no_call_parentheses = true`, spaces for indent
