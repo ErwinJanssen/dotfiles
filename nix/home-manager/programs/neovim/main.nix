@@ -70,5 +70,8 @@
       # Plugin for writing and navigating Obsidian vaults
       obsidian-nvim
     ];
+    # Explicitly disable these to match Home Manager stateVersion 26.05 defaults.
+    withRuby = false;
+    withPython3 = false;
   };
 }
