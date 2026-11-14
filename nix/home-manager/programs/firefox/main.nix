@@ -8,6 +8,7 @@
   programs.firefox = {
     enable = true;
     package = config.lib.nixGL.wrap pkgs.firefox;
+    configPath = ".mozilla/firefox";
     profiles = {
       default = {
         path = "default.profile";
